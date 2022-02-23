@@ -1,20 +1,21 @@
 <?php
     include_once "../util/utilModelo.php";
     include_once "../util/util.php";
+    
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("codigo");
-    $valor = array($_SESSION['usuario'][0]);
-    $tabla = "usuario";
+    $nombreCampo = array("id_codigo");
+    $valor = array('osdo');
+    $tabla = "Usuario";
 
     $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
-    while ($fila = mysqli_fetch_array($result)) {
+ /*   while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
             $nombre = $fila['nombre'];
-            $codigoUsuario = $fila['codigo'];
+            $codigoUsuario = $fila['codigo']; 
 
-        }
-    }
+        } 
+    } */
 
 ?>
 <div class="navbar navbar-fixed-top">
