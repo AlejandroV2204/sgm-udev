@@ -4,17 +4,17 @@
     $utilModelo1 = new utilModelo();
     $util = new util();
     $nombreCampo = array("codigo");
-    $valor = array($_SESSION['usuario'][0]);
+    // $valor = array($_SESSION['usuario'][0]);
     $tabla = "usuario";
 
-    $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
-    while ($fila = mysqli_fetch_array($result)) {
-        if ($fila != NULL) {
-            $nombre = $fila['nombre'];
-            $codigoUsuario = $fila['codigo'];
+    // $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
+    // while ($fila = mysqli_fetch_array($result)) {
+    //     if ($fila != NULL) {
+    //         $nombre = $fila['nombre'];
+    //         $codigoUsuario = $fila['codigo'];
 
-        }
-    }
+    //     }
+    // }
 
 ?>
 <div class="navbar navbar-fixed-top">
