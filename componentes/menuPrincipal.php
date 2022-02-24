@@ -4,9 +4,9 @@
     
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("id_codigo");
+    $nombreCampo = array("id");
     $valor = array('osdo');
-    $tabla = "Usuario";
+    $tabla = "usuario";
 
     $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
  /*   while ($fila = mysqli_fetch_array($result)) {

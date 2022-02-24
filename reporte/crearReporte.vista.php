@@ -1,5 +1,6 @@
 <?php 
-include_once('../componentes/menuPrincipal.php');
+include "../util/util.php";
+include_once "../util/utilModelo.php";
 ?>
 
 <!DOCTYPE html>

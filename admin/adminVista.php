@@ -4,10 +4,10 @@
     $utilModelo2 = new utilModelo();
     $util = new util();
     $util->validarRuta(0);
-    $nombreCampo = array("id_usuario");
+    $nombreCampo = array("id");
     //$valor = array($_SESSION['usuario'][0]);
     $valor=array('1');
-    $tabla = "Usuario";
+    $tabla = "usuario";
     $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
     while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
@@ -54,17 +54,17 @@
 
 
                     <?php
-                        $nombreCampo = array("codigoReferido");
+                        $nombreCampo = array("id");
                         $valor = array('1');
-                        $tabla = "Usuario";
+                        $tabla = "usuario";
                         $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
                         $referidos = "";
                         $contadorReferidos =0;
                         while ($fila = mysqli_fetch_array($result)) {
                             if ($fila != NULL) {
                                 $contadorReferidos++;
-                                $saldo = $fila['id_usario'];
-                                $referidos = $referidos . ' <a href="javascript:;" class="shortcut"><i class="shortcut-icon  icon-user"></i><span class="shortcut-label">' . $fila['nombre'] . ' <br> <b>CODIGO: ' . $fila['codigo'] . '</b></span> </a>';
+                                $saldo = $fila['id'];
+                                $referidos = $referidos . ' <a href="javascript:;" class="shortcut"><i class="shortcut-icon  icon-user"></i><span class="shortcut-label">' . $fila['nombre'] . ' <br> <b>CODIGO: ' . $fila['id'] . '</b></span> </a>';
                             }
                         }
                           //consulta los referidos del mes actual

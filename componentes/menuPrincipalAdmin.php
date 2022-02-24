@@ -3,15 +3,15 @@
     include_once "../util/util.php";
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("id_usuario");
+    $nombreCampo = array("id");
     $valor = array('1');
-    $tabla = "Usuario";
+    $tabla = "usuario";
 
     $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
     while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
             $nombre = $fila['nombre'];
-            $codigoUsuario = $fila['id_usuario'];
+            $codigoUsuario = $fila['id'];
 
         }
     }
