@@ -17,7 +17,7 @@ $clave =$_POST["clave"];//clave que se envia para saber que funcion utilizar 0 =
 
       function validarUsuario($b) {
         $utilModelo = new utilModelo();
-            $result = $utilModelo->consultarVariasTablas("*","usuario","usuario='$b'");
+            $result = $utilModelo->consultarVariasTablas("*","id_usuario","id_usuario='$b'");
               $rowcount=mysqli_num_rows($result);
             
             

@@ -93,20 +93,20 @@
                             <!-- ************INCIAR SESION******* FIN ***** -->
 
                             <!-- ************REGISTRAR******* INICIO ***** -->
-                            <form id="register-form" action="../usuario/usuarioControlador.php" method="post"
+                            <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
                                   role="form" style="display: none;">
-                                <?php
+                                <!-- <?php
                                     $key = $util1->generarCodigo();
                                     $edadTrabajador=$util1->mayorEdad('14');
 
-                                ?>
+                                ?> -->
                                 <!-- <div class="form-group">
                                     <input type="text" name="codigo" id="codigo" tabindex="1" class="form-control"
                                            value="<?php echo $key; ?>" readonly>
                                 </div> -->
                                 <div class="form-group">
                                     <input type="text" name="nombre" id="nombre" tabindex="1" class="form-control"
-                                           placeholder="Nombre Completo" value="" required>
+                                           placeholder="Nombre" value="" required>
                                 </div>
                                 <!-- <div class="form-group">
                                     <input type="text" name="documento" id="documento" tabindex="1" class="form-control"
@@ -115,7 +115,8 @@
                                 <!-- <div class="form-group">
                                     Fecha de nacimiento: <input type="date" name="edad" id="edad" tabindex="1"
                                                                 class="form-control" placeholder="Fecha de nacimiento"
-                                                                value="" required min="1940-01-01" max="<?php echo $edadTrabajador; ?>>
+                                                                value="" required min="1940-01-01" max="
+                                                                 <?php echo $edadTrabajador; ?>>
                                 </div> -->
                                 <!-- <div class="form-group">
                                     <input type="text" name="direccion" id="direccion" tabindex="1" class="form-control"
@@ -130,17 +131,18 @@
                                            placeholder="Codigo referido" value="" required>
                                            <div id="referidoValido"></div>
                                 </div> -->
-                                <div class="form-group">
-                                    <input type="email" name="email" id="email" tabindex="1" class="form-control"
-                                           placeholder="Correo electronico" value="" required>
-                                </div>
 
                                 <div class="form-group">
                                     <input type="text" name="username" id="username2" onkeyup="validarUsuario('#username2',0,'#usuarioValido');" tabindex="1" class="form-control"
                                            placeholder="Usuario" value="" required>
-                                           <div id="usuarioValido" class="form-group span4">
+                                           <div id="Apellido" class="form-group span4">
 
                                            </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" tabindex="1" class="form-control"
+                                           placeholder="Correo electronico" value="" required>
                                 </div>
 
                                 <div class="form-group" id="pass">
