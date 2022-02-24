@@ -18,7 +18,7 @@
       <link href="../css/style.css" rel="stylesheet">
     <script src="../js/login.js"></script>
     <script src="../js/funciones.js"></script>
-    <title>INICIO</title>
+    <title>Inicio Sesion</title>
 </head>
 <body>
 
@@ -35,7 +35,7 @@
                             <a href="#modalCondiciones" id="register-form-link">Regístrate ahora</a>
                         </div>
                     </div>
-                     
+                    <hr>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -133,16 +133,16 @@
                                 </div> -->
 
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username2" onkeyup="validarUsuario('#username2',0,'#usuarioValido');" tabindex="1" class="form-control"
+                                    <input type="text" name="apellido" id="apellido" tabindex="1" class="form-control"
                                            placeholder="Usuario" value="" required>
-                                           <div id="Apellido" class="form-group span4">
-
-                                           </div>
+                                           
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="email" name="email" id="email" tabindex="1" class="form-control"
+                                    <input type="email" name="email" id="email" onkeyup="validarCorreo('#username2',0,'#usuarioValido');" tabindex="1" class="form-control"
                                            placeholder="Correo electronico" value="" required>
+                                           <div id="email" class="form-group span4">
+                                           </div>
                                 </div>
 
                                 <div class="form-group" id="pass">
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
                                     <br>
-                                    <img src="../img/Error-128.png" width="20" height="20"><strong> Las contraseñas no
+                                    <img src="../img/Error-128.png" width="15" height="15"><strong style="size: 12px;">Las contraseñas no
                                         coinciden</strong>
                                 </div>
                                  <!-- <div id="terminos">
@@ -170,7 +170,7 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <input type="submit" name="guardar" id="guardar" tabindex="4"
-                                                   class="form-control btn btn-register" value="Crear cuenta">
+                                                   class="form-control btn-register" value="Crear cuenta">
                                         </div>
                                     </div>
                                 </div>

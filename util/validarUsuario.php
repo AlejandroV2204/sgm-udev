@@ -1,21 +1,25 @@
 <?php
 include_once "utilModelo.php";
 
-
-$user =$_POST["b"];//recibe el nombre de usuario para validar
-$referido =$_POST["b"];//recibe el codigo de referido que se verica su existencia
-$clave =$_POST["clave"];//clave que se envia para saber que funcion utilizar 0 = validar usuario 1 = validar referido 
+//recibe el nombre de usuario para validar
+$user =$_POST["b"];
+//recibe el codigo de referido que se verica su existencia
+$referido =$_POST["b"];
+//clave que se envia para saber que funcion utilizar 0 = validar usuario 1 = validar referido 
+$clave =$_POST["clave"];
 
 
 
       if($clave==0) {
         
-            validarUsuario($user);
+            validarCorreo($user);
       }else{
             validarReferido($referido);
       }
 
-      function validarUsuario($b) {
+
+      //Cambio logica y nombre de la validacion del usuario para reutilizar para que me valide el correo
+      function validarCorreo($b) {
         $utilModelo = new utilModelo();
             $result = $utilModelo->consultarVariasTablas("*","id_usuario","id_usuario='$b'");
               $rowcount=mysqli_num_rows($result);

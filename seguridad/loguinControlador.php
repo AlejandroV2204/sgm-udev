@@ -9,10 +9,10 @@ $util = new utilModelo();
 
 
 
-$usuario = filter_input(INPUT_POST, 'username');
-$password = filter_input(INPUT_POST, 'ipassword');
+$usuario = filter_input(INPUT_POST, 'userini');
+$password = filter_input(INPUT_POST, 'rPassword');
 
-$nombreCampo = array("id","password");
+$nombreCampo = array("email","password");
 $valor = array("$usuario","$password");
 $tabla = "usuario";
 $result = $util -> mostrarregistros($tabla,$nombreCampo,$valor);
