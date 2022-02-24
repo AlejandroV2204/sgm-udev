@@ -3,14 +3,15 @@
     include_once "../util/util.php";
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("codigo");
-    $valor = array($_SESSION['usuario'][0]);
+    $nombreCampo = array("id");
+    $valor = array($_SESSION['usuario'][0]); 
+    
     $tabla = "usuario";
 
     $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
     while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
-            $nombre = $fila['nombre'];
+            $nombre = $fila['correo'];
             $codigoUsuario = $fila['codigo'];
 
         }
@@ -59,6 +60,7 @@
                 <li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-book"></i><span></span>Solicitudes</a></li>
                 <li><a href="../publicidad/publicidadVistaPreliminar.php"><i class="icon-book"></i><span></span>Publicidad </a></li>
                 <li><a href="../crudTrabajador/crudTrabajadorVista.php"><i class="icon-book"></i><span></span>Trabajador</a></li>
+                <li><a href="../computadores/nuevo_computador.php"><i class="icon-book"></i><span></span>Nuevo Computador</a></li>
 
             </ul>
         </div>

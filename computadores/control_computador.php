@@ -1,34 +1,11 @@
 <?php
 
-// include_once('../conexion.php');
+include "../util/util.php";
+include_once "../util/utilModelo.php";
+$utilModelo2 = new utilModelo();
+$util = new util();
 
-// $statement = $conn->prepare("insert into computador (id_computador, id_sala1, sistema_operativo, motherboard,
-//     ram, velocidad_ram, procesador, tipo_graficos, capacidad_disco, mouse, teclado, estado_panel_frontal, lectora_cd, ventiladores,
-//     cambio_pasta_termica, ultimo_mantenimiento, salidas_video) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-
-// $statement->bind_param(
-//     "iisssssssssssssss",
-//     $idcomputador,
-//     $idsala,
-//     $sistema_operativo,
-//     $motherboard,
-//     $ram,
-//     $velocidadram,
-//     $procesador,
-//     $tipograficos,
-//     $capacidaddiscoduro,
-//     $mouse,
-//     $teclado,
-//     $panelfrontal,
-//     $lectoradvd,
-//     $ventiladores,
-//     $pastatermica,
-//     $ultimomantenimiento,
-//     $salidavideo
-// );
-
-
+//Variables que se crean de los campos en el formulario (la vista)
 $idcomputador = $_REQUEST['id_pc'];
 $sistema_operativo = $_REQUEST['so_pc'];
 $idsala = $_REQUEST['sala'];
@@ -49,22 +26,15 @@ $salidavideo = $_REQUEST['salidas_video'];
 
 
 	//$campos es el nombre de los campos tal cual aparece en la base de datos
-    $campos = array("codigo", "nombre", "cedula", "fechaNacimiento","fechaDeIngreso", "direccion", "telefono", "codigoReferido", "usuario", "correo", "password", "activo", "tipo");
+    $campos = array("id", "id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado");
     //$valores son los valores a almacenar
-    $valores = array("$codigo","$nombre","$cedula","$fechaNacimiento","$fechaIngreso","$direccion","$celular","$codigoReferido","$usuario","$correo","$password","$activo","$tipo");
+    $valores = array("$idcomputador","$idsala","$sistema_operativo","$motherboard","$ram","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", "1");
     //la funcion insertar recive el nombre de la tabla y los dos arrays de campos y valores
-    $nombreDeTabla = "usuario";
-    $utilModelo -> insertar($nombreDeTabla,$campos, $valores) ;
+    $nombreDeTabla = "computador";
+    $utilModelo2->insertar($nombreDeTabla,$campos, $valores);
     echo "si funciono";
-    $_SESSION['mensajeOk']="Accion realizada";header('Location: ../crudTrabajador/crudTrabajadorVista.php');
+    // $_SESSION['mensajeOk']="Accion realizada";header('Location: ../crudTrabajador/crudTrabajadorVista.php');
+    $_SESSION['mensajeOk']="Accion realizada";header('Location: ../admin/adminVista.php');
 
-// $statement->execute();
-
-
-// echo "Datos guardados";
-
-
-// $statement->close();
-// $conn->close();
 
 ?>
