@@ -35,7 +35,7 @@
                             <a href="#modalCondiciones" id="register-form-link">Regístrate ahora</a>
                         </div>
                     </div>
-                    <hr>
+                     
                 </div>
                 <div class="panel-body">
                     <div class="row">
