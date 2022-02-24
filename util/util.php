@@ -18,7 +18,7 @@
                 } else {
                     switch ($_SESSION['usuario'][1]) {
                         case 0:// usuario administrador
-                            header('Location: ../admin/adminVista.php');
+                            header('Location: ../util/okVista.php');
                             exit();
                             break;
                         case 1://usuario venderor

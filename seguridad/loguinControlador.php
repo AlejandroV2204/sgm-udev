@@ -12,7 +12,7 @@ $util = new utilModelo();
 $usuario = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'ipassword');
 
-$nombreCampo = array("usuario","password");
+$nombreCampo = array("id","password");
 $valor = array("$usuario","$password");
 $tabla = "usuario";
 $result = $util -> mostrarregistros($tabla,$nombreCampo,$valor);
