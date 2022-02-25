@@ -1,28 +1,20 @@
 <?php 
+include "../util/util.php";
+include_once "../util/utilModelo.php";
+$utilModeloRepacacion = new utilModelo();
+$utilReparacion=new util();
+
+$id_reparacion=$_REQUEST['id'];
+$id_reporte1=$_REQUEST['id_reporte'];
+$fecha=$_REQUEST['fecha'];
+$descripcion=$_REQUEST['descripcion'];
 
 
-include_once("../conexion.php");
-
-$id_reparacion=@$_POST['id'];
-$id_usuario2=@$_POST['id_usuario2'];
-$id_PC2=@$_POST['id_PC2'];
-$fecha=@$_POST['fecha'];
-$descripcion=@$_POST['descripcion'];
-
-
-
-$sql="INSERT INTO reparacion VALUES(default,'$id_PC2','$id_PC2','$fecha','$descripcion')";
-
- echo $sql;
-if(mysqli_query($conn,$sql)){
-    echo "New record created successfully ";
-}else{
-    echo "Error: ". $sql . "<br>". mysqli_error($conn);
-
-}
-mysqli_close($conn);
-header("location:reparacionesList.php")
-
-
-
+$campos= array ("id","id_reporte1","fecha","descripcion");
+$valores= array ("$id_reparacion","$id_reporte1","$fecha","$descripcion");
+$tabla= "reparacion"   ;  
+$utilModeloRepacacion2 ->insertar($tabla,$campos,$valores);
+echo "informacion enviada a la tabla reparaciones";
+$_SESSION['mensajeOK']="Accion realizada";header('Locarion:../admin/adminVista.php');
+ 
 ?>
