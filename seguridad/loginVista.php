@@ -44,8 +44,8 @@
                             <form id="login-form" action="loguinControlador.php" method="post" role="form"
                                   style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username" tabindex="1" class="form-control"
-                                           placeholder="Usuario" value="">
+                                    <input type="text" name="userini" id="userini" tabindex="1" class="form-control"
+                                           placeholder="Correo" value="">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="ipassword" id="ipassword" tabindex="2"
@@ -134,7 +134,7 @@
 
                                 <div class="form-group">
                                     <input type="text" name="apellido" id="apellido" tabindex="1" class="form-control"
-                                           placeholder="Usuario" value="" required>
+                                           placeholder="Apellido" value="" required>
                                            
                                 </div>
 
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
                                     <br>
-                                    <img src="../img/Error-128.png" width="15" height="15"><strong style="size: 12px;">Las contraseñas no
+                                    <img src="../img/Error-128.png" width="20" height="15"><strong>Las contraseñas no
                                         coinciden</strong>
                                 </div>
                                  <!-- <div id="terminos">
@@ -170,7 +170,7 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <input type="submit" name="guardar" id="guardar" tabindex="4"
-                                                   class="form-control btn-register" value="Crear cuenta">
+                                                   class="form-control btn btn-register" value="Crear cuenta">
                                         </div>
                                     </div>
                                 </div>
