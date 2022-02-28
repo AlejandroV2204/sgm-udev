@@ -18,7 +18,7 @@
       <link href="../css/style.css" rel="stylesheet">
     <script src="../js/login.js"></script>
     <script src="../js/funciones.js"></script>
-    <title>INICIO</title>
+    <title>Inicio Sesion</title>
 </head>
 <body>
 
@@ -44,8 +44,8 @@
                             <form id="login-form" action="loguinControlador.php" method="post" role="form"
                                   style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username" tabindex="1" class="form-control"
-                                           placeholder="Usuario" value="">
+                                    <input type="text" name="userini" id="userini" tabindex="1" class="form-control"
+                                           placeholder="Correo" value="">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="ipassword" id="ipassword" tabindex="2"
@@ -93,20 +93,20 @@
                             <!-- ************INCIAR SESION******* FIN ***** -->
 
                             <!-- ************REGISTRAR******* INICIO ***** -->
-                            <form id="register-form" action="../usuario/usuarioControlador.php" method="post"
+                            <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
                                   role="form" style="display: none;">
-                                <?php
+                                <!-- <?php
                                     $key = $util1->generarCodigo();
                                     $edadTrabajador=$util1->mayorEdad('14');
 
-                                ?>
+                                ?> -->
                                 <!-- <div class="form-group">
                                     <input type="text" name="codigo" id="codigo" tabindex="1" class="form-control"
                                            value="<?php echo $key; ?>" readonly>
                                 </div> -->
                                 <div class="form-group">
                                     <input type="text" name="nombre" id="nombre" tabindex="1" class="form-control"
-                                           placeholder="Nombre Completo" value="" required>
+                                           placeholder="Nombre" value="" required>
                                 </div>
                                 <!-- <div class="form-group">
                                     <input type="text" name="documento" id="documento" tabindex="1" class="form-control"
@@ -115,7 +115,8 @@
                                 <!-- <div class="form-group">
                                     Fecha de nacimiento: <input type="date" name="edad" id="edad" tabindex="1"
                                                                 class="form-control" placeholder="Fecha de nacimiento"
-                                                                value="" required min="1940-01-01" max="<?php echo $edadTrabajador; ?>>
+                                                                value="" required min="1940-01-01" max="
+                                                                 <?php echo $edadTrabajador; ?>>
                                 </div> -->
                                 <!-- <div class="form-group">
                                     <input type="text" name="direccion" id="direccion" tabindex="1" class="form-control"
@@ -130,16 +131,17 @@
                                            placeholder="Codigo referido" value="" required>
                                            <div id="referidoValido"></div>
                                 </div> -->
+
                                 <div class="form-group">
-                                    <input type="email" name="email" id="email" tabindex="1" class="form-control"
-                                           placeholder="Correo electronico" value="" required>
+                                    <input type="text" name="apellido" id="apellido" tabindex="1" class="form-control"
+                                           placeholder="Apellido" value="" required>
+                                           
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username2" onkeyup="validarUsuario('#username2',0,'#usuarioValido');" tabindex="1" class="form-control"
-                                           placeholder="Usuario" value="" required>
-                                           <div id="usuarioValido" class="form-group span4">
-
+                                    <input type="email" name="email" id="email" onkeyup="validarCorreo('#username2',0,'#usuarioValido');" tabindex="1" class="form-control"
+                                           placeholder="Correo electronico" value="" required>
+                                           <div id="email" class="form-group span4">
                                            </div>
                                 </div>
 
@@ -153,7 +155,7 @@
                                 </div>
                                 <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
                                     <br>
-                                    <img src="../img/Error-128.png" width="20" height="20"><strong> Las contraseñas no
+                                    <img src="../img/Error-128.png" width="20" height="15"><strong>Las contraseñas no
                                         coinciden</strong>
                                 </div>
                                  <!-- <div id="terminos">

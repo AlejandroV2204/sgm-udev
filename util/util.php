@@ -22,7 +22,6 @@
                             exit();
                             break;
                         case 1://usuario venderor
-
                             header('Location: ../vendedor/vendedorVista.php');
                             exit();
                             break;

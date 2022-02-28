@@ -4,7 +4,11 @@
     $utilModelo1 = new utilModelo();
     $util = new util();
     $nombreCampo = array("codigo");
+
     // $valor = array($_SESSION['usuario'][0]);
+
+    $valor = array($_SESSION['id_usuario'][0]);
+
     $tabla = "usuario";
 
     // $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
