@@ -3,7 +3,7 @@
     include_once "../util/util.php";
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("id");
+    $nombreCampo = array("email");
     $valor = array($_SESSION['usuario'][0]); 
     
     $tabla = "usuario";

@@ -10,7 +10,7 @@ $util = new utilModelo();
 
 
 $usuario = filter_input(INPUT_POST, 'userini');
-$password = filter_input(INPUT_POST, 'rPassword');
+$password = filter_input(INPUT_POST, 'ipassword');
 
 $nombreCampo = array("email","password");
 

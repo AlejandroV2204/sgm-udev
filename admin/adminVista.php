@@ -4,7 +4,7 @@
     $utilModelo2 = new utilModelo();
     $util = new util();
     $util->validarRuta(0);
-    $nombreCampo = array("id");
+    $nombreCampo = array("email");
     //$valor = array($_SESSION['usuario'][0]);
     $valor=array('1');
     $tabla = "usuario";
@@ -170,7 +170,7 @@
                                   
                                   // $result = $utilModelo2->consultarVariasTablas("*","computador","id='$codigoUsuario'");
 
-                                   $result = $utilModelo2->consultarVariasTablas("*","computador","id=1");
+                                   $result = $utilModelo2->consultarVariasTablas("*","computador","id_computador=121314");
                                    while ($fila = mysqli_fetch_array($result)) {
                                    if ($fila != NULL) {
                                        $ultimoPago=$util->validarUsuarioActivo($fila[1]);

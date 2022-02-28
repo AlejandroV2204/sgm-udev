@@ -26,9 +26,9 @@ $salidavideo = $_REQUEST['salidas_video'];
 
 
 	//$campos es el nombre de los campos tal cual aparece en la base de datos
-    $campos = array("id", "id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado");
+    $campos = array("id_computador", "id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video");
     //$valores son los valores a almacenar
-    $valores = array("$idcomputador","$idsala","$sistema_operativo","$motherboard","$ram","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", "1");
+    $valores = array("$idcomputador","$idsala","$sistema_operativo","$motherboard","$ram","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo");
     //la funcion insertar recive el nombre de la tabla y los dos arrays de campos y valores
     $nombreDeTabla = "computador";
     $utilModelo2->insertar($nombreDeTabla,$campos, $valores);
