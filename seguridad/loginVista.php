@@ -29,7 +29,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6">
-                            <a href="#" class="active" id="login-form-link">Iniciar sesión</a>
+                                <a href="#" class="active" id="login-form-link">Iniciar sesión</a>
                         </div>
                         <div class="col-xs-6">
                             <a href="#modalCondiciones" id="register-form-link">Regístrate ahora</a>
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
                                     <br>
-                                    <img src="../img/Error-128.png" width="20" height="15"><strong>Las contraseñas no
+                                    <img src="../img/Error-128.png" width="15" height="15"><strong>Las contraseñas no
                                         coinciden</strong>
                                 </div>
                                  <!-- <div id="terminos">
