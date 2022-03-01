@@ -21,7 +21,7 @@ $tipo = '0';//el tipo numero 2 es un usuario stadart ademas tenemos tipo 0 para 
 
 
 //guardar
-if(isset($_POST['guardarTrabajador'])){
+// if(isset($_POST['guardarTrabajador'])){
 
 echo "Guardar";
 
@@ -36,12 +36,12 @@ $utilModelo -> insertar($nombreDeTabla,$campos, $valores) ;
 
 echo "si funciono";
 $_SESSION['mensajeOk']="Accion realizada";
-      //header('Location: ../crudTrabajador/crudTrabajadorVista.php');
+      header('Location:crudUsuariosVista.php');
 
 
 //modificar
- }else if(isset($_POST['modificarTrabajador'])){
- 	echo "modificar";
+//  }else if(isset($_POST['modificarTrabajador'])){
+//  	echo "modificar";
 
 // 	//$campos es el nombre de los campos tal cual aparece en la base de datos
 // $campos = array("nombre", "apellido", "email", "password", "tipo_Usuario", "activo");
@@ -53,9 +53,9 @@ $_SESSION['mensajeOk']="Accion realizada";
 // $_SESSION['mensajeOk']="Accion realizada";
 
 //      header('Location: ../crudTrabajador/crudTrabajadorVista.php');
- }else{
+//  }else{
 
-	echo "Entrada 3";
+// 	echo "Entrada 3";
 
 // 			$campo = array("activo");
 
@@ -63,6 +63,6 @@ $_SESSION['mensajeOk']="Accion realizada";
 // 		$_SESSION['mensajeOk']="Accion realizada";
  		//header('Location: ../crudTrabajador/crudTrabajadorVista.php');
 
-   }
+//    }
 	// exit();
 ?>
