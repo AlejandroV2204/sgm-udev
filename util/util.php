@@ -47,9 +47,9 @@
 
         function validarElemento($tipoUsarioPermitido, $html)
         {
-            if ($_SESSION['usuario'][1] == $tipoUsarioPermitido) {
+           /* if ($_SESSION['usuario'][1] == $tipoUsarioPermitido) {
                 echo $html;
-            }
+            }*/
         }
 
         function validarUsuarioActivo($codigoUsuario)
@@ -163,15 +163,15 @@
             return $meta;
         }
 
-        function generarCodigo()
-        {
-            $longitud = 6;
-            $key = '';
-            $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
-            $max = strlen($pattern) - 1;
-            for ($i = 0; $i < $longitud; $i++) $key .= $pattern{mt_rand(0, $max)};
-            return $key;
-        }
+        //function generarCodigo()
+        //{
+          //  $longitud = 6;
+            //$key = '';
+            //$pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+            //$max = strlen($pattern) - 1;
+            //for ($i = 0; $i < $longitud; $i++) $key .= $pattern{mt_rand(0, $max)};
+            //return $key;
+        //}
 
         function validarCodigo($codigo){
           $utilModelo = new utilModelo();
