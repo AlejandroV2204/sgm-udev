@@ -1,28 +1,22 @@
 <?php 
+include "../util/util.php";
+include_once "../util/utilModelo.php";
+$utilModeloReparacion2 = new utilModelo();
+$utilReparacion=new util();
+
+//$id_reparacion=$_REQUEST['id'];
+$id_reporte1=filter_input(INPUT_POST,'id_reporte1');
+$fecha=filter_input(INPUT_POST,'fecha');
+$descripcion=filter_input(INPUT_POST,'descripcion');
 
 
-include_once("../conexion.php");
+$campos= array ("id_reporte1","fecha","descripcion");
+$valores= array ($id_reporte1,$fecha,$descripcion);
+$tabla= "reparacion";  
+$utilModeloReparacion2 -> insertar($tabla,$campos,$valores);
 
-$id_reparacion=@$_POST['id'];
-$id_reporte=@$_POST['id_reporte1'];
-
-$fecha=@$_POST['fecha'];
-$descripcion=@$_POST['descripcion'];
-
-
-
-$sql="INSERT INTO reparacion VALUES(default,'$id_reparacion','$id_reporte','$fecha','$descripcion')";
-
- echo $sql;
-if(mysqli_query($conn,$sql)){
-    echo "New record created successfully ";
-}else{
-    echo "Error: ". $sql . "<br>". mysqli_error($conn);
-
-}
-mysqli_close($conn);
-header("location:reparacionesList.php")
-
-
-
+echo "informacion enviada a la tabla reparaciones";
+$_SESSION['mensajeOK']="Accion realizada"; 
+header('Location:../admin/adminVista.php');
+ 
 ?>

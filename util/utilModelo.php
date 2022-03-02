@@ -32,8 +32,7 @@
             }
             $consulta = "SELECT * FROM $tabla  $condiciones";
 //se deja echo de alejandro 
-   echo "consulta: ".$consulta;
-
+   //echo "consulta: ".$consulta;
 //    die();
 
             $query = mysqli_query($link, $consulta);
