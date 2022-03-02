@@ -4,14 +4,14 @@
 include_once("../conexion.php");
 
 $id_reparacion=@$_POST['id'];
-$id_usuario2=@$_POST['id_usuario2'];
-$id_PC2=@$_POST['id_PC2'];
+$id_reporte=@$_POST['id_reporte1'];
+
 $fecha=@$_POST['fecha'];
 $descripcion=@$_POST['descripcion'];
 
 
 
-$sql="INSERT INTO reparacion VALUES(default,'$id_PC2','$id_PC2','$fecha','$descripcion')";
+$sql="INSERT INTO reparacion VALUES(default,'$id_reparacion','$id_reporte','$fecha','$descripcion')";
 
  echo $sql;
 if(mysqli_query($conn,$sql)){

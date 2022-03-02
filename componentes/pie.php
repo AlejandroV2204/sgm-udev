@@ -38,7 +38,7 @@
       <div class="footer-inner">
         <div class="container">
           <div class="row">
-            <div class="span12"> &copy; 2019 </div>
+            <div class="span12"> &copy; 2022 </div>
             <!-- /span12 -->
           </div>
           <!-- /row -->

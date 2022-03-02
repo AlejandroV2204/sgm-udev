@@ -7,9 +7,9 @@ include_once('../header.php')
 ?>
 <?php
 
-$id_reparacion=@$_POST['id_reparacion'];
-$id_usuario2=@$_POST['id_usuario2'];
-$id_PC2=@$_POST['id_PC2'];
+$id_reparacion=@$_POST['id'];
+$id_reporte=@$_POST['id_reporte1'];
+
 $fecha=@$_POST['fecha'];
 $descripcion=@$_POST['descripcion'];
 
