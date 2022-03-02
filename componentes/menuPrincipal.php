@@ -27,7 +27,7 @@
                 <ul class="nav pull-right">
 
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                    class="icon-user"></i> <?php echo $nombre; ?> <b class="caret"></b></a>
+                                 class="icon-user"></i> <?php echo $nombre; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <?php
                                 $util->validarElemento(0, '<li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-bell"></i> Solicitudes</a></li>');

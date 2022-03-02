@@ -4,7 +4,7 @@ include_once('../componentes/menuPrincipal.php')
 ?>
 
 
-<!DOCTYPE html>
+<--<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -54,7 +54,10 @@ include_once('../componentes/menuPrincipal.php')
     <button class="btn btn-primary" type="submit">Enviar</button>
   </div>
 </form>
-</div>
+</div>-->
+
+
+
 <!---<div class="row"> 
 <div class="offset-md-3 col-md-6">
 <form  action ="reparacionesController.php" class="col-md-9 go-right">
