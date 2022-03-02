@@ -4,3 +4,4 @@ $link = mysqli_connect("bs8xt34tfk2kcawkul5c-mysql.services.clever-cloud.com", "
 
 mysqli_select_db($link, "bs8xt34tfk2kcawkul5c");
 $tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+

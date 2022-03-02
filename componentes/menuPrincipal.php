@@ -8,14 +8,17 @@
     $valor = array('1');
     $tabla = "usuario";
 
+
   /*   $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
    while ($fila = mysqli_fetch_array($result)) {
+
         if ($fila != NULL) {
             $nombre = $fila['nombre'];
             $codigoUsuario = $fila['codigo']; 
 
         } 
     } */
+
 
 ?>
 <div class="navbar navbar-fixed-top">
@@ -26,12 +29,18 @@
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
+<<<<<<< HEAD
 
                    <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                     class="icon-user"></i> <?php echo $nombre; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu"> -->
         
 
+=======
+                   <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                    class="icon-user"></i> <?php echo $nombre; ?> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">-->
+>>>>>>> andrey
                             <?php
                                 $util->validarElemento(0, '<li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-bell"></i> Solicitudes</a></li>');
                             ?>

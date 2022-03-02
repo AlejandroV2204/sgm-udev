@@ -31,8 +31,13 @@
                 $condiciones = ($i == (count($nombreCampo) - 1)) ? $condiciones . "`" . $nombreCampo[$i] . "` = '" . $valores[$i] . "'" : $condiciones . "`" . $nombreCampo[$i] . "`= '" . $valores[$i] . "' AND ";
             }
             $consulta = "SELECT * FROM $tabla  $condiciones";
+<<<<<<< HEAD
 //se deja echo de alejandro 
    //echo "consulta: ".$consulta;
+=======
+            
+     echo "consulta: ".$consulta;
+>>>>>>> andrey
 //    die();
 
             $query = mysqli_query($link, $consulta);
