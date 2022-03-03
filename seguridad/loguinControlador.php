@@ -9,16 +9,21 @@ $util = new utilModelo();
 
 
 
-$usuario = filter_input(INPUT_POST, 'username');
+$usuario = filter_input(INPUT_POST, 'userini');
 $password = filter_input(INPUT_POST, 'ipassword');
 
+<<<<<<< HEAD
 $nombreCampo = array("id","password");
+=======
+$nombreCampo = array("email","password");
+
+>>>>>>> feature/d1lan
 $valor = array("$usuario","$password");
 $tabla = "usuario";
 $result = $util -> mostrarregistros($tabla,$nombreCampo,$valor);
 $contador = 0;
 while ($fila = mysqli_fetch_array($result)) {
-    if ($fila != NULL) {
+     if ($fila != NULL) {
         $_SESSION['usuario']=array($fila['codigo'],$fila['tipo']);
         $contador++;
     }

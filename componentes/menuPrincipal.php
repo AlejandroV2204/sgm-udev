@@ -4,6 +4,7 @@
     
     $utilModelo1 = new utilModelo();
     $util = new util();
+<<<<<<< HEAD
     $nombreCampo = array("id");
     $valor = array('1');
     $tabla = "usuario";
@@ -19,13 +20,31 @@
         } 
     } */
 
+=======
+    $nombreCampo = array("codigo");
+
+    // $valor = array($_SESSION['usuario'][0]);
+
+    $valor = array($_SESSION['id_usuario'][0]);
+
+    $tabla = "usuario";
+
+    // $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
+    // while ($fila = mysqli_fetch_array($result)) {
+    //     if ($fila != NULL) {
+    //         $nombre = $fila['nombre'];
+    //         $codigoUsuario = $fila['codigo'];
+
+    //     }
+    // }
+>>>>>>> feature/d1lan
 
 ?>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
-                    class="brand" href="index.html">GROW </a>
+                    class="brand" href="index.html">u_dev</a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 

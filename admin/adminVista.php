@@ -4,7 +4,7 @@
     $utilModelo2 = new utilModelo();
     $util = new util();
     $util->validarRuta(0);
-    $nombreCampo = array("id");
+    $nombreCampo = array("email");
     //$valor = array($_SESSION['usuario'][0]);
     $valor=array('1');
     $tabla = "usuario";
@@ -54,37 +54,42 @@
 
 
                     <?php
-                        $nombreCampo = array("id");
-                        $valor = array('1');
-                        $tabla = "usuario";
-                        $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
-                        $referidos = "";
-                        $contadorReferidos =0;
-                        while ($fila = mysqli_fetch_array($result)) {
-                            if ($fila != NULL) {
-                                $contadorReferidos++;
-                                $saldo = $fila['id'];
-                                $referidos = $referidos . ' <a href="javascript:;" class="shortcut"><i class="shortcut-icon  icon-user"></i><span class="shortcut-label">' . $fila['nombre'] . ' <br> <b>CODIGO: ' . $fila['id'] . '</b></span> </a>';
-                            }
-                        }
-                          //consulta los referidos del mes actual
-                       $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," tipo = 2");
-                        
-                        $contadorReferidos =0;
-                        $fila = mysqli_fetch_row($result);                            
-                                $contadorReferidos=$fila[0];     
+                        //se comenta esto
 
-                                $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," tipo = 1");
+                        // $nombreCampo = array("codigoReferido");
+                        // $valor = array('1');
+                        // $tabla = "usuario";
+                        // $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
+                        // $referidos = "";
+                        // $contadorReferidos =0;
+                        // while ($fila = mysqli_fetch_array($result)) {
+                        //     if ($fila != NULL) {
+                        //         $contadorReferidos++;
+                        //         $saldo = $fila['id_usario'];
+                        //         $referidos = $referidos . ' <a href="javascript:;" class="shortcut"><i class="shortcut-icon  icon-user"></i><span class="shortcut-label">' . $fila['nombre'] . ' <br> <b>CODIGO: ' . $fila['codigo'] . '</b></span> </a>';
+                        //      }
+                        // }
+                          //consulta los referidos del mes actual
+
+                          // se comenta esto
+
+                      //  $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," tipo = 2");
+                        
+                      //   $contadorReferidos =0;
+                      //   $fila = mysqli_fetch_row($result);                            
+                      //           $contadorReferidos=$fila[0];     
+
+                      //           $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," tipo = 1");
                         
                        
-                        $fila = mysqli_fetch_row($result);                            
-                                $contadorVendedores=$fila[0];  
+                      //   $fila = mysqli_fetch_row($result);                            
+                      //           $contadorVendedores=$fila[0];  
 
-                                $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," fechaDeIngreso between  '$fechaInicial' and '$fechaFinal'");
+                      //           $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," fechaDeIngreso between  '$fechaInicial' and '$fechaFinal'");
                         
                         
-                        $fila = mysqli_fetch_row($result);                            
-                                $contadorReferidosMensual=$fila[0];               
+                      //   $fila = mysqli_fetch_row($result);                            
+                      //           $contadorReferidosMensual=$fila[0];               
                             
                         
 
@@ -126,7 +131,10 @@
 
                         <div class="widget widget-table action-table">
                           <div class="widget-header"> <i class="icon-th-list"></i>
+
                             <h3>AFILIADOS</h3>
+
+
                           </div>
 
                           <!-- /widget-header -->
@@ -134,6 +142,7 @@
                             <table class="table table-striped table-bordered" >
                               <thead>
                                 <tr>
+
                                   <th> NOMBRE</th>
                                   <th> DIRECCION</th>
                                   <th> TELEFONO</th>
@@ -141,36 +150,49 @@
                                   <th> FECHA ULTIMO PAGO</th>
                                   <th> ESTADO PAGO</th>
 
+
                                 </tr>
                               </thead>
                               <tbody>
                                   <?php
-                                 // $result = $utilModelo2->consultarVariasTablas("*","usuario","codigoReferido='$codigoUsuario'");
+                                  
+                                  //  $result = $utilModelo2->consultarVariasTablas("*","computador","id='$codigoUsuario'");
 
-                                  $result = $utilModelo2->consultarVariasTablas("*","usuario","tipo=2");
-                                  while ($fila = mysqli_fetch_array($result)) {
-                                  if ($fila != NULL) {
-                                    $ultimoPago=$util->validarUsuarioActivo($fila[1]);
+                                   $result = $utilModelo2->consultarVariasTablas("*","computador","id_computador=121314");
+                                   while ($fila = mysqli_fetch_array($result)) {
+                                  //  if ($fila != NULL) {
+                                  //      $ultimoPago=$util->validarUsuarioActivo($fila[1]);
 
-                                    echo"
+                                  //     echo"
 
-                                    <tr>
-                                      <td>$fila[2]</td>
-                                      <td>$fila[6]</td>
-                                      <td>$fila[7]</td>
-                                      <td>$fila[5]</td>
-                                       <td>$ultimoPago[0]</td>
-                                       <td>$ultimoPago[1]</td>
+                                  //     <tr>
+                                  //       <td>$fila[2]</td>
+                                  //       <td>$fila[6]</td>
+                                  //       <td>$fila[7]</td>
+                                  //       <td>$fila[5]</td>
+                                  //       <td>$ultimoPago[0]</td>
+                                  //        <td>$ultimoPago[1]</td>
 
-                                    </tr>
+                                  //     </tr>
 
-                                    ";
+                                  //     ";
 
 
+                                    // for($i = 0; $i < count($fila);$i++)
+                                    
+                                    // {
+
+                                    //   echo "<tr>
+                                    //       <td>$fila[$i]</td>
+                                    //   </tr>";
+
+                                    // }
+
+                                  //  }
                                   }
-                                  } ?>
+                             ?>
 
-
+                          
                               </tbody>
                             </table>
                           </div>
@@ -190,10 +212,17 @@
         <!-- /container -->
     </div>
     <!-- /main-inner -->
-</div> <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+</div> 
+
+
+
+
+              <!-- <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a> -->
 
                 <!-- Modal -->
-                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+                <!-- <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h3 id="myModalLabel">Thank you for visiting EGrappler.com</h3>
@@ -205,7 +234,7 @@
                     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
                     <button class="btn btn-primary">Save changes</button>
                   </div>
-                </div>
+                </div> -->
 
 <?php
     include "../componentes/pie.php";

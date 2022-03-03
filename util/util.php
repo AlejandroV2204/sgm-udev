@@ -22,7 +22,6 @@
                             exit();
                             break;
                         case 1://usuario venderor
-
                             header('Location: ../vendedor/vendedorVista.php');
                             exit();
                             break;
@@ -52,46 +51,46 @@
             }*/
         }
 
-        function validarUsuarioActivo($codigoUsuario)
-        {
-            $utilModelo = new utilModelo();
-            $result = $utilModelo->ultimaFechaPago($codigoUsuario);
-            while ($fila = mysqli_fetch_array($result)) {
-                if ($fila != NULL) {
-                    $fecha = date("d-m-Y", strtotime($fila['fechaMovimiento']));
-                }
-            }
-            if (isset($fecha)) {
-                $fechaVencimiento = new DateTime($fecha);
-                $intervalo = new DateInterval('P1M');
-                $fechaVencimiento->add($intervalo);
-                date_add($fechaVencimiento, date_interval_create_from_date_string('1 days'));
+        // function validarUsuarioActivo($codigoUsuario)
+        // {
+        //     $utilModelo = new utilModelo();
+        //     $result = $utilModelo->ultimaFechaPago($codigoUsuario);
+        //     while ($fila = mysqli_fetch_array($result)) {
+        //         if ($fila != NULL) {
+        //             $fecha = date("d-m-Y", strtotime($fila['fechaMovimiento']));
+        //         }
+        //     }
+        //     if (isset($fecha)) {
+        //         $fechaVencimiento = new DateTime($fecha);
+        //         $intervalo = new DateInterval('P1M');
+        //         $fechaVencimiento->add($intervalo);
+        //         date_add($fechaVencimiento, date_interval_create_from_date_string('1 days'));
 
-                $fechaActual = new DateTime("now");
-//            echo $fechaVencimiento->format('Y-m-d') . "\n";
-//            echo $fechaActual->format('Y-m-d') . "\n";
-//            var_dump($fechaActual == $fechaVencimiento);
-//            var_dump($fechaActual <= $fechaVencimiento);
-//            die();
-                if ($fechaActual <= $fechaVencimiento || $fechaActual == $fechaVencimiento) {
-                    $estado = "activo";
-//                echo $estado;
+        //         $fechaActual = new DateTime("now");
+        //    echo $fechaVencimiento->format('Y-m-d') . "\n";
+        //    echo $fechaActual->format('Y-m-d') . "\n";
+        //    var_dump($fechaActual == $fechaVencimiento);
+        //    var_dump($fechaActual <= $fechaVencimiento);
+        //    die();
+        //         if ($fechaActual <= $fechaVencimiento || $fechaActual == $fechaVencimiento) {
+        //             $estado = "activo";
+        //        echo $estado;
 
-                } else {
-                    $estado = "vencido";
+        //         } else {
+        //             $estado = "vencido";
 
-                }
-                $valores = array($fecha, $estado);
-//            die();
+        //         }
+        //         $valores = array($fecha, $estado);
+        //    die();
 
-            } else {
-                $valores = array("", "vencido");
-            }
+        //     } else {
+        //         $valores = array("", "vencido");
+        //     }
 
-            return $valores;
+        //     return $valores;
 
 
-        }
+        // }
 
         function mostrarCantidadReferidos($codigo)
         {
@@ -163,6 +162,7 @@
             return $meta;
         }
 
+<<<<<<< HEAD
 
         // function generarCodigo()
         // {
@@ -174,23 +174,34 @@
         //     return $key;
         // }
 
-
-        function validarCodigo($codigo){
-          $utilModelo = new utilModelo();
-          $util=new util();
-          $nuevoCodigo=$codigo;
-          //echo $nuevoCodigo;
-        $result=$utilModelo->consultarVariasTablas("codigo","usuario","codigo='$nuevoCodigo'");
-        $rowcount=mysqli_num_rows($result);
-                if($rowcount!= 0)    {
-                $nuevoCodigo=$util->generarCodigo();
-                return $nuevoCodigo;
-                }else{
-
-                  return $nuevoCodigo;
-            }
-
+=======
+        function generarCodigo()
+        {
+            $longitud = 6;
+            $key = '';
+            $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+            $max = strlen($pattern) - 1;
+            for ($i = 0; $i < $longitud; $i++) $key .= $pattern[mt_rand(0, $max)];
+            return $key;
         }
+>>>>>>> feature/d1lan
+
+        // function validarCodigo($codigo){
+        //   $utilModelo = new utilModelo();
+        //   $util=new util();
+        //   $nuevoCodigo=$codigo;
+        //   //echo $nuevoCodigo;
+        // $result=$utilModelo->consultarVariasTablas("codigo","usuario","codigo='$nuevoCodigo'");
+        // $rowcount=mysqli_num_rows($result);
+        //         if($rowcount!= 0)    {
+        //         $nuevoCodigo=$util->generarCodigo();
+        //         return $nuevoCodigo;
+        //         }else{
+
+        //           return $nuevoCodigo;
+        //     }
+
+        // }
 
         //Devuelve fecha actual
         function hoy()

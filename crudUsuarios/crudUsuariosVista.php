@@ -1,6 +1,7 @@
 <?php
-include "../util/utilOsdo.php";
+// include "../util/utilOsdo.php";
 include_once "../util/utilModelo.php";
+include_once "../util/util.php";
 $util = new util();
 
 $util -> validarRuta(0);

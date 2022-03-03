@@ -3,19 +3,30 @@
     include_once "../util/util.php";
     $utilModelo1 = new utilModelo();
     $util = new util();
+<<<<<<< HEAD
 
     $nombreCampo = array("id");
 
     $valor = array('1');
+=======
+    $nombreCampo = array("email");
+    $valor = array($_SESSION['usuario'][0]); 
+    
+>>>>>>> feature/d1lan
     $tabla = "usuario";
 
     $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
     while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
+<<<<<<< HEAD
             $nombre = $fila['nombre'];
 
             $codigoUsuario = $fila['id'];
 
+=======
+            $nombre = $fila['correo'];
+            $codigoUsuario = $fila['codigo'];
+>>>>>>> feature/d1lan
 
         }
     }
@@ -25,7 +36,7 @@
     <div class="navbar-inner">
         <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
-                    class="brand" href="adminVista.php">GROW </a>
+                    class="brand" href="adminVista.php">u_dev</a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
@@ -63,6 +74,7 @@
                 <li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-book"></i><span></span>Solicitudes</a></li>
                 <li><a href="../publicidad/publicidadVistaPreliminar.php"><i class="icon-book"></i><span></span>Publicidad </a></li>
                 <li><a href="../crudTrabajador/crudTrabajadorVista.php"><i class="icon-book"></i><span></span>Trabajador</a></li>
+                <li><a href="../computadores/nuevo_computador.php"><i class="icon-book"></i><span></span>Nuevo Computador</a></li>
 
             </ul>
         </div>
