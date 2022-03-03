@@ -95,42 +95,12 @@
                             <!-- ************REGISTRAR******* INICIO ***** -->
                             <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
                                   role="form" style="display: none;">
-                                <!-- <?php
-                                    $key = $util1->generarCodigo();
-                                    $edadTrabajador=$util1->mayorEdad('14');
-
-                                ?> -->
-                                <!-- <div class="form-group">
-                                    <input type="text" name="codigo" id="codigo" tabindex="1" class="form-control"
-                                           value="<?php echo $key; ?>" readonly>
-                                </div> -->
+                               
                                 <div class="form-group">
                                     <input type="text" name="nombre" id="nombre" tabindex="1" class="form-control"
                                            placeholder="Nombre" value="" required>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <input type="text" name="documento" id="documento" tabindex="1" class="form-control"
-                                           placeholder="Numero de Cedula" value="" required>
-                                </div> -->
-                                <!-- <div class="form-group">
-                                    Fecha de nacimiento: <input type="date" name="edad" id="edad" tabindex="1"
-                                                                class="form-control" placeholder="Fecha de nacimiento"
-                                                                value="" required min="1940-01-01" max="
-                                                                 <?php echo $edadTrabajador; ?>>
-                                </div> -->
-                                <!-- <div class="form-group">
-                                    <input type="text" name="direccion" id="direccion" tabindex="1" class="form-control"
-                                           placeholder="Direccion" value="" required>
-                                </div> -->
-                                <!-- <div class="form-group">
-                                    <input type="text" name="telefono" id="telefono" tabindex="1" class="form-control"
-                                           placeholder="Telefono" value="" required>
-                                </div> -->
-                                <!-- <div class="form-group">
-                                    <input type="text" name="referido" id="referido"onkeyup="validarUsuario('#referido',2,'#referidoValido')"; tabindex="1" class="form-control"
-                                           placeholder="Codigo referido" value="" required>
-                                           <div id="referidoValido"></div>
-                                </div> -->
+                                
 
                                 <div class="form-group">
                                     <input type="text" name="apellido" id="apellido" tabindex="1" class="form-control"
@@ -158,14 +128,7 @@
                                     <img src="../img/Error-128.png" width="15" height="15"><strong>Las contraseñas no
                                         coinciden</strong>
                                 </div>
-                                 <!-- <div id="terminos">
-                                    <p>
-
-                                                <h1>Términos y condiciones de uso de InstagramVersión</h1><br> simplificada realizada por la firma de abogados ​Schillings​ por encargo de la​ Growing Up Digital1Taskforce​ para su informe de enero de 2017.2Traducción: Dpto. TIC, colegio Madre Josefa Campos (Alaquàs).Términos de uso de ​Instagram​: nuestras reglas.1.Tienes que tener 13 o más años.2.No publiques nada que muestre violencia, que pueda asustar a otras personas o que contengaimágenes con desnudos.3.No uses la cuenta de nadie sin permiso, ni intentes descubrir sus datos de login.4.No permitas que nadie use tu cuenta.5.Mantén tu contraseña en secreto.6.No acoses a nadie ni publiques nada feo sobre ninguna persona.7.No publiques información privada de otra persona.8.No uses Instagram para hacer nada ilegal ni nada que nosotros hayamos prohibido.9.Si quieres añadir un sitio web a tu nombre de usuario, asegúrate primero de que tienes permiso deInstagram.10.No cambies nada de nuestro sitio web o de nuestras aplicaciones, ni subas ningún tipo de virus, nihagas nada que pueda interferir con la forma en que Instagram funciona. No nos envíes ideas sobrecómo mejorar Instagram.11.No utilices ningún tipo de software o robot para crear cuentas de acceso a Instagram, ni envíesspam o emails no deseados.12.Lee nuestras normas de uso y obedécelas cuando uses Instagram.13.No hagas nada que pueda afectar al modo en que otras personas usan y disfrutan de Instagram.14.No incites a nadie a saltarse estas reglas.Tus derechos y nuestros derechos:1.Tienes derecho a sentirte seguro usando Instagram.2.Oficialmenteereseldueñodecualquierimagenovídeooriginalquepubliques,peronosotrostenemospermisoparausarlos,asícomoparapermitirqueotroslosusenencualquierpartedelmundo. Aunque otros nos paguen por ese uso nosotros no tenemos que pagarte a tí por eso.3.TúereselresponsabledetodoloquehagasenInstagramydetodoloquepubliques,incluyendocosas inesperadas como nombres de usuario, datos y música de otra gente.4.Se asumirá que eres el propietario de lo que publicas, y que lo que publicas no incumple la ley. Siincumples la ley y te multan, tendrás que pagar la multa.5.AunqueereselresponsabledelainformaciónqueponesenInstagram,nosotrospodemosalmacenar,usarycompartirtuinformaciónpersonalconcompañíasconectadasaInstagram.Estainformaciónincluyetunombre,tuemail,tuescuela,dóndevives,tusimágenes,tunúmerodeteléfono,tus“megusta”y“nomegusta”,lossitiosquevisitas,quiénessontusamigosycualquier1​https://www.schillingspartners.com/2​http://www.childrenscommissioner.gov.uk/publications/govrowing-digital
-
-                                    </p>
-                                 </div>
-                                 <input type="checkbox" name="vehicle1" value="Bike" required>  He leido y acepto los terminos y condiciones<br><br> -->
+                                 
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
