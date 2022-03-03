@@ -55,12 +55,18 @@
             <ul class="mainnav">
                 <li class="active"><a href="../admin/adminVista.php"><i
                                 class=" icon-home"></i><span>Inicio</span> </a></li>
-                <li><a href="../registrarPago/registroPagoVista.php"><i class="icon-group"></i><span>Pagar Mensualidad</span> </a></li>
+
+                                <!-- Se comentaron, probablemente no se utilize -->
+                <!-- <li><a href="../registrarPago/registroPagoVista.php"><i class="icon-group"></i><span>Pagar Mensualidad</span> </a></li>
                 <li><a href="../asociados/estadoAsociadosVista.php"><i class="icon-group"></i><span>Asociados</span> </a></li>
                 <li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-book"></i><span></span>Solicitudes</a></li>
                 <li><a href="../publicidad/publicidadVistaPreliminar.php"><i class="icon-book"></i><span></span>Publicidad </a></li>
-                <li><a href="../crudTrabajador/crudTrabajadorVista.php"><i class="icon-book"></i><span></span>Trabajador</a></li>
+                <li><a href="../crudTrabajador/crudTrabajadorVista.php"><i class="icon-book"></i><span></span>Trabajador</a></li> -->
                 <li><a href="../computadores/nuevo_computador.php"><i class="icon-book"></i><span></span>Nuevo Computador</a></li>
+                <li><a href="../reparaciones/reparacionesVista.php"><i class="icon-book"></i><span></span>Reparaciones</a></li>
+                <li><a href="../sala/crearSala.vista.php"><i class="icon-book"></i><span></span>Nuevo Sala</a></li>
+                
+                
 
             </ul>
         </div>
