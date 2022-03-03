@@ -161,11 +161,12 @@ textarea {
 	
 	font-size: 12px;
 	font-weight: bold;
-	color: #b2afaa;
+	color: #928686;
 }
 
 .subnavbar .container > ul > li > a:hover {
-	color: #888;
+	color: rgb(255, 251, 251);
+	border-bottom:6px solid #f1d00a;
 	text-decoration: none;
 }
 
@@ -187,7 +188,7 @@ textarea {
 
 .subnavbar .container > ul > li.active > a {
 	
-	border-bottom:7px solid #f1d00a;
+	/* border-bottom:7px solid #f1d00a; */
 	color: #ffffff;
 }
     
@@ -843,7 +844,7 @@ html .fc, .fc table {
 	color: #fff
 }
 .fc-state-disabled, .fc-state-disabled .fc-button-inner {
-	color: #999;
+	color: rgb(214, 13, 13);
 	border-color: #ddd
 }
 .fc-state-disabled {

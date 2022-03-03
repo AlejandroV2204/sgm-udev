@@ -4,22 +4,22 @@
     
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("codigo");
+    $nombreCampo = array("id");
 
-    // $valor = array($_SESSION['usuario'][0]);
+    $valor = array($_SESSION['id'][0]);
 
-    $valor = array($_SESSION['id_usuario'][0]);
+    $valor = array($_SESSION['nombre'][0]);
 
     $tabla = "usuario";
 
-    // $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
-    // while ($fila = mysqli_fetch_array($result)) {
-    //     if ($fila != NULL) {
-    //         $nombre = $fila['nombre'];
-    //         $codigoUsuario = $fila['codigo'];
+    $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
+    while ($fila = mysqli_fetch_array($result)) {
+        if ($fila != NULL) {
+            $nombre = $fila['nombre'];
+            $codigoUsuario = $fila['id'];
 
-    //     }
-    // }
+        }
+    }
 
 ?>
 <div class="navbar navbar-fixed-top">
@@ -31,9 +31,9 @@
                 <ul class="nav pull-right">
 
 
-                   <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                     class="icon-user"></i> <?php echo $nombre; ?> <b class="caret"></b></a>
-                        <ul class="dropdown-menu"> -->
+                        <ul class="dropdown-menu">
         
 
                             <?php
