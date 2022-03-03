@@ -1,5 +1,5 @@
-<!-- /main -->
-<div class="extra">
+<!-- main -->
+ <div class="extra">
   <div class="extra-inner">
     <div class="container">
       <div class="row">
@@ -13,8 +13,8 @@
               <li><a href="javascript:;">Free Resources and Scripts</a></li>
             </ul>
           </div>
-          <!-- /span3 -->
-          <div class="span3">
+          <!-- /span3  -->
+          < <div class="span3">
             <h4>
               Support</h4>
               <ul>
@@ -26,12 +26,12 @@
             </div>
             
           </div>
-          <!-- /row -->
+           <!-- /row  -->
         </div>
-        <!-- /container -->
+         <!-- /container  -->
       </div>
-      <!-- /extra-inner -->
-    </div>
+       <!-- /extra-inner -->
+    </div> 
 
     <!-- /extra -->
     <div class="footer">

@@ -15,7 +15,7 @@
         }
     }
 
-    
+
 
 ?>
 <!DOCTYPE html>
@@ -74,57 +74,59 @@
                           // se comenta esto
 
                       //  $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," tipo = 2");
-                        
+
                       //   $contadorReferidos =0;
-                      //   $fila = mysqli_fetch_row($result);                            
-                      //           $contadorReferidos=$fila[0];     
+                      //   $fila = mysqli_fetch_row($result);
+                      //           $contadorReferidos=$fila[0];
 
                       //           $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," tipo = 1");
-                        
-                       
-                      //   $fila = mysqli_fetch_row($result);                            
-                      //           $contadorVendedores=$fila[0];  
+
+
+                      //   $fila = mysqli_fetch_row($result);
+                      //           $contadorVendedores=$fila[0];
 
                       //           $result = $utilModelo2->consultarVariasTablas("count(*)","usuario"," fechaDeIngreso between  '$fechaInicial' and '$fechaFinal'");
-                        
-                        
-                      //   $fila = mysqli_fetch_row($result);                            
-                      //           $contadorReferidosMensual=$fila[0];               
-                            
-                        
-
-                    ?>
 
 
-                    <div class="widget">
-                        <div class="widget-header"><i class="icon-group"></i>
-                            <h3>TOTAL AFILIADOS <span class="badge badge-pill badge-success"><?php echo $contadorReferidos;?></span></h3>
-                        </div>
+                      //   $fila = mysqli_fetch_row($result);
+                      //           $contadorReferidosMensual=$fila[0];
+
+
+
+                    // ?>
+
+
+                    <!-- <div class="widget">
+                         <div class="widget-header"><i class="icon-group"></i>
+                        <h3>TOTAL AFILIADOS <span class="badge badge-pill badge-success">
+                      <?php echo $contadorReferidos;?> -->
+                    <!-- </span></h3>
+                        </div> -->
                         <!-- /widget-header -->
 
                         <!-- /widget-content -->
-                    </div>
+                    <!-- </div>
                     <div class="widget">
                         <div class="widget-header"><i class="icon-group"></i>
                             <h3> TOTAL VENDEDORES <span class="badge badge-pill badge-success"><?php echo $contadorVendedores;?></span></h3>
-                        </div>
+                        </div> -->
                         <!-- /widget-header -->
 
                         <!-- /widget-content -->
                     </div>
                     <!-- /widget -->
-                     <div class="widget">
+                     <!-- <div class="widget">
                         <div class="widget-header"><i class="icon-group"></i>
                             <h3>AFILIADOS ESTE MES <span class="badge badge-pill badge-success"><?php echo $contadorReferidosMensual;?></span></h3>
-                        </div>
+                        </div> -->
                         <!-- /widget-header -->
 
                         <!-- /widget-content -->
-                    </div>
+                    <!-- </div>
 
-                </div>
+                </div> -->
                 <!-- /span8 -->
-                <div class="span8">
+                <!-- <div class="span8">
 
 
                      <div class="widget widget-nopad">
@@ -135,10 +137,10 @@
                             <h3>AFILIADOS</h3>
 
 
-                          </div>
+                          </div> -->
 
                           <!-- /widget-header -->
-                          <div id="scroll" class="widget-content">
+                          <!-- <div id="scroll" class="widget-content">
                             <table class="table table-striped table-bordered" >
                               <thead>
                                 <tr>
@@ -148,18 +150,18 @@
                                   <th> TELEFONO</th>
                                   <th> FECHA AFILIACION</th>
                                   <th> FECHA ULTIMO PAGO</th>
-                                  <th> ESTADO PAGO</th>
+                                  <th> ESTADO PAGO</th> -->
 
 
-                                </tr>
+                                <!-- </tr>
                               </thead>
-                              <tbody>
+                              <tbody> -->
                                   <?php
-                                  
+
                                   //  $result = $utilModelo2->consultarVariasTablas("*","computador","id='$codigoUsuario'");
 
-                                   $result = $utilModelo2->consultarVariasTablas("*","computador","id_computador=121314");
-                                   while ($fila = mysqli_fetch_array($result)) {
+                                  //  $result = $utilModelo2->consultarVariasTablas("*","computador","id_computador=121314");
+                                  //  while ($fila = mysqli_fetch_array($result)) {
                                   //  if ($fila != NULL) {
                                   //      $ultimoPago=$util->validarUsuarioActivo($fila[1]);
 
@@ -179,7 +181,7 @@
 
 
                                     // for($i = 0; $i < count($fila);$i++)
-                                    
+
                                     // {
 
                                     //   echo "<tr>
@@ -189,30 +191,30 @@
                                     // }
 
                                   //  }
-                                  }
+                                  // }
                              ?>
 
-                          
-                              </tbody>
+
+                              <!-- </tbody>
                             </table>
                           </div>
                           <h6 class="bigstats">mensaje</h6>
-                          <!-- /widget-content -->
+                           /widget-content
                         </div>
-                      </div>
+                      </div> -->
 
 
 
-                </div>
+                <!-- </div> -->
                  <!-- /span8 -->
 
-            </div>
+            <!-- </div> -->
             <!-- /row -->
-        </div>
+        <!-- </div> -->
         <!-- /container -->
-    </div>
+    <!-- </div> -->
     <!-- /main-inner -->
-</div> 
+<!-- </div>  -->
 
 
 
