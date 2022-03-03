@@ -14,7 +14,7 @@
             </ul>
           </div>
           <!-- /span3  -->
-          < <div class="span3">
+           <div class="span3">
             <h4>
               Support</h4>
               <ul>

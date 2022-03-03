@@ -166,7 +166,7 @@ textarea {
 
 .subnavbar .container > ul > li > a:hover {
 	color: rgb(255, 251, 251);
-	border-bottom:6px solid #f1d00a;
+	border-bottom:5px solid #f1d00a;
 	text-decoration: none;
 }
 
