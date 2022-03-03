@@ -12,12 +12,10 @@ $util = new utilModelo();
 $usuario = filter_input(INPUT_POST, 'userini');
 $password = filter_input(INPUT_POST, 'ipassword');
 
-<<<<<<< HEAD
-$nombreCampo = array("id","password");
-=======
+
 $nombreCampo = array("email","password");
 
->>>>>>> feature/d1lan
+
 $valor = array("$usuario","$password");
 $tabla = "usuario";
 $result = $util -> mostrarregistros($tabla,$nombreCampo,$valor);
