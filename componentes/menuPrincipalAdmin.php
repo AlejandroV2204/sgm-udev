@@ -3,30 +3,16 @@
     include_once "../util/util.php";
     $utilModelo1 = new utilModelo();
     $util = new util();
-<<<<<<< HEAD
-
-    $nombreCampo = array("id");
-
-    $valor = array('1');
-=======
     $nombreCampo = array("email");
     $valor = array($_SESSION['usuario'][0]); 
     
->>>>>>> feature/d1lan
     $tabla = "usuario";
 
     $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
     while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
-<<<<<<< HEAD
-            $nombre = $fila['nombre'];
-
-            $codigoUsuario = $fila['id'];
-
-=======
             $nombre = $fila['correo'];
             $codigoUsuario = $fila['codigo'];
->>>>>>> feature/d1lan
 
         }
     }
