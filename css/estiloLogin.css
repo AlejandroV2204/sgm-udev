@@ -1,5 +1,6 @@
 body {
-  padding-top: 90px;
+  padding-top: 20px;
+  padding-left:700px;
 }
 .panel-login {
   border-color: rgb(247, 247, 247);
@@ -15,7 +16,7 @@ body {
 }
 .panel-login>.panel-heading a{
   text-decoration: none;
-  color: #666;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 15px;
   -webkit-transition: all 0.1s linear;
@@ -30,7 +31,7 @@ body {
   margin-top: 10px;
   margin-bottom: 0px;
   clear: both;
-  border: 0;
+  border: 1;
   height: 1px;
   background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
   background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
@@ -38,7 +39,7 @@ body {
   background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 }
 .panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
-  height: 45px;
+  height: 50px;
   border: 1px solid #ddd;
   font-size: 16px;
   -webkit-transition: all 0.1s linear;
@@ -72,12 +73,12 @@ body {
 }
 .forgot-password {
   text-decoration: underline;
-  color: #888;
+  color: rgb(134, 120, 120);
 }
 .forgot-password:hover,
 .forgot-password:focus {
   text-decoration: underline;
-  color: #666;
+  color: rgb(10, 10, 10);
 }
 
 .btn-register {

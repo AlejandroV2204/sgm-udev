@@ -9,9 +9,8 @@ Bootstrap Admin Template by EGrappler.com
 */
 
 body {
-
-	 /* background-image:url("../img/fondo_login.png");  */
-    background-color: #f0f0f0;
+	 background-image:url("../img/fondo_login.png"); 
+    /* background-color: #f0f0f0; */
 	font: 13px/1.7em 'Open Sans';
 }
     
@@ -44,7 +43,7 @@ textarea {
 .table-bordered th {
 	background: #E9E9E9;
 	background:-moz-linear-gradient(top, #FAFAFA 0%, #E9E9E9 100%); /* FF3.6+ */
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#E9E9E9)); /* Chrome,Safari4+ */
+	/* background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#E9E9E9)); Chrome,Safari4+ */
 	background:-webkit-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%); /* Chrome10+,Safari5.1+ */
 	background:-o-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%); /* Opera11.10+ */
 	background:-ms-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%); /* IE10+ */
