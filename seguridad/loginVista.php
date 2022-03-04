@@ -24,16 +24,16 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-login">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-15">
+                        <div class="col-xs-6">
                                 <a href="#" class="active" id="login-form-link">Iniciar sesión</a>
                         </div>
-                        <!-- <div class="col-xs-6">
+                        <div class="col-xs-6">
                             <a href="#modalCondiciones" id="register-form-link">Regístrate ahora</a>
-                        </div> -->
+                        </div>
                     </div>
                     <hr>
                 </div>
@@ -74,14 +74,14 @@
                                         ?>
                                         <div class="form-group">
                                             <div class="row">
-                                                <!-- <div class="col-lg-12">
-                                                     <div class="text-center">
-                                                         <div class="alert alert-success" role="alert">
+                                                <div class="col-lg-12">
+                                                    <div class="text-center">
+                                                        <div class="alert alert-success" role="alert">
                                                             <img src="../img/ok.png" width="15" height="15" alt="">
                                                             Usuario creado con exito.
-                                                        </div> 
-                                                    </div> 
-                                                </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <?php
@@ -92,23 +92,20 @@
                             </form>
                             <!-- ************INCIAR SESION******* FIN ***** -->
 
-                             <!-- Esperando orden donde se pueda colocar el registro  -->
-
-
                             <!-- ************REGISTRAR******* INICIO ***** -->
-                             <!-- <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
+                            <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
                                   role="form" style="display: none;">
-
+                               
                                 <div class="form-group">
                                     <input type="text" name="nombre" id="nombre" tabindex="1" class="form-control"
                                            placeholder="Nombre" value="" required>
                                 </div>
-
+                                
 
                                 <div class="form-group">
                                     <input type="text" name="apellido" id="apellido" tabindex="1" class="form-control"
                                            placeholder="Apellido" value="" required>
-
+                                           
                                 </div>
 
                                 <div class="form-group">
@@ -131,7 +128,7 @@
                                     <img src="../img/Error-128.png" width="15" height="15"><strong>Las contraseñas no
                                         coinciden</strong>
                                 </div>
-
+                                 
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
@@ -141,9 +138,9 @@
                                     </div>
                                 </div>
 
-                            </form> -->
+                            </form>
 
-                             <!-- ************REGISTRAR******* FIN *****  -->
+                            <!-- ************REGISTRAR******* FIN ***** -->
                         </div>
                     </div>
                 </div>
