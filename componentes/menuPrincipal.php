@@ -6,20 +6,20 @@
     $util = new util();
     $nombreCampo = array("id");
 
-    $valor = array($_SESSION['id'][0]);
+    // $valor = array($_SESSION['id'][0]);
 
     // $valor = array($_SESSION['id'][0]);
 
     $tabla = "usuario";
 
-    $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
-    while ($fila = mysqli_fetch_array($result)) {
-        if ($fila != NULL) {
-            $nombre = $fila['nombre'];
-            $codigoUsuario = $fila['id'];
+    // $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
+    // while ($fila = mysqli_fetch_array($result)) {
+    //     if ($fila != NULL) {
+    //         $nombre = $fila['nombre'];
+    //         $codigoUsuario = $fila['id'];
 
-        }
-    }
+    //     }
+    // }
 
 ?>
 <div class="navbar navbar-fixed-top">
