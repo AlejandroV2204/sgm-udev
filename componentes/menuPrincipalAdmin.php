@@ -67,7 +67,7 @@
                 <li><a href="../computadores/nuevo_computador.php"><i class="icon-book"></i><span></span>Nuevo Computador</a></li>
                 <li><a href="../reparaciones/reparacionesVista.php"><i class="icon-book"></i><span></span>Reparaciones</a></li>
                 <li><a href="../sala/crearSala.vista.php"><i class="icon-book"></i><span></span>Nuevo Sala</a></li>
-                
+                <li><a href="../reporte/crearReporte.vista.php"><i class="icon-book"></i><span></span>Nuevo Reporte</a></li>
                 
 
             </ul>
