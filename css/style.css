@@ -75,7 +75,7 @@ textarea {
 	padding: 7px 0;
 	
 	
-	background: #21325e !important;
+	background: #160040 !important;
 	
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
@@ -124,7 +124,7 @@ textarea {
     
 .subnavbar-inner {
 	height: 60px;
-	background: #3e497a;
+	background: #2D31FA;
 	border-bottom: 1px solid #ffffff;
 }
 
@@ -187,7 +187,7 @@ textarea {
 
 .subnavbar .container > ul > li.active > a {
 	
-	border-bottom:7px solid #f1d00a;
+	border-bottom:7px solid #5d8bf4;
 	color: #ffffff;
 }
     
