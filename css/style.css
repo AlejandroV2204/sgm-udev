@@ -163,11 +163,11 @@ textarea {
    
    font-size: 12px;
    font-weight: bold;
-   color: #b2afaa;
+   color: #ffffff;
 }
 
 .subnavbar .container > ul > li > a:hover {
-   color: #888;
+   color: rgb(255, 255, 255);
    text-decoration: none;
 }
 
