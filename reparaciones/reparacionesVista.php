@@ -1,102 +1,59 @@
 <?php
     include "../componentes/menuPrincipalAdmin.php";
 ?>
-
-
-<--<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="../css/estiloLogin.css" rel="stylesheet" id="estiloLogin">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-      <link href="../css/style.css" rel="stylesheet">
-    <script src="../js/login.js"></script>
-    <script src="../js/funciones.js"></script>
-    <title>INICIO</title>
-</head>
+  <meta charset="utf-8">
+  <title>sgm-udev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+  rel="stylesheet">
+  <link href="../css/font-awesome.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/pages/dashboard.css" rel="stylesheet">
+  <link href="../css/pages/plans.css" rel="stylesheet">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-<div class="row"> 
-<div class="offset-md-3 col-md-6">
-<form  action ="reparacionesController.php" method ="post" class="row g-3">
- 
-  <div class="col-md-4">
-    <label for="validationDefault02" class="form-label">Id_reporte1</label>
-    <input type="text" class="form-control" name="id_reporte1"  id="validationDefault02"  required>
-  </div>
 
-  <div class="col-md-4">
+
+    <div class="container">
+    <div class="row">
+		<form role="form" method="post" action="crearSala.controller.php" class="col-md-9 go-right">
+			<h2>Crear Reporte</h2>
+      <br>
+			<div class="form-group">
+      <label for="name">id reporte</label>
+			<input id="name" name="id_reporte1" type="text" class="form-control" required>
+			
+		</div>
+		<div class="form-group">
+    <label for="phone">Fecha</label>
+			<input id="phone" name="fecha" type="tel" class="form-control" required>
+			
+		</div>
+		<div class="col-md-4">
     <label for="validationDefault02" class="form-label">Fecha</label>
     <input type="text" class="form-control" name="fecha"  id="validationDefault02"  required>
   </div>
-  </div>
-  <div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here"  name="descripcion" id="floatingTextarea2" style="height: 100px"></textarea>
-  <label for="floatingTextarea2">Descripcion</label>
+		</div>
 </div>
- 
- 
-    </select>
+   <ul  class="col-12">
+     <button type="submit" class="btn btn-primary">Crear</button>
+  </ul>
+  
   </div>
  
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-      <label class="form-check-label" for="invalidCheck2">
-        Agree to terms and conditions
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Enviar</button>
-  </div>
-</form>
-</div>-->
-
-
-
-<!---<div class="row"> 
-<div class="offset-md-3 col-md-6">
-<form  action ="reparacionesController.php" class="col-md-9 go-right">
- 
-  <div class="col-md-4">
-    <label for="validationDefault02" class="form-label">Id_reporte</label>
-    <input type="text" class="form-control" name="id_reporte1"  id="validationDefault02"  required>
-  </div>
-
-  <div class="col-md-4">
-    <label for="validationDefault02" class="form-label">Fecha</label>
-    <input type="text" class="form-control" name="fecha"  id="validationDefault02"  required>
-  </div>
-  </div>
-  <div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here"  name="descripcion" id="floatingTextarea2" style="height: 100px"></textarea>
-  <label for="floatingTextarea2">Descripcion</label>
-</div>
- 
- 
-    </select>
-  </div>
- 
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-      <label class="form-check-label" for="invalidCheck2">
-        Agree to terms and conditions
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-  </div>
-  <button type="button" class="btn btn-info">Guardar</button>
-  <button type="button" class="btn btn-default">Cancelar</button>
-  </div>
-</form>
-</div>-->
-
 
 <?php
+
 include_once('../componentes/pie.php');
+
 ?>
+
