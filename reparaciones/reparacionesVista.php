@@ -1,6 +1,5 @@
 <?php
-
-include_once('../componentes/menuPrincipal.php')
+    include "../componentes/menuPrincipalAdmin.php";
 ?>
 
 

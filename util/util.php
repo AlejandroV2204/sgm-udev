@@ -4,7 +4,7 @@
      */
     include '../conexion.php';
     include_once "utilModelo.php";
-          session_start();
+        @session_start();
 
 
     class util

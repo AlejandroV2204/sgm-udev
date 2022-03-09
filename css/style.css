@@ -46,7 +46,6 @@ textarea {
 .table-bordered th {
    background: #E9E9E9;
    background:-moz-linear-gradient(top, #FAFAFA 0%, #E9E9E9 100%); /* FF3.6+ */
-   background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#E9E9E9)); /* Chrome,Safari4+ */
    background:-webkit-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%); /* Chrome10+,Safari5.1+ */
    background:-o-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%); /* Opera11.10+ */
    background:-ms-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%); /* IE10+ */
@@ -91,7 +90,8 @@ textarea {
 .navbar .nav a {
    font-size: 11px;
 }
-.navbar .nav>li>a { color:rgb(0, 0, 0) !important;}
+.navbar .nav>li>a { 
+   color:rgb(0, 0, 0) !important;}
 .navbar .brand {
    font-weight: 600;
    position: relative;
@@ -99,7 +99,7 @@ textarea {
 }
 
 .navbar .search-query {
-   background-color: rgb(255, 255, 255);
+   background-color: rgb(212, 23, 23);
    width: 150px;
    font-size: 11px;
    font-weight: bold;

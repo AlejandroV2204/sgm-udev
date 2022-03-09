@@ -20,7 +20,7 @@
 </head>
 <body>
 <?php
-    include "../componentes/menuPrincipal.php";
+    include "../componentes/menuPrincipalAdmin.php";
 ?>
 <div class="main">
     <div class="main-inner">

@@ -26,9 +26,9 @@ $util -> validarRuta(0);
   <![endif]-->
 </head>
 <body>
-  <?php
-  include "../componentes/menuPrincipal.php";
-  ?>
+<?php
+    include "../componentes/menuPrincipalAdmin.php";
+?>
 <div class="container">
     <div class="row">
 		<form action = "crearReporte.controller.php" method = "post"  role="form" class="col-md-9 go-right">
