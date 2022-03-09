@@ -3,7 +3,7 @@
     include_once "../util/util.php";
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("email");
+    $nombreCampo = array("nombre");
     $valor = array($_SESSION['usuario'][0]); 
     
     $tabla = "usuario";
@@ -12,7 +12,7 @@
     while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
             $nombre = $fila['nombre'];
-            $codigoUsuario = $fila['codigo'];
+            $codigoUsuario = $fila['id'];
 
         }
     }

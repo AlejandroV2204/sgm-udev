@@ -7,8 +7,6 @@ $util = new utilModelo();
 //$valores = array("sd33d2","calle 19 # 9-113");
 //$util->modificar('usuario',$campos,$valores,'id','1');
 
-
-
 $usuario = filter_input(INPUT_POST, 'userini');
 $password = filter_input(INPUT_POST, 'ipassword');
 
@@ -22,7 +20,7 @@ $result = $util -> mostrarregistros($tabla,$nombreCampo,$valor);
 $contador = 0;
 while ($fila = mysqli_fetch_array($result)) {
      if ($fila != NULL) {
-        $_SESSION['usuario']=array($fila['codigo'],$fila['tipo']);
+        $_SESSION['usuario']=array($fila['id'],$fila['tipo']);
         $contador++;
     }
 }
