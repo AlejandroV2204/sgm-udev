@@ -41,11 +41,11 @@ $util -> validarRuta(0);
 
           <div class="span9">
 
-            <a href="#modalGuardar"  data-toggle="modal" class=" form-control btn btn-register">Crear Trabajador</a><br><br>
+            <a href="#modalGuardar"  data-toggle="modal" class=" form-control btn btn-register">Crear Usuario</a><br><br>
               <div class="widget widget-nopad">
             <div class="widget widget-table action-table">
               <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Trabajadores</h3>
+                <h3>Usuarios</h3>
               </div>
 
               <!-- /widget-header -->
@@ -53,10 +53,12 @@ $util -> validarRuta(0);
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th> CODIGO </th>
-                      <th> NOMBRE</th>
-                      <th> FECHA INGRESO</th>
-                      <th> AFILIADOS </th>
+                      <th> Nombre </th>
+                      <th> Apellido</th>
+                      <th> Contraseña </th>
+                      <th> Correo </th>
+                      <th> Tipo Usuario </th>
+                      <th> Estado </th>
                       <th class="td-actions">EDITAR/ELIMINAR</th>
                     </tr>
                   </thead>
@@ -67,15 +69,11 @@ $util -> validarRuta(0);
 
                                   //  $key = $util->generarCodigo();
                                   //var_dump(  $codigoV=$util->validarCodigo($key));
-                                  $codigoV="45645";
-                                    $edadTrabajador=$util->mayorEdad('18');
-
-
-                                    echo "$codigoV"."oscar dorado";
+                                  
 
                   $utilModelo = new utilModelo();
                   $tabla = "usuario";
-                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"tipo=1 and activo=0");
+                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"1");
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
@@ -84,15 +82,17 @@ $util -> validarRuta(0);
   			        					   $fila[3]."||".
                              $fila[5]."||".
                              $fila[6]."||".
-                             $fila[10]."||".
-  			        					   $fila[7];
+                             $fila[1];
+  			        					  
 
                           echo "
                             <tr>
                               <td>$fila[1] </td>
                               <td> $fila[2] </td>
-                              <td> $fila[5]</td>
+                              <td> $fila[3]</td>
                                <td>$fila[4]</td>
+                               <td>$fila[5]</td>
+                               <td>$fila[6]</td>
                               <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
                             </tr>";
                           }
@@ -123,7 +123,7 @@ $util -> validarRuta(0);
   <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-      <h3 id="myModalLabel">Crear Trabajador</h3>
+      <h3 id="myModalLabel">Crear Usuario</h3>
     </div>
     <div class="modal-body">
 

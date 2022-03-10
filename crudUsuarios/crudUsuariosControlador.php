@@ -14,7 +14,7 @@ $tipo = '0';//el tipo numero 2 es un usuario stadart ademas tenemos tipo 0 para 
 
 
 //guardar
-// if(isset($_POST['guardarTrabajador'])){
+ if(isset($_POST['guardar'])){
 
 echo "Guardar";
 
@@ -32,30 +32,30 @@ $_SESSION['mensajeOk']="Accion realizada";
       header('Location:crudUsuariosVista.php');
 
 
-//modificar
-//  }else if(isset($_POST['modificarTrabajador'])){
-//  	echo "modificar";
+modificar
+ }else if(isset($_POST['modificar'])){
+ 	echo "modificar";
 
-// 	//$campos es el nombre de los campos tal cual aparece en la base de datos
-// $campos = array("nombre", "apellido", "email", "password", "tipo_Usuario", "activo");
-// //$valores son los valores a almacenar
-// $valores = array("$nombre","$cedula","$fechaNacimiento","$direccion","$celular","$correo");
-// //la funcion insertar recive el nombre de la tabla y los dos arrays de campos y valores
-// $nombreDeTabla = "Usuario";
-// $utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id',$codigo) ;
-// $_SESSION['mensajeOk']="Accion realizada";
+	//$campos es el nombre de los campos tal cual aparece en la base de datos
+$campos = array("nombre", "apellido", "email", "password", "tipo_Usuario", "activo");
+//$valores son los valores a almacenar
+$valores = array("$nombre","$cedula","$fechaNacimiento","$direccion","$celular","$correo");
+//la funcion insertar recibe el nombre de la tabla y los dos arrays de campos y valores
+$nombreDeTabla = "Usuario";
+$utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id',$codigo) ;
+$_SESSION['mensajeOk']="Accion realizada";
 
-//      header('Location: ../crudTrabajador/crudTrabajadorVista.php');
-//  }else{
+    // header('Location: ../crudTrabajador/crudTrabajadorVista.php');
+ }else{
 
-// 	echo "Entrada 3";
+	echo "Entrada 3";
 
-// 			$campo = array("activo");
+			$campo = array("activo");
 
-// 		$utilModelo -> modificar('Usuario',$campo,'1','id', "1") ;
-// 		$_SESSION['mensajeOk']="Accion realizada";
- 		//header('Location: ../crudTrabajador/crudTrabajadorVista.php');
+		$utilModelo -> modificar('Usuario',$campo,'1','id', "1") ;
+		$_SESSION['mensajeOk']="Accion realizada";
+ 		header('Location: ../crudTrabajador/crudTrabajadorVista.php');
 
-//    }
-	// exit();
+   }
+	exit();
 ?>

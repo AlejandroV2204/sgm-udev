@@ -1,14 +1,14 @@
 <?php
     include_once "../util/utilModelo.php";
     include_once "../util/util.php";
-    $utilModelo1 = new utilModelo();
+    $utilModelo = new utilModelo();
     $util = new util();
-    $nombreCampo = array("nombre");
+    $nombreCampo = array("id");
     $valor = array($_SESSION['usuario'][0]); 
     
     $tabla = "usuario";
 
-    $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
+    $result = $utilModelo->mostrarregistros($tabla, $nombreCampo, $valor);
     while ($fila = mysqli_fetch_array($result)) {
         if ($fila != NULL) {
             $nombre = $fila['nombre'];
@@ -26,7 +26,7 @@
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                    <h2><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                     class="icon-user"></i> 
                                     <?php echo $nombre; ?> 
                                     <b class="caret"></b></a>
@@ -42,6 +42,7 @@
                             </li>
                         </ul>
                     </li>
+                </h2>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -62,8 +63,8 @@
                 <!-- <li><a href="../registrarPago/registroPagoVista.php"><i class="icon-group"></i><span>Pagar Mensualidad</span> </a></li>
                 <li><a href="../asociados/estadoAsociadosVista.php"><i class="icon-group"></i><span>Asociados</span> </a></li>
                 <li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-book"></i><span></span>Solicitudes</a></li>
-                <li><a href="../publicidad/publicidadVistaPreliminar.php"><i class="icon-book"></i><span></span>Publicidad </a></li>
-                <li><a href="../crudTrabajador/crudTrabajadorVista.php"><i class="icon-book"></i><span></span>Trabajador</a></li> -->
+                <li><a href="../publicidad/publicidadVistaPreliminar.php"><i class="icon-book"></i><span></span>Publicidad </a></li>-->
+                <li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-book"></i><span></span>Usuarios</a></li> 
                 <li><a href="../computadores/nuevo_computador.php"><i class="icon-book"></i><span></span>Nuevo Computador</a></li>
                 <li><a href="../reparaciones/reparacionesVista.php"><i class="icon-book"></i><span></span>Reparaciones</a></li>
                 <li><a href="../sala/crearSala.vista.php"><i class="icon-book"></i><span></span>Nuevo Sala</a></li>
