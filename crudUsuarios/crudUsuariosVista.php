@@ -87,6 +87,7 @@ $util -> validarRuta(0);
 
                           echo "
                             <tr>
+                              <td>$fila[0] </td>
                               <td>$fila[1] </td>
                               <td> $fila[2] </td>
                               <td> $fila[3]</td>
@@ -255,9 +256,9 @@ $util -> validarRuta(0);
   </div>
   <div class="modal-body">
 
-      <form action="crudTrabajadorControlador.php" method="post" >
+      <form action="crudUsuariosControlador.php" method="post" >
 
-                                  <input id="codigoEliminar" name="codigo" type="hidden">
+                                  <input id="codigoEliminar" name="codigoEliminar" type="hidden">
                                   <h3>Seguro desea desactivar el trabajador</h3>
     </div>
   <div class="modal-footer">

@@ -32,7 +32,7 @@ $_SESSION['mensajeOk']="Accion realizada";
       header('Location:crudUsuariosVista.php');
 
 
-modificar
+//modificar
  }else if(isset($_POST['modificar'])){
  	echo "modificar";
 
@@ -50,11 +50,12 @@ $_SESSION['mensajeOk']="Accion realizada";
 
 	echo "Entrada 3";
 
-			$campo = array("activo");
+			$campo = array("estado");
+			$id=$_POST['codigoEliminar'];
 
-		$utilModelo -> modificar('Usuario',$campo,'1','id', "1") ;
+		$utilModelo -> modificar('usuario',$campo,'1','id', $id) ;
 		$_SESSION['mensajeOk']="Accion realizada";
- 		header('Location: ../crudTrabajador/crudTrabajadorVista.php');
+ 		//header('Location: ../crudUsuarios/crudUsuariosVista.php');
 
    }
 	exit();
