@@ -59,7 +59,7 @@
 
                         <?php
 
-                            
+                            $utilidad->mostrarregistros('sala', )
 
                         ?>
                             <label for="validationCustom03" class="form-label">Lugar ubicado:</label>
