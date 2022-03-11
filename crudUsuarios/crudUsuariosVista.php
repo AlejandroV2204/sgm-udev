@@ -10,7 +10,7 @@ $util -> validarRuta(0);
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>NOMBRE S.A.</title>
+  <title>Usuarios</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -65,9 +65,6 @@ $util -> validarRuta(0);
 
                   <?php
 
-
-                                  //  $key = $util->generarCodigo();
-                                  //var_dump(  $codigoV=$util->validarCodigo($key));
                                   
 
                   $utilModelo = new utilModelo();
@@ -83,8 +80,9 @@ $util -> validarRuta(0);
                              $fila[4]."||".
                              $fila[5]."||".
                              $fila[6];
-  			        					  
+  			        					    
                               $tipoUser = "";
+                              $estado = "";
 
                              if($fila[5] == 0){
 
@@ -100,13 +98,23 @@ $util -> validarRuta(0);
 
                    }
 
+                   if($fila[6] == 0){
+
+                    $estado = "Activo";
+
+                   }else{
+
+                    $estado = "Inactivo";
+
+                   }
+
                           echo "
                             <tr>
                               <td>$fila[1] </td>
                               <td> $fila[2] </td>
                                <td>$fila[4]</td>
                                <td>$tipoUser</td>
-                               <td>$fila[6]</td>
+                               <td>$estado</td>
                               <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
                             </tr>";
 
@@ -196,10 +204,10 @@ $util -> validarRuta(0);
   </div>
   <div class="modal-body">
 
-      <form style="min-width: 500px;" action="crudTrabajadorControlador.php" method="post" >
+      <form style="min-width: 500px;" action="crudUsuariosControlador.php" method="post" >
 
                                 <div class="form-group">
-                                  <input id="IdE" name="id" type="hidden">
+                                  <input id="codigoE" name="id" type="hidden">
                                   </div>
                                 <div class="form-group">
                                   <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
@@ -241,7 +249,7 @@ $util -> validarRuta(0);
 
       <form action="crudUsuariosControlador.php" method="post" >
 
-                                  <input id="codigoEliminar" name="codigoEliminar" type="hidden">
+                                  <input id="idEliminar" name="idEliminar" type="hidden">
                                   <h3>Seguro desea desactivar el trabajador</h3>
     </div>
   <div class="modal-footer">
@@ -297,8 +305,8 @@ $util -> validarRuta(0);
     function agregarForm(datos){
       d=datos.split("||");
 
-       $("#IdE").val(d[0]);
-       $("#codigoEliminar").val(d[0]);
+       $("#codigoE").val(d[0]);
+       $("#idEliminar").val(d[0]);
        $("#nombreE").val(d[1]);
        $("#apellidoE").val(d[2]);
        $("#emailE").val(d[4]);

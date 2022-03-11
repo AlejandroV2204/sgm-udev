@@ -22,7 +22,7 @@
     <div class="navbar-inner">
         <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
-                    class="brand" href="adminVista.php">u_dev</a>
+                    class="brand" href="adminVista.php">SGM - U_DEV</a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
@@ -32,12 +32,14 @@
                                     <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <?php
-                                $util->validarElemento(0, '<li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-bell"></i> Solicitudes</a></li>');
+                                $util->validarElemento(0, '<li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-bell"></i>Notificacion Tecnico</a></li>');
+                                $util->validarElemento(0, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
                             ?>
 
                             <?php
-                                $util->validarElemento(2, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i> Cambiar contraseña</a></li>');
+                                $util->validarElemento(1, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
                             ?>
+
                             <li><a href="../seguridad/cerrarSesion.php"><i class="icon-signout"></i>Cerrar sesion</a>
                             </li>
                         </ul>

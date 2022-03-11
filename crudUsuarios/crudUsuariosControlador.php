@@ -36,26 +36,28 @@ $_SESSION['mensajeOk']="Accion realizada";
  }else if(isset($_POST['modificarUsuario'])){
  	echo "modificar";
 
+	 $id=$_POST['id'];
+
 	//$campos es el nombre de los campos tal cual aparece en la base de datos
-$campos = array("nombreE", "apellidoE", "emailE");
+$campos = array("nombre", "apellido", "email");
 //$valores son los valores a almacenar
 $valores = array("$nombre","$apellido","$correo");
 //la funcion insertar recibe el nombre de la tabla y los dos arrays de campos y valores
 $nombreDeTabla = "usuario";
-$utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id', 'id') ;
+$utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id', $id) ;
 $_SESSION['mensajeOk']="Accion realizada";
 
-     header('Location: ../crudTrabajador/crudTrabajadorVista.php');
+     header('Location: crudUsuariosVista.php');
  }else{
 
 	echo "Eliminar";
 
 			$campo = array("estado");
-			$id=$_POST['codigoEliminar'];
+			$id=$_POST['idEliminar'];
 
 		$utilModelo -> modificar('usuario',$campo,'1','id', $id) ;
 		$_SESSION['mensajeOk']="Accion realizada";
- 		//header('Location: ../crudUsuarios/crudUsuariosVista.php');
+ 		header('Location: crudUsuariosVista.php');
 
    }
 	exit();

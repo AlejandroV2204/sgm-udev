@@ -12,7 +12,7 @@
 
     $tabla = "usuario";
 
-    // $result = $utilModelo1->mostrarregistros($tabla, $nombreCampo, $valor);
+    // $result = $utilModelo->mostrarregistros($tabla, $nombreCampo, $valor);
     // while ($fila = mysqli_fetch_array($result)) {
     //     if ($fila != NULL) {
     //         $nombre = $fila['nombre'];
@@ -26,7 +26,7 @@
     <div class="navbar-inner">
         <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
-                    class="brand" href="">u_dev</a>
+                    class="brand" >SGM U_DEV</a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
