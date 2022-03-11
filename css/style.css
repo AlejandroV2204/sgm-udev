@@ -167,8 +167,9 @@ textarea {
 }
 
 .subnavbar .container > ul > li > a:hover {
-   color: rgb(255, 255, 255);
+   color: #ffffff;
    text-decoration: none;
+   border-bottom:7px solid #5d8bf4;
 }
 
 .subnavbar .container > ul > li > a > i {
@@ -188,8 +189,6 @@ textarea {
 
 
 .subnavbar .container > ul > li.active > a {
-	
-	border-bottom:7px solid #5d8bf4;
 	color: #f8f4f4;
 }
    

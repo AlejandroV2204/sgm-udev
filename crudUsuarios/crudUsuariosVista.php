@@ -55,7 +55,6 @@ $util -> validarRuta(0);
                     <tr>
                       <th> Nombre </th>
                       <th> Apellido</th>
-                      <th> Contraseña </th>
                       <th> Correo </th>
                       <th> Tipo Usuario </th>
                       <th> Estado </th>
@@ -78,24 +77,41 @@ $util -> validarRuta(0);
                       if ($fila != NULL) {
 
                         $datos=$fila[0]."||".
+                            $fila[1]."||".
   			        					   $fila[2]."||".
   			        					   $fila[3]."||".
+                             $fila[4]."||".
                              $fila[5]."||".
-                             $fila[6]."||".
-                             $fila[1];
+                             $fila[6];
   			        					  
+                              $tipoUser = "";
+
+                             if($fila[5] == 0){
+
+                              $tipoUser = "Administrador";
+
+                   }else if($fila[5] == 1){
+
+                    $tipoUser = "Monitor";
+
+                   }else{
+
+                    $tipoUser = "Estudiante";
+
+                   }
 
                           echo "
                             <tr>
-                              <td>$fila[0] </td>
                               <td>$fila[1] </td>
                               <td> $fila[2] </td>
-                              <td> $fila[3]</td>
                                <td>$fila[4]</td>
-                               <td>$fila[5]</td>
+                               <td>$tipoUser</td>
                                <td>$fila[6]</td>
                               <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
                             </tr>";
+
+                              
+
                           }
                         }
                          ?>
@@ -120,6 +136,8 @@ $util -> validarRuta(0);
     </div>
     <!-- /main-inner -->
   </div>
+
+
     <!-- inicio modal guardar -->
   <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -128,48 +146,20 @@ $util -> validarRuta(0);
     </div>
     <div class="modal-body">
 
-      <form class"span8" action="crudTrabajadorControlador.php" method="post" >
-
-
-                                <div class="form-group   ">
-                                    <input   type="text" name="codigo" id="codigo" tabindex="1" class=" form-control span4"
-                                           value="<?php echo $codigoV; ?> "readonly required>
-                                </div>
-                                <div class="form-group   ">
-                                    <input   type="text" name="nombre" id="nombre" tabindex="1" class=" form-control span4"
-                                           placeholder="Nombre Completo" value="" required>
-                                </div>
-                                <div class="form-group   ">
-                                    <input   type="text" name="documento" id="documento" tabindex="1" class=" form-control span4"
-                                           placeholder="Numero de Cedula" value="" required>
-                                </div>
-                                <div class="form-group   ">
-                                   Fecha Ncmiento<input type="date" name="edad" id="edad" tabindex="1"
-                                                                class=" form-control span3" min="1940-01-01" max="<?php echo $edadTrabajador; ?>"
-                                                                value="" required>
-                                </div>
-                                <div class="form-group   ">
-                                    <input   type="text" name="direccion" id="direccion" tabindex="1" class=" form-control span4"
-                                           placeholder="Direccion" value="" required>
-                                </div>
-                                <div class="form-group   ">
-                                    <input   type="text" name="telefono" id="telefono" tabindex="1" class=" form-control span4"
-                                           placeholder="Telefono" value="" required>
-                                </div>
-                                <div class="form-group  ">
-                                    <input   type="email" name="email" id="email" tabindex="1" class=" form-control span4"
-                                           placeholder="Correo electronico" value="" required>
-                                </div>
+      <form class="span8" action="crudUsuariosControlador.php" method="post" >
 
                                 <div class="form-group">
-                                    <input  type="text" name="username" onkeyup="validarUsuario('#username');" id="username" tabindex="1" class=" form-control span4"
-                                           placeholder="Usuario" value="" required>
-                                           <div id="usuarioValido" class="span4">
-
-                                           </div>
+                                    <input   type="text" name="nombre" id="nombre" tabindex="1" class=" form-control span4"
+                                           placeholder="Nombres" value="" required>
                                 </div>
-
-
+                                <div class="form-group   ">
+                                    <input   type="text" name="apellido" id="apellido" tabindex="1" class=" form-control span4"
+                                           placeholder="Apellidos" value="" required>
+                                </div>
+                                <div class="form-group  ">
+                                    <input   type="email" name="email" id="email" onkeyup="validarCorreo('#username');" tabindex="1" class=" form-control span4"
+                                           placeholder="Correo electronico" value="" required>
+                                </div>
                                 <div class="form-group" id="pass">
                                     <input   type="password" name="password" onkeyup="validarPassword();" id="password"
                                            class=" form-control span4 " placeholder="Contraseña" tabindex="2" required>
@@ -186,14 +176,17 @@ $util -> validarRuta(0);
 
     </div>
     <div class="modal-footer">
+      <!-- Cierre modal -->
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-      <button type="submit" name="guardarTrabajador" id="guardarTrabajador"class="btn btn-primary">Guardar</button>
+      <!-- Boton envio datos -->
+      <button type="submit" name="guardarUsuario" id="guardarTrabajador"class="btn btn-primary">Guardar</button>
     </div>
 
     </form>
   </div>
-
   <!-- Fin modal -->
+
+
 
   <!-- inicio modal editar -->
 <div id="modalEditar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -205,48 +198,38 @@ $util -> validarRuta(0);
 
       <form style="min-width: 500px;" action="crudTrabajadorControlador.php" method="post" >
 
-
-
                                 <div class="form-group">
-                                  <input id="codigoE" name="codigo" type="hidden">
-                                    <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
-                                           placeholder="Nombre Completo" value="" required>
+                                  <input id="IdE" name="id" type="hidden">
+                                  </div>
+                                <div class="form-group">
+                                  <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
+                                           placeholder="Nombres" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input   type="text" name="documento" id="documentoE" tabindex="1" class=" form-control span4"
-                                           placeholder="Numero de Cedula" value="" required>
+                                    <input   type="text" name="apellido" id="apellidoE" tabindex="1" class=" form-control span4"
+                                           placeholder="Apellidos" value="" required>
                                 </div>
                                 <div class="form-group">
-                                   Fecha Nacimiento:  <input style="min-width: 285px;" type="date" name="edad" id="edadE" tabindex="1"
-                                                                class=" form-control span3" placeholder="Fecha de nacimiento"
-                                                                value="" required>
+                                    <input   type="text" name="email" id="emailE" tabindex="1" class=" form-control span4"
+                                           placeholder="Correo electronico" value="" required>
                                 </div>
-                                <div class="form-group">
-                                    <input   type="text" name="direccion" id="direccionE" tabindex="1" class=" form-control span4"
-                                           placeholder="Direccion" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <input   type="tel" pattern="[0-9]{} "name="telefono" id="telefonoE" tabindex="1" class=" form-control span4"
-                                           placeholder="Telefono" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <input   type="email" name="email" id="emailE" tabindex="1" class=" form-control span4"
-                                           placeholder="Correo electronico" required value="">
-                                </div>
-
-
-
+                                
+                                <!-- <div class="form-group">
+                                    <input   type="email" name="tipoUser" id="tipoUserE" tabindex="1" class=" form-control span4"
+                                           placeholder="Tipo Usuario" required value="">
+                                </div> -->
 
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    <button type="submit" name="modificarTrabajador" id="modificarTrabajador"class="btn btn-primary">Modificar</button>
+    <button type="submit" name="modificarUsuario" id="modificarTrabajador"class="btn btn-primary">Modificar</button>
   </div>
 
   </form>
 </div>
-
 <!-- Fin modal -->
+
+
 
  <!-- inicio modal eliminar -->
 <div id="modalEliminar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -314,14 +297,11 @@ $util -> validarRuta(0);
     function agregarForm(datos){
       d=datos.split("||");
 
-       $("#codigoE").val(d[0]);
+       $("#IdE").val(d[0]);
        $("#codigoEliminar").val(d[0]);
        $("#nombreE").val(d[1]);
-       $("#documentoE").val(d[2]);
-       $("#edadE").val(d[3]);
-      $("#telefonoE").val(d[4]);
-       $("#direccionE").val(d[6]);
-       $("#emailE").val(d[5]);
+       $("#apellidoE").val(d[2]);
+       $("#emailE").val(d[4]);
     }
 
   </script>

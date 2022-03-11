@@ -24,16 +24,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-5 col-md-offset-3">
             <div class="panel panel-login">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-14">
                                 <a href="#" class="active" id="login-form-link">Iniciar sesión</a>
                         </div>
-                        <div class="col-xs-6">
+
+                        <!-- Boton Registro de pagina publica no usado -->
+                        <!-- <div class="col-xs-6">
                             <a href="#modalCondiciones" id="register-form-link">Regístrate ahora</a>
-                        </div>
+                        </div> -->
                     </div>
                     <hr>
                 </div>
@@ -92,8 +94,11 @@
                             </form>
                             <!-- ************INCIAR SESION******* FIN ***** -->
 
-                            <!-- ************REGISTRAR******* INICIO ***** -->
-                            <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
+                            <!-- Registro por si alguna vez se vuelve publica la aplicacion 
+                            Julian Esteban Ramirez Cordoba U_dev -->
+
+
+                            <!-- <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
                                   role="form" style="display: none;">
                                
                                 <div class="form-group">
@@ -138,7 +143,7 @@
                                     </div>
                                 </div>
 
-                            </form>
+                            </form> -->
 
                             <!-- ************REGISTRAR******* FIN ***** -->
                         </div>
