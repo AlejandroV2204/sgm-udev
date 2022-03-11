@@ -57,10 +57,11 @@
             for ($i = 0; $i < count($valores); $i++) {
                  $construccionDeValores = ($i == (count($valores) - 1)) ? $construccionDeValores . "`" . $campos[$i] . "` = '" . $valores[$i] . "'" : $construccionDeValores . "`" . $campos[$i] . "` = '" . $valores[$i] . "',";
             }
+
              $consulta = "UPDATE `$tabla` SET $construccionDeValores WHERE `$campoCondicion` = '$condicion' ;";
              $query = mysqli_query($link, $consulta);
              echo $consulta; 
-                die();
+                // die();
            return $query;
         }
 
