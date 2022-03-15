@@ -42,7 +42,7 @@
             //funcion para mostrar todos los registros sin condiciones
             global $link;
 
-            $consulta = "SELECT * FROM $tabla";
+            $consulta = "SELECT * FROM $tabla where 1";
 
             $query = mysqli_query($link, $consulta);
 

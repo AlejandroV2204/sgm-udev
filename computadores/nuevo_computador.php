@@ -1,5 +1,5 @@
 <?php include_once('../conexion.php');
-      include_once('util/utilModelo.php');
+      include_once('../util/utilModelo.php');
 
       $utilidad = new utilModelo();
 
@@ -36,7 +36,7 @@
                     
                     <form class="row g-3 my-3" action="control_computador.php" method="post">
                         
-                        <h1>Nuevo computador</h1>
+                        <h1>Nuevo computadorcito</h1>
                         <br>
                         <br>
                         <!-- <div class="col-md-2"> -->
@@ -56,21 +56,29 @@
                         <!-- </div> -->
                     
                         <!-- <div class="col-md-4"> -->
+                            
+                            <label for="validationCustom03" class="form-label">Lugar ubicado:</label>
+                            <select name="sala" class="form-select">
 
                         <?php
 
-                            $utilidad->mostrarregistros('sala', )
+                        echo "osdo";
+
+                            $tabla = "sala";
+                            $campo = array("nombre_sala");
+                            $valor = "s1";
+
+                            $sql = $utilidad->mostrarTodosRegistros($tabla);
+
+                            while($row = $sql->fetch_assoc()){
+                                
+                                // echo "<option value = \"Seleccione\">". $row['nombre_sala']. "</option>";
+                                echo "<option value = ".$row['id'].">". $row['nombre_sala']. "</option>";
+                            }
+                         
 
                         ?>
-                            <label for="validationCustom03" class="form-label">Lugar ubicado:</label>
-                            <select name="sala" class="form-select">
-                            <option selected value="1">Sala 1</option>
-                            <option value="2">Sala 2</option>
-                            <option value="3">Sala 3</option>
-                            <option>Sala 4</option>
-                            <option>Sala 5</option>
-                            <option>Sala 6</option>
-                            </select>"
+                            </select>
 
                         <!-- </div> -->
                     
