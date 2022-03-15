@@ -55,7 +55,7 @@ $_SESSION['mensajeOk']="Accion realizada";
 			$campo = array("estado");
 			$id=$_POST['idEliminar'];
 
-		$utilModelo -> modificar('usuario',$campo,'1','id', $id) ;
+		$utilModelo->modificar('usuario',$campo,'0','id', $id) ;
 		$_SESSION['mensajeOk']="Accion realizada";
  		header('Location: crudUsuariosVista.php');
 
