@@ -166,6 +166,7 @@
         function hoy()
         {
 
+            // return date("Y") . "-" . date("m") . "-" . date("d");
             return date("Y") . "-" . date("m") . "-" . date("d");
         }
 
