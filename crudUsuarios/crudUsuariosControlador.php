@@ -35,7 +35,7 @@ $_SESSION['mensajeOk']="Accion realizada";
 //modificar
  }else if(isset($_POST['modificarUsuario'])){
  	echo "modificar";
-
+    
 	 $id=$_POST['id'];
 
 	//$campos es el nombre de los campos tal cual aparece en la base de datos
