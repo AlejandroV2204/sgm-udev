@@ -1,46 +1,68 @@
 <?php
-include "../util/util.php";
+@session_start();
+include_once "../util/util.php";
 include_once "../util/utilModelo.php";
-$utilModelo2 = new utilModelo();
+$utilModelo = new utilModelo();
 $util = new util();
 
-include_once('./componentes/menuPrincipal.php');
-//include_once('../conexion.php');
+$cantidad_pc = filter_input(INPUT_POST, 'cantidad_pc');
+$nombre_sala = filter_input(INPUT_POST, 'nombre_sala');
+$estado_sala ='1';
 
-$cantidad_pc = $_REQUEST['cantidad_pc'];
-$nombre_sala = $_REQUEST['nombre_sala'];
-$estado = $_REQUEST['estado'];
+
+if(isset($_POST['guardarSala'])){
+
+    echo "Guardar";
 
 
 //$campos es el nombre de los campos tal cual aparece en la base de datos
-$campos = array("cantidad_pc", "nombre_sala", "estado");
+$campos = array("cantidad_pc", "nombre_sala", "estado_sala");
 //$valores son los valores a almacenar
-$valores = array("$cantidad_pc", "$nombre_sala", "$estado");
+$valores = array("$cantidad_pc", "$nombre_sala", "$estado_sala");
 //la funcion insertar recive el nombre de la tabla y los dos arrays de campos y valores
 $nombreDeTabla = "sala";
-$utilModelo2->insertar($nombreDeTabla,$campos, $valores);
+$utilModelo->insertar($nombreDeTabla,$campos, $valores);
+
 echo "si funciono";
 // $_SESSION['mensajeOk']="Accion realizada";header('Location: ../crudTrabajador/crudTrabajadorVista.php');
-$_SESSION['mensajeOk']="Accion realizada";header('Location: ../admin/adminVista.php');
+$_SESSION['mensajeOk']="Accion realizada";
 
-/*$nombre_sala= $_POST['nombre_sala'];
-$cantidad_pc= $_POST['cantidad_pc'];
-$estado= $_POST['estado'];
+header('Location: ../sala/crearSala.vista.php');
 
-$sql = "INSERT INTO sala VALUES (default,'$cantidad_pc','$nombre_sala','$estado')";
-echo $sql;
 
-if (mysqli_query($conn, $sql)) {
-              echo "New record created successfully";
+//modificar
+}else if(isset($_POST['modificarSala'])){
+
+    echo "modificar";
+
+    $id=$_POST['id'];
+
+   //$campos es el nombre de los campos tal cual aparece en la base de datos
+$campos = array("cantidad_pc", "nombre_sala", "estado_sala");
+//$valores son los valores a almacenar
+$valores = array("$cantidad_pc","$nombre_sala","$estado_sala");
+//la funcion insertar recibe el nombre de la tabla y los dos arrays de campos y valores
+$nombreDeTabla = "sala";
+$utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id_sala', $id) ;
+$_SESSION['mensajeOk']="Accion realizada";
+
+    header('Location: crearSala.vista.php');
 }else{
-         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}*/
-mysqli_close($conn);
-header("location:sala.list.php");
-?>
-<?php
-include_once('../php/footer.php');
+
+   echo "Eliminar";
+
+           $campo = array("estado_sala");
+           $id=$_POST['idEliminar'];
+
+       $utilModelo -> modificar('sala',$campo,'0','id_sala', $id) ;
+       $_SESSION['mensajeOk']="Accion realizada";
+        header('Location: crearSala.vista.php');
+
+  }
+
+   exit();
 
 ?>
+
 
     
