@@ -30,8 +30,8 @@
                 $condiciones = ($i == (count($nombreCampo) - 1)) ? $condiciones . "`" . $nombreCampo[$i] . "` = '" . $valores[$i] . "'" : $condiciones . "`" . $nombreCampo[$i] . "`= '" . $valores[$i] . "' AND ";
             }
             $consulta = "SELECT * FROM $tabla  $condiciones";
-            // echo "consulta: ".$consulta;
-            // die();
+             echo "consulta: ".$consulta;
+             //die();
 
             $query = mysqli_query($link, $consulta);
             
@@ -60,8 +60,8 @@
 
              $consulta = "UPDATE `$tabla` SET $construccionDeValores WHERE `$campoCondicion` = '$condicion' ;";
              $query = mysqli_query($link, $consulta);
-            //  echo $consulta; 
-            //     die();
+             //echo $consulta; 
+                 //die();
            return $query;
         }
 

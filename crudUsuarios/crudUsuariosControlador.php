@@ -19,7 +19,7 @@ $tipo = '0';//el tipo numero 2 es un usuario stadart ademas tenemos tipo 0 para 
 echo "Guardar";
 
 //$campos es el nombre de los campos tal cual aparece en la base de datos
-$campos = array("nombre", "apellido", "email", "password", "tipo_usuario", "estado");
+$campos = array("nombre", "apellido", "email", "password", "tipo_usuario", "estado_usuario");
 //$valores son los valores a almacenar
 $valores = array("$nombre","$apellido","$correo","$password","$tipo","$activo");
 //la funcion insertar recive el nombre de la tabla y los dos arrays de campos y valores
@@ -44,7 +44,7 @@ $campos = array("nombre", "apellido", "email");
 $valores = array("$nombre","$apellido","$correo");
 //la funcion insertar recibe el nombre de la tabla y los dos arrays de campos y valores
 $nombreDeTabla = "usuario";
-$utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id', $id) ;
+$utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id_usuario', $id) ;
 $_SESSION['mensajeOk']="Accion realizada";
 
      header('Location: crudUsuariosVista.php');
@@ -52,10 +52,10 @@ $_SESSION['mensajeOk']="Accion realizada";
 
 	echo "Eliminar";
 
-			$campo = array("estado");
+			$campo = array("estado_usuario");
 			$id=$_POST['idEliminar'];
 
-		$utilModelo->modificar('usuario',$campo,'0','id', $id) ;
+		$utilModelo->modificar('usuario',$campo,'0','id_usuario', $id) ;
 		$_SESSION['mensajeOk']="Accion realizada";
  		header('Location: crudUsuariosVista.php');
 
