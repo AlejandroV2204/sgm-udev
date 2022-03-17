@@ -3,17 +3,16 @@
     include_once "../util/utilModelo.php";
     $utilModelo2 = new utilModelo();
     $util = new util();
-    $util->validarRuta(0);
-    $nombreCampo = array("email");
-    //$valor = array($_SESSION['usuario'][0]);
-    $valor=array('1');
-    $tabla = "usuario";
-    $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
-    while ($fila = mysqli_fetch_array($result)) {
-        if ($fila != NULL) {
-            $saldo = $fila['nombre'];
-        }
-    }
+    // $util->validarRuta(0);
+    // $nombreCampo = array("id_usuario");
+    // $valor = array($_SESSION['usuario'][0]);
+    // $tabla = "usuario";
+    // $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
+    // while ($fila = mysqli_fetch_array($result)) {
+    //     if ($fila != NULL) {
+    //         $saldo = $fila['nombre'];
+    //     }
+    // }
 
 
 

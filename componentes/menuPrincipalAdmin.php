@@ -5,7 +5,6 @@
     $util = new util();
     $nombreCampo = array("id_usuario");
     $valor = array($_SESSION['usuario'][0]); 
-    
     $tabla = "usuario";
 
     $result = $utilModelo->mostrarregistros($tabla, $nombreCampo, $valor);
