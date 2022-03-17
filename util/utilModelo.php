@@ -20,6 +20,9 @@
 
             $consulta = "INSERT INTO `$tabla` ($construccionDeCampos) VALUES ($construccionDeValores);";
             $query = mysqli_query($link, $consulta);
+
+           // echo $consulta;
+          //  die();
         
         }
 
@@ -61,8 +64,8 @@
              $consulta = "UPDATE `$tabla` SET $construccionDeValores WHERE `$campoCondicion` = '$condicion' ;";
              $query = mysqli_query($link, $consulta);
              echo $consulta; 
-                // die();
-           return $query;
+                //die();
+           //return $query;
         }
 
         function consultarVariasTablas($campos, $valores, $condiciones)

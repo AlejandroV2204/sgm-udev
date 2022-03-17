@@ -1,25 +1,24 @@
 <?php
     include_once "../util/utilModelo.php";
     include_once "../util/util.php";
-    
-    $utilModelo1 = new utilModelo();
+     
+       @session_start();
+     
+    $utilModelo = new utilModelo();
     $util = new util();
     $nombreCampo = array("id");
 
-    // $valor = array($_SESSION['id'][0]);
-
-    // $valor = array($_SESSION['id'][0]);
-
+    $valor = array($_SESSION['usuario'][0]);
+    
     $tabla = "usuario";
 
-    // $result = $utilModelo->mostrarregistros($tabla, $nombreCampo, $valor);
-    // while ($fila = mysqli_fetch_array($result)) {
-    //     if ($fila != NULL) {
-    //         $nombre = $fila['nombre'];
-    //         $codigoUsuario = $fila['id'];
-
-    //     }
-    // }
+    $result = $utilModelo->mostrarregistros($tabla, $nombreCampo, $valor);
+    while ($fila = mysqli_fetch_array($result)) {
+        if ($fila != NULL) {
+            $nombre = $fila['nombre'];
+            $codigoUsuario = $fila['id'];
+        }
+    }
 
 ?>
 <div class="navbar navbar-fixed-top">
@@ -32,7 +31,9 @@
 
 
                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                    class="icon-user"></i> <?php echo $nombre; ?> <b class="caret"></b></a>
+                                    class="icon-user"></i> 
+                                    <?php echo $nombre; ?> 
+                                    <b class="caret"></b></a>
                         <ul class="dropdown-menu">
         
 
