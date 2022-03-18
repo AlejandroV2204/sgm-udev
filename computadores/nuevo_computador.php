@@ -1,4 +1,6 @@
-<?php include_once('../conexion.php');
+<?php 
+
+      include_once('../conexion.php');
       include_once('../util/utilModelo.php');
       include_once('../util/util.php');
 
@@ -6,18 +8,18 @@
       $utilidad = new utilModelo();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>NOMBRE S.A.</title>
+    <title>Computadores</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
-          rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
     <link href="../css/font-awesome.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/pages/dashboard.css" rel="stylesheet">
@@ -27,45 +29,143 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
+
 <body>
-<?php
-    include "../componentes/menuPrincipalAdmin.php";
-?>
-<div class="main">
-    <div class="main-inner">
-        <div class="container">
-                <div class="row">
-                        
-                    
-                    <form class="row g-3 my-3" action="control_computador.php" method="post">
-                        
-                        <h1>Nuevo computador</h1>
-                        <br>
-                        <br>
-                        <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label">Identificador del PC</label>
-                            <input type="text" class="form-control" name="id_pc">
-                            <label for="inputPassword4" class="form-label">Sistema operativo</label>
-                            <input type="text" class="form-control" name="so_pc">
-                        </div>
-                        
-                        <div class="class container my-3">
-                    
-                            <div class="col-6">
-                                <label for="validationCustom02" class="form-label">Motherboard</label>
-                                <input type="text" class="form-control" name="mobo_pc" placeholder="ASUS H61M-K">
-                            </div>
-                            
-                        </div>
-                    
-                        <!-- <div class="col-md-4"> -->
-                            
-                            <label for="validationCustom03" class="form-label">Lugar ubicado:</label>
-                            <select name="sala" class="form-select">
+
+    <?php include "../componentes/menuPrincipalAdmin.php"; ?>
+
+    <!-- ================================================================================================================================== -->
+
+
+
+    <!-- <div class="span12"> -->
+
+    <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register">Nuevo computador</a><br><br>
+    <div class="widget widget-nopad">
+        <div class="widget widget-table action-table">
+            <div class="widget-header"> <i class="icon-th-list"></i>
+                <h3>Computadores</h3>
+            </div>
+
+            <!-- /widget-header -->
+            <div class="widget-content">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th> ID </th> -->
+                            <th> Sala</th>
+                            <th> S.O </th>
+                            <th> Motherboard </th>
+                            <th> RAM </th>
+                            <th> Velocidad RAM </th>
+                            <th> Procesador </th>
+                            <th> Graficos </th>
+                            <th> Capacidad Disco </th>
+                            <th> Mouse </th>
+                            <th> Teclado </th>
+                            <th> Panel frontal </th>
+                            <th> Lectora DVD </th>
+                            <th> Ventiladores </th>
+                            <th> Ultima termica </th>
+                            <th> Ultimo mantenimiento </th>
+                            <th> Salidas video </th>
+                            <th> Estado </th>
+                            <th class="td-actions">EDITAR/ELIMINAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
                         <?php
 
-                        echo "osdo";
+
+                  $tabla = "computador";
+                  $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
+                  while ($fila = mysqli_fetch_array($result)) {
+                      if ($fila != NULL) {
+
+                        $datos=$fila[0]."||".
+                            $fila[1]."||".
+  			        					   $fila[2]."||".
+  			        					   $fila[3]."||".
+                             $fila[4]."||".
+                             $fila[5]."||".
+                             $fila[6]."||".
+                             $fila[7]."||".
+                             $fila[8]."||".
+                             $fila[9]."||".
+                             $fila[10]."||".
+                             $fila[11]."||".
+                             $fila[12]."||".
+                             $fila[13]."||".
+                             $fila[14]."||".
+                             $fila[15]."||".
+                             $fila[16]."||".
+                             $fila[17];
+  			        					    
+
+                          echo "
+                            <tr>
+                              <td>$fila[1] </td>
+                              <td> $fila[2] </td>
+                               <td>$fila[3]</td>
+                               <td>$fila[4]</td>
+                               <td>$fila[5]</td>
+                               <td>$fila[6]</td>
+                               <td>$fila[7]</td>
+                               <td>$fila[8]</td>
+                               <td>$fila[9]</td>
+                               <td>$fila[10]</td>
+                               <td>$fila[11]</td>
+                               <td>$fila[12]</td>
+                               <td>$fila[13]</td>
+                               <td>$fila[14]</td>
+                               <td>$fila[15]</td>
+                               <td>$fila[16]</td>
+                               <td>$fila[17]</td>
+                               
+                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
+                            </tr>";
+
+
+                          }
+                        }
+                         ?>
+                    </tbody>
+                </table>
+            </div>
+            <h6 class="bigstats"></h6>
+            <!-- /widget-content -->
+        </div>
+    </div>
+
+    <!-- </div> -->
+    <!-- /FIN TABLA rangos -->
+
+    <!-- =================================================================================================================== -->
+
+    <!-- INICIO MODAL GUARDAR -->
+    <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h3 id="myModalLabel">Registrar PC</h3>
+        </div>
+        <div class="modal-body">
+
+            <form class="span8" action="control_computador.php" method="post">
+
+                <label for="serial" class="form-label">Identificador del PC</label>
+                <input type="text" class="form-control" name="id_pc">
+                <label for="sistemaoperativo" class="form-label">Sistema operativo</label>
+                <input type="text" class="form-control" name="so_pc">
+
+                <label for="placa base" class="form-label">Motherboard</label>
+                <input type="text" class="form-control" name="mobo_pc" placeholder="ASUS H61M-K">
+
+                <label for="lugar ubicado" class="form-label">Lugar ubicado:</label>
+                <select name="sala" class="form-select">
+
+                    <?php
 
                             $tabla = "sala";
                             $campo = array("nombre_sala");
@@ -75,299 +175,132 @@
 
                             while($row = $sql->fetch_assoc()){
                                 
-                                // echo "<option value = \"Seleccione\">". $row['nombre_sala']. "</option>";
-                                echo "<option value = ".$row['id'].">". $row['nombre_sala']. "</option>";
+                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
+                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
                             }
-                         
-
+                        
                         ?>
-                            </select>
 
-                        <!-- </div> -->
-                    
-                        <!-- <div class="class container my-3"> -->
-                    
-                            <div class="col-3">
-                                    <label for="validationCustom04" class="form-label">Procesador</label>
-                                    <input type="text" class="form-control" name="procesador" placeholder="Intel Pentium E5300">
-                                </div>
-                        
-                                
-                        
-                                <label for="customRange3" class="form-label">Cantidad RAM</label>
-                                    <input type="range" name="cantidad_ram" class="form-range" min="0" max="32" step="4" oninput="rangeValue.innerText = this.value">
-                                    <p id="rangeValue">4</p>
-                        
-                                    <div class="col-md-4">
-                                <label for="validationCustom03" class="form-label">Velocidad RAM</label>
-                                <select name="velocidad_ram" class="form-select">
-                                <option selected value="1333mhz">1333Mhz</option>
-                                <option value="1006mhz">1066Mhz</option>    
-                                <option value="1600mhz">1600mhz</option>
-                                <option value="2133mhz">2133mhz</option>
-                                <option value="2600mhz">2600mhz</option>
-                                
-                                </select>
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom07" class="form-label">Tipo de graficos</label>
-                                <input type="text" class="form-control" name="tipo_graficos" placeholder="Dedicados/Integrados">
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom08" class="form-label">Capacidad disco</label>
-                                <input type="text" class="form-control" name="capacidad_disco" placeholder="500GB">
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom09" class="form-label">Mouse</label>
-                                <input type="text" class="form-control" name="mouse" placeholder="">
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom10" class="form-label">Teclado</label>
-                                <input type="text" class="form-control" name="teclado" placeholder="">
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom11" class="form-label">Estado del panel frontal</label>
-                                <input type="text" class="form-control" name="panel_frontal" placeholder="">
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom12" class="form-label">Lectora CD/DVD</label>
-                                <input type="text" class="form-control" name="lectora_dvd" placeholder="">
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom13" class="form-label">Ventiladores</label>
-                                <input type="text" class="form-control" name="ventiladores" placeholder="">
-                            </div>
-                    
-                            
+                </select>
 
-                            <div class="col-3">
-                                <label for="validationCustom14" class="form-label">Ultima pasta termica</label>
-                                <input type="text" class="form-control" name="ultima_termica" placeholder="">
-                            </div>
-                    
-                            <div class="col-3">
-                                <label for="validationCustom15" class="form-label">Ultimo mantenimiento</label>
-                                <input type="text" class="form-control" name="ultimo_man" placeholder="">
-                            </div>
-                            
-                            <?php echo "<input type=\"date\" id=\"start\" name=\"trip-start\" 
-                                    value=\"$util->hoy();\"
-                                    min=\"2018-01-01\" max=\"2018-12-31\">" ?>
+                <label for="procesadores" class="form-label">Procesador</label>
+                <input type="text" class="form-control" name="procesador" placeholder="Intel Pentium E5300">
+
+                <label for="cantidad de ram" class="form-label">Cantidad RAM</label>
+                <input type="range" name="cantidad_ram" class="form-range" min="0" max="32" step="4"
+                    oninput="rangeValue.innerText = this.value+'GB'">
+                <p id="rangeValue">4GB</p>
+
+                <label for="velocidad" class="form-label">Velocidad RAM</label>
+                <select name="velocidad_ram" class="form-select">
+                    <option selected value="1333mhz">1333Mhz</option>
+                    <option value="1006mhz">1066Mhz</option>
+                    <option value="1600mhz">1600mhz</option>
+                    <option value="2133mhz">2133mhz</option>
+                    <option value="2600mhz">2600mhz</option>
+
+                </select>
+
+                <p>
+                    Tipo de graficos:<br>
+                    <input type="radio" name="tipo_graficos" value="Integrados"> Integrados <br>
+                    <input type="radio" name="tipo_graficos" value="Dedicados"> Dedicados
+
+                </p>
+
+                <label for="capacidad disco" class="form-label">Capacidad disco</label>
+                <input type="text" class="form-control" name="capacidad_disco" placeholder="500GB">
+
+                <!-- <label for="mouse" class="form-label">Mouse</label>
+                    <input type="text" class="form-control" name="mouse" placeholder="">
+
+                    <label for="teclado" class="form-label">Teclado</label>
+                    <input type="text" class="form-control" name="teclado" placeholder="">
+
+                    <label for="lectora dvd" class="form-label">Lectora CD/DVD</label>
+                    <input type="text" class="form-control" name="lectora_dvd" placeholder=""> -->
+
+                <p>
+                    El computador tiene: <br>
+                    <input type="checkbox" name="tiene[0]" value="si"> Teclado <br>
+                    <input type="checkbox" name="tiene[1]" value="si"> Mouse <br>
+                    <input type="checkbox" name="tiene[2]" value="si"> Lectora CD/DVD
+
+                </p>
+
+                <p>
+                    Estado del panel frontal: <br>
+                    <input type="radio" name="panel_frontal" value="Funcional"> Funcional<br>
+                    <input type="radio" name="panel_frontal" value="Fallando"> con fallas<br>
+                    <input type="radio" name="panel_frontal" value="Sin funcionar"> No funciona
+
+                </p>
+
+                <label for="ventiladores" class="form-label">Ventiladores</label>
+                <input type="text" class="form-control" name="ventiladores" placeholder="">
 
 
-                            
-                    
-                            <div class="col-3">
-                                <label for="validationCustom16" class="form-label">Salidas de video</label>
-                                <input type="text" class="form-control" name="salidas_video" placeholder="">
-                            </div>
-                            
-                        <!-- </div> -->
-                        
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </div>
-                    
-                    </form>
+                <label for="pasta termica" class="form-label">Ultima pasta termica</label>
+                <input type="date" id="start" name="ultima_termica" value="<?php echo date('Y-m-d'); ?>"
+                    min="2018-01-01" max="2025-12-31">
+
+                <label for="mantenimiento" class="form-label">Ultimo mantenimiento</label>
+                <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01"
+                    max="2025-12-31">
+
+                <label for="validationCustom16" class="form-label">Salidas de video</label>
+                <input type="text" class="form-control" name="salidas_video" placeholder="">
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+
+        </div>
+        <div class="modal-footer">
+            <!-- Cierre modal -->
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+            <!-- Boton envio datos -->
+            <button type="submit" name="guardarComputador" id="guardarTrabajador"
+                class="btn btn-primary">Guardar</button>
+        </div>
+
+        </form>
+    </div>
+    <!-- FIN MODAL GUARDAR -->
 
 
-                    <form>
-  <div class="form-group">
-    <label for="id_pc">ID Computador</label> 
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">
-          <i class="fa fa-reorder"></i>
-        </div>
-      </div> 
-      <input id="id_pc" name="id_pc" placeholder="PC05-SALA1" type="text" required="required" class="form-control">
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Sistema Operativo</label> 
-    <div>
-      <div class="custom-controls-stacked">
-        <div class="custom-control custom-radio">
-          <input name="so_pc" id="so_pc_0" type="radio" required="required" class="custom-control-input" value="Windows"> 
-          <label for="so_pc_0" class="custom-control-label">Windows 10</label>
-        </div>
-      </div>
-      <div class="custom-controls-stacked">
-        <div class="custom-control custom-radio">
-          <input name="so_pc" id="so_pc_1" type="radio" required="required" class="custom-control-input" value="Windows 8"> 
-          <label for="so_pc_1" class="custom-control-label">Windows 8</label>
-        </div>
-      </div>
-      <div class="custom-controls-stacked">
-        <div class="custom-control custom-radio">
-          <input name="so_pc" id="so_pc_2" type="radio" required="required" class="custom-control-input" value="Ubuntu/Derivados"> 
-          <label for="so_pc_2" class="custom-control-label">Ubuntu/Derivados</label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="mobo_pc">Motherboard</label> 
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">
-          <i class="fa fa-braille"></i>
-        </div>
-      </div> 
-      <input id="mobo_pc" name="mobo_pc" placeholder="h61m-k" type="text" required="required" class="form-control">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="procesador">Procesador</label> 
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">
-          <i class="fa fa-microchip"></i>
-        </div>
-      </div> 
-      <input id="procesador" name="procesador" type="text" required="required" class="form-control">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="velocidad_ram">Velocidad RAM</label> 
-    <div>
-      <select id="velocidad_ram" name="velocidad_ram" required="required" class="custom-select">
-        <option value="800mhz">800mhz</option>
-        <option value="1066mhz">1066mhz</option>
-        <option value="1333mhz">1333mhz</option>
-        <option value="1600mhz">1600mhz</option>
-        <option value="1800mhz">1800mhz</option>
-        <option value="2133mhz">2133mhz</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Tipo graficos</label> 
-    <div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="tipo_graficos" id="tipo_graficos_0" type="radio" class="custom-control-input" value="Integrados" required="required"> 
-        <label for="tipo_graficos_0" class="custom-control-label">Integrados</label>
-      </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="tipo_graficos" id="tipo_graficos_1" type="radio" class="custom-control-input" value="Dedicados" required="required"> 
-        <label for="tipo_graficos_1" class="custom-control-label">Dedicados</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="capacidad_disco">Disco duro</label> 
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">
-          <i class="fa fa-codiepie"></i>
-        </div>
-      </div> 
-      <input id="capacidad_disco" name="capacidad_disco" placeholder="ej: 500GB" type="text" class="form-control" required="required">
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Tiene:</label> 
-    <div>
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="mouse/teclado" id="mouse/teclado_0" type="checkbox" class="custom-control-input" value="mouse" required="required"> 
-        <label for="mouse/teclado_0" class="custom-control-label">Mouse</label>
-      </div>
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="mouse/teclado" id="mouse/teclado_1" type="checkbox" class="custom-control-input" value="teclado" required="required"> 
-        <label for="mouse/teclado_1" class="custom-control-label">Teclado</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Estado del Panel Frontal</label> 
-    <div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="panel_frontal" id="panel_frontal_0" type="radio" class="custom-control-input" value="rabbit" required="required"> 
-        <label for="panel_frontal_0" class="custom-control-label">funcional</label>
-      </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="panel_frontal" id="panel_frontal_1" type="radio" class="custom-control-input" value="duck" required="required"> 
-        <label for="panel_frontal_1" class="custom-control-label">con fallas</label>
-      </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="panel_frontal" id="panel_frontal_2" type="radio" class="custom-control-input" value="fish" required="required"> 
-        <label for="panel_frontal_2" class="custom-control-label">no funciona</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Lectora CD/DVD</label> 
-    <div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="lectora_dvd" id="lectora_dvd_0" type="radio" class="custom-control-input" value="si" required="required"> 
-        <label for="lectora_dvd_0" class="custom-control-label">si</label>
-      </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input name="lectora_dvd" id="lectora_dvd_1" type="radio" class="custom-control-input" value="no" required="required"> 
-        <label for="lectora_dvd_1" class="custom-control-label">no</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="ventiladores">Numero Ventiladores:</label> 
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">
-          <i class="fa fa-first-order"></i>
-        </div>
-      </div> 
-      <input id="ventiladores" name="ventiladores" placeholder="3" type="text" class="form-control" required="required">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="salidas_video">Salidas Video</label> 
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">
-          <i class="fa fa-wrench"></i>
-        </div>
-      </div> 
-      <input id="salidas_video" name="salidas_video" type="text" class="form-control" required="required">
-    </div>
-  </div> 
-  <div class="form-group">
-    <button name="submit" type="submit" class="btn btn-primary">Guardar</button>
-  </div>
-</form>
-            
+    <div class="main">
+        <div class="main-inner">
+            <div class="container">
+                <div class="row">
 
 
 
 
                 </div>
-            <!-- /row -->
+                <!-- /row -->
+            </div>
+            <!-- /container -->
         </div>
-        <!-- /container -->
+        <!-- /main-inner -->
     </div>
-    <!-- /main-inner -->
-</div>
-<!-- /div-main -->
+    <!-- /div-main -->
 
-<?php
+    <?php
     include "../componentes/pie.php";
 ?>
-<!-- Le javascript
+    <!-- Le javascript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="../js/jquery-1.7.2.min.js"></script>
-<script src="../js/excanvas.min.js"></script>
-<script src="../js/chart.min.js" type="text/javascript"></script>
-<script src="../js/bootstrap.js"></script>
-<script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.7.2.min.js"></script>
+    <script src="../js/excanvas.min.js"></script>
+    <script src="../js/chart.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
-<script src="js/base.js"></script>
+    <script src="js/base.js"></script>
 
 </body>
+
 </html>
