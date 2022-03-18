@@ -49,13 +49,12 @@
                 
                     $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
                     
-
                     $tabla = "computador";
                     $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
                     while ($fila = mysqli_fetch_row($result)) {
                     
                         $random = $imagenes[rand(0, 2)];
-                        
+
                         echo "<div class=\"card\">";
 
                             echo "<img src=\"$random\">
@@ -72,9 +71,7 @@
                         
                     }
 
-
                     ?>
-
 
 
                 <!-- /widget-header -->
