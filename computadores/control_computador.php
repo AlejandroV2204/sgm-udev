@@ -7,7 +7,7 @@ $util = new util();
 
 //Variables que se crean de los campos en el formulario (la vista)
 
-// $idcomputador = $_REQUEST['id_pc']; Se comento porque en la tabla esta autoincrement
+$idcomputador = $_REQUEST['id_pc']; // Se comento porque en la tabla esta autoincrement
 
 $sistema_operativo = $_REQUEST['so_pc'];
 $idsala = $_REQUEST['sala'];
@@ -39,28 +39,31 @@ if(isset($_POST['guardarComputador']))
 
         //$campos es el nombre de los campos tal cual aparece en la base de datos
         $campos = array("id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado_pc");
-            
+
         //$valores son los valores a almacenar
         $valores = array("$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", 1);
-            
+
         //la funcion insertar recibe el nombre de la tabla y los dos arrays de campos y valores
         $nombreDeTabla = "computador";
         $utilModelo2->insertar($nombreDeTabla,$campos, $valores);
         echo "si funciono";
         $_SESSION['mensajeOk']="Accion realizada";header('Location: ../admin/adminVista.php');
-    
+
     }
 
     else if(isset($_POST['modificarComputador']))
     {
 
+        // Se comentaron los campos de teclado, mouse, lectora dvd hasta mirar como recibirlos correctamente
 
-        $campos = array("id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado_pc");
-        
-        $valores = array("$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", 1);
+        // $campos = array("id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado_pc");
+        $campos = array("id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "estado_panel_frontal", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado_pc");
+
+        $valores = array("$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$panelfrontal", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", 1);
+        // $valores = array("$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", 1);
         $nombreDeTabla = "computador";
-        
-        $utilModelo2->insertar($nombreDeTabla,$campos, $valores);
+
+        $utilModelo2->modificar($nombreDeTabla,$campos,$valores,'id_pc', $idcomputador);
         echo "si funciono";
         $_SESSION['mensajeOk']="Accion realizada";header('Location: ../admin/adminVista.php');
 
