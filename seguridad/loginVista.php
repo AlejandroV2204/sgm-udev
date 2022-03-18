@@ -1,9 +1,9 @@
 <?php
     include "../util/util.php";
-    $util1 = new util();
+    $util = new util();
     if (isset($_SESSION['usuario'])) {
 
-        $util1->validarRuta(4);
+        $util->validarRuta(4);
     }
 ?>
 <!DOCTYPE html>
@@ -98,10 +98,10 @@
                             Julian Esteban Ramirez Cordoba U_dev -->
 
 
-                            <!-- <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
+                             <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
                                   role="form" style="display: none;">
                                
-                                <div class="form-group">
+                               <!-- <div class="form-group">
                                     <input type="text" name="nombre" id="nombre" tabindex="1" class="form-control"
                                            placeholder="Nombre" value="" required>
                                 </div>
@@ -141,9 +141,9 @@
                                                    class="form-control btn btn-register" value="Crear cuenta">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
-                            </form> -->
+                            </form> 
 
                             <!-- ************REGISTRAR******* FIN ***** -->
                         </div>

@@ -98,11 +98,11 @@ $util -> validarRuta(0);
 
                    }
 
-                   if($fila[6] == 0){
+                   if($fila[6] == 1){
 
                     $estado = "Activo";
 
-                   }else{
+                   }else if($fila[6] == 0){
 
                     $estado = "Inactivo";
 
