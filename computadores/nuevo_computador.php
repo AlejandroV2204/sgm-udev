@@ -36,8 +36,6 @@
 
     <!-- ================================================================================================================================== -->
 
-    <!-- <div class="span12"> -->
-
     <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register">Agregar computador</a><br><br>
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
@@ -45,96 +43,138 @@
                 <h3>Computadores</h3>
             </div>
 
-            <!-- /widget-header -->
-            <div class="widget-content">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <!-- <th> ID </th> -->
-                            <th> Sala</th>
-                            <th> S.O </th>
-                            <th> Motherboard </th>
-                            <th> RAM </th>
-                            <th> Velocidad RAM </th>
-                            <th> Procesador </th>
-                            <th> Graficos </th>
-                            <th> Capacidad Disco </th>
-                            <th> Mouse </th>
-                            <th> Teclado </th>
-                            <th> Panel frontal </th>
-                            <th> Lectora DVD </th>
-                            <th> Ventiladores </th>
-                            <th> Ultima termica </th>
-                            <th> Ultimo mantenimiento </th>
-                            <th> Salidas video </th>
-                            <th> Estado </th>
-                            <th class="td-actions">EDITAR/ELIMINAR</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div class="containero">
 
-                        <?php
+                <?php
+                
+                    $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
+                    
+
+                    $tabla = "computador";
+                    $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
+                    while ($fila = mysqli_fetch_row($result)) {
+                    
+                        $random = $imagenes[rand(0, 2)];
+                        
+                        echo "<div class=\"card\">";
+
+                            echo "<img src=\"$random\">
+                            <h4>$fila[0]</h4>
+                            <p>Caracteristicas: </p>
+                            <li>Procesador: $fila[6]</li>
+                            <li>RAM: $fila[4]</li>
+                            <li>Disco duro: $fila[8]</li>
+                            <li>Sistema Operativo: $fila[2]</li>
+                            <a href=\"#\">Editar</a>";
 
 
-                  $tabla = "computador";
-                  $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
-                  while ($fila = mysqli_fetch_array($result)) {
-                      if ($fila != NULL) {
+                        echo "</div>";
+                        
+                    }
 
-                        $datos=$fila[0]."||".
-                            $fila[1]."||".
-  			        					   $fila[2]."||".
-  			        					   $fila[3]."||".
-                             $fila[4]."||".
-                             $fila[5]."||".
-                             $fila[6]."||".
-                             $fila[7]."||".
-                             $fila[8]."||".
-                             $fila[9]."||".
-                             $fila[10]."||".
-                             $fila[11]."||".
-                             $fila[12]."||".
-                             $fila[13]."||".
-                             $fila[14]."||".
-                             $fila[15]."||".
-                             $fila[16]."||".
-                             $fila[17];
-  			        					    
 
-                          echo "
+                    ?>
+
+
+
+                <!-- /widget-header -->
+                <div class="widget-content">
+                    <table class="table table-striped table-bordered">
+                        <thead>
                             <tr>
-                              <td>$fila[1] </td>
-                              <td> $fila[2] </td>
-                               <td>$fila[3]</td>
-                               <td>$fila[4]</td>
-                               <td>$fila[5]</td>
-                               <td>$fila[6]</td>
-                               <td>$fila[7]</td>
-                               <td>$fila[8]</td>
-                               <td>$fila[9]</td>
-                               <td>$fila[10]</td>
-                               <td>$fila[11]</td>
-                               <td>$fila[12]</td>
-                               <td>$fila[13]</td>
-                               <td>$fila[14]</td>
-                               <td>$fila[15]</td>
-                               <td>$fila[16]</td>
-                               <td>$fila[17]</td>
-                               
-                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                            </tr>";
+                                <!-- <th> ID </th> -->
+                                <th> Sala</th>
+                                <th> S.O </th>
+                                <th> Motherboard </th>
+                                <th> RAM </th>
+                                <th> Velocidad RAM </th>
+                                <th> Procesador </th>
+                                <th> Graficos </th>
+                                <th> Capacidad Disco </th>
+                                <th> Mouse </th>
+                                <th> Teclado </th>
+                                <th> Panel frontal </th>
+                                <th> Lectora DVD </th>
+                                <th> Ventiladores </th>
+                                <th> Ultima termica </th>
+                                <th> Ultimo mantenimiento </th>
+                                <th> Salidas video </th>
+                                <th> Estado </th>
+                                <th class="td-actions">EDITAR/ELIMINAR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
+                            <?php
+    
+    
+                      $tabla = "computador";
+                      $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
+                      while ($fila = mysqli_fetch_array($result)) {
+                          if ($fila != NULL) {
+    
+                            $datos=$fila[0]."||".
+                                $fila[1]."||".
+                                                 $fila[2]."||".
+                                                 $fila[3]."||".
+                                 $fila[4]."||".
+                                 $fila[5]."||".
+                                 $fila[6]."||".
+                                 $fila[7]."||".
+                                 $fila[8]."||".
+                                 $fila[9]."||".
+                                 $fila[10]."||".
+                                 $fila[11]."||".
+                                 $fila[12]."||".
+                                 $fila[13]."||".
+                                 $fila[14]."||".
+                                 $fila[15]."||".
+                                 $fila[16]."||".
+                                 $fila[17];
+                                                  
+    
+                              echo "
+                                <tr>
+                                  <td>$fila[1] </td>
+                                  <td> $fila[2] </td>
+                                   <td>$fila[3]</td>
+                                   <td>$fila[4]</td>
+                                   <td>$fila[5]</td>
+                                   <td>$fila[6]</td>
+                                   <td>$fila[7]</td>
+                                   <td>$fila[8]</td>
+                                   <td>$fila[9]</td>
+                                   <td>$fila[10]</td>
+                                   <td>$fila[11]</td>
+                                   <td>$fila[12]</td>
+                                   <td>$fila[13]</td>
+                                   <td>$fila[14]</td>
+                                   <td>$fila[15]</td>
+                                   <td>$fila[16]</td>
+                                   <td>$fila[17]</td>
+                                   
+                                  <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
+                                </tr>";
+    
+    
+                              }
+                            }
+                             ?>
+                        </tbody>
+                    </table>
+                </div>
 
-                          }
-                        }
-                         ?>
-                    </tbody>
-                </table>
+                <h6 class="bigstats"></h6>
+                <!-- /widget-content -->
             </div>
-            <h6 class="bigstats"></h6>
-            <!-- /widget-content -->
         </div>
+
+
+
     </div>
+
+
+
 
     <!-- </div> -->
     <!-- /FIN TABLA -->
@@ -347,7 +387,7 @@
                     <input type="checkbox" name="tiene[1]" value="si"> Mouse <br>
                     <input type="checkbox" name="tiene[2]" value="si"> Lectora CD/DVD
 
-                </p> --> 
+                </p> -->
 
                 <!-- Comentado hasta nuevo aviso! -->
 
@@ -384,33 +424,34 @@
         </div>
 
     </div>
-   
+
 
     </form>
     </div>
     <!-- FIN MODAL EDITAR -->
 
-     <!-- INICIO MODAL ELIMINAR -->
-<div id="modalEliminar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Desactivar computador</h3>
-  </div>
-  <div class="modal-body">
+    <!-- INICIO MODAL ELIMINAR -->
+    <div id="modalEliminar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Desactivar computador</h3>
+        </div>
+        <div class="modal-body">
 
-      <form action="control_computador.php" method="post" >
+            <form action="control_computador.php" method="post">
 
-                                  <input id="idEliminar" name="idEliminar" type="hidden">
-                                  <h3>Seguro desea desactivar el computador</h3>
+                <input id="idEliminar" name="idEliminar" type="hidden">
+                <h3>Seguro desea desactivar el computador</h3>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+            <button type="submit" name="eliminar" id="eliminar" class="btn btn-primary">Desactivar</button>
+        </div>
+
+        </form>
     </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    <button type="submit" name="eliminar" id="eliminar"class="btn btn-primary">Desactivar</button>
-  </div>
-
-  </form>
-</div>
-<!-- Fin modal -->
+    <!-- Fin modal -->
 
 
 
@@ -431,31 +472,29 @@
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
     <script type="text/javascript">
+    function agregarForm(datos) {
+        d = datos.split("||");
 
-    function agregarForm(datos){
-      d=datos.split("||");
+        $("#codigoE").val(d[0]);
+        $("#idEliminar").val(d[0]);
+        $("#so_pc").val(d[2]);
+        $("#mobo_pc").val(d[3]);
+        $("#sala").val(d[1]);
+        $("#procesador").val(d[6]);
+        $("#cantidad_ram").val(d[4]);
+        $("#velocidad_ram").val(d[5]);
+        $("#tipo_graficos").val(d[7]);
+        $("#capacidad_disco").val(d[8]);
+        $("#panel_frontal").val(d[11]);
+        $("#ventiladores").val(d[13]);
+        $("#ultima_termica").val(d[14]);
+        $("#ultimo_man").val(d[15]);
+        $("#salidas_video").val(d[16]);
 
-       $("#codigoE").val(d[0]);
-       $("#idEliminar").val(d[0]);
-       $("#so_pc").val(d[2]);
-       $("#mobo_pc").val(d[3]);
-       $("#sala").val(d[1]);
-       $("#procesador").val(d[6]);
-       $("#cantidad_ram").val(d[4]);
-       $("#velocidad_ram").val(d[5]);
-       $("#tipo_graficos").val(d[7]);
-       $("#capacidad_disco").val(d[8]);
-       $("#panel_frontal").val(d[11]);
-       $("#ventiladores").val(d[13]);
-       $("#ultima_termica").val(d[14]);
-       $("#ultimo_man").val(d[15]);
-       $("#salidas_video").val(d[16]);
-      
-      // $("#apellidoE").val(d[2]);
-      // $("#emailE").val(d[4]);
+        // $("#apellidoE").val(d[2]);
+        // $("#emailE").val(d[4]);
     }
-
-  </script>
+    </script>
 
 </body>
 

@@ -51,6 +51,8 @@
                 <!-- /span6 -->
                 <div class="span4">
 
+                
+
 
                     <?php
                         //se comenta esto
