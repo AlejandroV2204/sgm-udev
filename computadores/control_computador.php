@@ -71,7 +71,7 @@ if(isset($_POST['guardarComputador']))
 
     }
 
-    else
+    else if(isset($_POST['eliminar']))
     {
 
         $campo = array("estado_pc");

@@ -136,6 +136,55 @@
         </div>
     </div>
 
+
+    <div class="cards">
+    <article class="card">
+        <header>
+            <h2>A short heading</h2>
+        </header>    
+        <img src="../img/generic-pc.jpg" alt="Hot air balloons">
+        <div class="content">
+            <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many years ago. </p>
+        </div>
+            
+    </article>
+            
+     <article class="card">
+        <header>
+            <h2>A short heading</h2>
+        </header>    
+        <img src="../img/generic-pc.jpg" alt="Hot air balloons">
+        <div class="content">
+            <p>Short content.</p>
+        </div>
+        <footer>I have a footer!</footer>
+    </article>
+            
+    <article class="card">
+        <header>
+            <h2>A longer heading in this card</h2>
+        </header>
+        <img src="../img/generic-pc.jpg" alt="Hot air balloons">
+        <div class="content">
+            <p>In a curious work, published in Paris in 1863 by Delaville Dedreux, there is a
+                suggestion for reaching the North Pole by an aerostat.</p>
+        </div>
+        <footer>I have a footer!</footer>
+    </article>
+    <article class="card">
+        <header>
+            <h2>A short heading</h2>
+        </header>
+        <img src="../img/generic-pc.jpg" alt="Hot air balloons">
+        <div class="content">
+            <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many
+                years ago. </p>
+        </div>
+
+    </article>
+</div>
+    
+
     <!-- </div> -->
     <!-- /FIN TABLA -->
 
@@ -384,10 +433,7 @@
         </div>
 
     </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-        <button type="submit" name="modificarComputador" id="modificarTrabajador" class="btn btn-primary">Modificar</button>
-    </div>
+   
 
     </form>
     </div>
