@@ -1,12 +1,10 @@
 <?php 
+    include_once('../conexion.php');
+    include_once('../util/utilModelo.php');
+    include_once('../util/util.php');
 
-      include_once('../conexion.php');
-      include_once('../util/utilModelo.php');
-      include_once('../util/util.php');
-
-      $util = new util();  
-      $utilidad = new utilModelo();
-
+    $util = new util();  
+    $utilidad = new utilModelo();
 ?>
 
 <!DOCTYPE html>
@@ -24,10 +22,6 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/pages/dashboard.css" rel="stylesheet">
     <link href="../css/pages/plans.css" rel="stylesheet">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -36,11 +30,11 @@
 
     <!-- ================================================================================================================================== -->
 
-    <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register">Agregar computador</a><br><br>
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Computadores</h3>
+            <h3>Computadores</h3>
+            <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i class="bi bi-plus"></i>    Nuevo registro</a><br><br>
             </div>
 
             <div class="containero">
@@ -170,10 +164,6 @@
 
     </div>
 
-
-
-
-    <!-- </div> -->
     <!-- /FIN TABLA -->
 
     <!-- =================================================================================================================== -->
