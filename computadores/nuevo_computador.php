@@ -393,6 +393,28 @@
     </div>
     <!-- FIN MODAL EDITAR -->
 
+     <!-- INICIO MODAL ELIMINAR -->
+<div id="modalEliminar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Desactivar computador</h3>
+  </div>
+  <div class="modal-body">
+
+      <form action="control_computador.php" method="post" >
+
+                                  <input id="idEliminar" name="idEliminar" type="hidden">
+                                  <h3>Seguro desea desactivar el computador</h3>
+    </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    <button type="submit" name="eliminar" id="eliminar"class="btn btn-primary">Desactivar</button>
+  </div>
+
+  </form>
+</div>
+<!-- Fin modal -->
+
 
 
 

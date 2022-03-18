@@ -47,7 +47,7 @@ if(isset($_POST['guardarComputador']))
         $nombreDeTabla = "computador";
         $utilModelo2->insertar($nombreDeTabla,$campos, $valores);
         echo "si funciono";
-        $_SESSION['mensajeOk']="Accion realizada";header('Location: ../admin/adminVista.php');
+        $_SESSION['mensajeOk']="Accion realizada";header('Location: nuevo_computador.php');
 
     }
 
@@ -65,12 +65,25 @@ if(isset($_POST['guardarComputador']))
 
         $utilModelo2->modificar($nombreDeTabla,$campos,$valores,'id_pc', $idcomputador);
         echo "si funciono";
-        $_SESSION['mensajeOk']="Accion realizada";header('Location: ../admin/adminVista.php');
+        $_SESSION['mensajeOk']="Accion realizada";header('Location: nuevo_computador.php');
 
 
 
     }
 
+    else
+    {
 
+        $campo = array("estado_pc");
+        $idi=$_POST['idEliminar'];
+
+        $utilModelo -> modificar('computador',$campo,'0','id_pc', $id);
+        $_SESSION['mensajeOk']="Accion realizada";
+        header('Location: nuevo_computador.php');
+
+
+    }
+
+    exit();
 
 ?>
