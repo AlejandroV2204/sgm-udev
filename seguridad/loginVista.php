@@ -74,7 +74,7 @@
                                 <?php
                                     if (isset($_SESSION['mensajeOk'])) {
                                         ?>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="text-center">
@@ -85,7 +85,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <?php
                                         unset($_SESSION['mensajeOk']);
                                     }

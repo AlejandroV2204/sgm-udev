@@ -1,17 +1,18 @@
 <?php
-include "../util/utilOsdo.php";
+include "../util/util.php";
 include_once "../util/utilModelo.php";
-$util = new utilOsdo();
+$util = new util();
+$utilModelo = new utilModelo();
 
 $util -> validarRuta(0);
-$codigo = $_GET['7c6o5d4i3g2o1'];
+$id = $_GET[0];
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>NOMBRE S.A.</title>
+  <title>Tecc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -28,9 +29,7 @@ $codigo = $_GET['7c6o5d4i3g2o1'];
   <![endif]-->
 </head>
 <body>
-  <?php
-  include "../componentes/menuPrincipalAdmin.php";
-  ?>
+
   <div class="main">
     <div class="main-inner">
       <div class="container">
@@ -42,9 +41,8 @@ $codigo = $_GET['7c6o5d4i3g2o1'];
           <div class="span12">
             <?php 
 
-             $utilModelo = new utilModelo();
                   $tabla = "usuario";
-                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"codigo='$codigo'");
+                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"id_usuario='$id'");
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
@@ -142,7 +140,7 @@ $codigo = $_GET['7c6o5d4i3g2o1'];
                   <?php
                   $utilModelo = new utilModelo();
                   $tabla = "usuario";
-                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"codigoReferido='$codigo'");
+                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"codigoReferido='$id'");
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 

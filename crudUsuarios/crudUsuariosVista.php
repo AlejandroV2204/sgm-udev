@@ -84,11 +84,17 @@ $util -> validarRuta(0);
                               $tipoUser = "";
                               $estado = "";
 
+                              // Nombre o maquillaje de tipo usuario
+
                              if($fila[5] == 0){
 
                               $tipoUser = "Administrador";
 
                    }else if($fila[5] == 1){
+
+                    $tipoUser = "Tecnico";
+
+                   }else if($fila[5] == 2){
 
                     $tipoUser = "Monitor";
 
@@ -97,6 +103,8 @@ $util -> validarRuta(0);
                     $tipoUser = "Estudiante";
 
                    }
+
+                      //  Nombre o decoracion de activo y inactivo
 
                    if($fila[6] == 1){
 
@@ -167,6 +175,16 @@ $util -> validarRuta(0);
                                 <div class="form-group  ">
                                     <input   type="email" name="email" id="email" onkeyup="validarCorreo('#username');" tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="tipo" class="form-label"></label>
+                                    <select class="form-select" name = "tipo_user" id="tipo" required>
+                                    <option selected disabled value="">Tipo Usuario</option>
+                                    <option>Estudiante</option>
+                                    <option>Monitor</option>
+                                    <option>Tecnico</option>
+                                    <option>Administrador</option>
+                                  </select>
                                 </div>
                                 <div class="form-group" id="pass">
                                     <input   type="password" name="password" onkeyup="validarPassword();" id="password"

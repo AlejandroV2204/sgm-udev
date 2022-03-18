@@ -38,7 +38,7 @@
         
 
                             <?php
-                                $util->validarElemento(0, '<li><a href="../controlSolicitudes/controlSolicitudesVista.php"><i class="icon-bell"></i> Solicitudes</a></li>');
+                                $util->validarElemento(0, '<li><a href="../admin/adminVista.php"><i class="icon-bell"></i> Control Admin</a></li>');
                             ?>
 
                             <?php

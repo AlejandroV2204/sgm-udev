@@ -51,6 +51,33 @@
             }
         }
 
+        // Convertir de una cadena de caracteres a un entero el tipo usuario
+        function converUser($tipo){
+
+            $retornoTipo;
+
+             if($tipo == "Administrador"){
+  
+                $retornoTipo = 0;
+
+             }else if($tipo == "Tecnico"){
+
+                $retornoTipo = 1;
+
+             }else if($tipo == "Monitor"){
+
+                $retornoTipo = 2;
+
+             }else{
+
+                $retornoTipo = 3;
+
+             }
+
+            return $retornoTipo;
+
+        }
+
         // function validarUsuarioActivo($codigoUsuario)
         // {
         //     $utilModelo = new utilModelo();
@@ -142,24 +169,6 @@
 //            die();
             return array($meta, $rango);
 
-        }
-
-        function validarRangoUsuarioPago($cantidadReferidos)
-        {
-//            echo "cantidad referidos: ".$cantidadReferidos;
-            $utilModelo = new utilModelo();
-            $tabla = "rangoUsuario";
-            $meta = 0;
-            $result = $utilModelo->mostrarTodosRegistros($tabla);
-            while ($fila = mysqli_fetch_array($result)) {
-                if ($fila != NULL) {
-                    if ($cantidadReferidos >= $fila['vp']) {
-//                        echo "ingreso";
-                        $meta = $fila['vp'];
-                    }
-                }
-            }
-            return $meta;
         }
 
         //Devuelve fecha actual
