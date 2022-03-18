@@ -23,7 +23,7 @@
 
            // echo $consulta;
           //  die();
-        
+
         }
 
         function mostrarregistros($tabla, $nombreCampo, $valores){
@@ -37,15 +37,15 @@
              //die();
 
             $query = mysqli_query($link, $consulta);
-            
+
             return $query;
         }
 
-        function mostrarTodosRegistros($tabla){ 
+        function mostrarTodosRegistros($tabla){
             //funcion para mostrar todos los registros sin condiciones
             global $link;
 
-            $consulta = "SELECT * FROM $tabla";
+            $consulta = "SELECT * FROM $tabla where 1";
 
             $query = mysqli_query($link, $consulta);
 
@@ -64,8 +64,8 @@
              $consulta = "UPDATE `$tabla` SET $construccionDeValores WHERE `$campoCondicion` = '$condicion' ;";
              $query = mysqli_query($link, $consulta);
 
-             //echo $consulta; 
-                 //die();
+            //  echo $consulta;
+            //      die();
            return $query;
 
         }
