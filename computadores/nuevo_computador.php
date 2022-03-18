@@ -38,7 +38,7 @@
 
     <!-- <div class="span12"> -->
 
-    <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register">Nuevo computador</a><br><br>
+    <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register">Agregar computador</a><br><br>
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
