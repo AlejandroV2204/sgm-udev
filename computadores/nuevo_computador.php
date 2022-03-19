@@ -28,13 +28,14 @@
 
     <?php include "../componentes/menuPrincipalAdmin.php"; ?>
 
-    <!-- ================================================================================================================================== -->
+    <!-- ============= INICIO -TABLA ======================================================================================================== -->
 
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
-            <h3>Computadores</h3>
-            <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i class="bi bi-plus"></i>    Nuevo registro</a><br><br>
+                <h3>Computadores</h3>
+                <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
+                        class="bi bi-plus"></i> Nuevo registro</a><br><br>
             </div>
 
             <div class="containero">
@@ -46,6 +47,7 @@
                     $tabla = "computador";
                     $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
                     while ($fila = mysqli_fetch_row($result)) {
+
                     
                         $random = $imagenes[rand(0, 2)];
 
@@ -57,8 +59,7 @@
                             <li>Procesador: $fila[6]</li>
                             <li>RAM: $fila[4]</li>
                             <li>Disco duro: $fila[8]</li>
-                            <li>Sistema Operativo: $fila[2]</li>
-                            <a href=\"#\">Editar</a>";
+                            <li>Sistema Operativo: $fila[2]</li>";
 
 
                         echo "</div>";
@@ -177,13 +178,18 @@
         </div>
         <div class="modal-body">
 
-            <form class="span8" action="control_computador.php" method="post">
+            <form class="span5" action="control_computador.php" method="post">
 
-                <!-- <label for="serial" class="form-label">Identificador del PC</label>
-                <input type="text" class="form-control" name="id_pc"> -->
+                <label for="serial" class="form-label">Identificador del PC</label>
+                <input type="text" class="form-control" name="id_pc">
 
-                <label for="sistemaoperativo" class="form-label">Sistema operativo</label>
-                <input type="text" class="form-control" name="so_pc" placeholder="ej: windows 8.1">
+                <p>
+                    Sistema operativo: <br>
+                    <input type="radio" name="so_pc" value="WINDOWS 8.1"> Windows 8.1<br>
+                    <input type="radio" name="so_pc" value="WINDOWS 10"> Windows 10<br>
+                    <input type="radio" name="so_pc" value="LINUX"> Linux
+
+                </p>
 
                 <label for="placa base" class="form-label">Motherboard</label>
                 <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k">
@@ -194,8 +200,6 @@
                     <?php
 
                             $tabla = "sala";
-                            $campo = array("nombre_sala");
-                            $valor = "s1";
 
                             $sql = $utilidad->mostrarTodosRegistros($tabla);
 
@@ -230,28 +234,25 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" value="Integrados"> Integrados <br>
-                    <input type="radio" name="tipo_graficos" value="Dedicados"> Dedicados
+                    <input type="radio" name="tipo_graficos" value="INTEGRADOS"> Integrados <br>
+                    <input type="radio" name="tipo_graficos" value="DEDICADOS"> Dedicados
 
                 </p>
 
                 <label for="capacidad disco" class="form-label">Capacidad disco</label>
                 <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB">
 
-                <!-- <label for="mouse" class="form-label">Mouse</label>
-                    <input type="text" class="form-control" name="mouse" placeholder="">
-
-                    <label for="teclado" class="form-label">Teclado</label>
-                    <input type="text" class="form-control" name="teclado" placeholder="">
-
-                    <label for="lectora dvd" class="form-label">Lectora CD/DVD</label>
-                    <input type="text" class="form-control" name="lectora_dvd" placeholder=""> -->
-
                 <p>
                     El computador tiene: <br>
-                    <input type="checkbox" name="tiene[0]" value="si"> Teclado <br>
-                    <input type="checkbox" name="tiene[1]" value="si"> Mouse <br>
-                    <input type="checkbox" name="tiene[2]" value="si"> Lectora CD/DVD
+                    <small>Teclado:</small> <br>
+                    <input type="radio" name="teclado" value="SI"> SI <br>
+                    <input type="radio" name="teclado" value="NO"> NO <br>
+                    <small>Mouse:</small> <br>
+                    <input type="radio" name="mouse" value="SI"> SI <br>
+                    <input type="radio" name="mouse" value="NO"> NO <br>
+                    <small>Lectora DVD:</small> <br>
+                    <input type="radio" name="lectora_dvd" value="SI"> SI <br>
+                    <input type="radio" name="lectora_dvd" value="NO"> NO <br>
 
                 </p>
 
@@ -263,8 +264,8 @@
 
                 </p>
 
-                <label for="ventiladores" class="form-label">Ventiladores</label>
-                <input type="text" class="form-control" name="ventiladores" placeholder="">
+                <label for="ventiladores" class="form-label">No. Ventiladores</label>
+                <input type="number" class="form-control" name="ventiladores" placeholder="">
 
 
                 <label for="pasta termica" class="form-label">Ultima pasta termica</label>
@@ -275,8 +276,13 @@
                 <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01"
                     max="2025-12-31">
 
-                <label for="validationCustom16" class="form-label">Salidas de video</label>
-                <input type="text" class="form-control" name="salidas_video" placeholder="">
+                <p>
+                    Salidas de video: <br>
+                    <input type="radio" name="salidas_video" value="HDMI"> HDMI<br>
+                    <input type="radio" name="salidas_video" value="VGA - DVI"> VGA O DVI<br>
+                    <input type="radio" name="salidas_video" value="AMBAS"> AMBAS
+
+                </p>
 
         </div>
         <div class="modal-footer">
@@ -306,8 +312,17 @@
                     <input id="codigoE" name="id_pc" type="hidden">
                 </div>
 
-                <label for="sistemaoperativo" class="form-label">Sistema operativo</label>
-                <input type="text" class="form-control" name="so_pc" placeholder="ej: windows 8.1">
+
+                <label for="serial" class="form-label">Identificador del PC</label>
+                <input type="text" class="form-control" name="id_pc">
+
+                <p>
+                    Sistema operativo: <br>
+                    <input type="radio" name="so_pc" value="WINDOWS 8.1"> Windows 8.1<br>
+                    <input type="radio" name="so_pc" value="WINDOWS 10"> Windows 10<br>
+                    <input type="radio" name="so_pc" value="LINUX"> Linux
+
+                </p>
 
                 <label for="placa base" class="form-label">Motherboard</label>
                 <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k">
@@ -318,6 +333,7 @@
                     <?php
 
                             $tabla = "sala";
+
                             $sql = $utilidad->mostrarTodosRegistros($tabla);
 
                             while($row = $sql->fetch_assoc()){
@@ -351,32 +367,27 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" value="Integrados"> Integrados <br>
-                    <input type="radio" name="tipo_graficos" value="Dedicados"> Dedicados
+                    <input type="radio" name="tipo_graficos" value="INTEGRADOS"> Integrados <br>
+                    <input type="radio" name="tipo_graficos" value="DEDICADOS"> Dedicados
 
                 </p>
 
                 <label for="capacidad disco" class="form-label">Capacidad disco</label>
                 <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB">
 
-                <!-- <label for="mouse" class="form-label">Mouse</label>
-                    <input type="text" class="form-control" name="mouse" placeholder="">
-
-                    <label for="teclado" class="form-label">Teclado</label>
-                    <input type="text" class="form-control" name="teclado" placeholder="">
-
-                    <label for="lectora dvd" class="form-label">Lectora CD/DVD</label>
-                    <input type="text" class="form-control" name="lectora_dvd" placeholder=""> -->
-
-                <!-- <p>
+                <p>
                     El computador tiene: <br>
-                    <input type="checkbox" name="tiene[0]" value="si"> Teclado <br>
-                    <input type="checkbox" name="tiene[1]" value="si"> Mouse <br>
-                    <input type="checkbox" name="tiene[2]" value="si"> Lectora CD/DVD
+                    <small>Teclado:</small> <br>
+                    <input type="radio" name="teclado" value="SI"> SI <br>
+                    <input type="radio" name="teclado" value="NO"> NO <br>
+                    <small>Mouse:</small> <br>
+                    <input type="radio" name="mouse" value="SI"> SI <br>
+                    <input type="radio" name="mouse" value="NO"> NO <br>
+                    <small>Lectora DVD:</small> <br>
+                    <input type="radio" name="lectora_dvd" value="SI"> SI <br>
+                    <input type="radio" name="lectora_dvd" value="NO"> NO <br>
 
-                </p> -->
-
-                <!-- Comentado hasta nuevo aviso! -->
+                </p>
 
                 <p>
                     Estado del panel frontal: <br>
@@ -386,8 +397,8 @@
 
                 </p>
 
-                <label for="ventiladores" class="form-label">Ventiladores</label>
-                <input type="text" class="form-control" name="ventiladores" placeholder="">
+                <label for="ventiladores" class="form-label">No. Ventiladores</label>
+                <input type="number" class="form-control" name="ventiladores" placeholder="">
 
 
                 <label for="pasta termica" class="form-label">Ultima pasta termica</label>
@@ -398,8 +409,13 @@
                 <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01"
                     max="2025-12-31">
 
-                <label for="validationCustom16" class="form-label">Salidas de video</label>
-                <input type="text" class="form-control" name="salidas_video" placeholder="">
+                <p>
+                    Salidas de video: <br>
+                    <input type="radio" name="salidas_video" value="HDMI"> HDMI<br>
+                    <input type="radio" name="salidas_video" value="VGA - DVI"> VGA O DVI<br>
+                    <input type="radio" name="salidas_video" value="AMBAS"> AMBAS
+
+                </p>
 
         </div>
         <div class="modal-footer">
@@ -439,13 +455,6 @@
         </form>
     </div>
     <!-- Fin modal -->
-
-
-
-
-
-
-
 
     <?php include "../componentes/pie.php"; ?>
 
