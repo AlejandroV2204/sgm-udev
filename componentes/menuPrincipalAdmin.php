@@ -34,14 +34,18 @@
 
                               <!-- Validar opciones para mi admin -->
                             <?php
-                                $util->validarElemento(0, '<li><a href="../admin/verReferidosVista.php"><i class="icon-bell"></i>Control Tecnico</a></li>');
+                                $util->validarElemento(0, '<li><a href="../admin/verControlVista.php"><i class="icon-bell"></i>Control Tecnico</a></li>');
                                 $util->validarElemento(0, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
                             ?>
 
                                    <!-- Validar opciones para mi tecno -->
                             <?php
                                 $util->validarElemento(1, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
+                                $util->validarElemento(2, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
+                                $util->validarElemento(3, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
                             ?>
+
+                            
 
                             <li><a href="../seguridad/cerrarSesion.php"><i class="icon-signout"></i>Cerrar sesion</a>
                             </li>

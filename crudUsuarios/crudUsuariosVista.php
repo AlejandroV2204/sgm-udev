@@ -173,7 +173,7 @@ $util -> validarRuta(0);
                                            placeholder="Apellidos" value="" required>
                                 </div>
                                 <div class="form-group  ">
-                                    <input   type="email" name="email" id="email" onkeyup="validarCorreo('#username');" tabindex="1" class=" form-control span4"
+                                    <input   type="email" name="email" id="email" onkeyup="validarCorreo('#email' );" tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
                                 </div>
                                 <div class="col-md-4">
@@ -305,9 +305,6 @@ $util -> validarRuta(0);
 
         if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) {
             if (password === rPassword) {
-
-
-
                 document.getElementById("errorPass").className = "hidden";
                 document.getElementById("pass").className = "form-group";
                 document.getElementById("pass1").className = "form-group";

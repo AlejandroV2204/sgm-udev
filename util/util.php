@@ -1,7 +1,4 @@
 <?php
-    /**
-     * heruko: 420114024b50d*
-     */
     include '../conexion.php';
     include_once "utilModelo.php";
         @session_start();
@@ -22,11 +19,11 @@
                             exit();
                             break;
                         case 1://usuario venderor
-                            header('Location: ../vendedor/vendedorVista.php');
+                            header('Location: ../admin/adminVista.php');
                             exit();
                             break;
                         case 2://usuario stadart
-                            header('Location: ../usuario/usuarioStandartVista.php');
+                            header('Location: ../admin/adminVista.php');
                             exit();
                             break;
 
