@@ -77,20 +77,21 @@
                                 <!-- <th> ID </th> -->
                                 <th> Sala</th>
                                 <th> S.O </th>
+                                <!-- <th> Motherboard </th> -->
                                 <th> Motherboard </th>
-                                <th> RAM </th>
+                                <!-- <th> Velocidad RAM </th> -->
                                 <th> Velocidad RAM </th>
+                                <!-- <th> Graficos </th> -->
                                 <th> Procesador </th>
-                                <th> Graficos </th>
                                 <th> Capacidad Disco </th>
-                                <th> Mouse </th>
-                                <th> Teclado </th>
-                                <th> Panel frontal </th>
-                                <th> Lectora DVD </th>
-                                <th> Ventiladores </th>
+                                <!-- <th> Mouse </th> -->
+                                <!-- <th> Teclado </th> -->
+                                <!-- <th> Panel frontal </th> -->
+                                <!-- <th> Lectora DVD </th> -->
+                                <!-- <th> Ventiladores </th> -->
                                 <th> Ultima termica </th>
                                 <th> Ultimo mantenimiento </th>
-                                <th> Salidas video </th>
+                                <!-- <th> Salidas video </th> -->
                                 <th> Estado </th>
                                 <th class="td-actions">EDITAR/ELIMINAR</th>
                             </tr>
@@ -105,49 +106,33 @@
                       while ($fila = mysqli_fetch_array($result)) {
                           if ($fila != NULL) {
     
-                            $datos=$fila[0]."||".
-                                $fila[1]."||".
-                                                 $fila[2]."||".
-                                                 $fila[3]."||".
-                                 $fila[4]."||".
-                                 $fila[5]."||".
-                                 $fila[6]."||".
-                                 $fila[7]."||".
-                                 $fila[8]."||".
-                                 $fila[9]."||".
-                                 $fila[10]."||".
-                                 $fila[11]."||".
-                                 $fila[12]."||".
-                                 $fila[13]."||".
-                                 $fila[14]."||".
-                                 $fila[15]."||".
-                                 $fila[16]."||".
-                                 $fila[17];
-                                                  
-    
-                              echo "
-                                <tr>
-                                  <td>$fila[1] </td>
-                                  <td> $fila[2] </td>
-                                   <td>$fila[3]</td>
-                                   <td>$fila[4]</td>
-                                   <td>$fila[5]</td>
-                                   <td>$fila[6]</td>
-                                   <td>$fila[7]</td>
-                                   <td>$fila[8]</td>
-                                   <td>$fila[9]</td>
-                                   <td>$fila[10]</td>
-                                   <td>$fila[11]</td>
-                                   <td>$fila[12]</td>
-                                   <td>$fila[13]</td>
-                                   <td>$fila[14]</td>
-                                   <td>$fila[15]</td>
-                                   <td>$fila[16]</td>
-                                   <td>$fila[17]</td>
+                            $datos=$fila[0]."||".$fila[1]."||".$fila[2]."||".$fila[3]."||".$fila[4]."||".$fila[5]."||".$fila[6]."||".$fila[7]."||".$fila[8]."||".$fila[9]."||".$fila[10]."||".$fila[11]."||".$fila[12]."||".$fila[13]."||".$fila[14]."||".$fila[15]."||".$fila[16]."||".$fila[17];
                                    
-                                  <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                                </tr>";
-    
+                            $estado = "";
+
+                            if($fila[17] == 0){
+
+                                $estado = "Inactivo";
+
+                            } else if($fila[17] == 1){
+
+                                $estado = "Activo";
+                            }
+
+                                echo "
+                                  <tr>
+                                    <td>$fila[1] </td>
+                                    <td> $fila[2] </td>
+                                     <td>$fila[3]</td>
+                                     <td>$fila[4]</td>
+                                     <td>$fila[6]</td>
+                                     <td>$fila[8]</td>
+                                     <td>$fila[14]</td>
+                                     <td>$fila[15]</td>
+                                     <td>$estado</td>
+                                     
+                                    <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
+                                  </tr>";
     
                               }
                             }
