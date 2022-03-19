@@ -2,7 +2,7 @@
 
 include "../util/util.php";
 include_once "../util/utilModelo.php";
-$utilModelo2 = new utilModelo();
+$utilModelo = new utilModelo();
 $util = new util();
 
 //Variables que se crean de los campos en el formulario (la vista)
@@ -41,7 +41,7 @@ if(isset($_POST['guardarComputador']))
 
         //la funcion insertar recibe el nombre de la tabla y los dos arrays de campos y valores
         $nombreDeTabla = "computador";
-        $utilModelo2->insertar($nombreDeTabla,$campos, $valores);
+        $utilModelo->insertar($nombreDeTabla,$campos, $valores);
         echo "si funciono";
         $_SESSION['mensajeOk']="Accion realizada";header('Location: nuevo_computador.php');
 
@@ -55,7 +55,7 @@ if(isset($_POST['guardarComputador']))
 
         $nombreDeTabla = "computador";
 
-        $utilModelo2->modificar($nombreDeTabla,$campos,$valores,'id_pc', $idcomputador);
+        $utilModelo->modificar($nombreDeTabla,$campos,$valores,'id_pc', $idcomputador);
         echo "si funciono";
         $_SESSION['mensajeOk']="Accion realizada";header('Location: nuevo_computador.php');
 
@@ -63,13 +63,14 @@ if(isset($_POST['guardarComputador']))
 
     }
 
-    else if(isset($_POST['eliminar']))
+    else if(isset($_POST['idEliminar']))
     {
 
         $campo = array("estado_pc");
+
         $idi=$_POST['idEliminar'];
 
-        $utilModelo -> modificar('computador',$campo,'0','id_pc', $idcomputador);
+        $utilModelo -> modificar('computador',$campo,'0','id_pc', $idi);
         $_SESSION['mensajeOk']="Accion realizada";
         header('Location: nuevo_computador.php');
 
