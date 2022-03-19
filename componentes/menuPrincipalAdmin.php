@@ -76,8 +76,19 @@
 
                      <!-- Valido las cosas que va a utilizar mi tecnico -->
                 <?php
+                                $util->validarElemento(1, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-book"></i><span></span>Usuarios</a></li> ');
                                 $util->validarElemento(1, '<li><a href="../reparaciones/reparacionesVista.php"><i class="icon-book"></i><span></span>Reparaciones</a></li>');
                                 $util->validarElemento(1, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-book"></i><span></span>Reportes</a></li>');
+                ?>
+
+                <?php       
+                                $util->validarElemento(2, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-book"></i><span></span>Usuarios</a></li> ');
+                                $util->validarElemento(2, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-book"></i><span></span>Reportes</a></li>');
+                ?>
+
+                <?php
+                                $util->validarElemento(3, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-book"></i><span></span>Usuarios</a></li> ');
+                                $util->validarElemento(3, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-book"></i><span></span>Reportes</a></li>');
                 ?>
 
 
