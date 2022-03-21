@@ -157,7 +157,7 @@ $util -> validarRuta(0);
     <!-- inicio modal guardar -->
   <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
       <h3 id="myModalLabel">Crear Usuario</h3>
     </div>
     <div class="modal-body">
@@ -263,12 +263,13 @@ $util -> validarRuta(0);
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Eliminar Registro</h3>
   </div>
+  
   <div class="modal-body">
 
       <form action="crudUsuariosControlador.php" method="post" >
 
                                   <input id="idEliminar" name="idEliminar" type="hidden">
-                                  <h3>Seguro desea desactivar el trabajador</h3>
+                                  <h3>Seguro desea desactivar el usuario</h3>
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
@@ -303,14 +304,18 @@ $util -> validarRuta(0);
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
 
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) {
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.length() > 6) ) {
             if (password === rPassword) {
                 document.getElementById("errorPass").className = "hidden";
                 document.getElementById("pass").className = "form-group";
                 document.getElementById("pass1").className = "form-group";
+            }else if(password.length() <= 6)){
+            
+                document.getElementById("ErrorPass").className = "from-group";
+
             }else {
                 document.getElementById("pass").className += " has-error";
-                document.getElementById("pass1").className += " has-error";
+                document .getElementById("pass1").className += " has-error";
                 document.getElementById("errorPass").className = "form-group";
 
             }

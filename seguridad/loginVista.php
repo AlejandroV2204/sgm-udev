@@ -65,12 +65,13 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="text-center">
-                                                <a href="../restaurarPassword/restaurarPasswordVista.php" tabindex="5"
+                                                <a href=" ../olvidastePassword/cambioPass.php" tabindex="5"
                                                    class="forgot-password">¿Has olvidado tu contraseña?</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <?php
                                     if (isset($_SESSION['mensajeOk'])) {
                                         ?>
@@ -101,7 +102,7 @@
                              <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
                                   role="form" style="display: none;">
                                
-                               <!-- <div class="form-group">
+                                <!-- <div class="form-group">
                                     <input type="text" name="nombre" id="nombre" tabindex="1" class="form-control"
                                            placeholder="Nombre" value="" required>
                                 </div>
@@ -141,9 +142,9 @@
                                                    class="form-control btn btn-register" value="Crear cuenta">
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
 
-                            </form> 
+                            </form>  -->
 
                             <!-- ************REGISTRAR******* FIN ***** -->
                         </div>

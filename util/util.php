@@ -41,9 +41,8 @@
             }
         }
 
-        function validarElemento($tipoUsarioPermitido, $html)
-        {
-           if ($_SESSION['usuario'][1] == $tipoUsarioPermitido) {
+        function validarElemento($tipoUsarioPermitido, $html){
+           if ($_SESSION['usuario'][1] == $tipoUsarioPermitido){
                 echo $html;
             }
         }
