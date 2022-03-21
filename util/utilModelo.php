@@ -65,7 +65,7 @@
              $query = mysqli_query($link, $consulta);
 
             //  echo $consulta;
-            //      die();
+            //      die(); 
            return $query;
 
         }
