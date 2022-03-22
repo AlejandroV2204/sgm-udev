@@ -1,17 +1,16 @@
 <?php
 include_once "utilModelo.php";
 
-//recibe el nombre de usuario para validar
+//recibe el correo de usuario para validar
 $user =$_POST["email"];
-
 $table = "usuario"
 
 
 
-      if($clave==0) {
+      // if($clave==0) {
         
-            validarCorreo($user);
-      }
+      //       validarCorreo($user);
+      // }
 
 
       //Cambio logica y nombre de la validacion del usuario para reutilizar para que me valide el correo
@@ -21,11 +20,11 @@ $table = "usuario"
               $rowcount=mysqli_num_rows($result);
                
             
-                if($rowcount!= 0) {
-            echo "<span style='font-weight:bold;color:red;'>El nombre de usuario ya existe.</span>";
+                if($rowcount != 0) {
+            echo "<span style='font-weight:bold;color:red;'>El Correo de usuario ya existe.</span>";
 
                 }else{
-                  echo( "<span style='font-weight:bold;color:green;'>Usuario Disponible.</span>");
+                  echo( "<span style='font-weight:bold;color:green;'>Correo Disponible.</span>");
 
             }
       

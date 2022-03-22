@@ -22,7 +22,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-14">
-                                <a class="active" id="login-form-link">Cambiar Contraseña</a>
+                                <a class="active" id="login-form-link">Olvidaste tu Contraseña</a>
                         </div>
                     </div>
                     <hr>

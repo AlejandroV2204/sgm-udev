@@ -4,11 +4,8 @@
     include_once "../util/utilModelo.php";
     $utilModelo = new utilModelo();
     $util = new util();
-    $util->validarRuta(0);
-    $util->validarRuta(1);
-    $util->validarRuta(2);
-    $util->validarRuta(3);
-    
+    $util->validarRuta(0, 1, 2);
+
     $nombreCampo = array("id_usuario");
     $valor = array($_SESSION['usuario'][0]);
     $tabla = "usuario";
@@ -157,9 +154,9 @@
     function validarPassword() {
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.length() > 6) {
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.lengt() > 6) {
             if (password === rPassword) {
-                //                                                    alert("son iguales");
+                //alert("son iguales");
                 document.getElementById("guardar").className = "btn btn-primary btn-lg ";
                 document.getElementById("guardar").disabled = false;
                 document.getElementById("errorPass").className = "hidden";
