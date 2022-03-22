@@ -812,7 +812,7 @@ html .fc,
 }
 
 .fc-cell-overlay {
-    background: #9cf;
+    background: rgb(126, 186, 247);
     opacity: .2;
     filter: alpha(opacity=20)
 }
@@ -1257,7 +1257,7 @@ table.fc-border-separate {
 .dropdown-menu li>a:hover,
 .dropdown-menu .active>a,
 .dropdown-menu .active>a:hover {
-    background: #00ba8b;
+    background: #6bb6fc;
 }
 
 .accordion-heading {
