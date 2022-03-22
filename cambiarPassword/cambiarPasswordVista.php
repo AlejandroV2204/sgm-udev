@@ -2,14 +2,17 @@
     @session_start();
     include "../util/util.php";
     include_once "../util/utilModelo.php";
-    $utilModelo2 = new utilModelo();
+    $utilModelo = new utilModelo();
     $util = new util();
-    $util->validarRuta(2);
-    $nombreCampo = array("codigo");
+    $util->validarRuta(0, 1, 2);
+
+    $nombreCampo = array("id_usuario");
     $valor = array($_SESSION['usuario'][0]);
     $tabla = "usuario";
-    $result1 = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
+
+        $result1 = $utilModelo->mostrarregistros($tabla, $nombreCampo, $valor);
     $passwordViejo = '';
+    
     while ($fila = mysqli_fetch_array($result1)) {
         if ($fila != NULL) {
 
@@ -62,7 +65,7 @@
                         </div>
                     </div>
                     <?php
-                    unset($_SESSION['mensajeOk']);
+                   unset($_SESSION['mensajeOk']);
                 }
 
             ?>
@@ -146,12 +149,14 @@
 
 <script src="js/base.js"></script>
 <script type="text/javascript">
+
+
     function validarPassword() {
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) {
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.lengt() > 6) {
             if (password === rPassword) {
-                //                                                    alert("son iguales");
+                //alert("son iguales");
                 document.getElementById("guardar").className = "btn btn-primary btn-lg ";
                 document.getElementById("guardar").disabled = false;
                 document.getElementById("errorPass").className = "hidden";
@@ -166,6 +171,7 @@
             }
         }
     }
+
     function validarPasswordViejo() {
         var password = document.getElementById("antigua").value;
         var passwordV = document.getElementById("passwordViejo").value;

@@ -22,7 +22,7 @@
     <div class="navbar-inner">
         <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
-                    class="brand" href="adminVista.php"><img src="../img/udev_logo.png"></a>
+                    class="brand" href="">SGM_UDEV</a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
@@ -34,14 +34,18 @@
 
                               <!-- Validar opciones para mi admin -->
                             <?php
-                                $util->validarElemento(0, '<li><a href="../admin/verReferidosVista.php"><i class="icon-bell"></i>Control Tecnico</a></li>');
+                                $util->validarElemento(0, '<li><a href="../admin/verControlVista.php"><i class="icon-bell"></i>Control Tecnico</a></li>');
                                 $util->validarElemento(0, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
                             ?>
 
                                    <!-- Validar opciones para mi tecno -->
                             <?php
                                 $util->validarElemento(1, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
+                                $util->validarElemento(2, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
+                                $util->validarElemento(3, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
                             ?>
+
+                            
 
                             <li><a href="../seguridad/cerrarSesion.php"><i class="icon-signout"></i>Cerrar sesion</a>
                             </li>
@@ -76,8 +80,19 @@
 
                      <!-- Valido las cosas que va a utilizar mi tecnico -->
                 <?php
+                                $util->validarElemento(1, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-book"></i><span></span>Usuarios</a></li> ');
                                 $util->validarElemento(1, '<li><a href="../reparaciones/reparacionesVista.php"><i class="icon-book"></i><span></span>Reparaciones</a></li>');
                                 $util->validarElemento(1, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-book"></i><span></span>Reportes</a></li>');
+                ?>
+
+                <?php       
+                                $util->validarElemento(2, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-book"></i><span></span>Usuarios</a></li> ');
+                                $util->validarElemento(2, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-book"></i><span></span>Reportes</a></li>');
+                ?>
+
+                <?php
+                                $util->validarElemento(3, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-book"></i><span></span>Usuarios</a></li> ');
+                                $util->validarElemento(3, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-book"></i><span></span>Reportes</a></li>');
                 ?>
 
 

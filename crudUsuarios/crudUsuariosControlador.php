@@ -16,7 +16,6 @@ $activo = '1';//por defecto viene en 0 que es inactivo y 1 es activo
 
 //guardar
  if(isset($_POST['guardarUsuario'])){
-
 echo "Guardar";
 
 //$campos es el nombre de los campos tal cual aparece en la base de datos
