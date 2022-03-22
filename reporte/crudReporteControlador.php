@@ -49,10 +49,10 @@ $_SESSION['mensajeOk']="Accion realizada";
 
  }else{
 
-	echo "Eliminar <br>";
+	echo "Eliminar";
 
 			$tabla = "reporte";
-			$campo = array("estado");
+			$campo = array("estado_reporte");
 			$id = $_POST['idEliminar'];
 
 		$utilModelo -> modificar($tabla,$campo,'0','id_reporte', $id) ;
