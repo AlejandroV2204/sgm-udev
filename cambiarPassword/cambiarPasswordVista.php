@@ -4,8 +4,8 @@
     include_once "../util/utilModelo.php";
     $utilModelo2 = new utilModelo();
     $util = new util();
-    $util->validarRuta(2);
-    $nombreCampo = array("codigo");
+    $util->validarRuta(0);
+    $nombreCampo = array("id_usuario");
     $valor = array($_SESSION['usuario'][0]);
     $tabla = "usuario";
     $result1 = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <?php
-                    unset($_SESSION['mensajeOk']);
+                   unset($_SESSION['mensajeOk']);
                 }
 
             ?>

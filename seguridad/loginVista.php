@@ -29,7 +29,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-14">
-                                <a href="#" class="active" id="login-form-link">Iniciar sesión</a>
+                                <a class="active" id="login-form-link">Iniciar sesión</a>
                         </div>
 
                         <!-- Boton Registro de pagina publica no usado -->
@@ -65,7 +65,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="text-center">
-                                                <a href=" ../olvidastePassword/cambioPass.php" tabindex="5"
+                                                <a href=" ../olvidastePassword/cambioPassVista.php" tabindex="5"
                                                    class="forgot-password">¿Has olvidado tu contraseña?</a>
                                             </div>
                                         </div>
