@@ -161,7 +161,7 @@
     function validarPassword() {
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) {
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.lenght() > 6) {
             if (password === rPassword) {
                 //                                                    alert("son iguales");
                 document.getElementById("guardar").className = "btn btn-success btn-lg ";
