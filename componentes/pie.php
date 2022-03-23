@@ -1,10 +1,10 @@
 <!-- main -->
-<!-- <div class="extra"> -->
+<div class="extra">
 
-<!-- <div class="extra-inner"> -->
-<!-- <div class="container"> -->
+    <div class="extra-inner">
+        <div class="container">
 
-<!-- <div class="row">
+            <div class="row">
                 <div class="span3">
                     <h4>
                         About Free Admin Template</h4>
@@ -14,10 +14,10 @@
                         <li><a href="javascript:;">Responsive HTML5 Portfolio Templates</a></li>
                         <li><a href="javascript:;">Free Resources and Scripts</a></li>
                     </ul>
-                </div> -->
+                </div>
 
 
-<!-- <div class="span3">
+                <div class="span3">
                     <h4>
                         Support</h4>
                     <ul>
@@ -28,13 +28,13 @@
                     </ul>
                 </div>
 
-            </div> -->
-<!-- /row  -->
-<!-- </div> -->
-<!-- /container  -->
-<!-- </div> -->
-<!-- /extra-inner -->
-<!-- </div> -->
+            </div>
+            <!-- /row  -->
+        </div>
+        <!-- /container  -->
+    </div>
+    <!-- /extra-inner -->
+</div>
 
 <!-- /extra -->
 <div class="footer">
