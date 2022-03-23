@@ -22,8 +22,8 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
-                class="brand" href=""><img src="../img/udev_logo2.png"></a>
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a>
+                    <a class="brand" ><img src="../img/udev_logo2.png"></a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
@@ -53,8 +53,7 @@
 
 
 
-                                <li><a href="../seguridad/cerrarSesion.php"><i class="icon-signout"></i>Cerrar
-                                        sesion</a>
+                                <li><a href="../seguridad/cerrarSesion.php"><i class="icon-signout"></i>Cerrar sesion</a>
                                 </li>
                             </ul>
                         </li>
