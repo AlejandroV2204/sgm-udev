@@ -76,11 +76,11 @@ $util -> validarRuta(0);
   			        					   $fila[2]."||".
                              $fila[3];
                              
-                   if($fila[2] == 1){
+                   if($fila[3] == 1){
 
                     $estado = "inactivo";
 
-                   }else if($fila[2] == 0){
+                   }else if($fila[3] == 0){
 
                     $estado = "Activo";
 
@@ -180,10 +180,10 @@ $util -> validarRuta(0);
                                     <input   type="text" name="nombre_sala" id="nombre_sala" tabindex="1" class=" form-control span4"
                                            placeholder="Nombre de la sala" value="" required>
                                 </div>
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                     <input   type="text" name="estado_sala" id="estado_sala" tabindex="1" class=" form-control span4"
                                            placeholder="Estado" value="" required>
-                                </div> -->
+                                </div>
 
     </div>
   <div class="modal-footer">

@@ -55,7 +55,7 @@ $_SESSION['mensajeOk']="Accion realizada";
            $campo = array("estado_sala");
            $id = $_POST['idEliminar'];
 
-       $utilModelo -> modificar($table,$campo, '0' ,'id_sala', $id) ;
+       $utilModelo -> modificar($table,$campo,'0','id_sala', $id) ;
        $_SESSION['mensajeOk']="Accion realizada";
         header('Location: crearSala.vista.php');
 
