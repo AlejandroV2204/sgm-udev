@@ -35,7 +35,7 @@
             <div class="widget-header"> <i class="icon-th-list"></i>
                 <h3>Computadores</h3>
                 <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
-                        class="bi bi-plus"></i> Nuevo registro</a><br><br>
+                        class="icon-plus"></i> Nuevo registro</a><br><br>
             </div>
 
             <div class="containero">
