@@ -10,24 +10,25 @@ $id = $_SESSION['usuario'][0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Tecc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
-  rel="stylesheet">
-  <link href="../css/font-awesome.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/pages/dashboard.css" rel="stylesheet">
-  <link href="../css/pages/plans.css" rel="stylesheet">
-  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
+    <meta charset="utf-8">
+    <title>Tecc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/pages/dashboard.css" rel="stylesheet">
+    <link href="../css/pages/plans.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
+
 <body>
 
   <div class="main">
@@ -170,54 +171,37 @@ $id = $_SESSION['usuario'][0];
               <!-- /widget-content -->
             </div>
           </div >
-
-          </div>
-          <!-- /FIN TABLA referidos -->
-
-
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
         </div>
-        <!-- /row -->
-      </div>
-      <!-- /container -->
+        <!-- /main-inner -->
     </div>
-    <!-- /main-inner -->
-  </div>
-  
 
 
 
-  <?php
+
+    <?php
   include "../componentes/pie.php";
   ?>
-  <!-- Le javascript
+    <!-- Le javascript
   ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="../js/jquery-1.7.2.min.js"></script>
-  <script src="../js/excanvas.min.js"></script>
-  <script src="../js/funciones.js"></script>
-  <script src="../js/chart.min.js" ></script>
-  <script src="../js/bootstrap.js"></script>
-  <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.7.2.min.js"></script>
+    <script src="../js/excanvas.min.js"></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/chart.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
 
-  <script type="text/javascript">
+    <script type="text/javascript">
 
 
-  
-    function agregarForm(datos){
-      d=datos.split("||");
 
-       $("#codigoE").val(d[0]);
-       $("#codigoEliminar").val(d[0]);
-       $("#nombreE").val(d[1]);
-       $("#documentoE").val(d[2]);
-       $("#edadE").val(d[3]);
-      $("#telefonoE").val(d[4]);
-       $("#direccionE").val(d[6]);
-       $("#emailE").val(d[5]);
-    }
-
-  </script>
+    </script>
 
 </body>
+
 </html>

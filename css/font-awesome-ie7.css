@@ -31,6 +31,11 @@
   padding-bottom: 3px;
   vertical-align: middle;
 }
+
+.clipo{
+
+  size: 20px;
+}
 .nav [class^="icon-"],
 .nav [class*=" icon-"] {
   vertical-align: inherit;

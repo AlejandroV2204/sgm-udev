@@ -7,7 +7,7 @@ $util = new util();
 
 //Variables que se crean de los campos en el formulario (la vista)
 
-$idcomputador = $_REQUEST['id_pc']; // Se comento porque en la tabla esta autoincrement
+$idcomputador = $_REQUEST['id_pc']; 
 $sistema_operativo = $_REQUEST['so_pc'];
 $idsala = $_REQUEST['sala'];
 $motherboard = $_REQUEST['mobo_pc'];
@@ -24,8 +24,6 @@ $pastatermica = date('Y-m-d', strtotime($_POST['ultima_termica']));
 $mouse = $_REQUEST['mouse'];
 $teclado = $_REQUEST['teclado'];
 $lectoradvd = $_REQUEST['lectora_dvd'];
-
-
 
 
 // https://stackoverflow.com/questions/12115373/detect-unchecked-checkbox-php#:~:text=If%20a%20checkbox%20is%20not,))%20will%20do%20the%20trick.&text=You%20can't%20%2D%20there's%20nothing,%2C%20an%20empty%20text%20field.)
