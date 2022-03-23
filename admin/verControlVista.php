@@ -5,7 +5,7 @@ $util = new util();
 $utilModelo = new utilModelo();
 
 $util -> validarRuta(0);
-$id = $_GET[0];
+$id = $_SESSION['usuario'][0];
 
 ?>
 <!DOCTYPE html>
@@ -52,12 +52,11 @@ $id = $_GET[0];
                              $fila[3]."||".
                              $fila[5]."||".
                              $fila[6]."||".
-                             $fila[10]."||".
-                             $fila[7];
+                             $fila[1];
 
 
-                             echo "<h1>Nombre: $fila[2]</h1><br>
-                                    <h1>Codigo: $fila[1]</h1>";
+                             echo "<h3>Nombre: $fila[1]</h3><br>
+                                    <h3>Apellido: $fila[2]</h3>";
 
              ?>
             
@@ -65,7 +64,7 @@ $id = $_GET[0];
               <div class="widget widget-nopad">
             <div class="widget widget-table action-table">
               <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>DATOS VENDEDOR</h3>
+                <h3>Datos Tecnico</h3>
               </div>
 
               <!-- /widget-header -->
@@ -73,12 +72,9 @@ $id = $_GET[0];
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>                      
-                      <th> IDENTIFICACION</th>
-                      <th> FECHA NACIMIENTO</th>
-                      <th> FECHA INGRESO</th>
+                      <th> IDENTIFICADOR</th>
+                      <th> NOMBRE</th>
                       <th> DIRECCION</th>
-                      <th> TELEFONO</th>
-                      <th> CORREO ELECTRONICO</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -89,12 +85,10 @@ $id = $_GET[0];
                           echo "
                             <tr>
                              
-                              <td> $fila[3] </td>
+                              <td> $fila[0] </td>
+                              <td> $fila[1] </td>
                               <td> $fila[4] </td>
-                              <td> $fila[5] </td>
-                              <td> $fila[6]</td>
-                               <td>$fila[7]</td>
-                               <td>$fila[10]</td>
+                  
                             </tr>";
                           }
                         }
@@ -119,7 +113,7 @@ $id = $_GET[0];
               <div class="widget widget-nopad">
             <div class="widget widget-table action-table">
               <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>REFERIDOS</h3>
+                <h3>Computadores Notificados</h3>
               </div>
 
               <!-- /widget-header -->
@@ -139,8 +133,8 @@ $id = $_GET[0];
 
                   <?php
                   $utilModelo = new utilModelo();
-                  $tabla = "usuario";
-                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"codigoReferido='$id'");
+                  $tabla = "reporte";
+                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"id_reporte='$id'");
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
