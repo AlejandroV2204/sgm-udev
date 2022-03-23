@@ -6,7 +6,10 @@ Bootstrap Admin Template by EGrappler.com
 /*------------------------------------------------------------------
 [1. Global]
 */
-
+.chart-container {
+    width: 100%;
+    height: auto;
+}
 .slider {
     position: absolute;
     top: 50%;
