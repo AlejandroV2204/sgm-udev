@@ -230,7 +230,7 @@ $util -> validarRuta(0);
                                   </div>
                                 <div class="form-group">
                                   <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
-                                           placeholder="Nombres" onkeyup= "getFrom" value="" required>
+                                           placeholder="Nombres" value="" required>
                                 </div>
                                 <div class="form-group">
                                     <input   type="text" name="apellido" id="apellidoE" tabindex="1" class=" form-control span4"
@@ -243,7 +243,7 @@ $util -> validarRuta(0);
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    <button type="submit" name="modificarUsuario" id="modificarTrabajador"class="btn btn-primary">Modificar</button>
+    <button type="submit" name="modificarUsuario" id="modificar"class="btn btn-primary">Modificar</button>
   </div>
 
   </form>
