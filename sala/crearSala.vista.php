@@ -208,7 +208,7 @@ $util -> validarRuta(0);
       <form action="crearSala.controller.php" method="post" >
 
                                   <input id="idEliminar" name="idEliminar" type="hidden">
-                                  <h3>Seguro desea desactivar el trabajador</h3>
+                                  <h3>Seguro desea desactivar la sala?</h3>
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
