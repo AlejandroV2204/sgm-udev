@@ -118,12 +118,13 @@ $util -> validarRuta(0);
 
                           echo "
                             <tr>
-                              <td>$fila[1] </td>
-                              <td> $fila[2] </td>
+                              <td>$fila[1]</td>
+                              <td> $fila[2]</td>
                                <td>$fila[4]</td>
                                <td>$tipoUser</td>
                                <td>$estado</td>
-                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
+                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');
+                              \" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
                             </tr>";
 
                               
@@ -229,7 +230,7 @@ $util -> validarRuta(0);
                                   </div>
                                 <div class="form-group">
                                   <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
-                                           placeholder="Nombres" value="" required>
+                                           placeholder="Nombres" onkeyup= "getFrom" value="" required>
                                 </div>
                                 <div class="form-group">
                                     <input   type="text" name="apellido" id="apellidoE" tabindex="1" class=" form-control span4"
@@ -239,12 +240,6 @@ $util -> validarRuta(0);
                                     <input   type="text" name="email" id="emailE" tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
                                 </div>
-                                
-                                <!-- <div class="form-group">
-                                    <input   type="email" name="tipoUser" id="tipoUserE" tabindex="1" class=" form-control span4"
-                                           placeholder="Tipo Usuario" required value="">
-                                </div> -->
-
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
@@ -309,11 +304,7 @@ $util -> validarRuta(0);
                 document.getElementById("errorPass").className = "hidden";
                 document.getElementById("pass").className = "form-group";
                 document.getElementById("pass1").className = "form-group";
-            }else if(password.length() <= 6)){
-            
-                document.getElementById("ErrorPass").className = "from-group";
-
-            }else {
+            else {
                 document.getElementById("pass").className += " has-error";
                 document .getElementById("pass1").className += " has-error";
                 document.getElementById("errorPass").className = "form-group";
@@ -330,7 +321,7 @@ $util -> validarRuta(0);
        $("#nombreE").val(d[1]);
        $("#apellidoE").val(d[2]);
        $("#emailE").val(d[4]);
-    }
+    
 
   </script>
 

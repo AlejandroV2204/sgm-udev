@@ -13,6 +13,10 @@
     //         $saldo = $fila['nombre'];
     //     }
     // }
+
+    include "../componentes/menuPrincipalAdmin.php";
+  
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +41,7 @@
     <script src="../js/chart.min.js" type="text/javascript"></script>
   </head>
 <body>
-    <?php
-    include "../componentes/menuPrincipalAdmin.php";
-    ?>
+ 
     <div class="main">
       <div class="main-inner">
         <div class="container">
@@ -102,7 +104,7 @@
                 <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js">
                 </script>
 
-                <script src="js/base.js"></script>
+                <script src="../js/base.js"></script>
 
 </body>
 
