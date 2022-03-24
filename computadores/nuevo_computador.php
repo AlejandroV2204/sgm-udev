@@ -166,21 +166,22 @@
             <form class="span5" action="control_computador.php" method="post">
 
                 <label for="serial" class="form-label">Identificador del PC</label>
-                <input type="text" class="form-control" name="id_pc">
+                <input type="text" class="form-control" name="id_pc" required>
 
                 <p>
                     Sistema operativo: <br>
-                    <input type="radio" name="so_pc" value="WINDOWS 8.1"> Windows 8.1<br>
-                    <input type="radio" name="so_pc" value="WINDOWS 10"> Windows 10<br>
-                    <input type="radio" name="so_pc" value="LINUX"> Linux
+                    <input type="radio" name="so_pc" value="WINDOWS 8.1" required> Windows 8.1<br>
+                    <input type="radio" name="so_pc" value="WINDOWS 10" required> Windows 10<br>
+                    <input type="radio" name="so_pc" value="LINUX" required> Linux
 
                 </p>
 
                 <label for="placa base" class="form-label">Motherboard</label>
-                <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k">
+                <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k" required>
 
                 <label for="lugar ubicado" class="form-label">Lugar ubicado:</label>
-                <select name="sala" class="form-select">
+                <select name="sala" class="form-select" required>
+                <option selected disabled value="">Salas</option>
 
                     <?php
 
@@ -200,16 +201,17 @@
                 </select>
 
                 <label for="procesadores" class="form-label">Procesador</label>
-                <input type="text" class="form-control" name="procesador" placeholder="ej: Intel Pentium E5300">
+                <input type="text" class="form-control" name="procesador" placeholder="ej: Intel Pentium E5300" required>
 
                 <label for="cantidad de ram" class="form-label">Cantidad RAM</label>
                 <input type="range" name="cantidad_ram" class="form-range" min="0" max="32" step="4"
-                    oninput="rangeValue.innerText = this.value+'GB'">
+                    oninput="rangeValue.innerText = this.value+'GB'" required>
                 <p id="rangeValue">4GB</p>
 
                 <label for="velocidad" class="form-label">Velocidad RAM</label>
-                <select name="velocidad_ram" class="form-select">
-                    <option selected value="1333mhz">1333Mhz</option>
+                <select name="velocidad_ram" class="form-select" required>
+                <option selected disabled value="">Escoge</option>
+                    <option value="1333mhz">1333Mhz</option>
                     <option value="1006mhz">1066Mhz</option>
                     <option value="1600mhz">1600mhz</option>
                     <option value="2133mhz">2133mhz</option>
@@ -219,53 +221,53 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" value="INTEGRADOS"> Integrados <br>
-                    <input type="radio" name="tipo_graficos" value="DEDICADOS"> Dedicados
+                    <input type="radio" name="tipo_graficos" value="INTEGRADOS" required> Integrados <br>
+                    <input type="radio" name="tipo_graficos" value="DEDICADOS" required> Dedicados
 
                 </p>
 
                 <label for="capacidad disco" class="form-label">Capacidad disco</label>
-                <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB">
+                <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB" required>
 
                 <p>
                     El computador tiene: <br>
                     <small>Teclado:</small> <br>
-                    <input type="radio" name="teclado" value="SI"> SI <br>
-                    <input type="radio" name="teclado" value="NO"> NO <br>
+                    <input type="radio" name="teclado" value="SI" required> SI <br>
+                    <input type="radio" name="teclado" value="NO" required> NO <br>
                     <small>Mouse:</small> <br>
-                    <input type="radio" name="mouse" value="SI"> SI <br>
-                    <input type="radio" name="mouse" value="NO"> NO <br>
+                    <input type="radio" name="mouse" value="SI" required> SI <br>
+                    <input type="radio" name="mouse" value="NO" required> NO <br>
                     <small>Lectora DVD:</small> <br>
-                    <input type="radio" name="lectora_dvd" value="SI"> SI <br>
-                    <input type="radio" name="lectora_dvd" value="NO"> NO <br>
+                    <input type="radio" name="lectora_dvd" value="SI" required> SI <br>
+                    <input type="radio" name="lectora_dvd" value="NO" required> NO <br>
 
                 </p>
 
                 <p>
                     Estado del panel frontal: <br>
-                    <input type="radio" name="panel_frontal" value="Funcional"> Funcional<br>
-                    <input type="radio" name="panel_frontal" value="Fallando"> con fallas<br>
-                    <input type="radio" name="panel_frontal" value="Sin funcionar"> No funciona
+                    <input type="radio" name="panel_frontal" value="Funcional" required> Funcional<br>
+                    <input type="radio" name="panel_frontal" value="Fallando" required> con fallas<br>
+                    <input type="radio" name="panel_frontal" value="Sin funcionar" required> No funciona
 
                 </p>
 
                 <label for="ventiladores" class="form-label">No. Ventiladores</label>
-                <input type="number" class="form-control" name="ventiladores" placeholder="">
+                <input type="number" class="form-control" name="ventiladores" placeholder="" required>
 
 
                 <label for="pasta termica" class="form-label">Ultima pasta termica</label>
                 <input type="date" id="start" name="ultima_termica" value="<?php echo date('Y-m-d'); ?>"
-                    min="2018-01-01" max="2025-12-31">
+                    min="2018-01-01" max="2025-12-31" required>
 
                 <label for="mantenimiento" class="form-label">Ultimo mantenimiento</label>
                 <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01"
-                    max="2025-12-31">
+                    max="2025-12-31" required>
 
                 <p>
                     Salidas de video: <br>
-                    <input type="radio" name="salidas_video" value="HDMI"> HDMI<br>
-                    <input type="radio" name="salidas_video" value="VGA - DVI"> VGA O DVI<br>
-                    <input type="radio" name="salidas_video" value="AMBAS"> AMBAS
+                    <input type="radio" name="salidas_video" value="HDMI" required> HDMI<br>
+                    <input type="radio" name="salidas_video" value="VGA - DVI" required> VGA O DVI<br>
+                    <input type="radio" name="salidas_video" value="AMBAS" required> AMBAS
 
                 </p>
 

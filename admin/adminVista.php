@@ -3,16 +3,19 @@
     include_once "../util/utilModelo.php";
     $utilModelo2 = new utilModelo();
     $util = new util();
-    // $util->validarRuta(0);
-    // $nombreCampo = array("id_usuario");
-    // $valor = array($_SESSION['usuario'][0]);
-    // $tabla = "usuario";
-    // $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
-    // while ($fila = mysqli_fetch_array($result)) {
-    //     if ($fila != NULL) {
-    //         $saldo = $fila['nombre'];
-    //     }
-    // }
+    $nombreCampo = array("id_usuario");
+    $valor = array($_SESSION['usuario'][0]);
+    $tabla = "usuario";
+
+    $result = $utilModelo2->mostrarregistros($tabla, $nombreCampo, $valor);
+    while ($fila = mysqli_fetch_array($result)) {
+        if ($fila != NULL) {
+            $nombre = $fila['nombre'];
+            $codigoUsuario = $fila['id_usuario'];
+
+        }
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,77 +36,62 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/chart.min.js" type="text/javascript"></script>
-  </head>
+    <?php include "../componentes/menuPrincipalAdmin.php";?>
+</head>
+
 <body>
-    <?php
-    include "../componentes/menuPrincipalAdmin.php";
-    ?>
-    <div class="main">
-      <div class="main-inner">
-        <div class="container">
-          <div class="row">
 
-                    <div id="chart-container">
-                        <canvas id="graphCanvas"></canvas>
-                    </div>
 
-                    <script>
-                    $(document).ready(function() {
-                        showGraph();
-                    });
 
-                    function showGraph() {
-                        {
-                            $.post("data.php",
-                                function(data) {
-                                    console.log(data);
-                                    var name = [];
-                                    var marks = [];
+    <div class="container">
+        <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2>
 
-                                    for (var i in data) {
-                                        name.push(data[i].id_usuario1);
-                                        marks.push(data[i].id_PC1);
-                                    }
+        <div class="row">
 
-                                    var chartdata = {
-                                        labels: name,
-                                        datasets: [{
-                                            label: 'Student Marks',
-                                            backgroundColor: '#49e2ff',
-                                            borderColor: '#46d5f1',
-                                            hoverBackgroundColor: '#CCCCCC',
-                                            hoverBorderColor: '#666666',
-                                            data: marks
-                                        }]
-                                    };
 
-                                    var graphTarget = $("#graphCanvas");
+            <div class="card-category-1">
 
-                                    var barGraph = new Chart(graphTarget, {
-                                        type: 'bar',
-                                        data: chartdata
-                                    });
-                                });
-                        }
-                    }
-                    </script>
+                <?php
+                        
+                            
+                    $tabla = "reporte, usuario";
+                    $result = $utilModelo2->consultarVariasTablas("id_reporte, descripcion_reporte, nombre",$tabla,"id_usuario1 = id_usuario");
+                    while ($fila = mysqli_fetch_row($result)) {
 
-                </div>
 
-                <?php include "../componentes/pie.php"; ?>
+                      echo  "<div class=\"basic-card basic-card-dark\">
+                                <div class=\"card-content\">
+                                  <span class=\"card-title\">Reporte# $fila[0]</span>
+                                        <p class=\"card-text\">
+                                            $fila[1]
+                                        </p>
+                                </div>
+            
+                                <div class=\"card-link\">
+                                        <a href=\"#\" title=\"Read Full\"><span>Reporte hecho por: $fila[2]</span></a>
+                                 </div>
+                             </div>
+                                
+                                
+                                ";
+                                
+                            }
 
-                <!-- Le javascript
-<-- ============================================================================================ -->
-                <!-- Placed at the end of the document so the pages load faster -->
-                <script src="../js/excanvas.min.js"></script>
-                <script src="../js/bootstrap.js"></script>
-                <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js">
-                </script>
+                        ?>
 
-                <script src="js/base.js"></script>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Javascript -->
+    <script src="../js/excanvas.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js">
+        </script>
 
+<script src="js/base.js"></script>
+
+<?php include "../componentes/pie.php"; ?>
 </body>
 
 </html>
