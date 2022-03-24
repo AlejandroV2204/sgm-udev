@@ -4,13 +4,13 @@
     
     $utilModelo1 = new utilModelo();
     $util = new util();
-    $nombreCampo = array("id");
+   // $nombreCampo = array("id");
 
     // $valor = array($_SESSION['id'][0]);
 
     // $valor = array($_SESSION['id'][0]);
 
-    $tabla = "usuario";
+   // $tabla = "usuario";
 
     // $result = $utilModelo->mostrarregistros($tabla, $nombreCampo, $valor);
     // while ($fila = mysqli_fetch_array($result)) {

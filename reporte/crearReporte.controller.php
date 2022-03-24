@@ -20,4 +20,3 @@ $_SESSION['mensajeOK']="Accion realizada";
 //header('Location: ../admin/adminVista.php');
  
 ?>
-
