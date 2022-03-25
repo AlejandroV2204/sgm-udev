@@ -123,12 +123,9 @@ $util -> validarRuta(0);
                                <td>$fila[4]</td>
                                <td>$tipoUser</td>
                                <td>$estado</td>
-                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');
-                              \" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                            </tr>";
-
-                              
-
+                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                              <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
+                            </tr>";  
                           }
                         }
                          ?>
@@ -229,15 +226,15 @@ $util -> validarRuta(0);
                                   <input id="IdE" name="id" type="hidden">
                                   </div>
                                 <div class="form-group">
-                                  <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
+                                  <input   type="text" name="nombre" id="nombre" tabindex="1" class=" form-control span4"
                                            placeholder="Nombres" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input   type="text" name="apellido" id="apellidoE" tabindex="1" class=" form-control span4"
+                                    <input   type="text" name="apellido" id="apellido" tabindex="1" class=" form-control span4"
                                            placeholder="Apellidos" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input   type="text" name="email" id="emailE" tabindex="1" class=" form-control span4"
+                                    <input   type="text" name="email" id="email" tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
                                 </div>
     </div>
@@ -263,7 +260,7 @@ $util -> validarRuta(0);
 
       <form action="crudUsuariosControlador.php" method="post" >
 
-                                  <input id="idEliminar" name="idEliminar" type="hidden">
+                                  <input id="idEliminar" name="idEliminar" type="text">
                                   <h3>Seguro desea desactivar el usuario</h3>
     </div>
   <div class="modal-footer">
@@ -304,24 +301,24 @@ $util -> validarRuta(0);
                 document.getElementById("errorPass").className = "hidden";
                 document.getElementById("pass").className = "form-group";
                 document.getElementById("pass1").className = "form-group";
-            else {
+              }else {
                 document.getElementById("pass").className += " has-error";
                 document .getElementById("pass1").className += " has-error";
                 document.getElementById("errorPass").className = "form-group";
-
+          
             }
-        }
+          }
     }
 
     function agregarForm(datos){
-     var d=datos.split("||");
+      d=datos.split("||");
 
        $("#IdE").val(d[0]);
        $("#idEliminar").val(d[0]);
-       $("#nombreE").val(d[1]);
-       $("#apellidoE").val(d[2]);
-       $("#emailE").val(d[4]);
-    
+       $("#nombre").val(d[1]);
+       $("#apellido").val(d[2]);
+       $("#email").val(d[4]);
+    }
 
   </script>
 
