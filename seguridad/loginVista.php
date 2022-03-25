@@ -157,27 +157,28 @@
 </div>
 
 
-<!-- <script type="text/javascript">
-    function validarPassword() {
-        var password = document.getElementById("password").value;
-        var rPassword = document.getElementById("rPassword").value;
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.lenght() > 6) {
-            if (password === rPassword) {
-                //                                                    alert("son iguales");
-                document.getElementById("guardar").className = "btn btn-success btn-lg ";
-                document.getElementById("guardar").disabled = false;
-                document.getElementById("errorPass").className = "hidden";
-                document.getElementById("pass").className = "form-group";
-                document.getElementById("pass1").className = "form-group";
-            } else {
-                document.getElementById("pass").className += " has-error";
-                document.getElementById("pass1").className += " has-error";
-                document.getElementById("errorPass").className = "form-group";
-                document.getElementById("guardar").className += " disabled";
-                document.getElementById("guardar").disabled = true;
-            }
-        }
-    } -->
+<script type="text/javascript">
+
+    // function validarPassword() {
+    //     var password = document.getElementById("password").value;
+    //     var rPassword = document.getElementById("rPassword").value;
+    //     if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.lenght() > 6) {
+    //         if (password === rPassword) {
+    //             //                                                    alert("son iguales");
+    //             document.getElementById("guardar").className = "btn btn-success btn-lg ";
+    //             document.getElementById("guardar").disabled = false;
+    //             document.getElementById("errorPass").className = "hidden";
+    //             document.getElementById("pass").className = "form-group";
+    //             document.getElementById("pass1").className = "form-group";
+    //         } else {
+    //             document.getElementById("pass").className += " has-error";
+    //             document.getElementById("pass1").className += " has-error";
+    //             document.getElementById("errorPass").className = "form-group";
+    //             document.getElementById("guardar").className += " disabled";
+    //             document.getElementById("guardar").disabled = true;
+    //         }
+    //     }
+    // }
 
 </script>
 </body>
