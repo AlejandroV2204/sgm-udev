@@ -290,22 +290,22 @@ $util -> validarRuta(0);
 
    function validarPassword() {
 
-        var password = document.getElementById("password").value;
-        var rPassword = document.getElementById("rPassword").value;
+        var password = document.getElementById("#password").value;
+        var rPassword = document.getElementById("#rPassword").value;
 
         if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) ) {
 
             if (password === rPassword) {
 
                 document.getElementById("errorPass").className += "hidden";
-                document.getElementById("pass").className += "form-group";
-                document.getElementById("pass1").className += "form-group";
+                document.getElementById("#pass").className += "form-group";
+                document.getElementById("#pass1").className += "form-group";
 
               }else{
 
                 document.getElementById("pass").className += " has-error";
-                document .getElementById("pass1").className += " has-error";
-                document.getElementById("errorPass").className += "form-group";
+                document .getElementById("#pass1").className += " has-error";
+                document.getElementById("#errorPass").className += "form-group";
           
             }
 
@@ -317,9 +317,9 @@ $util -> validarRuta(0);
 
        $("#IdE").val(d[0]);
        $("#idEliminar").val(d[0]);
-       $("#nombreE").val(d[2]);
-       $("#apellidoE").val(d[3]);
-       $("#emailE").val(d[5]);
+       $("#nombreE").val(d[1]);
+       $("#apellidoE").val(d[2]);
+       $("#emailE").val(d[4]);
     }
 
   </script>
