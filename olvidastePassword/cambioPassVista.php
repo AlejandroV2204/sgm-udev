@@ -40,6 +40,12 @@
                                       </div>
                                   </div>
 
+                                  <div class="row">
+                                      <div class="col-sm-8 col-sm-offset-2">        
+                                  <p>Ingrese su correo le enviaremos el codigo alli</p> 
+                                      </div>
+                                  </div>
+
                                 <div class="form-group">
                                     <input type="text" name="emailCambio" id="emailCambio" tabindex="1" class="form-control"
                                            placeholder="Correo">
