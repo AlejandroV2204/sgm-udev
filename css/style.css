@@ -23,7 +23,7 @@ Bootstrap Admin Template by EGrappler.com
     border-radius: 20px;
     display: flex;
     align-items: center;
-    box-shadow: 0px 15px 40px #7E6D5766;
+    box-shadow: 0px 15px 40px #ffffff66;
 }
 
 .slider p {
@@ -54,7 +54,7 @@ Bootstrap Admin Template by EGrappler.com
 }
 
 .slider input[type=”range”]::-webkit-slider-thumb:hover {
-    background: #7E6D57;
+    background: #ffffff;
 }
 
 body {

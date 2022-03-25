@@ -157,7 +157,7 @@
 </div>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     function validarPassword() {
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
@@ -177,7 +177,7 @@
                 document.getElementById("guardar").disabled = true;
             }
         }
-    }
+    } -->
 
 </script>
 </body>

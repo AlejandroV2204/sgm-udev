@@ -104,7 +104,7 @@ $util -> validarRuta(0);
 
                    }
 
-                      //  Nombre o decoracion de activo y inactivo
+                    //  Nombre o decoracion de activo y inactivo
 
                    if($fila[6] == 1){
 
@@ -185,11 +185,11 @@ $util -> validarRuta(0);
                                   </select>
                                 </div>
                                 <div class="form-group" id="pass">
-                                    <input   type="password" name="password" onkeyup="validarPassword();" id="password"
+                                    <input   type="password" name="password" min = "6"  max = "15" onkeyup= "validarPassword();" id="password"
                                            class=" form-control span4 " placeholder="Contraseña" tabindex="2" required>
                                 </div>
                                 <div class="form-group   " id="pass1">
-                                    <input   type="password" onkeyup="validarPassword();" name="rPassword" id="rPassword"
+                                    <input   type="password" onkeyup= "validarPassword();" name="rPassword" id="rPassword"
                                            tabindex="2" class=" form-control span4" placeholder="Confirmar contraseña" required>
                                 </div>
                                 <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
@@ -197,7 +197,6 @@ $util -> validarRuta(0);
                                     <img src="../img/Error-128.png" width="20" height="20"><strong> Las contraseñas no
                                         coinciden</strong>
                                 </div>
-
     </div>
     <div class="modal-footer">
       <!-- Cierre modal -->
@@ -205,7 +204,6 @@ $util -> validarRuta(0);
       <!-- Boton envio datos -->
       <button type="submit" name="guardarUsuario" id="guardarTrabajador"class="btn btn-primary">Guardar</button>
     </div>
-
     </form>
   </div>
   <!-- Fin modal -->
@@ -226,15 +224,15 @@ $util -> validarRuta(0);
                                   <input id="IdE" name="id" type="hidden">
                                   </div>
                                 <div class="form-group">
-                                  <input   type="text" name="nombre" id="nombre" tabindex="1" class=" form-control span4"
+                                  <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
                                            placeholder="Nombres" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input   type="text" name="apellido" id="apellido" tabindex="1" class=" form-control span4"
+                                    <input   type="text" name="apellido" id="apellidoE" tabindex="1" class=" form-control span4"
                                            placeholder="Apellidos" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input   type="text" name="email" id="email" tabindex="1" class=" form-control span4"
+                                    <input   type="text" name="email" id="emailE" tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
                                 </div>
     </div>
@@ -290,23 +288,27 @@ $util -> validarRuta(0);
 
   <script type="text/javascript">
 
-
    function validarPassword() {
 
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
 
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.length() > 6) ) {
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) ) {
+
             if (password === rPassword) {
-                document.getElementById("errorPass").className = "hidden";
-                document.getElementById("pass").className = "form-group";
-                document.getElementById("pass1").className = "form-group";
-              }else {
+
+                document.getElementById("errorPass").className += "hidden";
+                document.getElementById("pass").className += "form-group";
+                document.getElementById("pass1").className += "form-group";
+
+              }else{
+
                 document.getElementById("pass").className += " has-error";
                 document .getElementById("pass1").className += " has-error";
-                document.getElementById("errorPass").className = "form-group";
+                document.getElementById("errorPass").className += "form-group";
           
             }
+
           }
     }
 
@@ -315,9 +317,9 @@ $util -> validarRuta(0);
 
        $("#IdE").val(d[0]);
        $("#idEliminar").val(d[0]);
-       $("#nombre").val(d[1]);
-       $("#apellido").val(d[2]);
-       $("#email").val(d[4]);
+       $("#nombreE").val(d[2]);
+       $("#apellidoE").val(d[3]);
+       $("#emailE").val(d[5]);
     }
 
   </script>

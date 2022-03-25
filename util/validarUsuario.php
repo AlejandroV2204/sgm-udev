@@ -2,29 +2,23 @@
 include_once "utilModelo.php";
 
 //recibe el correo de usuario para validar
-$user =$_POST["email"];
-$table = "usuario"
-
-
-
-      // if($clave==0) {
-        
-      //       validarCorreo($user);
-      // }
-
+ $cor = $_POST["#email"];
+$table = "usuario";
 
       //Cambio logica y nombre de la validacion del usuario para reutilizar para que me valide el correo
-      function validarCorreo($user) {
+      function validarCorreo($cor) {
         $utilModelo = new utilModelo();
-            $result = $utilModelo->consultarVariasTablas($user, $table ,"email='$user'");
+            $result = $utilModelo->consultarVariasTablas($cor, $table ,"email='$cor'");
               $rowcount=mysqli_num_rows($result);
                
             
-                if($rowcount != 0) {
-            echo "<span style='font-weight:bold;color:red;'>El Correo de usuario ya existe.</span>";
+              if($rowcount != 0) {
 
-                }else{
-                  echo( "<span style='font-weight:bold;color:green;'>Correo Disponible.</span>");
+               echo "<span style='font-weight:bold;color:red;'>El Correo de usuario ya existe.</span>";
+
+              }else{
+
+                echo( "<span style='font-weight:bold;color:green;'>Correo Disponible.</span>");
 
             }
       
