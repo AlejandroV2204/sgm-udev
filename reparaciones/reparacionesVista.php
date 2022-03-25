@@ -1,8 +1,9 @@
 <?php
-// include "../util/utilOsdo.php";
+
 include_once "../util/utilModelo.php";
 include_once "../util/util.php";
 $util = new util();
+$utilidad = new utilModelo();
 
 $util -> validarRuta(0);
 ?>
@@ -138,12 +139,29 @@ $util -> validarRuta(0);
       <form class="span8" action="reparacionesController.php" method="post" >
 
                                 <div class="form-group">
-                                    <input   type="text" name="id_reporte1" id="id_reporte1" tabindex="1" class=" form-control span4"
-                                           placeholder="ID Reporte" value="" required>
+                                <label for="lugar ubicado" class="form-label">ID Reporte</label>
+                <select name="reporte" class="form-select">
+
+                    <?php
+
+                            $tabla = "reporte";
+
+                            $sql = $utilidad->mostrarTodosRegistros($tabla);
+
+                            while($row = $sql->fetch_assoc()){
+                                
+                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
+                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                echo "<option value = ".$row['id_reporte'].">". $row['id_reporte']. "</option>";
+                            }
+                        
+                        ?>
+
+                </select>
                                 </div>
                                 <div class="form-group   ">
-                                    <input   type="text" name="fecha" id="fecha" tabindex="1" class=" form-control span4"
-                                           placeholder="fecha" value="" required>
+                                    <input   type="date" name="fecha" id="fecha" tabindex="1" class=" form-control span4"
+                                           placeholder="fecha" value="<?php echo date('Y-m-d'); ?>" required>
                                 </div>
                                 <div class="form-group   ">
                                     <input   type="text" name="descripcion_reparacion" id="descripcion_reparacion" tabindex="1" class=" form-control span4"
@@ -168,7 +186,7 @@ $util -> validarRuta(0);
   <!-- inicio modal editar -->
 <div id="modalEditar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
     <h3 id="myModalLabel">Editar Registros</h3>
   </div>
   <div class="modal-body">
