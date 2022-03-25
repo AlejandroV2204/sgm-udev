@@ -26,7 +26,7 @@
             <div class="nav-collapse">
                 <ul class="nav pull-right">
 
-                    <h2><li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i
+                    <h2><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                     class="icon-user"></i>
                                     <?php echo $nombre; ?>
                                     <b class="caret"></b></a>
