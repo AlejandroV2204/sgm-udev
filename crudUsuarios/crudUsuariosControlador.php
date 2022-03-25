@@ -53,6 +53,7 @@ $_SESSION['mensajeOk']="Accion realizada";
 	echo "Eliminar";
 
 			$campo = array("estado_usuario");
+			
 			$id=$_POST['idEliminar'];
 
 		$utilModelo->modificar('usuario',$campo,'0','id_usuario', $id) ;
