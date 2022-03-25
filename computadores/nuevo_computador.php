@@ -42,6 +42,18 @@
 
                 <?php
                 
+
+                $tabla = "computador";
+                $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
+                while ($fila = mysqli_fetch_array($result)) {
+                    if ($fila != NULL) {
+
+                      $datos=$fila[0]."||".$fila[1]."||".$fila[2]."||".$fila[3]."||".$fila[4]."||".$fila[5]."||".$fila[6]."||".$fila[7]."||".$fila[8]."||".$fila[9]."||".$fila[10]."||".$fila[11]."||".$fila[12]."||".$fila[13]."||".$fila[14]."||".$fila[15]."||".$fila[16]."||".$fila[17];
+                            
+                        }
+                      }
+
+
                     $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
                     
                     $tabla = "computador";
@@ -59,7 +71,8 @@
                             <li>Procesador: $fila[6]</li>
                             <li>RAM: $fila[4]</li>
                             <li>Disco duro: $fila[8]</li>
-                            <li>Sistema Operativo: $fila[2]</li>";
+                            <li>Sistema Operativo: $fila[2]</li>
+                            <a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
 
 
                         echo "</div>";
@@ -69,77 +82,7 @@
                     ?>
 
 
-                <!-- /widget-header -->
-                <div class="widget-content">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <!-- <th> ID </th> -->
-                                <th> Sala</th>
-                                <th> S.O </th>
-                                <!-- <th> Motherboard </th> -->
-                                <th> Motherboard </th>
-                                <!-- <th> Velocidad RAM </th> -->
-                                <th> Velocidad RAM </th>
-                                <!-- <th> Graficos </th> -->
-                                <th> Procesador </th>
-                                <th> Capacidad Disco </th>
-                                <!-- <th> Mouse </th> -->
-                                <!-- <th> Teclado </th> -->
-                                <!-- <th> Panel frontal </th> -->
-                                <!-- <th> Lectora DVD </th> -->
-                                <!-- <th> Ventiladores </th> -->
-                                <th> Ultima termica </th>
-                                <th> Ultimo mantenimiento </th>
-                                <!-- <th> Salidas video </th> -->
-                                <th> Estado </th>
-                                <th class="td-actions">EDITAR/ELIMINAR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php
-    
-    
-                      $tabla = "computador";
-                      $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
-                      while ($fila = mysqli_fetch_array($result)) {
-                          if ($fila != NULL) {
-    
-                            $datos=$fila[0]."||".$fila[1]."||".$fila[2]."||".$fila[3]."||".$fila[4]."||".$fila[5]."||".$fila[6]."||".$fila[7]."||".$fila[8]."||".$fila[9]."||".$fila[10]."||".$fila[11]."||".$fila[12]."||".$fila[13]."||".$fila[14]."||".$fila[15]."||".$fila[16]."||".$fila[17];
-                                   
-                            $estado = "";
-
-                            if($fila[17] == 0){
-
-                                $estado = "Inactivo";
-
-                            } else if($fila[17] == 1){
-
-                                $estado = "Activo";
-                            }
-
-                                echo "
-                                  <tr>
-                                    <td>$fila[1] </td>
-                                    <td> $fila[2] </td>
-                                     <td>$fila[3]</td>
-                                     <td>$fila[4]</td>
-                                     <td>$fila[6]</td>
-                                     <td>$fila[8]</td>
-                                     <td>$fila[14]</td>
-                                     <td>$fila[15]</td>
-                                     <td>$estado</td>
-                                     
-                                    <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                                  </tr>";
-    
-                              }
-                            }
-                             ?>
-                        </tbody>
-                    </table>
-                </div>
+                
 
                 <h6 class="bigstats"></h6>
                 <!-- /widget-content -->
