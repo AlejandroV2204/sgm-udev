@@ -185,19 +185,15 @@ $util -> validarRuta(0);
                                   </select>
                                 </div>
                                 <div class="form-group" id="pass">
-                                    <input   type="password" name="password" onkeyup= "validarPassword();" id="password"
-                                           class=" form-control span4 " placeholder="Contraseña" tabindex="2" required>
-                                </div>
-                                <div class="form-group "id="pass1">
-                                    <input type="password" name="rPassword" id="rPassword" onkeyup= "validarPassword();"  tabindex="2" 
-                                    class=" form-control span4" placeholder="Confirmar contraseña" required>
-                                </div>
-                                <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
-                                    <br>
-                                    <img src="../img/Error-128.png" width="20" height="20"><strong> Las contraseñas no
-                                        coinciden</strong>
-                                </div>
-    </div>
+                                   <input   type="password" name="password" onkeyup="validarPassword();" id="password" class=" form-control span4 " placeholder="Contraseña" tabindex="2" required>
+                                  </div>
+                                <div class="form-group   " id="pass1">
+                                   <input   type="password" onkeyup="validarPassword();" name="rPassword" id="rPassword" tabindex="2" class=" form-control span4" placeholder="Confirmar contraseña" required>
+                                  </div>
+                                <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 14px;">
+                                 <br> <img src="../img/Error-128.png" width="14" height="14"><strong>Las contraseñas no coinciden</strong>
+                          </div>
+                       </div>
     <div class="modal-footer">
       <!-- Cierre modal -->
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
@@ -286,39 +282,38 @@ $util -> validarRuta(0);
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
 
-  <script>
+  <script type="text/javascript">
+
 
    function validarPassword() {
 
-        password = document.getElementById("password").value;
-        rPassword = document.getElementById("rPassword").value;
+        var password = document.getElementById("password").value;
+        var rPassword = document.getElementById("rPassword").value;
 
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null){
-
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) {
             if (password === rPassword) {
+                 
+                document.getElementById("errorPass").className = "hidden";
+                document.getElementById("pass").className = "form-group";
+                document.getElementById("pass1").className = "form-group";
+                
+            }else{
 
-                document.getElementById("errorPass").className += "hidden";
-                document.getElementById("#pass").className += "form-group";
-                document.getElementById("#pass1").className += "form-group";
+                document.getElementById("pass").className += " has-error";
+                document.getElementById("pass1").className += " has-error";
+                document.getElementById("errorPass").className = "form-group";
 
-              }else{
-
-                document.getElementById("pass").className += "has-error";
-                document .getElementById("#pass1").className += "has-error";
-                document.getElementById("#errorPass").className += "form-group";
-          
             }
-
-          }
+        }
     }
 
     function agregarForm(datos){
       d=datos.split("||");
 
-       $("#IdE").val(d[0]);
+       $("#idE").val(d[0]);
        $("#idEliminar").val(d[0]);
        $("#nombreE").val(d[1]);
-       $("#apellidoE").val(d[2]);
+       $("#apellidoE").val(d[2])
        $("#emailE").val(d[4]);
     }
 
