@@ -22,16 +22,22 @@
     <div class="navbar-inner">
         <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                         class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a>
-          <a class="brand" ><img src="../img/udev_logo2.png"></a>
+                        <a class="brand"><img src="../img/udev_logo2.png"></a>
+                        
             <div class="nav-collapse">
                 <ul class="nav pull-right">
-
-                    <h2><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                    class="icon-user"></i>
-                                    <?php echo $nombre; ?>
+                    <h2><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <div class = "row">
+                         <div class="col-lg-20">
+                             <p></p>
+                         </div>
+                </div>
+                        <i class="icon-user"></i>
+                            <?php echo $nombre; ?>
                                     <b class="caret"></b></a>
+                                    
                         <ul class="dropdown-menu">
-
+               
                         
                                <!-- Validar opciones para mi admin -->
                                 <?php
@@ -95,7 +101,6 @@
                                 $util->validarElemento(3, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-user"></i><span></span>Usuarios</a></li> ');
                                 $util->validarElemento(3, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-tasks"></i><span></span>Reportes</a></li>');
                 ?>
-
 
             </ul>
         </div>

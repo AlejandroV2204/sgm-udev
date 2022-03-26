@@ -41,8 +41,6 @@
 
 <body>
 
-
-
     <div class="container">
         <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2>
 
@@ -78,9 +76,13 @@
                             }
 
                         ?>
-
             </div>
         </div>
+
+        
+<?php
+            include "../componentes/pie.php";
+             ?>
     </div>
     
     <!-- Javascript -->
@@ -93,7 +95,6 @@
 
 <script src="js/base.js"></script>
 
-<?php include "../componentes/pie.php"; ?>
-</body>
 
+</body>
 </html>
