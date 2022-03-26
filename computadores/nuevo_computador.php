@@ -52,7 +52,6 @@
                         $random = $imagenes[rand(0, 2)];
 
                         echo "<div class=\"card\">";
-
                             echo "<img src=\"$random\">
                             <h4>$fila[0]</h4>
                             <p>Caracteristicas: </p>
@@ -453,6 +452,7 @@
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
     <script type="text/javascript">
+        
     function agregarForm(datos) {
         d = datos.split("||");
 
@@ -472,8 +472,6 @@
         $("#ultimo_man").val(d[15]);
         $("#salidas_video").val(d[16]);
 
-        // $("#apellidoE").val(d[2]);
-        // $("#emailE").val(d[4]);
     }
     </script>
 

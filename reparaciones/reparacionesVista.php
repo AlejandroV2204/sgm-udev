@@ -243,9 +243,6 @@ $util -> validarRuta(0);
 
   <script type="text/javascript">
 
-
-   
-
     function agregarForm(datos){
       d=datos.split("||");
 
@@ -256,8 +253,6 @@ $util -> validarRuta(0);
        $("#fecha").val(d[2]);
        $("#descripcion_reparacion").val(d[3]);
        $("#estado_reparacion").val(d[4]);
-      // $("#apellidoE").val(d[2]);
-      // $("#emailE").val(d[4]);
     }
 
   </script>

@@ -185,12 +185,12 @@ $util -> validarRuta(0);
                                   </select>
                                 </div>
                                 <div class="form-group" id="pass">
-                                    <input   type="password" name="password" min = "6"  max = "15" onkeyup= "validarPassword();" id="password"
+                                    <input   type="password" name="password" onkeyup= "validarPassword();" id="password"
                                            class=" form-control span4 " placeholder="Contraseña" tabindex="2" required>
                                 </div>
-                                <div class="form-group   " id="pass1">
-                                    <input   type="password" onkeyup= "validarPassword();" name="rPassword" id="rPassword"
-                                           tabindex="2" class=" form-control span4" placeholder="Confirmar contraseña" required>
+                                <div class="form-group "id="pass1">
+                                    <input type="password" name="rPassword" id="rPassword" onkeyup= "validarPassword();"  tabindex="2" 
+                                    class=" form-control span4" placeholder="Confirmar contraseña" required>
                                 </div>
                                 <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
                                     <br>
@@ -293,7 +293,9 @@ $util -> validarRuta(0);
         var password = document.getElementById("#password").value;
         var rPassword = document.getElementById("#rPassword").value;
 
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) ) {
+
+
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null){
 
             if (password === rPassword) {
 

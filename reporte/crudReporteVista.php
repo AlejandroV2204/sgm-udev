@@ -181,7 +181,7 @@ $util -> validarRuta(0);
                                     <input   type="text" name="id_pc" id="id_pc" tabindex="1" class=" form-control span4"
                                            placeholder="ID PC" value="" required>
                                 </div>
-                                <div class="form-group  ">
+                                <div class="form-group ">
                                     <input   type="text" name="descripcion_reporte" id="descripcion_reporte" tabindex="1" class=" form-control span4"
                                            placeholder="Descripción" value="" required>
                                 </div>

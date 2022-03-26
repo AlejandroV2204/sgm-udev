@@ -3,9 +3,6 @@
 include '../util/utilModelo.php';
 $util = new utilModelo();
 
-//$campos = array("codigoReferido","direccion");
-//$valores = array("sd33d2","calle 19 # 9-113");
-//$util->modificar('usuario',$campos,$valores,'id','1');
 
 $usuario = filter_input(INPUT_POST, 'userini');
 $password = filter_input(INPUT_POST, 'ipassword');

@@ -237,9 +237,6 @@ $util -> validarRuta(0);
 
   <script type="text/javascript">
 
-
-   
-
     function agregarForm(datos){
       d=datos.split("||");
 

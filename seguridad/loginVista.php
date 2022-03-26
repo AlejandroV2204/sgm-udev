@@ -93,14 +93,16 @@
 
                                 ?>
                             </form>
+
+
                             <!-- ************INCIAR SESION******* FIN ***** -->
 
                             <!-- Registro por si alguna vez se vuelve publica la aplicacion 
                             Julian Esteban Ramirez Cordoba U_dev -->
 
 
-                             <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
-                                  role="form" style="display: none;">
+                             <!-- <form id="register-form" action="../crudUsuarios/crudUsuariosControlador.php" method="post"
+                                  role="form" style="display: none;"> -->
                                
                                 <!-- <div class="form-group">
                                     <input type="text" name="nombre" id="nombre" tabindex="1" class="form-control"
@@ -157,7 +159,7 @@
 </div>
 
 
-<script type="text/javascript">
+<script type="text/javascript"> 
 
     // function validarPassword() {
     //     var password = document.getElementById("password").value;
@@ -180,6 +182,6 @@
     //     }
     // }
 
-</script>
+ </script>
 </body>
 </html>
