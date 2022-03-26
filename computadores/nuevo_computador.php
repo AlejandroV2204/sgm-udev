@@ -105,7 +105,24 @@
                       while ($fila = mysqli_fetch_array($result)) {
                           if ($fila != NULL) {
     
-                            $datos=$fila[0]."||".$fila[1]."||".$fila[2]."||".$fila[3]."||".$fila[4]."||".$fila[5]."||".$fila[6]."||".$fila[7]."||".$fila[8]."||".$fila[9]."||".$fila[10]."||".$fila[11]."||".$fila[12]."||".$fila[13]."||".$fila[14]."||".$fila[15]."||".$fila[16]."||".$fila[17];
+                            $datos=$fila[0].
+                            "||".$fila[1].
+                            "||".$fila[2].
+                            "||".$fila[3].
+                            "||".$fila[4].
+                            "||".$fila[5].
+                            "||".$fila[6].
+                            "||".$fila[7].
+                            "||".$fila[8].
+                            "||".$fila[9].
+                            "||".$fila[10].
+                            "||".$fila[11].
+                            "||".$fila[12].
+                            "||".$fila[13].
+                            "||".$fila[14].
+                            "||".$fila[15].
+                            "||".$fila[16].
+                            "||".$fila[17];
                                    
                             $estado = "";
 
@@ -458,7 +475,7 @@
 
         $("#codigoE").val(d[0]);
         $("#idEliminar").val(d[0]);
-        $("#so_pc").val(d[2]);
+        $("#so_pc").val(d[1]);
         $("#mobo_pc").val(d[3]);
         $("#sala").val(d[1]);
         $("#procesador").val(d[6]);

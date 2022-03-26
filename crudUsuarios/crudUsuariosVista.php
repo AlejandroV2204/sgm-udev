@@ -198,7 +198,7 @@ $util -> validarRuta(0);
       <!-- Cierre modal -->
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
       <!-- Boton envio datos -->
-      <button type="submit" name="guardarUsuario" id="guardarTrabajador"class="btn btn-primary">Guardar</button>
+      <button type="submit" name="guardarUsuario" id="guardarUsuario"class="btn btn-primary">Guardar</button>
     </div>
     </form>
   </div>
@@ -290,18 +290,25 @@ $util -> validarRuta(0);
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
 
+            var contPassword = password.length;
+
         if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) {
-            if (password === rPassword) {
-                 
+            
+          if (password === rPassword) {
+
+                document.getElementById("guardarUsuario").className = "btn btn-success btn-lg ";
+                document.getElementById("guardarUsuario").disabled = false;
                 document.getElementById("errorPass").className = "hidden";
                 document.getElementById("pass").className = "form-group";
                 document.getElementById("pass1").className = "form-group";
                 
-            }else{
+            }else if(password !== rPassword){
 
                 document.getElementById("pass").className += " has-error";
                 document.getElementById("pass1").className += " has-error";
                 document.getElementById("errorPass").className = "form-group";
+                document.getElementById("guardarUsuario").className += " disabled";
+                document.getElementById("guardarUsuario").disabled = true;
 
             }
         }
@@ -313,7 +320,7 @@ $util -> validarRuta(0);
        $("#idE").val(d[0]);
        $("#idEliminar").val(d[0]);
        $("#nombreE").val(d[1]);
-       $("#apellidoE").val(d[2])
+       $("#apellidoE").val(d[2]);
        $("#emailE").val(d[4]);
     }
 
