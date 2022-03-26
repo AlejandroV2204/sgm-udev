@@ -42,14 +42,16 @@
 
                 <?php
                 
-                    $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
-                    
-                    $tabla = "computador";
-                    $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
-                    while ($fila = mysqli_fetch_row($result)) {
+                $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
+                $tabla = "computador";
+                $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
+                while ($fila = mysqli_fetch_row($result)) 
+                {
+                    if ($fila != NULL) 
+                    {
 
-                    
-                        $random = $imagenes[rand(0, 2)];
+                      $datos=$fila[0]."||".$fila[1]."||".$fila[2]."||".$fila[3]."||".$fila[4]."||".$fila[5]."||".$fila[6]."||".$fila[7]."||".$fila[8]."||".$fila[9]."||".$fila[10]."||".$fila[11]."||".$fila[12]."||".$fila[13]."||".$fila[14]."||".$fila[15]."||".$fila[16]."||".$fila[17];
+                      $random = $imagenes[rand(0, 2)];
 
                         echo "<div class=\"card\">";
                             echo "<img src=\"$random\">
@@ -58,104 +60,18 @@
                             <li>Procesador: $fila[6]</li>
                             <li>RAM: $fila[4]</li>
                             <li>Disco duro: $fila[8]</li>
-                            <li>Sistema Operativo: $fila[2]</li>";
-
+                            <li>Sistema Operativo: $fila[2]</li>
+                            <a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
 
                         echo "</div>";
                         
                     }
+                }
+                    
+                ?>
 
-                    ?>
 
 
-                <!-- /widget-header -->
-                <div class="widget-content">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <!-- <th> ID </th> -->
-                                <th> Sala</th>
-                                <th> S.O </th>
-                                <!-- <th> Motherboard </th> -->
-                                <th> Motherboard </th>
-                                <!-- <th> Velocidad RAM </th> -->
-                                <th> Velocidad RAM </th>
-                                <!-- <th> Graficos </th> -->
-                                <th> Procesador </th>
-                                <th> Capacidad Disco </th>
-                                <!-- <th> Mouse </th> -->
-                                <!-- <th> Teclado </th> -->
-                                <!-- <th> Panel frontal </th> -->
-                                <!-- <th> Lectora DVD </th> -->
-                                <!-- <th> Ventiladores </th> -->
-                                <th> Ultima termica </th>
-                                <th> Ultimo mantenimiento </th>
-                                <!-- <th> Salidas video </th> -->
-                                <th> Estado </th>
-                                <th class="td-actions">EDITAR/ELIMINAR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php
-    
-    
-                      $tabla = "computador";
-                      $result = $utilidad->consultarVariasTablas("*",$tabla,"1");
-                      while ($fila = mysqli_fetch_array($result)) {
-                          if ($fila != NULL) {
-    
-                            $datos=$fila[0].
-                            "||".$fila[1].
-                            "||".$fila[2].
-                            "||".$fila[3].
-                            "||".$fila[4].
-                            "||".$fila[5].
-                            "||".$fila[6].
-                            "||".$fila[7].
-                            "||".$fila[8].
-                            "||".$fila[9].
-                            "||".$fila[10].
-                            "||".$fila[11].
-                            "||".$fila[12].
-                            "||".$fila[13].
-                            "||".$fila[14].
-                            "||".$fila[15].
-                            "||".$fila[16].
-                            "||".$fila[17];
-                                   
-                            $estado = "";
-
-                            if($fila[17] == 0){
-
-                                $estado = "Inactivo";
-
-                            } else if($fila[17] == 1){
-
-                                $estado = "Activo";
-                            }
-
-                                echo "
-                                  <tr>
-                                    <td>$fila[1] </td>
-                                    <td> $fila[2] </td>
-                                     <td>$fila[3]</td>
-                                     <td>$fila[4]</td>
-                                     <td>$fila[6]</td>
-                                     <td>$fila[8]</td>
-                                     <td>$fila[14]</td>
-                                     <td>$fila[15]</td>
-                                     <td>$estado</td>
-                                     
-                                    <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                                  </tr>";
-    
-                              }
-                            }
-                             ?>
-                        </tbody>
-                    </table>
-                </div>
 
                 <h6 class="bigstats"></h6>
                 <!-- /widget-content -->
@@ -182,21 +98,22 @@
             <form class="span5" action="control_computador.php" method="post">
 
                 <label for="serial" class="form-label">Identificador del PC</label>
-                <input type="text" class="form-control" name="id_pc">
+                <input type="text" class="form-control" name="id_pc" required>
 
                 <p>
                     Sistema operativo: <br>
-                    <input type="radio" name="so_pc" value="WINDOWS 8.1"> Windows 8.1<br>
-                    <input type="radio" name="so_pc" value="WINDOWS 10"> Windows 10<br>
-                    <input type="radio" name="so_pc" value="LINUX"> Linux
+                    <input type="radio" name="so_pc" value="WINDOWS 8.1" required> Windows 8.1<br>
+                    <input type="radio" name="so_pc" value="WINDOWS 10" required> Windows 10<br>
+                    <input type="radio" name="so_pc" value="LINUX" required> Linux
 
                 </p>
 
                 <label for="placa base" class="form-label">Motherboard</label>
-                <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k">
+                <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k" required>
 
                 <label for="lugar ubicado" class="form-label">Lugar ubicado:</label>
-                <select name="sala" class="form-select">
+                <select name="sala" class="form-select" required>
+                    <option selected disabled value="">Salas</option>
 
                     <?php
 
@@ -216,16 +133,18 @@
                 </select>
 
                 <label for="procesadores" class="form-label">Procesador</label>
-                <input type="text" class="form-control" name="procesador" placeholder="ej: Intel Pentium E5300">
+                <input type="text" class="form-control" name="procesador" placeholder="ej: Intel Pentium E5300"
+                    required>
 
                 <label for="cantidad de ram" class="form-label">Cantidad RAM</label>
                 <input type="range" name="cantidad_ram" class="form-range" min="0" max="32" step="4"
-                    oninput="rangeValue.innerText = this.value+'GB'">
+                    oninput="rangeValue.innerText = this.value+'GB'" required>
                 <p id="rangeValue">4GB</p>
 
                 <label for="velocidad" class="form-label">Velocidad RAM</label>
-                <select name="velocidad_ram" class="form-select">
-                    <option selected value="1333mhz">1333Mhz</option>
+                <select name="velocidad_ram" class="form-select" required>
+                    <option selected disabled value="">Escoge</option>
+                    <option value="1333mhz">1333Mhz</option>
                     <option value="1006mhz">1066Mhz</option>
                     <option value="1600mhz">1600mhz</option>
                     <option value="2133mhz">2133mhz</option>
@@ -235,53 +154,53 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" value="INTEGRADOS"> Integrados <br>
-                    <input type="radio" name="tipo_graficos" value="DEDICADOS"> Dedicados
+                    <input type="radio" name="tipo_graficos" value="INTEGRADOS" required> Integrados <br>
+                    <input type="radio" name="tipo_graficos" value="DEDICADOS" required> Dedicados
 
                 </p>
 
                 <label for="capacidad disco" class="form-label">Capacidad disco</label>
-                <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB">
+                <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB" required>
 
                 <p>
                     El computador tiene: <br>
                     <small>Teclado:</small> <br>
-                    <input type="radio" name="teclado" value="SI"> SI <br>
-                    <input type="radio" name="teclado" value="NO"> NO <br>
+                    <input type="radio" name="teclado" value="SI" required> SI <br>
+                    <input type="radio" name="teclado" value="NO" required> NO <br>
                     <small>Mouse:</small> <br>
-                    <input type="radio" name="mouse" value="SI"> SI <br>
-                    <input type="radio" name="mouse" value="NO"> NO <br>
+                    <input type="radio" name="mouse" value="SI" required> SI <br>
+                    <input type="radio" name="mouse" value="NO" required> NO <br>
                     <small>Lectora DVD:</small> <br>
-                    <input type="radio" name="lectora_dvd" value="SI"> SI <br>
-                    <input type="radio" name="lectora_dvd" value="NO"> NO <br>
+                    <input type="radio" name="lectora_dvd" value="SI" required> SI <br>
+                    <input type="radio" name="lectora_dvd" value="NO" required> NO <br>
 
                 </p>
 
                 <p>
                     Estado del panel frontal: <br>
-                    <input type="radio" name="panel_frontal" value="Funcional"> Funcional<br>
-                    <input type="radio" name="panel_frontal" value="Fallando"> con fallas<br>
-                    <input type="radio" name="panel_frontal" value="Sin funcionar"> No funciona
+                    <input type="radio" name="panel_frontal" value="Funcional" required> Funcional<br>
+                    <input type="radio" name="panel_frontal" value="Fallando" required> con fallas<br>
+                    <input type="radio" name="panel_frontal" value="Sin funcionar" required> No funciona
 
                 </p>
 
                 <label for="ventiladores" class="form-label">No. Ventiladores</label>
-                <input type="number" class="form-control" name="ventiladores" placeholder="">
+                <input type="number" class="form-control" name="ventiladores" placeholder="" required>
 
 
                 <label for="pasta termica" class="form-label">Ultima pasta termica</label>
                 <input type="date" id="start" name="ultima_termica" value="<?php echo date('Y-m-d'); ?>"
-                    min="2018-01-01" max="2025-12-31">
+                    min="2018-01-01" max="2025-12-31" required>
 
                 <label for="mantenimiento" class="form-label">Ultimo mantenimiento</label>
                 <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01"
-                    max="2025-12-31">
+                    max="2025-12-31" required>
 
                 <p>
                     Salidas de video: <br>
-                    <input type="radio" name="salidas_video" value="HDMI"> HDMI<br>
-                    <input type="radio" name="salidas_video" value="VGA - DVI"> VGA O DVI<br>
-                    <input type="radio" name="salidas_video" value="AMBAS"> AMBAS
+                    <input type="radio" name="salidas_video" value="HDMI" required> HDMI<br>
+                    <input type="radio" name="salidas_video" value="VGA - DVI" required> VGA O DVI<br>
+                    <input type="radio" name="salidas_video" value="AMBAS" required> AMBAS
 
                 </p>
 
@@ -310,9 +229,8 @@
             <form style="min-width: 500px;" action="control_computador.php" method="post">
 
                 <div class="form-group">
-                    <input id="codigoE" name="id_pc" type="hidden">
+                    <input id="codigoE" name="identificador" type="text">
                 </div>
-
 
                 <label for="serial" class="form-label">Identificador del PC</label>
                 <input type="text" class="form-control" name="id_pc">
@@ -475,15 +393,23 @@
 
         $("#codigoE").val(d[0]);
         $("#idEliminar").val(d[0]);
+<<<<<<< HEAD
         $("#so_pc").val(d[1]);
-        $("#mobo_pc").val(d[3]);
+=======
+        $("#id_pc").val(d[0]);
         $("#sala").val(d[1]);
-        $("#procesador").val(d[6]);
+        $("#so_pc").val(d[2]);
+>>>>>>> d1lan
+        $("#mobo_pc").val(d[3]);
         $("#cantidad_ram").val(d[4]);
         $("#velocidad_ram").val(d[5]);
+        $("#procesador").val(d[6]);
         $("#tipo_graficos").val(d[7]);
         $("#capacidad_disco").val(d[8]);
+        $("#mouse").val(d[9]);
+        $("#teclado").val(d[10]);
         $("#panel_frontal").val(d[11]);
+        $("#lectora_dvd").val(d[12]);
         $("#ventiladores").val(d[13]);
         $("#ultima_termica").val(d[14]);
         $("#ultimo_man").val(d[15]);

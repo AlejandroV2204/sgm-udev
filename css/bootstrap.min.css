@@ -2110,7 +2110,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 *padding-bottom:4px;
 }
 .btn-group .btn-large.dropdown-toggle {
-	padding-left: 12px;
+	padding-left: 10px;
 	padding-right: 12px;
 }
 .btn-group.open {

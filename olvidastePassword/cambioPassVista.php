@@ -47,13 +47,13 @@
                                   </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="emailCambio" id="emailCambio" tabindex="1" class="form-control"
+                                    <input type="text" name="email" id="email" tabindex="1" class="form-control"
                                            placeholder="Correo">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="submit" name="login-submit" tabindex="4"
+                                            <input type="submit" name="olvideClave" tabindex="4"
                                                     value="Enviar" class = "form-control btn btn-login">
                                         </div>
                                     </div>
