@@ -238,7 +238,7 @@ $util -> validarRuta(0);
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    <button type="submit" name="modificarUsuario" id="modificar"class="btn btn-primary">Modificar</button>
+    <button type="submit" name="modificarUsuario" id="modificarTrabajador"class="btn btn-primary">Modificar</button>
   </div>
 
   </form>
@@ -286,14 +286,12 @@ $util -> validarRuta(0);
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
 
-  <script type="text/javascript">
+  <script>
 
    function validarPassword() {
 
-        var password = document.getElementById("#password").value;
-        var rPassword = document.getElementById("#rPassword").value;
-
-
+        password = document.getElementById("password").value;
+        rPassword = document.getElementById("rPassword").value;
 
         if (password !== "" && password !== null && rPassword !== "" && rPassword !== null){
 
@@ -305,8 +303,8 @@ $util -> validarRuta(0);
 
               }else{
 
-                document.getElementById("pass").className += " has-error";
-                document .getElementById("#pass1").className += " has-error";
+                document.getElementById("pass").className += "has-error";
+                document .getElementById("#pass1").className += "has-error";
                 document.getElementById("#errorPass").className += "form-group";
           
             }
