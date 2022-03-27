@@ -1,5 +1,4 @@
 <?php
-// include "../util/utilOsdo.php";
 include_once "../util/utilModelo.php";
 include_once "../util/util.php";
 $util = new util();
@@ -151,7 +150,6 @@ $util -> validarRuta(0);
     <!-- /main-inner -->
   </div>
 
-
     <!-- inicio modal guardar -->
   <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -163,16 +161,17 @@ $util -> validarRuta(0);
       <form class="span8" action="crudUsuariosControlador.php" method="post" >
 
                                 <div class="form-group">
-                                    <input   type="text" name="nombre" id="nombre" tabindex="1" class=" form-control span4"
+                                    <input   type="text" minlength="3" name="nombre" id="nombre" tabindex="1" class=" form-control span4"
                                            placeholder="Nombres" value="" required>
                                 </div>
                                 <div class="form-group   ">
-                                    <input   type="text" name="apellido" id="apellido" tabindex="1" class=" form-control span4"
+                                    <input   type="text" minlength="3" name="apellido" id="apellido" tabindex="1" class=" form-control span4"
                                            placeholder="Apellidos" value="" required>
                                 </div>
                                 <div class="form-group  ">
-                                    <input   type="email" name="email" id="email" onkeyup="validarCorreo('#email');" tabindex="1" class=" form-control span4"
+                                    <input   type="email" name="email" id="email" onkeyup="validarCorreo('email');" tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
+                                          
                                 </div>
                                 <div class="col-md-4">
                                     <label for="tipo" class="form-label"></label>
@@ -185,7 +184,7 @@ $util -> validarRuta(0);
                                   </select>
                                 </div>
                                 <div class="form-group" id="pass">
-                                   <input   type="password" name="password" onkeyup="validarPassword();" id="password" class=" form-control span4 " placeholder="Contraseña" tabindex="2" required>
+                                   <input   type="password" name="password" onkeyup="validarPassword();" id="password" class=" form-control span4 " placeholder="Contraseña" tabindex="2" required> 
                                   </div>
                                 <div class="form-group   " id="pass1">
                                    <input   type="password" onkeyup="validarPassword();" name="rPassword" id="rPassword" tabindex="2" class=" form-control span4" placeholder="Confirmar contraseña" required>
@@ -198,7 +197,7 @@ $util -> validarRuta(0);
       <!-- Cierre modal -->
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
       <!-- Boton envio datos -->
-      <button type="submit" name="guardarUsuario" id="guardarUsuario"class="btn btn-primary">Guardar</button>
+      <button type="submit" name="guardarUsuario" id="guardarUsuario"class="btn btn-primary">Registrar</button>
     </div>
     </form>
   </div>
@@ -220,11 +219,11 @@ $util -> validarRuta(0);
                                   <input id="IdE" name="id" type="hidden">
                                   </div>
                                 <div class="form-group">
-                                  <input   type="text" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
+                                  <input   type="text" minlength="3" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"
                                            placeholder="Nombres" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input   type="text" name="apellido" id="apellidoE" tabindex="1" class=" form-control span4"
+                                    <input   type="text" minlength="3" name="apellido" id="apellidoE" tabindex="1" class=" form-control span4"
                                            placeholder="Apellidos" value="" required>
                                 </div>
                                 <div class="form-group">
@@ -281,7 +280,6 @@ $util -> validarRuta(0);
   <script src="../js/bootstrap.js"></script>
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
-
   <script type="text/javascript">
 
 
@@ -294,7 +292,7 @@ $util -> validarRuta(0);
 
         if (password !== "" && password !== null && rPassword !== "" && rPassword !== null) {
             
-          if (password === rPassword) {
+          if (password === rPassword && contPassword >= 6) {
 
                 document.getElementById("guardarUsuario").className = "btn btn-success btn-lg ";
                 document.getElementById("guardarUsuario").disabled = false;
@@ -309,6 +307,12 @@ $util -> validarRuta(0);
                 document.getElementById("errorPass").className = "form-group";
                 document.getElementById("guardarUsuario").className += " disabled";
                 document.getElementById("guardarUsuario").disabled = true;
+
+            }else if(contPassword < 6){
+              
+              document.getElementById("").className += "";
+              document.getElementById("guardarUsuario").className += " disabled";
+              document.getElementById("guardarUsuario").disabled = true;
 
             }
         }
