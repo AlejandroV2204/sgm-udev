@@ -1,24 +1,22 @@
 <?php
 include_once "utilModelo.php";
-$utilModelo = new utilModelo();
+
+//recibe el correo de usuario para validar
+ $cor = $_POST["#email"];
+ $tabla = "usuario";
 
       //Cambio logica y nombre de la validacion del usuario para reutilizar para que me valide el correo
-       function validarCorreo($cor) {
+      function validarCorreo($cor) {
+        
+        $utilModelo = new utilModelo();
 
-        //recibe el correo de usuario para validar
-           $campo = "email";
-           $tabla = "usuario";
-
-           echo $cor;
-
-
-            $result = $utilModelo->consultarVariasTablas($campo ,$tabla ,"$campo'='$cor");
-              
-            $rowcount=mysqli_num_rows($result);
+            $result = $utilModelo->consultarVariasTablas("*", $tabla ,"email='$cor'");
+              $rowcount=mysqli_num_rows($result);
                
+            
               if($rowcount != 0) {
 
-               echo "<span style='font-weight:bold;color:red;'>El Correo ya existe intente con otro.</span>";
+               echo "<span style='font-weight:bold;color:red;'>El Correo de usuario ya existe.</span>";
 
               }else{
 
@@ -26,6 +24,6 @@ $utilModelo = new utilModelo();
 
             }
       
-     }
-    
+    }
+
  ?>
