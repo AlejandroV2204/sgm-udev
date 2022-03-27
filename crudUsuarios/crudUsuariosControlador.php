@@ -26,12 +26,21 @@ $valores = array("$nombre","$apellido","$correo","$password","$tipo_user","$acti
 //la funcion insertar recive el nombre de la tabla y los dos arrays de campos y valores
 $nombreDeTabla = "usuario";
 
+ $validar = $utilModelo->consultarVariasTablas("*", $nombreDeTabla, "email='$correo'");
+
+if($validar->num_rows > 0){
+	header('Location:crudUsuariosVista.php');
+    echo "<h5 class='text-danger text-center'> El correo electronico ya se encuentra en uso</h5>";
+
+}else{
+
 $utilModelo -> insertar($nombreDeTabla,$campos, $valores) ;
 
 echo "si funciono";
 $_SESSION['mensajeOk']="Accion realizada";
       header('Location:crudUsuariosVista.php');
 
+}
 
 //modificar
  }else if(isset($_POST['modificarUsuario'])){

@@ -170,7 +170,7 @@ $util -> validarRuta(0);
                                            placeholder="Apellidos" value="" required>
                                 </div>
                                 <div class="form-group  ">
-                                    <input   type="email" name="email" id="email" onkeyup="validarCorreo('#email');" tabindex="1" class=" form-control span4"
+                                    <input   type="email" name="email" id="email"  tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
                                           
                                 </div>

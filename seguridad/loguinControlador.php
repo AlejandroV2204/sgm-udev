@@ -16,6 +16,7 @@ $tabla = "usuario";
 $result = $util -> mostrarregistros($tabla,$nombreCampo,$valor);
 $contador = 0;
 while ($fila = mysqli_fetch_array($result)) {
+    
      if ($fila != NULL) {
         $_SESSION['usuario']=array($fila['id_usuario'],$fila['tipo_usuario']);
         $contador++;
