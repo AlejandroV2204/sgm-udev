@@ -28,7 +28,6 @@ $util -> validarRuta(0);
 <body>
   <?php
   include "../componentes/menuPrincipalAdmin.php";
-
   ?>
   <div class="main">
     <div class="main-inner">
@@ -36,13 +35,18 @@ $util -> validarRuta(0);
         <div class="row">
 
           <div class="span3"></div>
-
          <!-- /INICIO TABLA Rangos-->
 
           <div class="span9">
 
             <a href="#modalGuardar"  data-toggle="modal" class=" form-control btn btn-register">Crear Usuario</a><br><br>
-              <div class="widget widget-nopad">
+            <?php
+                  if (isset($_SESSION['error'])) {
+                  echo $_SESSION['error'];
+                  unset($_SESSION['error']);
+                }
+                ?>
+            <div class="widget widget-nopad">
             <div class="widget widget-table action-table">
               <div class="widget-header"> <i class="icon-th-list"></i>
                 <h3>Usuarios</h3>
@@ -163,16 +167,15 @@ $util -> validarRuta(0);
 
                                 <div class="form-group">
                                     <input   type="text" minlength="3" name="nombre" id="nombre" tabindex="1" class=" form-control span4"
-                                           placeholder="Nombres" value="" required>
+                                           placeholder="Nombres" value="" pattern = "[a-zA-Z ' ']+" required>
                                 </div>
                                 <div class="form-group   ">
                                     <input   type="text" minlength="3" name="apellido" id="apellido" tabindex="1" class=" form-control span4"
-                                           placeholder="Apellidos" value="" required>
+                                           placeholder="Apellidos" value="" pattern = "[a-zA-Z ' ']+" required>
                                 </div>
                                 <div class="form-group  ">
                                     <input   type="email" name="email" id="email"  tabindex="1" class=" form-control span4"
                                            placeholder="Correo electronico" value="" required>
-                                          
                                 </div>
                                 <div class="col-md-4">
                                     <label for="tipo" class="form-label"></label>
@@ -191,7 +194,7 @@ $util -> validarRuta(0);
                                    <input   type="password" onkeyup="validarPassword();" name="rPassword" id="rPassword" tabindex="2" class=" form-control span4" placeholder="Confirmar contraseña" required>
                                   </div>
                                 <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 14px;">
-                                 <br> <img src="../img/Error-128.png" width="14" height="14"><strong>Las contraseñas no coinciden</strong>
+                                 <img src="../img/Error-128.png" width="14" height="14"><strong>Las contraseñas no coinciden</strong>
                           </div>
                        </div>
     <div class="modal-footer">
@@ -266,8 +269,6 @@ $util -> validarRuta(0);
 </div>
 <!-- Fin modal -->
 
-
-
   <?php
   include "../componentes/pie.php";
   ?>
@@ -300,6 +301,7 @@ $util -> validarRuta(0);
                 document.getElementById("errorPass").className = "hidden";
                 document.getElementById("pass").className = "form-group";
                 document.getElementById("pass1").className = "form-group";
+                document.getElementById("errorPass1").className += "hiddebn";
                 
             }else if(password !== rPassword){
 
@@ -309,9 +311,18 @@ $util -> validarRuta(0);
                 document.getElementById("guardarUsuario").className += " disabled";
                 document.getElementById("guardarUsuario").disabled = true;
 
+            }else if(contPassword < 6 && password === rPassword){
+        
+              document.getElementById("errorPass").className = "hidden";
+              document.getElementById("pass").className = "form-group";
+              document.getElementById("pass1").className = "form-group";
+              alert("La contraseña es muy corta debe tener mas de 6 caracteres");
+              document.getElementById("guardarUsuario").className += " disabled";
+              document.getElementById("guardarUsuario").disabled = true;
+
             }else if(contPassword < 6){
-              
-              document.getElementById("").className += "";
+
+              alert("La contraseña es muy corta debe tener mas de 6 caracteres");
               document.getElementById("guardarUsuario").className += " disabled";
               document.getElementById("guardarUsuario").disabled = true;
 

@@ -29,17 +29,16 @@ $nombreDeTabla = "usuario";
  $validar = $utilModelo->consultarVariasTablas("*", $nombreDeTabla, "email='$correo'");
 
 if($validar->num_rows > 0){
+
+
+	$_SESSION['error'] = "<h4 style='color: #ff0000;'>El correo electronico ingresado ya se encuentra en uso
+	                        Intenta con otro</h4>";
 	header('Location:crudUsuariosVista.php');
-    echo "<h5 class='text-danger text-center'> El correo electronico ya se encuentra en uso</h5>";
-
+       die();
 }else{
-
 $utilModelo -> insertar($nombreDeTabla,$campos, $valores) ;
-
-echo "si funciono";
 $_SESSION['mensajeOk']="Accion realizada";
       header('Location:crudUsuariosVista.php');
-
 }
 
 //modificar
