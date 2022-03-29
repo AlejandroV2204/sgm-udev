@@ -24,8 +24,6 @@ $utilModelo = new utilModelo();
               if($numero){
                 
                 $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
-                // $tabla = "computador";
-                // $result = $utilModelo->consultarVariasTablas("*",$tabla,"1");
                 while ($fila = mysqli_fetch_row($result)) 
                 {
                     if ($fila != NULL) 

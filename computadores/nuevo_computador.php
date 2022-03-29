@@ -30,13 +30,15 @@
 
     <!-- ============= INICIO -TABLA ======================================================================================================== -->
 
+
+
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
-            <div class="widget-header">
+            <div class="widget-header" id="dilan">
                 <!-- <i class="icon-th-list"></i> -->
-                <!-- <h3>Computadores</h3> -->
+                <h3>Filtrar por:</h3>
 
-                <select name="lugar" id="lugarE" class="form-select">
+                <select name="lugar" id="lugarE" class="">
                     <option selected disabled value="">Todas las salas</option>
 
                     <?php
@@ -56,8 +58,7 @@
 
                 </select>
 
-                <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
-                        class="icon-plus"></i> Nuevo registro</a><br><br>
+                
             </div>
 
             <div class="containero">
@@ -92,9 +93,6 @@
                     
                 ?>
 
-
-
-
                 <h6 class="bigstats"></h6>
                 <!-- /widget-content -->
             </div>
@@ -107,6 +105,10 @@
     <!-- /FIN TABLA -->
 
     <!-- =================================================================================================================== -->
+
+    <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
+                        class="icon-plus"></i> Nuevo registro</a><br><br>
+
 
     <!-- INICIO MODAL GUARDAR -->
 
@@ -317,9 +319,11 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="INTEGRADOS" required> Integrados
+                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="INTEGRADOS" required>
+                    Integrados
                     <br>
-                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="DEDICADOS" required> Dedicados
+                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="DEDICADOS" required>
+                    Dedicados
 
                 </p>
 
@@ -385,6 +389,8 @@
     </div>
 
 
+
+
     </form>
     </div>
     <!-- FIN MODAL EDITAR -->
@@ -405,7 +411,7 @@
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-            <button type="submit" name="eliminar" id="eliminar" class="btn btn-primary">Desactivar</button>
+            <button type="submit" name="eliminar" id="idEliminar" class="btn btn-primary">Desactivar</button>
         </div>
 
         </form>
@@ -425,33 +431,28 @@
 
     <script type="text/javascript">
 
-    $(document).ready(function(){
 
-        $("#lugarE").on('change', function(){
+    $(document).ready(function() {
 
-            var value = $(this).val(); 
+        $("#lugarE").on('change', function() {
+
+            var value = $(this).val();
             // alert(value);
 
             $.ajax({
-                url:"data.php",
-                type:"POST",
-                data:'request=' + value,
-                beforeSend:function(){
-                   
+                url: "data.php",
+                type: "POST",
+                data: 'request=' + value,
+                beforeSend: function() {
+
                 },
-                success:function(data){
-                    $(".containero").html(data);                
+                success: function(data) {
+                    $(".containero").html(data);
                 }
             });
         });
 
     });
-
-
-
-
-
-
 
     function agregarForm(datos) {
         d = datos.split("||");
