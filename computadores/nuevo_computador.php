@@ -32,8 +32,30 @@
 
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
-            <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Computadores</h3>
+            <div class="widget-header">
+                <!-- <i class="icon-th-list"></i> -->
+                <!-- <h3>Computadores</h3> -->
+
+                <select name="lugar" id="lugarE" class="form-select">
+                    <option selected disabled value="">Todas las salas</option>
+
+                    <?php
+
+                            $tabla = "sala";
+
+                            $sql = $utilidad->mostrarTodosRegistros($tabla);
+
+                            while($row = $sql->fetch_assoc()){
+                                
+                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
+                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
+                            }
+                        
+                        ?>
+
+                </select>
+
                 <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
                         class="icon-plus"></i> Nuevo registro</a><br><br>
             </div>
@@ -87,6 +109,7 @@
     <!-- =================================================================================================================== -->
 
     <!-- INICIO MODAL GUARDAR -->
+
     <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-header">
@@ -109,11 +132,10 @@
                 </p>
 
                 <label for="placa base" class="form-label">Motherboard</label>
-                <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k"
-                    required>
+                <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k" required>
 
                 <label for="lugar ubicado" class="form-label">Lugar ubicado:</label>
-                <select name="sala"  class="form-select" required>
+                <select name="sala" class="form-select" required>
                     <option selected disabled value="">Salas</option>
 
                     <?php
@@ -134,16 +156,16 @@
                 </select>
 
                 <label for="procesadores" class="form-label">Procesador</label>
-                <input type="text" class="form-control" name="procesador" 
-                    placeholder="ej: Intel Pentium E5300" required>
+                <input type="text" class="form-control" name="procesador" placeholder="ej: Intel Pentium E5300"
+                    required>
 
                 <label for="cantidad de ram" class="form-label">Cantidad RAM</label>
-                <input type="range" name="cantidad_ram"  class="form-range" min="0" max="32" step="4"
+                <input type="range" name="cantidad_ram" class="form-range" min="0" max="32" step="4"
                     oninput="rangeValue.innerText = this.value+'GB'" required>
                 <p id="rangeValue">4GB</p>
 
                 <label for="velocidad" class="form-label">Velocidad RAM</label>
-                <select name="velocidad_ram"  class="form-select" required>
+                <select name="velocidad_ram" class="form-select" required>
                     <option selected disabled value="">Escoge</option>
                     <option value="1333mhz">1333Mhz</option>
                     <option value="1006mhz">1066Mhz</option>
@@ -162,8 +184,7 @@
                 </p>
 
                 <label for="capacidad disco" class="form-label">Capacidad disco</label>
-                <input type="text" class="form-control" name="capacidad_disco" 
-                    placeholder="ej: 500GB" required>
+                <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB" required>
 
                 <p>
                     El computador tiene: <br>
@@ -195,12 +216,12 @@
 
 
                 <label for="pasta termica" class="form-label">Ultima pasta termica</label>
-                <input type="date" id="start" name="ultima_termica" 
-                    value="<?php echo date('Y-m-d'); ?>" min="2018-01-01" max="2025-12-31" required>
+                <input type="date" id="start" name="ultima_termica" value="<?php echo date('Y-m-d'); ?>"
+                    min="2018-01-01" max="2025-12-31" required>
 
                 <label for="mantenimiento" class="form-label">Ultimo mantenimiento</label>
-                <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>"
-                    min="2018-01-01" max="2025-12-31" required>
+                <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01"
+                    max="2025-12-31" required>
 
                 <p>
                     Salidas de video: <br>
@@ -254,7 +275,7 @@
                     required>
 
                 <label for="lugar ubicado" class="form-label">Lugar ubicado:</label>
-                <select  id="salaE" name="sala" class="form-select" required>
+                <select id="salaE" name="sala" class="form-select" required>
                     <option selected disabled value="">Salas</option>
 
                     <?php
@@ -332,12 +353,13 @@
                 </p>
 
                 <label for="ventiladores" class="form-label">No. Ventiladores</label>
-                <input type="number" class="form-control" name="ventiladores" id="ventiladoresE" placeholder="" required>
+                <input type="number" class="form-control" name="ventiladores" id="ventiladoresE" placeholder=""
+                    required>
 
 
                 <label for="pasta termica" class="form-label">Ultima pasta termica</label>
-                <input type="date" name="ultima_termica" id="ultima_termicaEE"
-                    value="<?php echo date('Y-m-d'); ?>" min="2018-01-01" max="2025-12-31" required>
+                <input type="date" name="ultima_termica" id="ultima_termicaEE" value="<?php echo date('Y-m-d'); ?>"
+                    min="2018-01-01" max="2025-12-31" required>
 
                 <label for="mantenimiento" class="form-label">Ultimo mantenimiento</label>
                 <input type="date" name="ultimo_man" id="ultimo_manE" value="<?php echo date('Y-m-d'); ?>"
@@ -402,6 +424,35 @@
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
     <script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $("#lugarE").on('change', function(){
+
+            var value = $(this).val(); 
+            // alert(value);
+
+            $.ajax({
+                url:"data.php",
+                type:"POST",
+                data:'request=' + value,
+                beforeSend:function(){
+                   
+                },
+                success:function(data){
+                    $(".containero").html(data);                
+                }
+            });
+        });
+
+    });
+
+
+
+
+
+
+
     function agregarForm(datos) {
         d = datos.split("||");
 
