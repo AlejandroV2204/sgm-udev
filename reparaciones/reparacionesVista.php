@@ -174,7 +174,7 @@ $util -> validarRuta(0);
       <!-- Cierre modal -->
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
       <!-- Boton envio datos -->
-      <button type="submit" name="guardarReparacion" id="guardarTrabajador"class="btn btn-primary">Guardar</button>
+      <button type="submit" name="guardarReparacion" id="guardarReparacion"class="btn btn-primary">Guardar</button>
     </div>
 
     </form>
@@ -191,24 +191,40 @@ $util -> validarRuta(0);
   </div>
   <div class="modal-body">
 
-      <form style="min-width: 500px;" action="crearSala.controller.php" method="post" >
+      <form style="min-width: 500px;" action="reparacionesController.php" method="post" >
 
                                 <div class="form-group">
                                   <input id="codigoE" name="id" type="hidden">
                                   </div>
-                                <div class="form-group">
-                                  <input   type="text" name="cantidad_pc" id="cantidad_pc" tabindex="1" class=" form-control span4"
-                                           placeholder="Cantidad de computadores" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <input   type="text" name="nombre_sala" id="nombre_sala" tabindex="1" class=" form-control span4"
-                                           placeholder="Nombre de la sala" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <input   type="text" name="estado_sala" id="estado_sala" tabindex="1" class=" form-control span4"
-                                           placeholder="Estado" value="" required>
-                                </div>
+                                  <div class="form-group">
+                                <label for="lugar ubicado" class="form-label">ID Reporte</label>
+                <select name="reporte" class="form-select">
 
+                    <?php
+
+                            $tabla = "reporte";
+
+                            $sql = $utilidad->mostrarTodosRegistros($tabla);
+
+                            while($row = $sql->fetch_assoc()){
+                                
+                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
+                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                echo "<option value = ".$row['id_reporte'].">". $row['id_reporte']. "</option>";
+                            }
+                        
+                        ?>
+
+                </select>
+                </div>
+                                  <div class="form-group   ">
+                                    <input   type="date" name="fecha" id="fecha" tabindex="1" class=" form-control span4"
+                                           placeholder="fecha" value="<?php echo date('Y-m-d'); ?>" required>
+                                </div>
+                                <div class="form-group   ">
+                                    <input   type="text" name="descripcion_reparacion" id="descripcion_reparacion" tabindex="1" class=" form-control span4"
+                                           placeholder="Descripcion De La Reparacion" value="" required>
+                                </div>
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
