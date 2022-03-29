@@ -21,10 +21,14 @@ if(isset($_POST['olvideClave'])){
             //Campo tal cual como aparece en la base ede datos
             $campo = array("codigo");
 
-        $utilModelo->modificar($tabla, $campo, $valor, "email", $email);
+        $envio = $utilModelo->modificar($tabla, $campo, $valor, "email", $email);
 
            echo "Todo va bien";
+            if($envio){
 
+                
+                
+            }
 
         // Codigo Dilan 
 
