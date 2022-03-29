@@ -1427,6 +1427,12 @@ table.fc-border-separate {
 }
 
 
+.carregando{
+
+    text-align: center;
+}
+
+
 body {
     margin:0;
 }

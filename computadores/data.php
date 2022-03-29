@@ -17,9 +17,17 @@ $utilModelo = new utilModelo();
 
               $nombreCampo = array("id_sala1");
               $tabla = "computador";
+
+              if($_POST['request'] == 9){
+                
+                $request = 'true';
+                echo "ben10 ";
+              }
+
               $result = $utilModelo->mostrarregistros($tabla,$nombreCampo,$request);
               $numero = mysqli_num_rows($result);
-
+              
+              print_r($numero);
 
               if($numero){
                 

@@ -34,12 +34,12 @@
 
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
-            <div class="widget-header" id="dilan">
+            <div class="widget-header" id="lunarrrrrrrr">
                 <!-- <i class="icon-th-list"></i> -->
                 <h3>Filtrar por:</h3>
 
                 <select name="lugar" id="lugarE" class="">
-                    <option selected disabled value="">Todas las salas</option>
+                    <option selected value="9">Todas las salas</option>
 
                     <?php
 
@@ -58,10 +58,14 @@
 
                 </select>
 
-                
+
             </div>
 
+
+
             <div class="containero">
+
+
 
                 <?php
                 
@@ -97,17 +101,50 @@
                 <!-- /widget-content -->
             </div>
         </div>
-
+<!-- ======================================================================= -->
+        <!-- <div class="carregando" id="dilan">
+    
+        </div> -->
 
 
     </div>
+
+
+
+    <div id="dilan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        
+        <div class="modal-body">
+
+            
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- /FIN TABLA -->
 
     <!-- =================================================================================================================== -->
 
-    <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
+
+    <div class="widget widget-nopad">
+        <div class="widget widget-table action-table">
+            <div class="widget-header" id="nuevoRegistro">
+                <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
                         class="icon-plus"></i> Nuevo registro</a><br><br>
+            </div>
+        </div>
+    </div>
 
 
     <!-- INICIO MODAL GUARDAR -->
@@ -428,26 +465,25 @@
     <script src="../js/chart.min.js" type="text/javascript"></script>
     <script src="../js/bootstrap.js"></script>
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
-
     <script type="text/javascript">
-
 
     $(document).ready(function() {
 
         $("#lugarE").on('change', function() {
 
             var value = $(this).val();
-            // alert(value);
-
             $.ajax({
                 url: "data.php",
                 type: "POST",
                 data: 'request=' + value,
                 beforeSend: function() {
-
+                    $('#dilan').html('<img class="center" src="../img/loading.gif"/>')
+                    .show();
                 },
                 success: function(data) {
                     $(".containero").html(data);
+                    $('#dilan').html('<img class="center" src="../img/loading.gif"/>')
+                    .hide();
                 }
             });
         });
