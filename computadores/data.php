@@ -20,14 +20,15 @@ $utilModelo = new utilModelo();
 
               if($_POST['request'] == 9){
                 
-                $request = 'true';
+                $request = array($_POST['request'].' or 1 = 1');
                 echo "ben10 ";
+                
               }
 
               $result = $utilModelo->mostrarregistros($tabla,$nombreCampo,$request);
               $numero = mysqli_num_rows($result);
               
-              print_r($numero);
+              // print_r($numero);
 
               if($numero){
                 
