@@ -48,7 +48,7 @@
 
                                 <div class="form-group">
                                     <input type="text" name="email" id="email" tabindex="1" class="form-control"
-                                           placeholder="Correo">
+                                           placeholder="Correo" required>
                                 </div>
                                 <div class="form-group">
                                     <div class="row">

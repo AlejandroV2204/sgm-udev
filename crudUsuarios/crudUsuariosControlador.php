@@ -34,7 +34,7 @@ if($validar->num_rows > 0){
 
 	$_SESSION['error'] = "<h4 style='color: #ff0000;'>El correo electronico ingresado ya se encuentra en uso
 	                        Intenta con otro</h4>";
-	header('Location:crudUsuariosVista.php');
+	    header('Location:crudUsuariosVista.php');
        die();
 
 	//    De lo contrario utilizo la funcion insert

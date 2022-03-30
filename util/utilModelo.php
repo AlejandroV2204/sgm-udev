@@ -63,7 +63,7 @@
              $consulta = "UPDATE `$tabla` SET $construccionDeValores WHERE `$campoCondicion` = '$condicion' ;";
              $query = mysqli_query($link, $consulta);
 
-               echo $consulta;
+               //echo $consulta;
             //       die(); 
            return $query;
 
@@ -75,7 +75,7 @@
             $consulta = "SELECT $campos FROM $valores WHERE $condiciones";
             $query = mysqli_query($link, $consulta);
             
-             echo "$consulta";
+             //echo "$consulta";
             return $query;
 
         }

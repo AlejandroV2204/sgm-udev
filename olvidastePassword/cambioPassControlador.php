@@ -7,7 +7,7 @@ include_once "../util/utilModelo.php";
 if(isset($_POST['olvideClave'])){
 
     //Correo al que se le valida
-    $email = $_POST['email'];
+    $email = filter_input(INPUT_POST, 'email');
     //Tabla 
     $tabla = "usuario";
 
@@ -22,41 +22,48 @@ if(isset($_POST['olvideClave'])){
             $campo = array("codigo");
 
         $envio = $utilModelo->modificar($tabla, $campo, $valor, "email", $email);
-
-           echo "Todo va bien";
             if($envio){
+               
+                 //A donde mando el mensaje
+                 $destino = $email;
+                 //El encavesado del mensaje
+                 $encabesado = "Correo de cambio contraseña".
+                 "Enviado desde la pagina SGM_UDEV";
 
-                
-                
+                 //Extracion de el nombre y el apellido del usuario para mandarlo al correo
+                 $nombreCampo = array("email");
+                 $valor = array($email);
+
+                 $resultado = $utilModelo->mostrarregistros("usuario", $nombreCampo, $valor);
+                while ($fila = mysqli_fetch_array($resultado)) {
+                    if ($fila != NULL) {
+                         $nombre = $fila['nombre'];
+                         $apellido = $fila['apellido'];
+                    }
+                }
+                 $mensaje = "Hola espero que estes bien $nombre $apellido el codigo de validacion para el
+                 cambio de tu contraseña es: $code";
+
+
+                 echo $destino.$encabesado.$mensaje;
+
+                 mail($destino, $encabesado, $mensaje);
+
+                  if(mail($destino, $encabesado, $mensaje) == true){
+                  echo "se mando";
+                  }else{
+                      echo "puta";
+                  }
+
+            }else{
+                $errors['db-error'] = "Something went wrong!";
             }
+    }else{
 
-        // Codigo Dilan 
+        $_SESSION['error'] = "Correo inesistente";
+        echo "El correo no esta en la base de datos";
 
-
-         // $insert_code = "UPDATE usuario SET $campo = $code WHERE email = '$email'";
-            // $run_query =  mysqli_query($con, $insert_code);
-        //     $email = mysqli_real_escape_string($con, $_POST['email']);
-        //     $check_email =  "SELECT * FROM usuario WHERE email='$email'";
-        //     $run_sql = mysqli_query($con, $check_email);
-        //     if($run_query){
-        //         $subject = "Password Reset Code";
-        //         $message = "Your password reset code is $code";
-        //         $sender = "From: shahiprem7890@gmail.com";
-        //         if(mail($email, $subject, $message, $sender)){
-        //             $info = "We've sent a passwrod reset otp to your email - $email";
-        //             $_SESSION['info'] = $info;
-        //             $_SESSION['email'] = $email;
-        //             header('location: reset-code.php');
-        //             exit();
-        //         }else{
-        //             $errors['otp-error'] = "Failed while sending code!";
-        //         }
-        //     }else{
-        //         $errors['db-error'] = "Something went wrong!";
-        //     }
-         }else{
-             $_SESSION['error'] = "Correo inesistente";
-            echo "El correo no esta en la base de datos";
-        }
+    }
 }
+
 ?>
