@@ -14,6 +14,7 @@ $estado_reparacion ='1';
 
 if(isset($_POST['guardarReparacion'])){
 
+    echo $id_reporte1;
     echo "Guardar";
 
 
@@ -29,7 +30,7 @@ echo "si funciono";
 // $_SESSION['mensajeOk']="Accion realizada";header('Location: ../crudTrabajador/crudTrabajadorVista.php');
 $_SESSION['mensajeOk']="Accion realizada";
 
-header('Location: ../reparaciones/reparacionesVista.php');
+//header('Location: ../reparaciones/reparacionesVista.php');
 
 
 //modificar
@@ -48,15 +49,16 @@ $nombreDeTabla = "reparacion";
 $utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id_reparacion', $id) ;
 $_SESSION['mensajeOk']="Accion realizada";
 
-    header('Location: reparacionesVista.php');
+    //header('Location: reparacionesVista.php');
 }else{
 
    echo "Eliminar";
 
            $campo = array("estado_reparacion");
+           $valor = array("0");
            $id=$_POST['idEliminar'];
 
-       $utilModelo -> modificar('reparacion',$campo,'0','id_reparacion', $id) ;
+       $utilModelo -> modificar('reparacion',$campo,$valor,'id_reparacion', $id) ;
        $_SESSION['mensajeOk']="Accion realizada";
         header('Location: reparacionesVista.php');
 

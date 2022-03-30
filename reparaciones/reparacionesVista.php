@@ -92,10 +92,11 @@ $util -> validarRuta(0);
 
                           echo "
                             <tr>
-                              <td>$fila[1] </td>
+                              <td>$fila[0] </td>
+                              <td> $fila[1] </td>
                               <td> $fila[2] </td>
                               <td> $fila[3] </td>
-                              <td> $fila[4] </td>
+
                                <td>$estado</td>
                               <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
                             </tr>";
@@ -140,7 +141,7 @@ $util -> validarRuta(0);
 
                                 <div class="form-group">
                                 <label for="lugar ubicado" class="form-label">ID Reporte</label>
-                <select name="reporte" class="form-select">
+                <select name="id_reporte1" class="form-select">
 
                     <?php
 
@@ -154,7 +155,7 @@ $util -> validarRuta(0);
                                 asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
                                 echo "<option value = ".$row['id_reporte'].">". $row['id_reporte']. "</option>";
                             }
-                        
+                  
                         ?>
 
                 </select>
@@ -198,7 +199,7 @@ $util -> validarRuta(0);
                                   </div>
                                   <div class="form-group">
                                 <label for="lugar ubicado" class="form-label">ID Reporte</label>
-                <select name="reporte" class="form-select">
+                <select name="id_reporte1" class="form-select">
 
                     <?php
 
@@ -228,7 +229,7 @@ $util -> validarRuta(0);
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    <button type="submit" name="modificarSala" id="modificarTrabajador"class="btn btn-primary">Modificar</button>
+    <button type="submit" name="modificarReparacion" id="modificarTrabajador"class="btn btn-primary">Modificar</button>
   </div>
 
   </form>
