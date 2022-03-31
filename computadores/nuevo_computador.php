@@ -37,7 +37,8 @@
                 <!-- <h3>Computadores</h3> -->
 
                 <select name="lugar" id="lugarE" class="form-select">
-                    <option selected disabled value="">Todas las salas</option>
+                    <option selected 
+                    value='true'>Todas las salas</option>
 
                     <?php
 
