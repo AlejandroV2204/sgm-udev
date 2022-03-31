@@ -32,8 +32,31 @@
 
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
-            <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Computadores</h3>
+            <div class="widget-header">
+                <!-- <i class="icon-th-list"></i> -->
+                <!-- <h3>Computadores</h3> -->
+
+                <select name="lugar" id="lugarE" class="form-select">
+                    <option selected 
+                    value='true'>Todas las salas</option>
+
+                    <?php
+
+                            $tabla = "sala";
+
+                            $sql = $utilidad->mostrarTodosRegistros($tabla);
+
+                            while($row = $sql->fetch_assoc()){
+                                
+                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
+                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
+                            }
+                        
+                        ?>
+
+                </select>
+
                 <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
                         class="icon-plus"></i> Nuevo registro</a><br><br>
             </div>
@@ -87,6 +110,7 @@
     <!-- =================================================================================================================== -->
 
     <!-- INICIO MODAL GUARDAR -->
+
     <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-header">
@@ -154,7 +178,8 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" value="INTEGRADOS" required> Integrados <br>
+                    <input type="radio" name="tipo_graficos" value="INTEGRADOS" required> Integrados
+                    <br>
                     <input type="radio" name="tipo_graficos" value="DEDICADOS" required> Dedicados
 
                 </p>
@@ -178,9 +203,12 @@
 
                 <p>
                     Estado del panel frontal: <br>
-                    <input type="radio" name="panel_frontal" value="Funcional" required> Funcional<br>
-                    <input type="radio" name="panel_frontal" value="Fallando" required> con fallas<br>
-                    <input type="radio" name="panel_frontal" value="Sin funcionar" required> No funciona
+                    <input type="radio" name="panel_frontal" value="Funcional" required>
+                    Funcional<br>
+                    <input type="radio" name="panel_frontal" value="Fallando" required> con
+                    fallas<br>
+                    <input type="radio" name="panel_frontal" value="Sin funcionar" required> No
+                    funciona
 
                 </p>
 
@@ -199,9 +227,9 @@
                 <p>
                     Salidas de video: <br>
                     <input type="radio" name="salidas_video" value="HDMI" required> HDMI<br>
-                    <input type="radio" name="salidas_video" value="VGA - DVI" required> VGA O DVI<br>
+                    <input type="radio" name="salidas_video" value="VGA - DVI" required> VGA O
+                    DVI<br>
                     <input type="radio" name="salidas_video" value="AMBAS" required> AMBAS
-
                 </p>
 
         </div>
@@ -229,25 +257,27 @@
             <form style="min-width: 500px;" action="control_computador.php" method="post">
 
                 <div class="form-group">
-                    <input id="codigoE" name="identificador" type="text">
+                    <input id="codigoE" name="numero" type="hidden">
                 </div>
 
-                <label for="serial" class="form-label">Identificador del PC</label>
-                <input type="text" class="form-control" name="id_pc">
+                <!-- <label for="serial" class="form-label">Identificador del PC</label>
+                <input type="text" class="form-control" name="id_pc"> -->
 
                 <p>
                     Sistema operativo: <br>
-                    <input type="radio" name="so_pc" value="WINDOWS 8.1"> Windows 8.1<br>
-                    <input type="radio" name="so_pc" value="WINDOWS 10"> Windows 10<br>
-                    <input type="radio" name="so_pc" value="LINUX"> Linux
+                    <input type="radio" name="so_pc" id="so_pcE" value="WINDOWS 8.1" required> Windows 8.1<br>
+                    <input type="radio" name="so_pc" id="so_pcE" value="WINDOWS 10" required> Windows 10<br>
+                    <input type="radio" name="so_pc" id="so_pcE" value="LINUX" required> Linux
 
                 </p>
 
                 <label for="placa base" class="form-label">Motherboard</label>
-                <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k">
+                <input type="text" class="form-control" name="mobo_pc" id="mobo_pcE" placeholder="ej: asus h61m-k"
+                    required>
 
                 <label for="lugar ubicado" class="form-label">Lugar ubicado:</label>
-                <select name="sala" class="form-select">
+                <select id="salaE" name="sala" class="form-select" required>
+                    <option selected disabled value="">Salas</option>
 
                     <?php
 
@@ -267,16 +297,18 @@
                 </select>
 
                 <label for="procesadores" class="form-label">Procesador</label>
-                <input type="text" class="form-control" name="procesador" placeholder="ej: Intel Pentium E5300">
+                <input type="text" class="form-control" name="procesador" id="procesadorE"
+                    placeholder="ej: Intel Pentium E5300" required>
 
                 <label for="cantidad de ram" class="form-label">Cantidad RAM</label>
-                <input type="range" name="cantidad_ram" class="form-range" min="0" max="32" step="4"
-                    oninput="rangeValue.innerText = this.value+'GB'">
+                <input type="range" name="cantidad_ram" id="cantidad_ramE" class="form-range" min="0" max="32" step="4"
+                    oninput="rangeValue.innerText = this.value+'GB'" required>
                 <p id="rangeValue">4GB</p>
 
                 <label for="velocidad" class="form-label">Velocidad RAM</label>
-                <select name="velocidad_ram" class="form-select">
-                    <option selected value="1333mhz">1333Mhz</option>
+                <select name="velocidad_ram" id="velocidad_ramE" class="form-select" required>
+                    <option selected disabled value="">Escoge</option>
+                    <option value="1333mhz">1333Mhz</option>
                     <option value="1006mhz">1066Mhz</option>
                     <option value="1600mhz">1600mhz</option>
                     <option value="2133mhz">2133mhz</option>
@@ -286,54 +318,60 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" value="INTEGRADOS"> Integrados <br>
-                    <input type="radio" name="tipo_graficos" value="DEDICADOS"> Dedicados
+                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="INTEGRADOS" required> Integrados
+                    <br>
+                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="DEDICADOS" required> Dedicados
 
                 </p>
 
                 <label for="capacidad disco" class="form-label">Capacidad disco</label>
-                <input type="text" class="form-control" name="capacidad_disco" placeholder="ej: 500GB">
+                <input type="text" class="form-control" name="capacidad_disco" id="capacidad_discoE"
+                    placeholder="ej: 500GB" required>
 
                 <p>
                     El computador tiene: <br>
                     <small>Teclado:</small> <br>
-                    <input type="radio" name="teclado" value="SI"> SI <br>
-                    <input type="radio" name="teclado" value="NO"> NO <br>
+                    <input type="radio" name="teclado" id="tecladoE" value="SI" required> SI <br>
+                    <input type="radio" name="teclado" id="tecladoE" value="NO" required> NO <br>
                     <small>Mouse:</small> <br>
-                    <input type="radio" name="mouse" value="SI"> SI <br>
-                    <input type="radio" name="mouse" value="NO"> NO <br>
+                    <input type="radio" name="mouse" id="mouseE" value="SI" required> SI <br>
+                    <input type="radio" name="mouse" id="mouseE" value="NO" required> NO <br>
                     <small>Lectora DVD:</small> <br>
-                    <input type="radio" name="lectora_dvd" value="SI"> SI <br>
-                    <input type="radio" name="lectora_dvd" value="NO"> NO <br>
+                    <input type="radio" name="lectora_dvd" id="lectora_dvdE" value="SI" required> SI <br>
+                    <input type="radio" name="lectora_dvd" id="lectora_dvdE" value="NO" required> NO <br>
 
                 </p>
 
                 <p>
                     Estado del panel frontal: <br>
-                    <input type="radio" name="panel_frontal" value="Funcional"> Funcional<br>
-                    <input type="radio" name="panel_frontal" value="Fallando"> con fallas<br>
-                    <input type="radio" name="panel_frontal" value="Sin funcionar"> No funciona
+                    <input type="radio" name="panel_frontal" id="panel_frontalE" value="Funcional" required>
+                    Funcional<br>
+                    <input type="radio" name="panel_frontal" id="panel_frontalE" value="Fallando" required> con
+                    fallas<br>
+                    <input type="radio" name="panel_frontal" id="panel_frontalE" value="Sin funcionar" required> No
+                    funciona
 
                 </p>
 
                 <label for="ventiladores" class="form-label">No. Ventiladores</label>
-                <input type="number" class="form-control" name="ventiladores" placeholder="">
+                <input type="number" class="form-control" name="ventiladores" id="ventiladoresE" placeholder=""
+                    required>
 
 
                 <label for="pasta termica" class="form-label">Ultima pasta termica</label>
-                <input type="date" id="start" name="ultima_termica" value="<?php echo date('Y-m-d'); ?>"
-                    min="2018-01-01" max="2025-12-31">
+                <input type="date" name="ultima_termica" id="ultima_termicaEE" value="<?php echo date('Y-m-d'); ?>"
+                    min="2018-01-01" max="2025-12-31" required>
 
                 <label for="mantenimiento" class="form-label">Ultimo mantenimiento</label>
-                <input type="date" id="start" name="ultimo_man" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01"
-                    max="2025-12-31">
+                <input type="date" name="ultimo_man" id="ultimo_manE" value="<?php echo date('Y-m-d'); ?>"
+                    min="2018-01-01" max="2025-12-31" required>
 
                 <p>
                     Salidas de video: <br>
-                    <input type="radio" name="salidas_video" value="HDMI"> HDMI<br>
-                    <input type="radio" name="salidas_video" value="VGA - DVI"> VGA O DVI<br>
-                    <input type="radio" name="salidas_video" value="AMBAS"> AMBAS
-
+                    <input type="radio" name="salidas_video" id="salidas_videoE" value="HDMI" required> HDMI<br>
+                    <input type="radio" name="salidas_video" id="salidas_videoE" value="VGA - DVI" required> VGA O
+                    DVI<br>
+                    <input type="radio" name="salidas_video" id="salidas_videoE" value="AMBAS" required> AMBAS
                 </p>
 
         </div>
@@ -364,7 +402,7 @@
             <form action="control_computador.php" method="post">
 
                 <input id="idEliminar" name="idEliminar" type="hidden">
-                <h3>Seguro desea desactivar el computador</h3>
+                <h3>Seguro desea desactivar el computador?</h3>
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
@@ -387,33 +425,57 @@
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
     <script type="text/javascript">
-        
+
+    $(document).ready(function(){
+
+        $("#lugarE").on('change', function(){
+
+            var value = $(this).val(); 
+            // alert(value);
+
+            $.ajax({
+                url:"data.php",
+                type:"POST",
+                data:'request=' + value,
+                beforeSend:function(){
+                   
+                },
+                success:function(data){
+                    $(".containero").html(data);                
+                }
+            });
+        });
+
+    });
+
+
+
+
+
+
+
     function agregarForm(datos) {
         d = datos.split("||");
 
         $("#codigoE").val(d[0]);
         $("#idEliminar").val(d[0]);
-<<<<<<< HEAD
-        $("#so_pc").val(d[1]);
-=======
-        $("#id_pc").val(d[0]);
-        $("#sala").val(d[1]);
-        $("#so_pc").val(d[2]);
->>>>>>> d1lan
-        $("#mobo_pc").val(d[3]);
-        $("#cantidad_ram").val(d[4]);
-        $("#velocidad_ram").val(d[5]);
-        $("#procesador").val(d[6]);
-        $("#tipo_graficos").val(d[7]);
-        $("#capacidad_disco").val(d[8]);
-        $("#mouse").val(d[9]);
-        $("#teclado").val(d[10]);
-        $("#panel_frontal").val(d[11]);
-        $("#lectora_dvd").val(d[12]);
-        $("#ventiladores").val(d[13]);
-        $("#ultima_termica").val(d[14]);
-        $("#ultimo_man").val(d[15]);
-        $("#salidas_video").val(d[16]);
+        // $("#id_pc").val(d[0]);
+        $("#salaE").val(d[1]);
+        $("#so_pcE").val(d[2]);
+        $("#mobo_pcE").val(d[3]);
+        $("#cantidad_ramE").val(d[4]);
+        $("#velocidad_ramE").val(d[5]);
+        $("#procesadorE").val(d[6]);
+        $("#tipo_graficosE").val(d[7]);
+        $("#capacidad_discoE").val(d[8]);
+        $("#mouseE").val(d[9]);
+        $("#tecladoE").val(d[10]);
+        $("#panel_frontalE").val(d[11]);
+        $("#lectora_dvdE").val(d[12]);
+        $("#ventiladoresE").val(d[13]);
+        $("#ultima_termicaE").val(d[14]);
+        $("#ultimo_manE").val(d[15]);
+        $("#salidas_videoE").val(d[16]);
 
     }
     </script>

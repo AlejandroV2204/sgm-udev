@@ -48,10 +48,10 @@ if(isset($_POST['guardarComputador']))
     else if(isset($_POST['modificarComputador']))
     {
 
-        $campos = array("id_pc", "id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado_pc");
-        $valores = array("$idcomputador", "$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", 1);
+        $campos = array("id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado_pc");
+        $valores = array("$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", 1);
         
-        $id = $POST['identificador'];
+        $id = $POST['numero'];
         $nombreDeTabla = "computador";
 
         $utilModelo->modificar($nombreDeTabla,$campos,$valores,'id_pc', $id);
@@ -62,14 +62,14 @@ if(isset($_POST['guardarComputador']))
 
     }
 
-    else if(isset($_POST['idEliminar']))
+    else
     {
 
-        $campo = array("estado_pc");
+        $campo = array("estado_pc", "0");
 
         $idi=$_POST['idEliminar'];
 
-        $utilModelo -> modificar('computador',$campo,'0','id_pc', $idi);
+        $utilModelo -> modificar('computador',$campo[0],'0','id_pc', $idi);
         $_SESSION['mensajeOk']="Accion realizada";
         header('Location: nuevo_computador.php');
 
