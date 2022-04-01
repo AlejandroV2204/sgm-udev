@@ -4,14 +4,13 @@ include_once "../util/utilModelo.php";
 $utilModelo = new utilModelo();
 ?>
 
-<div class="containero">
+
 
     <?php
         
             if(isset($_POST['request'])){
 
               $request = $_POST['request'];
-
               $nombreCampo = array("id_sala1");
               $tabla = "computador";
 
@@ -36,6 +35,8 @@ $utilModelo = new utilModelo();
               if($numero)
               {
                 
+                echo "<div class=\"containero\">";
+
                 $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
                 while ($fila = mysqli_fetch_row($result)) 
                 {
@@ -59,19 +60,18 @@ $utilModelo = new utilModelo();
                         
                     }
                 }
-                    
-                ?>
+                   
+                echo "<h6 class=\"bigstats\"></h6>
+                </div>";
 
-    <h6 class="bigstats"></h6>
-</div>
-<?php
-
-            }
+              }
   
-            else{
+              else{
 
-              echo "No hay computadores en esta sala";
+                echo "No hay computadores en esta sala";
+                
+              }
             }
-          }
 
-?>
+
+    ?>
