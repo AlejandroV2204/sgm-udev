@@ -39,7 +39,7 @@
                 <h3>Filtrar por:</h3>
 
                 <select name="lugar" id="lugarE" class="">
-                    <option selected value="9">Todas las salas</option>
+                    <option selected value="0">Todas las salas</option>
 
                     <?php
 

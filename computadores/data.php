@@ -2,15 +2,12 @@
 require_once('../conexion.php');
 include_once "../util/utilModelo.php";
 $utilModelo = new utilModelo();
+?>
 
+<div class="containero">
 
-    ?>
-
-    <div class="containero">
-
-                <?php
-
-                
+    <?php
+            
             if(isset($_POST['request'])){
 
               $request = $_POST['request'];
@@ -18,19 +15,26 @@ $utilModelo = new utilModelo();
               $nombreCampo = array("id_sala1");
               $tabla = "computador";
 
-              if($_POST['request'] == 9){
+              if($_POST['request'] == 0)
+              {
                 
-                $request = array($_POST['request'].' or 1 = 1');
-                echo "ben10 ";
-                
+                $campos = "*";
+                $valores = "computador";
+                $condiciones = "1";
+                $result = $utilModelo->consultarVariasTablas($campos, $valores, $condiciones);
+                $numero = mysqli_num_rows($result);
+              
+              }
+              
+              else{
+
+                $result = $utilModelo->mostrarregistros($tabla,$nombreCampo,$request);
+                $numero = mysqli_num_rows($result);
+
               }
 
-              $result = $utilModelo->mostrarregistros($tabla,$nombreCampo,$request);
-              $numero = mysqli_num_rows($result);
-              
-              // print_r($numero);
-
-              if($numero){
+              if($numero)
+              {
                 
                 $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
                 while ($fila = mysqli_fetch_row($result)) 
@@ -58,16 +62,16 @@ $utilModelo = new utilModelo();
                     
                 ?>
 
-                <h6 class="bigstats"></h6>
-                <!-- /widget-content -->
-            </div>
+    <h6 class="bigstats"></h6>
+</div>
 <?php
-  }else{
 
-    echo "No hay computadores en esta sala";
-  }
-}
+            }
+  
+            else{
 
-
+              echo "No hay computadores en esta sala";
+            }
+          }
 
 ?>
