@@ -30,12 +30,9 @@
 
     <!-- ============= INICIO -TABLA ======================================================================================================== -->
 
-
-
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
             <div class="widget-header" id="lunarrrrrrrr">
-                <!-- <i class="icon-th-list"></i> -->
                 <h3>Filtrar por:</h3>
 
                 <select name="lugar" id="lugarE" class="">
@@ -101,11 +98,14 @@
                 <!-- /widget-content -->
             </div>
         </div>
-<!-- ======================================================================= -->
-        <!-- <div class="carregando" id="dilan">
-    
-        </div> -->
+        
+        <!-- =========================================================== -->
 
+        <div class="carregando" id="dilan">
+    
+        </div>
+
+        <!-- =======================GIF DEL GATO======================== -->
 
     </div>
 
@@ -113,12 +113,12 @@
 
     <div id="dilan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
-        
+
         <div class="modal-body">
 
-            
+
         </div>
-        
+
     </div>
 
 
@@ -298,9 +298,6 @@
                     <input id="codigoE" name="numero" type="hidden">
                 </div>
 
-                <!-- <label for="serial" class="form-label">Identificador del PC</label>
-                <input type="text" class="form-control" name="id_pc"> -->
-
                 <p>
                     Sistema operativo: <br>
                     <input type="radio" name="so_pc" id="so_pcE" value="WINDOWS 8.1" required> Windows 8.1<br>
@@ -466,7 +463,6 @@
     <script src="../js/bootstrap.js"></script>
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
     <script type="text/javascript">
-
     $(document).ready(function() {
 
         $("#lugarE").on('change', function() {
@@ -478,12 +474,12 @@
                 data: 'request=' + value,
                 beforeSend: function() {
                     $('#dilan').html('<img class="center" src="../img/loading.gif"/>')
-                    .show();
+                        .show();
                 },
                 success: function(data) {
                     $(".containero").html(data);
                     $('#dilan').html('<img class="center" src="../img/loading.gif"/>')
-                    .hide();
+                        .hide();
                 }
             });
         });
@@ -495,7 +491,6 @@
 
         $("#codigoE").val(d[0]);
         $("#idEliminar").val(d[0]);
-        // $("#id_pc").val(d[0]);
         $("#salaE").val(d[1]);
         $("#so_pcE").val(d[2]);
         $("#mobo_pcE").val(d[3]);

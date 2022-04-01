@@ -1529,19 +1529,19 @@ body {
     
     
     .basic-card-aqua {
-        background-image: linear-gradient(to bottom right, #4EA699, #4EA699);
+        background-image: linear-gradient(to bottom right, #462e9b, #23413c);
     }
 
         .basic-card-aqua .card-content, .basic-card .card-link a {
-            color: #4EA699;
+            color: #2f3f3d;
         }
         
         .basic-card-aqua .card-link {
-            border-top:1px solid #4EA699;
+            border-top:1px solid #be2b2b;
         }
 
             .basic-card-aqua .card-link a:after {
-                background:#4EA699;
+                background:#fbff00;
             }
 
     .basic-card-lips {

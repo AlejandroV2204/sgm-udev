@@ -59,7 +59,7 @@
                     while ($fila = mysqli_fetch_row($result)) {
 
 
-                      echo  "<div class=\"basic-card basic-card-dark\">
+                      echo  "<div class=\"basic-card basic-card-aqua\">
                                 <div class=\"card-content\">
                                   <span class=\"card-title\">Reporte# $fila[0]</span>
                                         <p class=\"card-text\">
