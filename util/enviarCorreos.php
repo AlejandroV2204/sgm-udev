@@ -1,61 +1,52 @@
 <?php
+//Utilidades
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+//Librerias
 require '../PHPMailer/Exception.php';
 require '../PHPMailer/PHPMailer.php';
 require '../PHPMailer/SMTP.php';
 
-
-/**
- * 
- */
-class correosSmtp 
-{
-    
+//Clase
+class correoSmtp{
+    //Funcion
    function enviarCorreos($destinatario,$asunto,$mensaje){
 
+    //Instancia 
+     $email = new PHPMailer(true);
 
-$mail = new PHPMailer(true);
+        try{
 
-try {
-    //Server settings
-    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
-    $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = 'smtp.live.com';
-    //$mail->Host       = 'goliat.colombiahosting.com.co';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'oscar871220@hotmail.com';                     // SMTP username
-    $mail->Password   = 'lunita1987';                                    // Enable SMTP authentication
-   // $mail->Username   = 'info@todosconurdinola.com';                     // SMTP username
-    //$mail->Password   = 'Osjado1987';                               // SMTP password
-    $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
-    $mail->Port       = 587;                                    // TCP port to connect to
+            //Server sentencia
+            $email->SMTPDebug = 0;
+            $email->isSMTP();
+            $email->Host = "smtp-julianesteban.alwaysdata.net";                      //El host
+            $email->SMTPAuth = true;
+            //Editables de envio
+            $email->Username = 'julianesteban@alwaysdata.net';                     //SMTP usuario designado
+            $email->Password = 'osquitarPerro';                            //Contraseña
+            $email->STMPSecure = 'tls';
+            $email->Port = 587;                                     //puerto
 
-    //Recipients
-    $mail->setFrom('oscar871220@hotmail.com', 'Administrador');
-    $mail->addAddress($destinatario, 'oscar8712220');     // Add a recipient
+            //Destinatario
+            $email->setFrom('julianesteban@alwaysdata.net', 'Administracion');
+            $email->addAddress($destinatario, 'Pagina creada por Julian, Dilan, Ambuber, Alejandro Y Osquitar');       //Agrego destinatario
 
+            // Contenedor
+            $email->isHTML(true);               //Inserto correo en HTML
+            $email->Subject = $asunto;
+            $email->Body = $mensaje;
+            $email->AltBody = 'Funcion no definida';
 
+            $email->send();
 
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = $asunto;
-    $mail->Body    = $mensaje;
-    $mail->AltBody = 'No se para que sirve esta parte asi que probaré';
+        }catch (Exception $e) {
+            echo "<h2 class = 'login-form-link'>Error de conexion con el servicio<h2>";
+            //header("Location: ../olvidastePassword/cambioPassVista.php"); 
+            return false;
 
-    $mail->send();
-   
-
-} catch (Exception $e) {
-    echo "error de conexion"; 
-    return false;//{$mail->ErrorInfo}";
-  
+   }
+ }
 }
-}
-}
-
-
-
-
- ?>
+?>

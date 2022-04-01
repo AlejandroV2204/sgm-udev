@@ -1,28 +1,42 @@
 <?php
+@session_start();
+
+//Librerias
 include_once "../conexion.php";
 include_once "../util/utilModelo.php";
+include_once "../util/enviarCorreos.php";
 
+  //Instancio
   $utilModelo = new utilModelo();
+  $enviarEmail = new correoSmtp();
 
+  //El boton que me trae la informacion
 if(isset($_POST['olvideClave'])){
 
     //Correo al que se le valida
     $email = filter_input(INPUT_POST, 'email');
+
     //Tabla 
     $tabla = "usuario";
 
+    // Consulto en campo en mi base de datos
     $consulCorreo = $utilModelo->consultarVariasTablas("*", $tabla, "email='$email'");    
-        if($consulCorreo->num_rows > 0){
+        
+    // si el correo existe en la base de datos
+          if($consulCorreo->num_rows > 0){
+        
             //Se genera code
             $code = rand(999999, 111111);
  
             // Convierto a un array el campo para que lo reciva mi funcion
             $valor = array("$code");
+
             //Campo tal cual como aparece en la base ede datos
             $campo = array("codigo");
 
-        $envio = $utilModelo->modificar($tabla, $campo, $valor, "email", $email);
-            if($envio){
+                    //Modifico el campo code password
+                $edicion = $utilModelo->modificar($tabla, $campo, $valor, "email", $email);
+                 if($edicion){
                
                  //A donde mando el mensaje
                  $destino = $email;
@@ -33,7 +47,6 @@ if(isset($_POST['olvideClave'])){
                  //Extracion de el nombre y el apellido del usuario para mandarlo al correo
                  $nombreCampo = array("email");
                  $valor = array($email);
-
                  $resultado = $utilModelo->mostrarregistros("usuario", $nombreCampo, $valor);
                 while ($fila = mysqli_fetch_array($resultado)) {
                     if ($fila != NULL) {
@@ -41,16 +54,15 @@ if(isset($_POST['olvideClave'])){
                          $apellido = $fila['apellido'];
                     }
                 }
+
                  $mensaje = "Hola espero que estes bien $nombre $apellido el codigo de validacion para el
                  cambio de tu contraseña es: $code";
 
+                 $enviarEmail->enviarCorreos($destino, $encabesado, $mensaje);
 
-                 echo $destino.$encabesado.$mensaje;
-
-                 mail($destino, $encabesado, $mensaje);
-
-                  if(mail($destino, $encabesado, $mensaje) == true){
+                  if($enviarEmail = true){
                   echo "se mando";
+                //   header("Location: validacionVista.php");
                   }else{
                       echo "puta";
                   }
