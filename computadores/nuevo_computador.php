@@ -46,8 +46,6 @@
 
                             while($row = $sql->fetch_assoc()){
                                 
-                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
-                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
                                 echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
                             }
                         
@@ -59,10 +57,7 @@
             </div>
 
 
-
             <div class="containero">
-
-
 
                 <?php
                 
@@ -76,6 +71,8 @@
 
                       $datos=$fila[0]."||".$fila[1]."||".$fila[2]."||".$fila[3]."||".$fila[4]."||".$fila[5]."||".$fila[6]."||".$fila[7]."||".$fila[8]."||".$fila[9]."||".$fila[10]."||".$fila[11]."||".$fila[12]."||".$fila[13]."||".$fila[14]."||".$fila[15]."||".$fila[16]."||".$fila[17];
                       $random = $imagenes[rand(0, 2)];
+
+                        // La tarjeta donde se muestan los computadores
 
                         echo "<div class=\"card\">";
                             echo "<img src=\"$random\">
@@ -100,15 +97,12 @@
         </div>
 
         <!-- =========================================================== -->
-
         <div class="carregando" id="dilan">
-    
-        </div>
 
+        </div>
         <!-- =======================GIF DEL GATO======================== -->
 
     </div>
-
 
 
     <div id="dilan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -170,8 +164,10 @@
 
                             while($row = $sql->fetch_assoc()){
                                 
-                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
-                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                /* El value en este option es el 'valor que se va a guardar en la base de datos:
+                                 ej: [id_sala, que puede ser 1, 2, 3 etc].
+                                Asi como tambien otro valor para mostrar en el formulario 
+                                ej: [nombre_sala (que es el que aparece en las opciones)] */
                                 echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
                             }
                         
@@ -406,10 +402,6 @@
         </div>
 
     </div>
-
-
-
-
     </form>
     </div>
     <!-- FIN MODAL EDITAR -->
