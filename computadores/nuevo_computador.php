@@ -98,7 +98,7 @@
                 <!-- /widget-content -->
             </div>
         </div>
-        
+
         <!-- =========================================================== -->
 
         <div class="carregando" id="dilan">
@@ -121,21 +121,7 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
     <!-- /FIN TABLA -->
-
-    <!-- =================================================================================================================== -->
-
 
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
@@ -145,7 +131,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- INICIO MODAL GUARDAR -->
 
