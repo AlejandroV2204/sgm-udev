@@ -55,14 +55,19 @@ if(isset($_POST['olvideClave'])){
                     }
                 }
 
-                 $mensaje = "Hola espero que estes bien $nombre $apellido el codigo de validacion para el
-                 cambio de tu contraseña es: $code";
+                 $complemento = "<h2> Tu codigo es: $code<h2>";
+
+                 $mensaje = "<h3>Udev Pagina oficial matenimiento Reporte y aviso de confirmacion de cambio password</h3>
+                 <h3>Hola espero que estes bien $nombre $apellido el motivo de este mensaje es darle es codigo de 
+                 validacion para su respectivo cambio de contraseña. </h3>
+                 <br>
+                 $complemento";
 
                  $enviarEmail->enviarCorreos($destino, $encabesado, $mensaje);
 
                   if($enviarEmail = true){
-                  echo "se mando";
-                //   header("Location: validacionVista.php");
+                //   echo "se mando";
+                   header("Location: validacionVista.php");
                   }else{
                       echo "puta";
                   }

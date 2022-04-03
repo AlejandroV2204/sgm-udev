@@ -31,7 +31,7 @@ class correoSmtp{
 
             //Destinatario
             $email->setFrom('julianesteban@alwaysdata.net', 'Administracion');
-            $email->addAddress($destinatario, 'Pagina creada por Julian, Dilan, Ambuber, Alejandro Y Osquitar');       //Agrego destinatario
+            $email->addAddress($destinatario, '');       //Agrego destinatario
 
             // Contenedor
             $email->isHTML(true);               //Inserto correo en HTML
