@@ -3,12 +3,14 @@
 
 //Librerias
 include_once "../conexion.php";
+include_once "../util/util.php";
 include_once "../util/utilModelo.php";
 include_once "../util/enviarCorreos.php";
 
   //Instancio
   $utilModelo = new utilModelo();
   $enviarEmail = new correoSmtp();
+  $util = new util();
 
   
     //Correo al que se le valida
@@ -25,8 +27,12 @@ if(isset($_POST['olvideClave'])){
         
     // si el correo existe en la base de datos
           if($consulCorreo->num_rows > 0){
-      
-            $valor = array()
+
+            // Llamar la funcion generarclave para mandar la clave
+              $claveTempo = $util->generarClave();
+
+            // Define la clave que se le mostrara al usuario
+            $valor = array($claveTempo);
 
             //Campo tal cual como aparece en la base ede datos
             $campo = array("password");

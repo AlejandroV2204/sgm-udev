@@ -19,6 +19,7 @@
     }else{
 
       header('Location: ../componentes/menuPrincipalAdmin.php');
+      exit();
 
     }
     ?>
