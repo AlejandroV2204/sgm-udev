@@ -200,6 +200,22 @@
             return date('Y-m-d', mktime(0, 0, 0, $month, 1, $year));
         }
 
+        function generarClave(){
+
+            $letras = "0987654321abcdefghijklmnopqrstuvwxyz!@#$%^&*)_";
+            $clave = array();
+            $longitud = strlen($letras) - 1;
+            for($i = 0; $i < 10; $i++){
+        
+                $posicion_string = rand(0, $longitud);
+                $clave[] .= $letras[$posicion_string];
+            }
+            
+            return implode($clave);
+        
+           
+        }
+
     }
 
 ?>
