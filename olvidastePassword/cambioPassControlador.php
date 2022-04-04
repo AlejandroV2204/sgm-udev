@@ -50,6 +50,7 @@ if(isset($_POST['olvideClave'])){
                  $resultado = $utilModelo->mostrarregistros("usuario", $nombreCampo, $valor);
                 while ($fila = mysqli_fetch_array($resultado)) {
                     if ($fila != NULL) {
+                         $_SESSION['cambioPass']=array($fila['id_usuario'], $fila['email'], $fila['codigo']);
                          $nombre = $fila['nombre'];
                          $apellido = $fila['apellido'];
                     }
@@ -67,9 +68,10 @@ if(isset($_POST['olvideClave'])){
 
                   if($enviarEmail = true){
                 //   echo "se mando";
-                   header("Location: validacionVista.php");
+                   header("Location: validarVista.php");
                   }else{
-                      echo "puta";
+                    header("Location: cambioPassVista.php");
+                //   echo "puta";
                   }
 
             }else{
@@ -81,6 +83,24 @@ if(isset($_POST['olvideClave'])){
         echo "El correo no esta en la base de datos";
 
     }
+
+      //Valido el code en la base de datos sin  query reutilizando el session
+}else if(isset($_POST['valida'])){
+
+    $codigo = filter_input(INPUT_POST, 'code');
+
+    if($codigo == $_SESSION['cambioPass'][2]){
+
+         header("Location: camVistaPassword.php");
+    //  echo "Vamos bien mani";
+
+    }else{
+
+        header("Location: validarVista.php");
+    //  echo "Vamos mal";
+
+    }
+
 }
 
 ?>
