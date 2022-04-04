@@ -135,7 +135,7 @@ $util -> validarRuta(0);
     </div>
     <div class="modal-body">
 
-      <form class="span8" action="reparacionesController.php" method="post" >
+      <form class="span8" action="../reparaciones/reparacionesController.php" method="post" >
 
                                 <div class="form-group">
                                     <input   type="text" name="id_reporte1" id="id_reporte1" tabindex="1" class=" form-control span4"

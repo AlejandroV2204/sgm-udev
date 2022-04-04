@@ -37,6 +37,7 @@
 
                 <select name="lugar" id="lugarE" class="">
                     <option selected value="0">Todas las salas</option>
+                    
 
                     <?php
 
@@ -50,7 +51,7 @@
                             }
                         
                         ?>
-
+                    <option value="Inactive">PC NO DISPONIBLES</option>
                 </select>
 
 

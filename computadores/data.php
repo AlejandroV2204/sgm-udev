@@ -24,6 +24,15 @@ $utilModelo = new utilModelo();
                 $numero = mysqli_num_rows($result);
               
               }
+              else if($_POST['request'] == "Inactive"){
+
+                $campos = "*";
+                $valores = "computador";
+                $condiciones = "estado_pc = 0";
+                $result = $utilModelo->consultarVariasTablas($campos, $valores, $condiciones);
+                $numero = mysqli_num_rows($result);
+
+              }
               
               else{
 
@@ -68,7 +77,7 @@ $utilModelo = new utilModelo();
   
               else{
 
-                echo "No hay computadores en esta sala";
+                echo "No se encontraron resultados";
                 
               }
             }
