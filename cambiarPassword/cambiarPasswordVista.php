@@ -45,7 +45,7 @@
 <body>
 
 
-<div class="main">
+<div class="container-md">
 
     <div class="main-inner">
         <div class="container">
@@ -70,7 +70,7 @@
 
             ?>
 
-            <div class="widget">
+            <div class="panel-body">
                 <div class="widget-header"><i class="icon-pencil"></i>
                     <h3>Cambiar contraseña</h3>
                 </div>
@@ -112,7 +112,7 @@
 
 
                         <div class="form-actions">
-                            <button type="submit" id="guardar" class="btn btn-primary">Guaradar</button>
+                            <button type="submit" id="guardar" class="btn btn-primary">Cambiar Contraseña</button>
                             <button class="btn">Cancelar</button>
                         </div>
                     </div>
@@ -126,9 +126,6 @@
     <!-- /main-inner -->
 </div>
 
-<?php
-    include "../componentes/pie.php";
-?>
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
