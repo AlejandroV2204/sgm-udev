@@ -66,10 +66,11 @@ $_SESSION['mensajeOk']="Accion realizada";
 	echo "Eliminar";
 
 			$campo = array("estado_usuario");
+			$valor = array('0');
 			
 			$id=$_POST['idEliminar'];
 
-		$utilModelo->modificar('usuario',$campo,'0','id_usuario', $id) ;
+		$utilModelo->modificar('usuario',$campo, $valor,'id_usuario', $id) ;
 		$_SESSION['mensajeOk']="Accion realizada";
  		header('Location: crudUsuariosVista.php');
 

@@ -2,30 +2,51 @@
 require_once('../conexion.php');
 include_once "../util/utilModelo.php";
 $utilModelo = new utilModelo();
+?>
 
 
-    ?>
 
-    <div class="containero">
-
-                <?php
-
-                
+    <?php
+        
             if(isset($_POST['request'])){
 
               $request = $_POST['request'];
-
               $nombreCampo = array("id_sala1");
               $tabla = "computador";
-              $result = $utilModelo->mostrarregistros($tabla,$nombreCampo,$request);
-              $numero = mysqli_num_rows($result);
 
-
-              if($numero){
+              if($_POST['request'] == 0)
+              {
                 
+                $campos = "*";
+                $valores = "computador";
+                $condiciones = "1";
+                $result = $utilModelo->consultarVariasTablas($campos, $valores, $condiciones);
+                $numero = mysqli_num_rows($result);
+              
+              }
+              else if($_POST['request'] == "Inactive"){
+
+                $campos = "*";
+                $valores = "computador";
+                $condiciones = "estado_pc = 0";
+                $result = $utilModelo->consultarVariasTablas($campos, $valores, $condiciones);
+                $numero = mysqli_num_rows($result);
+
+              }
+              
+              else{
+
+                $result = $utilModelo->mostrarregistros($tabla,$nombreCampo,$request);
+                $numero = mysqli_num_rows($result);
+
+              }
+
+              if($numero)
+              {
+                
+                echo "<div class=\"containero\">";
+
                 $imagenes = array("../img/generic-pc.jpg", "../img/generic-pc2.jpg", "../img/generic-pc3.jpeg");
-                // $tabla = "computador";
-                // $result = $utilModelo->consultarVariasTablas("*",$tabla,"1");
                 while ($fila = mysqli_fetch_row($result)) 
                 {
                     if ($fila != NULL) 
@@ -48,19 +69,18 @@ $utilModelo = new utilModelo();
                         
                     }
                 }
-                    
-                ?>
+                   
+                echo "<h6 class=\"bigstats\"></h6>
+                </div>";
 
-                <h6 class="bigstats"></h6>
-                <!-- /widget-content -->
-            </div>
-<?php
-  }else{
+              }
+  
+              else{
 
-    echo "No hay computadores en esta sala";
-  }
-}
-
+                echo "No se encontraron resultados";
+                
+              }
+            }
 
 
-?>
+    ?>

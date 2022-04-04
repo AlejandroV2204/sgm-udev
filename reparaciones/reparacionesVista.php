@@ -137,7 +137,7 @@ $util -> validarRuta(0);
     </div>
     <div class="modal-body">
 
-      <form class="span8" action="reparacionesController.php" method="post" >
+      <form class="span8" action="../reparaciones/reparacionesController.php" method="post" >
 
                                 <div class="form-group">
                                 <label for="lugar ubicado" class="form-label">ID Reporte</label>

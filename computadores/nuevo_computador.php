@@ -32,13 +32,12 @@
 
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
-            <div class="widget-header">
-                <!-- <i class="icon-th-list"></i> -->
-                <!-- <h3>Computadores</h3> -->
+            <div class="widget-header" id="lunarrrrrrrr">
+                <h3>Filtrar por:</h3>
 
-                <select name="lugar" id="lugarE" class="form-select">
-                    <option selected 
-                    value='true'>Todas las salas</option>
+                <select name="lugar" id="lugarE" class="">
+                    <option selected value="0">Todas las salas</option>
+                    
 
                     <?php
 
@@ -48,18 +47,16 @@
 
                             while($row = $sql->fetch_assoc()){
                                 
-                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
-                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
                                 echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
                             }
                         
                         ?>
-
+                    <option value="Inactive">PC NO DISPONIBLES</option>
                 </select>
 
-                <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
-                        class="icon-plus"></i> Nuevo registro</a><br><br>
+
             </div>
+
 
             <div class="containero">
 
@@ -75,6 +72,8 @@
 
                       $datos=$fila[0]."||".$fila[1]."||".$fila[2]."||".$fila[3]."||".$fila[4]."||".$fila[5]."||".$fila[6]."||".$fila[7]."||".$fila[8]."||".$fila[9]."||".$fila[10]."||".$fila[11]."||".$fila[12]."||".$fila[13]."||".$fila[14]."||".$fila[15]."||".$fila[16]."||".$fila[17];
                       $random = $imagenes[rand(0, 2)];
+
+                        // La tarjeta donde se muestan los computadores
 
                         echo "<div class=\"card\">";
                             echo "<img src=\"$random\">
@@ -93,21 +92,40 @@
                     
                 ?>
 
-
-
-
                 <h6 class="bigstats"></h6>
                 <!-- /widget-content -->
             </div>
         </div>
 
+        <!-- =========================================================== -->
+        <div class="carregando" id="dilan">
 
+        </div>
+        <!-- =======================GIF DEL GATO======================== -->
+
+    </div>
+
+
+    <div id="dilan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-body">
+
+
+        </div>
 
     </div>
 
     <!-- /FIN TABLA -->
 
-    <!-- =================================================================================================================== -->
+    <div class="widget widget-nopad">
+        <div class="widget widget-table action-table">
+            <div class="widget-header" id="nuevoRegistro">
+                <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
+                        class="icon-plus"></i> Nuevo registro</a><br><br>
+            </div>
+        </div>
+    </div>
 
     <!-- INICIO MODAL GUARDAR -->
 
@@ -147,8 +165,10 @@
 
                             while($row = $sql->fetch_assoc()){
                                 
-                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
-                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                /* El value en este option es el 'valor que se va a guardar en la base de datos:
+                                 ej: [id_sala, que puede ser 1, 2, 3 etc].
+                                Asi como tambien otro valor para mostrar en el formulario 
+                                ej: [nombre_sala (que es el que aparece en las opciones)] */
                                 echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
                             }
                         
@@ -260,9 +280,6 @@
                     <input id="codigoE" name="numero" type="hidden">
                 </div>
 
-                <!-- <label for="serial" class="form-label">Identificador del PC</label>
-                <input type="text" class="form-control" name="id_pc"> -->
-
                 <p>
                     Sistema operativo: <br>
                     <input type="radio" name="so_pc" id="so_pcE" value="WINDOWS 8.1" required> Windows 8.1<br>
@@ -318,9 +335,11 @@
 
                 <p>
                     Tipo de graficos:<br>
-                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="INTEGRADOS" required> Integrados
+                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="INTEGRADOS" required>
+                    Integrados
                     <br>
-                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="DEDICADOS" required> Dedicados
+                    <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="DEDICADOS" required>
+                    Dedicados
 
                 </p>
 
@@ -384,8 +403,6 @@
         </div>
 
     </div>
-
-
     </form>
     </div>
     <!-- FIN MODAL EDITAR -->
@@ -406,7 +423,7 @@
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-            <button type="submit" name="eliminar" id="eliminar" class="btn btn-primary">Desactivar</button>
+            <button type="submit" name="eliminar" id="idEliminar" class="btn btn-primary">Desactivar</button>
         </div>
 
         </form>
@@ -423,43 +440,35 @@
     <script src="../js/chart.min.js" type="text/javascript"></script>
     <script src="../js/bootstrap.js"></script>
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
-
     <script type="text/javascript">
+    $(document).ready(function() {
 
-    $(document).ready(function(){
+        $("#lugarE").on('change', function() {
 
-        $("#lugarE").on('change', function(){
-
-            var value = $(this).val(); 
-            // alert(value);
-
+            var value = $(this).val();
             $.ajax({
-                url:"data.php",
-                type:"POST",
-                data:'request=' + value,
-                beforeSend:function(){
-                   
+                url: "data.php",
+                type: "POST",
+                data: 'request=' + value,
+                beforeSend: function() {
+                    $('#dilan').html('<img class="center" src="../img/loading.gif"/>')
+                        .show();
                 },
-                success:function(data){
-                    $(".containero").html(data);                
+                success: function(data) {
+                    $(".containero").html(data);
+                    $('#dilan').html('<img class="center" src="../img/loading.gif"/>')
+                        .hide();
                 }
             });
         });
 
     });
 
-
-
-
-
-
-
     function agregarForm(datos) {
         d = datos.split("||");
 
         $("#codigoE").val(d[0]);
         $("#idEliminar").val(d[0]);
-        // $("#id_pc").val(d[0]);
         $("#salaE").val(d[1]);
         $("#so_pcE").val(d[2]);
         $("#mobo_pcE").val(d[3]);
