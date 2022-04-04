@@ -11,7 +11,7 @@
       <link href="../css/style.css" rel="stylesheet">
     <script src="../js/login.js"></script>
     <script src="../js/funciones.js"></script>
-    <title>Document</title>
+    <title>Envio Correos</title>
 </head>
 <body src="../img/fondo_login.png">
             <!-- Contenedor vista -->
@@ -47,7 +47,7 @@
                                   </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="email" id="email" tabindex="1" class="form-control"
+                                    <input type="email" name="email" id="email" tabindex="1" class="form-control"
                                            placeholder="Correo" required>
                                 </div>
                                 <div class="form-group">
