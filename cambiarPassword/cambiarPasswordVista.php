@@ -112,8 +112,8 @@
 
 
                         <div class="form-actions">
-                            <button type="submit" id="guardar" class="btn btn-primary">Guaradar</button>
-                            <button class="btn">Cancelar</button>
+                            <button type="submit" name = "guardarPass" id="guardarPass" class="btn btn-primary">Guaradar</button>
+                            <button class="btn" name = "cancela">Cancelar</button>
                         </div>
                     </div>
                     <!-- /widget-content -->
