@@ -2,8 +2,10 @@
     @session_start();
     include '../util/utilModelo.php';
     $utilModelo = new utilModelo();
-    $password = filter_input(INPUT_POST, 'password');
+    
+      if(isset($_POST['guardarPass'])){
 
+    $password = filter_input(INPUT_POST, 'password');
 
     $tabla = "usuario";
     //Variables de actuaizar Contraseña
@@ -13,3 +15,10 @@
     $_SESSION['mensajeOk']="La contraseña fue cambiado con exito";
     header('Location: ../componentes/menuPrincipalAdmin.php');
     exit();
+      
+    }else{
+
+      header('Location: ../componentes/menuPrincipalAdmin.php');
+
+    }
+    ?>
