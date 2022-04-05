@@ -28,14 +28,16 @@ if(isset($_POST['olvideClave'])){
     // si el correo existe en la base de datos
           if($consulCorreo->num_rows > 0){
 
+            $code = "1";
+
             // Llamar la funcion generarclave para mandar la clave
               $claveTempo = $util->generarClave();
 
             // Define la clave que se le mostrara al usuario
-            $valor = array($claveTempo);
+            $valor = array($claveTempo, $code);
 
             //Campo tal cual como aparece en la base ede datos
-            $campo = array("password");
+            $campo = array("password", "codigo");
 
                     //Modifico el campo code password
                 $edicion = $utilModelo->modificar($tabla, $campo, $valor, "email", $email);

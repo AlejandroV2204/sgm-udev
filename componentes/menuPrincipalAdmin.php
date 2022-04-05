@@ -17,6 +17,7 @@
 
     }
 
+
 ?>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -34,10 +35,10 @@
                 </div>
                         <i class="icon-user"></i>
                             <?php echo $nombre; ?>
-                                    <b class="caret"></b></a>
+                                    <b class="caret"></b>
+                                </a>
                                     
                         <ul class="dropdown-menu">
-               
                         
                                <!-- Validar opciones para mi admin -->
                                 <?php
@@ -87,7 +88,7 @@
 
                 <!-- Valido las cosas que va a utilizar mi tecnico -->
                 <?php
-                                $util->validarElemento(1, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-user"></i><span></span>Usuarios</a></li> ');
+                                $util->validarElemento(1, '<li><a href="../computadores/nuevo_computador.php"><i class="icon-desktop"></i><span></span>Nuevo Computador</a></li>');
                                 $util->validarElemento(1, '<li><a href="../reparaciones/reparacionesVista.php"><i class="icon-certificate"></i><span></span>Reparaciones</a></li>');
                                 $util->validarElemento(1, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-tasks"></i><span></span>Reportes</a></li>');
                 ?>

@@ -1,4 +1,7 @@
 <?php
+
+    @session_start();
+
     include "../util/util.php";
     include_once "../util/utilModelo.php";
     $utilModelo2 = new utilModelo();
@@ -12,6 +15,7 @@
         if ($fila != NULL) {
             $nombre = $fila['nombre'];
             $codigoUsuario = $fila['id_usuario'];
+            $code = $fila['codigo'];
 
         }
 
@@ -40,7 +44,37 @@
 </head>
 
 <body>
+<?php 
+     if($code =! 0){
 
+    ?>
+
+     <!-- inicio modal eliminar -->
+<div id="modalextra" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-header" align="center">
+    <h3 id="myModalLabel">Aviso de cambio para cambio de contraseña</h3>
+  </div>
+      
+  <div class="modal-body" align="center">
+      <form action="../cambiarPassword/cambiarPasswordVista.php" method="post">
+        
+       <p>Se informa que es obligatorio que cambies tu contraseña ingresa mediante el boton abajo</p>
+       
+  <div align="center">
+       <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="submit" name="renvioPass" id="renvioPass" class="btn btn-primary">Entrar Cambio Contraseña</button>
+       </div>
+       <div>
+  </form>
+</div>
+<!-- Fin modal -->
+
+  <?php
+  }else{
+
+  ?>
+
+ 
     <div class="container">
         <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2>
 
@@ -84,6 +118,9 @@
             include "../componentes/pie.php";
              ?>
     </div>
+    <?php
+  }
+?>
     
     <!-- Javascript -->
     <script src="../js/jquery-1.7.2.min.js"></script>
@@ -94,7 +131,6 @@
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
 <script src="js/base.js"></script>
-
 
 </body>
 </html>
