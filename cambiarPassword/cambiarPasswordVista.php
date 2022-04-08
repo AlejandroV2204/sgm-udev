@@ -75,6 +75,8 @@
 
 
             <div class="panel-body">
+              <div class="row">
+                 <div class="col-md-5 col-md-offset-3">
                 <div class="widget-header"  ><i  class="icon-pencil " style="color: #162447" ></i>
                    <h3>Cambiar contraseña </h3> 
                 </div>
@@ -119,10 +121,12 @@
 
 
                         <div class="form-group">
-                            <button type="submit" id="guardar" class="btn btn-primary">Cambiar Contraseña</button>
+                            <button type="submit" name = "guardarPass" id="guardarPass" class="btn btn-primary">Cambiar Contraseña</button>
                             <button class="btn">Cancelar</button>
                         </div>
                     </div>
+                </div>
+            </div> 
                     <!-- /widget-content -->
                 </form>
             </div>

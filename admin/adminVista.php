@@ -40,14 +40,31 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    
     <?php 
 
-     if($code =! 0){
+    // Condicion de funcion o no funcion
 
+    if($code == 0){
+
+    include "../componentes/menuPrincipalAdmin.php";
+
+    }else{
+        
+        //No se pone nada de fondo
+
+    }
     ?>
+</head>
 
 <body>
+
+<!-- Cambio expuesto por Julian condicion pra obligar a el usuario a cambiar password  -->
+<?php 
+
+     if($code != 0){
+
+    ?>
 
      <!-- inicio modal eliminar -->
 <div id="modalextra" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
@@ -69,20 +86,21 @@
 </div>
 <!-- Fin modal -->
 
-</body>
 
+
+    <!-- Aqui trabaja el reponsable de inicio para ser mas preciso
+    Trabaja Dilan  -->
   <?php
+
+    // Responcibe de Dilan
   }else{
 
   ?>
 
-    <?php include "../componentes/menuPrincipalAdmin.php";
-    
-    ?>
-</head>
-
-<body>
-
+      <!-- De la linia 104 empieza code de Dilan Alerta no tocar lo de dilan  -->
+ 
+       <!-- Toda la visual de dilan se sube al develop con un buen funcionamiento
+       mediante el proceso de aliniacion -->
     <div class="container">
         <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2>
 
@@ -110,7 +128,10 @@
                                 <div class=\"card-link\">
                                         <a href=\"#\" title=\"Read Full\"><span>Reporte hecho por: $fila[2]</span></a>
                                  </div>
-                             </div>";
+                             </div>
+                                
+                                
+                                ";
                                 
                             }
 
@@ -123,9 +144,12 @@
             include "../componentes/pie.php";
              ?>
     </div>
-
-     <!-- Javascript -->
-     <script src="../js/jquery-1.7.2.min.js"></script>
+    <?php
+  }
+?>
+    
+    <!-- Javascript -->
+    <script src="../js/jquery-1.7.2.min.js"></script>
   <script src="../js/excanvas.min.js"></script>
   <script src="../js/funciones.js"></script>
   <script src="../js/chart.min.js" ></script>
@@ -133,10 +157,6 @@
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
 <script src="js/base.js"></script>
-
-    <?php
-  }
-?>
 
 </body>
 </html>

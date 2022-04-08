@@ -6,20 +6,25 @@
       if(isset($_POST['guardarPass'])){
 
     $password = filter_input(INPUT_POST, 'password');
-
+    $codigoSubir = 0;
     $tabla = "usuario";
+
     //Variables de actuaizar Contraseña
-    $campos = array("password");
-    $valores = array($password);
+
+    $campos = array("password", "codigo");
+
+    $valores = array($password, $codigoSubir);
+
     $utilModelo->modificar($tabla,$campos,$valores,'id_usuario', $_SESSION['usuario'][0]);
+
     $_SESSION['mensajeOk']="La contraseña fue cambiado con exito";
     
-    header('Location: ../componentes/menuPrincipalAdmin.php');
-    exit();
-      
+    header('Location: ../admin/adminVista.php');
+         exit();
+
     }else{
 
-      header('Location: ../componentes/menuPrincipalAdmin.php');
+      header('Location: ../admin/adminVista.php');
       exit();
 
     }
