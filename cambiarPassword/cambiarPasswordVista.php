@@ -45,10 +45,12 @@
 <body>
 
 
-<div class="container-md">
+<div class="container">
 
-    <div class="main-inner">
+    <div class="row">
         <div class="container">
+        <div class="col-lg-4">
+            
             <?php
                 if (isset($_SESSION['mensajeOk'])) {
                     ?>
@@ -69,17 +71,21 @@
                 }
 
             ?>
+            
+
 
             <div class="panel-body">
-                <div class="widget-header"><i class="icon-pencil"></i>
-                    <h3>Cambiar contraseña</h3>
+                <div class="widget-header"  ><i  class="icon-pencil " style="color: #162447" ></i>
+                   <h3>Cambiar contraseña </h3> 
                 </div>
                 <input type="hidden" id="passwordViejo" value="<?php echo $passwordViejo; ?>" >
                 <form action="cambiarPasswordControlador.php" method="post">
                     <!-- /widget-header -->
                     <div class="widget-content">
 
-                        <div class="control-group">
+                    <div class="container">
+
+                        <div class="form-group">
                             <label class="control-label" for="firstname">Contraseña antigua</label>
                             <div class="controls">
                                 <input type="password" onblur="validarPasswordViejo()" id="antigua" name="antigua">
@@ -90,17 +96,17 @@
                             <img src="../img/Error-128.png" width="20" height="20"><strong> Contraseña incorrecta.</strong>
                             <br>
                         </div>
-                        <div class="control-group">
+                        <div class="form-group">
                             <label class="control-label" for="firstname">Nueva contraseña</label>
                             <div class="controls" id="pass">
-                                <input type="password" class="span6" onkeyup="validarPassword();" id="password"
+                                <input type="password" class="span" onkeyup="validarPassword();" id="password"
                                        name="password">
                             </div> <!-- /controls -->
                         </div>
-                        <div class="control-group">
+                        <div class="form-group">
                             <label class="control-label" for="firstname">Repetir nueva contraseña</label>
                             <div class="controls" id="pass1">
-                                <input type="password" class="span6" id="rPassword" onkeyup="validarPassword();"
+                                <input type="password" class="span" id="rPassword" onkeyup="validarPassword();"
                                        name="rPassword">
                             </div> <!-- /controls -->
                         </div>
@@ -111,7 +117,7 @@
                         </div>
 
 
-                        <div class="form-actions">
+                        <div class="form-group">
                             <button type="submit" id="guardar" class="btn btn-primary">Cambiar Contraseña</button>
                             <button class="btn">Cancelar</button>
                         </div>
@@ -125,6 +131,7 @@
     </div>
     <!-- /main-inner -->
 </div>
+
 
 <!-- Le javascript
 ================================================== -->
