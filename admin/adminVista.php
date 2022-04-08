@@ -45,6 +45,7 @@
 
 <body>
 <?php 
+
      if($code =! 0){
 
     ?>
