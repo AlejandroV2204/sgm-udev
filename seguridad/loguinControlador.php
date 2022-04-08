@@ -18,7 +18,7 @@ $contador = 0;
 while ($fila = mysqli_fetch_array($result)) {
     
      if ($fila != NULL) {
-        $_SESSION['usuario']=array($fila['id_usuario'],$fila['tipo_usuario']);
+        $_SESSION['usuario']=array($fila['id_usuario'],$fila['tipo_usuario'],$fila['codigo']);
         $contador++;
     }
 }

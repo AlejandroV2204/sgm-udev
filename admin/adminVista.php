@@ -40,15 +40,14 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <?php include "../componentes/menuPrincipalAdmin.php";?>
-</head>
 
-<body>
-<?php 
+    <?php 
 
      if($code =! 0){
 
     ?>
+
+<body>
 
      <!-- inicio modal eliminar -->
 <div id="modalextra" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
@@ -70,12 +69,20 @@
 </div>
 <!-- Fin modal -->
 
+</body>
+
   <?php
   }else{
 
   ?>
 
- 
+    <?php include "../componentes/menuPrincipalAdmin.php";
+    
+    ?>
+</head>
+
+<body>
+
     <div class="container">
         <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2>
 
@@ -103,10 +110,7 @@
                                 <div class=\"card-link\">
                                         <a href=\"#\" title=\"Read Full\"><span>Reporte hecho por: $fila[2]</span></a>
                                  </div>
-                             </div>
-                                
-                                
-                                ";
+                             </div>";
                                 
                             }
 
@@ -119,12 +123,9 @@
             include "../componentes/pie.php";
              ?>
     </div>
-    <?php
-  }
-?>
-    
-    <!-- Javascript -->
-    <script src="../js/jquery-1.7.2.min.js"></script>
+
+     <!-- Javascript -->
+     <script src="../js/jquery-1.7.2.min.js"></script>
   <script src="../js/excanvas.min.js"></script>
   <script src="../js/funciones.js"></script>
   <script src="../js/chart.min.js" ></script>
@@ -132,6 +133,10 @@
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
 <script src="js/base.js"></script>
+
+    <?php
+  }
+?>
 
 </body>
 </html>
