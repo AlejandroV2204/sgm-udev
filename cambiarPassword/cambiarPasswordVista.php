@@ -4,7 +4,8 @@
     include_once "../util/utilModelo.php";
     $utilModelo = new utilModelo();
     $util = new util();
-    $util->validarRuta(0, 1, 2);
+    $util->validarRuta(0, 1, 2, 3);
+
 
     $nombreCampo = array("id_usuario");
     $valor = array($_SESSION['usuario'][0]);
@@ -44,13 +45,6 @@
 </head>
 <body>
 
-
-<div class="container">
-
-    <div class="row">
-        <div class="container">
-        <div class="col-lg-4">
-            
             <?php
                 if (isset($_SESSION['mensajeOk'])) {
                     ?>
@@ -73,19 +67,18 @@
             ?>
             
 
-
+<div class= "container" align = "center">
             <div class="panel-body">
-              <div class="row">
-                 <div class="col-md-5 col-md-offset-3">
-                <div class="widget-header"  ><i  class="icon-pencil " style="color: #162447" ></i>
+                <div class="widget-header"  >
+                    
+                <i  class="icon-pencil " style="color: #162447" ></i>
                    <h3>Cambiar contraseña </h3> 
                 </div>
+                
                 <input type="hidden" id="passwordViejo" value="<?php echo $passwordViejo; ?>" >
+            
                 <form action="cambiarPasswordControlador.php" method="post">
-                    <!-- /widget-header -->
-                    <div class="widget-content">
-
-                    <div class="container">
+                        <br>
 
                         <div class="form-group">
                             <label class="control-label" for="firstname">Contraseña antigua</label>
@@ -93,18 +86,21 @@
                                 <input type="password" onblur="validarPasswordViejo()" id="antigua" name="antigua">
                             </div> <!-- /controls -->
                         </div>
-                        <div class="form-group hidden" id="errorPass1" style="color: #ff0000; font-size: 23px;">
-                            <br>
-                            <img src="../img/Error-128.png" width="20" height="20"><strong> Contraseña incorrecta.</strong>
+                        <div class="form-group hidden" id="errorPass1" style="color: #ff0000; font-size: 15px;">
+                            <img src="../img/Error-128.png" width="15" height="15"><strong> Contraseña incorrecta.</strong>
                             <br>
                         </div>
+
+                        <br>
                         <div class="form-group">
                             <label class="control-label" for="firstname">Nueva contraseña</label>
                             <div class="controls" id="pass">
+                                
                                 <input type="password" class="span" onkeyup="validarPassword();" id="password"
                                        name="password">
                             </div> <!-- /controls -->
                         </div>
+                        <br>
                         <div class="form-group">
                             <label class="control-label" for="firstname">Repetir nueva contraseña</label>
                             <div class="controls" id="pass1">
@@ -112,29 +108,28 @@
                                        name="rPassword">
                             </div> <!-- /controls -->
                         </div>
-                        <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 23px;">
+                        <br>
+                        <div class="form-group hidden" id="errorPass" style="color: #ff0000; font-size: 15px;">
                             <br>
-                            <img src="../img/Error-128.png" width="20" height="20"><strong> Las contraseñas no
+                            <img src="../img/Error-128.png" width="15" height="15"><strong> Las contraseñas no
                                 coinciden</strong>
                         </div>
 
-
-
                         <div class="form-group">
                             <button type="submit" name = "guardarPass" id="guardarPass" class="btn btn-primary">Cambiar Contraseña</button>
-                            <button class="btn">Cancelar</button>
                         </div>
-                    </div>
-                </div>
-            </div> 
-                    <!-- /widget-content -->
+                        <div>
+                            <p></p>
+                        </div>
+                        <div class="form-group">
+                        <button class="btn">Cancelar</button>
+                        </div>
                 </form>
             </div>
-
         </div>
         <!-- /container -->
+        </div>
     </div>
-    <!-- /main-inner -->
 </div>
 
 
@@ -163,7 +158,9 @@
     function validarPassword() {
         var password = document.getElementById("password").value;
         var rPassword = document.getElementById("rPassword").value;
-        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.lengt() > 6) {
+        
+        if (password !== "" && password !== null && rPassword !== "" && rPassword !== null && password.lengt > 6) {
+            
             if (password === rPassword) {
                 //alert("son iguales");
                 document.getElementById("guardar").className = "btn btn-primary btn-lg ";
@@ -189,7 +186,6 @@
             document.getElementById("guardar").disabled = false;
             document.getElementById("errorPass1").className = "hidden";
         }else{
-            alert("la contraseña no es valida");
             document.getElementById("errorPass1").className = "form-group";
             document.getElementById("guardar").className += " disabled";
             document.getElementById("guardar").disabled = true;

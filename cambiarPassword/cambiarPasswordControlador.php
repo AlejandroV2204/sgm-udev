@@ -19,7 +19,7 @@
 
     $_SESSION['mensajeOk']="La contraseña fue cambiado con exito";
     
-    header('Location: ../admin/adminVista.php');
+    header('Location: ../cambiarPassword/cambiarPasswordVista.php');
          exit();
 
     }else{

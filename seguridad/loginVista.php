@@ -72,26 +72,6 @@
                                     </div>
                                 </div>
 
-                                <?php
-                                    if (isset($_SESSION['mensajeOk'])) {
-                                        ?>
-                                        <!-- <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="text-center">
-                                                        <div class="alert alert-success" role="alert">
-                                                            <img src="../img/ok.png" width="15" height="15" alt="">
-                                                            Usuario creado con exito.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <?php
-                                        unset($_SESSION['mensajeOk']);
-                                    }
-
-                                ?>
                             </form>
 
 
