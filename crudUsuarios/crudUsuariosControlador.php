@@ -57,7 +57,7 @@ $campos = array("nombre", "apellido", "email");
 $valores = array("$nombre","$apellido","$correo");
 //la funcion insertar recibe el nombre de la tabla y los dos arrays de campos y valores
 $nombreDeTabla = "usuario";
-$utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id_usuario', $id) ;
+$utilModelo -> modificar($nombreDeTabla, $campos, $valores, 'id_usuario', $id) ;
 $_SESSION['mensajeOk']="Accion realizada";
 
      header('Location: crudUsuariosVista.php');

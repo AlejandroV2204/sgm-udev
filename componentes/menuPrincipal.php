@@ -7,7 +7,7 @@
     $utilModelo = new utilModelo();
     $util = new util();
 
-    /*$nombreCampo = array("id_usuario");
+    $nombreCampo = array("id_usuario");
 
     $valor = array($_SESSION['usuario'][0]);
     
@@ -20,7 +20,7 @@
             $nombre = $fila['nombre'];
             $codigoUsuario = $fila['id'];
         }
-    }*/
+    }
 
 ?>
 <div class="navbar navbar-fixed-top">
