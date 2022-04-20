@@ -32,7 +32,9 @@
                 $condiciones = ($i == (count($nombreCampo) - 1)) ? $condiciones . "`" . $nombreCampo[$i] . "` = '" . $valores[$i] . "'" : $condiciones . "`" . $nombreCampo[$i] . "`= '" . $valores[$i] . "' AND ";
             }
             $consulta = "SELECT * FROM $tabla  $condiciones";
+            
             //  echo "consulta: ".$consulta;
+
              //die();
 
             $query = mysqli_query($link, $consulta);
@@ -45,6 +47,8 @@
             global $link;
 
             $consulta = "SELECT * FROM $tabla where 1";
+
+            echo "consulta: ". $consulta;
 
             $query = mysqli_query($link, $consulta);
 
@@ -65,6 +69,7 @@
 
             //   echo $consulta;
             //        die(); 
+
            return $query;
 
         }

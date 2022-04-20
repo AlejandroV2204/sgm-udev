@@ -44,7 +44,7 @@ $valores = array("$id_pc","$descripcion");
 $nombreDeTabla = "reporte";
 $utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id_reporte', $id) ;
 $_SESSION['mensajeOk']="Accion realizada";
-	//header('Location:crudReporteVista.php');
+header('Location:crudReporteVista.php');
 
 
  }else{
@@ -52,10 +52,11 @@ $_SESSION['mensajeOk']="Accion realizada";
 	echo "Eliminar";
 
 			$tabla = "reporte";
+			$valor = array("0");
 			$campo = array("estado_reporte");
 			$id = $_POST['idEliminar'];
 
-		$utilModelo -> modificar($tabla,$campo,'0','id_reporte', $id) ;
+		$utilModelo -> modificar($tabla,$campo,$valor,'id_reporte', $id) ;
 		$_SESSION['mensajeOk']="Accion realizada";
  		header('Location:crudReporteVista.php');
 
