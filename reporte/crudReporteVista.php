@@ -4,6 +4,8 @@ include_once "../util/utilModelo.php";
 include_once "../util/util.php";
 $util = new util();
 
+$utilidad = new utilModelo();
+
 $util -> validarRuta(0);
 
 ?>
@@ -36,11 +38,11 @@ $util -> validarRuta(0);
       <div class="container">
         <div class="row">
 
-          <div class="span3"></div>
+          <div class="span1"></div>
 
          <!-- /INICIO TABLA Rangos-->
 
-          <div class="span9">
+          <div class="span11">
 
             <a href="#modalGuardar"  data-toggle="modal" class=" form-control btn btn-register">Crear Reporte</a><br><br>
               <div class="widget widget-nopad">
@@ -58,8 +60,9 @@ $util -> validarRuta(0);
                       <th> ID USUARIO </th>
                       <th> ID PC </th>
                       <th> DESCRIPCIÓN </th>
+                      <th> OBSERVACIÓN </th>
                       <th> ESTADO </th>
-                      <th class="td-actions">EDITAR/ELIMINAR</th>
+                      <th class="td-actions">REVISIÓN/EDITAR/ELIMINAR</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -79,15 +82,22 @@ $util -> validarRuta(0);
                             $fila[1]."||".
   			        					  $fila[2]."||".
   			        					  $fila[3]."||".
-                            $fila[4];
+                            $fila[4]."||".
+                            $fila[5];
   			        				
                               $estado = "";
 
-                   if($fila[4] == 1){
+                   if($fila[5] == 1){
 
                     $estado = "Activo";
 
-                   }else{
+                   }
+                   else if($fila[5] == 2){
+
+                    $estado = "Pendiente";
+
+                   }
+                   else{
 
                     $estado = "Inactivo";
 
@@ -99,8 +109,9 @@ $util -> validarRuta(0);
                               <td> $fila[1] </td>
                               <td> $fila[2] </td>
                               <td> $fila[3] </td>
+                              <td> $fila[4] </td>
                               <td>$estado</td>
-                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
+                              <td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
                             </tr>";
 
                               
@@ -140,10 +151,26 @@ $util -> validarRuta(0);
 
       <form class="span8" action="crudReporteControlador.php" method="post" >
 
-                                <div class="form-group   ">
-                                    <input   type="text" name="id_pc" id="idPc" tabindex="1" class=" form-control span4"
-                                           placeholder="ID PC" value="" required>
-                                </div>
+      <label for="lugar ubicado" class="form-label">Lugar ubicado:</label>
+                <select name="id_pc" class="form-select">
+
+                    <?php
+
+                            $tabla = "computador";
+
+                            $sql = $utilidad->mostrarTodosRegistros($tabla);
+
+                            while($row = $sql->fetch_assoc()){
+                                
+                                /* El option en html recibe un value (que es el que va a la base de datos) ej: [id_sala]
+                                asi como tambien otro valor para mostrar en el formulario ej: [nombre_sala] */
+                                echo "<option value = ".$row['id_pc'].">". $row['id_pc']. "</option>";
+                            }
+                        
+                        ?>
+
+                </select>
+
                                 <div class="form-group  ">
                                     <input   type="text" name="descripcion_reporte" id="descripcion" tabindex="1" class=" form-control span4"
                                            placeholder="Descripción" value="" required>

@@ -33,7 +33,7 @@
                 $condiciones = ($i == (count($nombreCampo) - 1)) ? $condiciones . "`" . $nombreCampo[$i] . "` = '" . $valores[$i] . "'" : $condiciones . "`" . $nombreCampo[$i] . "`= '" . $valores[$i] . "' AND ";
             }
             $consulta = "SELECT * FROM $tabla  $condiciones";
-             // echo "consulta: ".$consulta;
+            //echo "consulta: ".$consulta;
              //die();
 
             $query = mysqli_query($link, $consulta);
@@ -46,6 +46,8 @@
             global $link;
 
             $consulta = "SELECT * FROM $tabla where 1";
+
+            echo "consulta: ". $consulta;
 
             $query = mysqli_query($link, $consulta);
 
@@ -61,10 +63,10 @@
                  $construccionDeValores = ($i == (count($valores) - 1)) ? $construccionDeValores . "`" . $campos[$i] . "` = '" . $valores[$i] . "'" : $construccionDeValores . "`" . $campos[$i] . "` = '" . $valores[$i] . "',";
             }
 
-             $consulta = "UPDATE `$tabla` SET $construccionDeValores WHERE `$campoCondicion` = '$condicion' ;";
+             $consulta = "UPDATE `$tabla` SET $construccionDeValores WHERE `$campoCondicion` = '$condicion';";
              $query = mysqli_query($link, $consulta);
 
-            //   echo $consulta;
+            //    echo $consulta;
             //       die(); 
            return $query;
 
