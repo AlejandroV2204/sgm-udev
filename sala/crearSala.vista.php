@@ -221,9 +221,7 @@ $util -> validarRuta(0);
 
 
 
-  <?php
-  include "../componentes/pie.php";
-  ?>
+  
   <!-- Le javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
@@ -250,5 +248,6 @@ $util -> validarRuta(0);
   </script>
 
 </body>
+<?php include "../componentes/pie.php"; ?>
 </html>
 

@@ -30,23 +30,24 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
     <link href="../css/font-awesome.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/pages/dashboard.css" rel="stylesheet">
-    <link href="../css/pages/plans.css" rel="stylesheet">
+    <!-- <link href="../css/pages/dashboard.css" rel="stylesheet">
+    <link href="../css/pages/plans.css" rel="stylesheet"> -->
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <?php include "../componentes/menuPrincipalAdmin.php";?>
 </head>
 
 <body>
+    <?php include "../componentes/menuPrincipalAdmin.php";?>
 
 
 
     <div class="container">
-        <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2>
 
-        <div class="row">
+        <!-- <h2>Hola <?php //echo $nombre ?></h2> se comenta hasta nuevo aviso--> 
+
+        <div class="containero">
 
 
             <div class="card-category-1">
@@ -59,7 +60,7 @@
                     while ($fila = mysqli_fetch_row($result)) {
 
 
-                      echo  "<div class=\"basic-card basic-card-light\">
+                      echo  "<div class=\"basic-card basic-card-dark\">
                                 <div class=\"card-content\">
                                   <span class=\"card-title\">Reporte# $fila[0]</span>
                                         <p class=\"card-text\">
@@ -91,7 +92,7 @@
   <script src="../js/bootstrap.js"></script>
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
-<script src="js/base.js"></script>
+<!-- <script src="js/base.js"></script> -->
 
 <?php include "../componentes/pie.php"; ?>
 </body>
