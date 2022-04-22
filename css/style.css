@@ -1427,6 +1427,116 @@ table.fc-border-separate {
 }
 
 
+/* TARJETA DE LA PAGINA ABOUT / SOBRE */
+
+.profile-card {
+    background: url('https://hd-wallpaper.wiki/wp-content/uploads/2022/02/cool-spongebob-wallpaper-24.jpg') top right no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flow-root;
+}
+
+.profile-card__door {
+    width: 640px;
+    height: 200px;
+    left: 0;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+.profile-card__door:hover {
+    left: -320px;
+    box-shadow: inset 320px 0 350px black;
+}
+.profile-card__front, .profile-card__back {
+    text-align: center;
+    width: 320px;
+    float: left;
+    color: white;
+    padding-top: 10%;
+    position: relative;
+    text-shadow: 0 1px 0 black;
+    font-size: 0.9em;
+}
+.profile-card__avatar {
+    border: 3px solid white;
+    border-radius: 7px;
+    width: 72px;
+    height: 72px;
+}
+
+
+
+.profile-dylan {
+    background: url('https://hd-wallpaper.wiki/wp-content/uploads/2021/07/aesthetic-dark-green-wallpaper.jpg') top right no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+.profile-osdo {
+    background: url('https://hd-wallpaper.wiki/wp-content/uploads/2021/07/aesthetic-dark-green-wallpaper.jpg') top right no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.profile-jeronimo {
+    background: url('https://hd-wallpaper.wiki/wp-content/uploads/2021/07/aesthetic-dark-green-wallpaper.jpg') top right no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.profile-julian {
+    background: url('https://hd-wallpaper.wiki/wp-content/uploads/2021/07/aesthetic-dark-green-wallpaper.jpg') top right no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.profile-alejandro {
+    background: url('https://hd-wallpaper.wiki/wp-content/uploads/2021/07/aesthetic-dark-green-wallpaper.jpg') top right no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
 .carregando{
 
     text-align: center;
