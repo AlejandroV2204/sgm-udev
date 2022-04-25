@@ -52,8 +52,8 @@ $id_reporte = $row['id_reporte'];
             <h1>Revisión De Reporte</h1>
             <form action = "crudRevisionControlador.php" method = "GET" class="row g-3">
   <div class="col-md-4">
-    <label for="validationDefault01" class="form-label">ID Reporte:
-    <input type="text" name="id_reporte" id="id_reporte" tabindex="1" class=" form-control span6"  value="<?php echo $id_reporte; ?>" > </label>
+    
+    <input type="hidden" name="id_reporte" id="id_reporte" tabindex="1" class=" form-control span6"  value="<?php echo $id_reporte; ?>" > </label>
     
   </div>
   <div class="col-md-4">
