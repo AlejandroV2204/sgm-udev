@@ -430,7 +430,6 @@
     </div>
     <!-- Fin modal -->
 
-    <?php include "../componentes/pie.php"; ?>
 
     <!-- Le javascript
 ================================================== -->
@@ -489,6 +488,8 @@
     }
     </script>
 
+<?php include "../componentes/pie.php"; ?>
 </body>
+
 
 </html>
