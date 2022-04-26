@@ -101,8 +101,8 @@
  
        <!-- Toda la visual de dilan se sube al develop con un buen funcionamiento
        mediante el proceso de aliniacion -->
-    <div class="container">
-        <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2>
+    <div class="containero">
+        <!-- <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2> -->
 
         <div class="row">
 
