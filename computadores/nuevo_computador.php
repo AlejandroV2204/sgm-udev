@@ -31,6 +31,7 @@
     <!-- ============= INICIO -TABLA ======================================================================================================== -->
 
     <div class="widget widget-nopad">
+        
         <div class="widget widget-table action-table">
             <div class="widget-header" id="lunarrrrrrrr">
                 <h3>Filtrar por:</h3>
@@ -121,7 +122,7 @@
     <div class="widget widget-nopad">
         <div class="widget widget-table action-table">
             <div class="widget-header" id="nuevoRegistro">
-                <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
+            <a href="#modalGuardar" data-toggle="modal" class=" form-control btn btn-register"><i
                         class="icon-plus"></i> Nuevo registro</a><br><br>
             </div>
         </div>
