@@ -181,7 +181,7 @@
     function validarPasswordViejo() {
         var password = document.getElementById("antigua").value;
         var passwordV = document.getElementById("passwordViejo").value;
-        if(password == passwordV){
+        if(password === passwordV){
             document.getElementById("guardar").className = "btn btn-primary btn-lg ";
             document.getElementById("guardar").disabled = false;
             document.getElementById("errorPass1").className = "hidden";
