@@ -53,8 +53,8 @@ $id = $_SESSION['usuario'][0];
                              $fila[1];
 
 
-                             echo "<h3>Nombre: $fila[1]</h3><br>
-                                    <h3>Apellido: $fila[2]</h3>";
+                             echo "<h3>Nombre completo Admin: $fila[1] $fila[2]
+                                            </h3><br>";
 
              ?>
             
@@ -69,9 +69,9 @@ $id = $_SESSION['usuario'][0];
               <div class="widget-content">
                 <table class="table table-striped table-bordered">
                   <thead>
-                    <tr>                      
-                      <th> IDENTIFICADOR</th>
+                    <tr>
                       <th> NOMBRE</th>
+                      <th> Apellido</th>
                       <th> DIRECCION</th>
                     </tr>
                   </thead>
@@ -82,9 +82,8 @@ $id = $_SESSION['usuario'][0];
 
                           echo "
                             <tr>
-                             
-                              <td> $fila[0] </td>
                               <td> $fila[1] </td>
+                              <td> $fila[2] </td>
                               <td> $fila[4] </td>
                   
                             </tr>";
@@ -94,77 +93,12 @@ $id = $_SESSION['usuario'][0];
                   </tbody>
                 </table>
               </div>
-             
-
               <!-- /widget-content -->
             </div>
           </div >
 
           </div>
           <!-- /FIN TABLA datos -->
-
-         <!-- /INICIO TABLA Referedo-->
-
-          <div class="span9">
-
-          
-              <div class="widget widget-nopad">
-            <div class="widget widget-table action-table">
-              <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Computadores Notificados</h3>
-              </div>
-
-              <!-- /widget-header -->
-              <div id="scroll" class="widget-content">
-                <table class="table table-striped table-bordered">
-                  <thead>
-                    <tr>
-                      <th> CODIGO </th>
-                      <th> NOMBRE</th>
-                      <th> FECHA INGRESO</th>
-                      <th> ESTADO</th>
-                      <th> ULTIMO PAGO</th>
-                      <th> REFERIDOS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                  <?php
-                  $utilModelo = new utilModelo();
-                  $tabla = "reporte";
-                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"id_reporte='$id'");
-                  while ($fila = mysqli_fetch_array($result)) {
-                      if ($fila != NULL) {
-
-                        $afilados=$util->mostrarCantidadReferidos($fila[1]);
-                        $pagos=$util->validarUsuarioActivo($fila[1]);
-
-                        $datos=$fila[0]."||".
-                             $fila[2]."||".
-                             $fila[3]."||".
-                             $fila[5]."||".
-                             $fila[6]."||".
-                             $fila[10]."||".
-                             $fila[7];
-
-                          echo "
-                            <tr>
-                              <td>$fila[1] </td>
-                              <td> $fila[2] </td>
-                              <td> $fila[5]</td>
-                              <td>$pagos[1]</td>
-                              <td>$pagos[0]</td>
-                              <td>$afilados[1]</td>
-                            </tr>";
-                          }
-                        }
-                         ?>
-                  </tbody>
-                </table>
-              </div>
-              <h6 class="bigstats"></h6>
-
-
               <!-- /widget-content -->
             </div>
           </div >
@@ -175,7 +109,6 @@ $id = $_SESSION['usuario'][0];
         </div>
         <!-- /main-inner -->
     </div>
-
 
 
 
@@ -191,13 +124,6 @@ $id = $_SESSION['usuario'][0];
     <script src="../js/chart.min.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
-
-
-    <script type="text/javascript">
-
-
-
-    </script>
 
 </body>
 

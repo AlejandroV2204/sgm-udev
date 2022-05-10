@@ -220,7 +220,7 @@ $util -> validarRuta(0);
       <form style="min-width: 500px;" action="crudUsuariosControlador.php" method="post" >
 
                                 <div class="form-group">
-                                  <input id="id" name="id" type="text">
+                                  <input id="id" name="id" type="hidden">
                                   </div>
                                 <div class="form-group">
                                   <input   type="text" minlength="3" name="nombre" id="nombreE" tabindex="1" class=" form-control span4"

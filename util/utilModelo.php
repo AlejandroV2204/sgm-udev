@@ -33,9 +33,8 @@
             }
             $consulta = "SELECT * FROM $tabla  $condiciones";
             
-            //  echo "consulta: ".$consulta;
-
-             //die();
+            // echo "consulta: ".$consulta;
+            // die();
 
             $query = mysqli_query($link, $consulta);
 

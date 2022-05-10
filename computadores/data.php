@@ -4,8 +4,6 @@ include_once "../util/utilModelo.php";
 $utilModelo = new utilModelo();
 ?>
 
-
-
     <?php
         
             if(isset($_POST['request'])){
