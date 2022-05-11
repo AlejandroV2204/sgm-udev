@@ -51,7 +51,7 @@ if(isset($_POST['guardarComputador']))
         $campos = array("id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video", "estado_pc");
         $valores = array("$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo", 1);
         
-        $id = $POST['numero'];
+        $id = $_POST['numero'];
         $nombreDeTabla = "computador";
 
         $utilModelo->modificar($nombreDeTabla,$campos,$valores,'id_pc', $id);

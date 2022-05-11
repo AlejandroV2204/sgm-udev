@@ -77,10 +77,9 @@ $id_reporte = $row['id_reporte'];
   </div>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Guardar</button>
-  </div>
+    </div>
 </div>
 </form>
-
 
 <?php  
 include "../componentes/pie.php";

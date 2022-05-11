@@ -72,7 +72,7 @@ $util -> validarRuta(0);
                       if ($fila != NULL) {
 
                         $datos=$fila[0]."||".
-                            $fila[1]."||".
+                             $fila[1]."||".
   			        					   $fila[2]."||".
                              $fila[3];
                              
@@ -173,18 +173,13 @@ $util -> validarRuta(0);
                                   <input id="codigoE" name="id" type="hidden">
                                   </div>
                                 <div class="form-group">
-                                  <input   type="text" name="cantidad_pc" id="cantidad_pc" tabindex="1" class=" form-control span4"
+                                  <input   type="text" name="cantidad_pc" id="Cantidad" tabindex="1" class=" form-control span4"
                                            placeholder="Cantidad de computadores" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input   type="text" name="nombre_sala" id="nombre_sala" tabindex="1" class=" form-control span4"
+                                    <input   type="text" name="nombre_sala" id="Sala" tabindex="1" class=" form-control span4"
                                            placeholder="Nombre de la sala" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <input   type="text" name="estado_sala" id="estado_sala" tabindex="1" class=" form-control span4"
-                                           placeholder="Estado" value="" required>
-                                </div>
-
+                      </div>
     </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
@@ -240,9 +235,8 @@ $util -> validarRuta(0);
 
        $("#codigoE").val(d[0]);
        $("#idEliminar").val(d[0]);
-       $("#cantidad_pc").val(d[1]);
-       $("#nombre_sala").val(d[2]);
-       $("#estado_sala").val(d[3]);
+       $("#Cantidad").val(d[1]);
+       $("#Sala").val(d[2]);
     }
 
   </script>

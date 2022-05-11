@@ -22,10 +22,6 @@ $util -> validarRuta(0);
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/pages/dashboard.css" rel="stylesheet">
   <link href="../css/pages/plans.css" rel="stylesheet">
-  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 </head>
 <body>
   <?php
@@ -82,11 +78,11 @@ $util -> validarRuta(0);
                              
                    if($fila[4] == 0){
 
-                    $estado = "inactivo";
+                    $estado = "En proceso";
 
                    }else{
 
-                    $estado = "Activo";
+                    $estado = "Reparado";
 
                    }
 
@@ -223,7 +219,7 @@ $util -> validarRuta(0);
                                            placeholder="fecha" value="<?php echo date('Y-m-d'); ?>" required>
                                 </div>
                                 <div class="form-group   ">
-                                    <input   type="text" name="descripcion_reparacion" id="descripcion_reparacion" tabindex="1" class=" form-control span4"
+                                    <input   type="text" name="descripcion_reparacion" id="Descripcion" tabindex="1" class=" form-control span4"
                                            placeholder="Descripcion De La Reparacion" value="" required>
                                 </div>
     </div>
@@ -284,8 +280,7 @@ $util -> validarRuta(0);
        $("#id_reparacion").val(d[0]);
        $("#id_reporte1").val(d[1]);
        $("#fecha").val(d[2]);
-       $("#descripcion_reparacion").val(d[3]);
-       $("#estado_reparacion").val(d[4]);
+       $("#Descripcion").val(d[3]);
     }
 
   </script>
