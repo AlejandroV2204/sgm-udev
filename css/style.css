@@ -1728,7 +1728,8 @@ body {
 .containero .card{
 
     width: 230px;
-    height: 280px;
+    /* height: 280px; */
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -1772,6 +1773,38 @@ body {
     color: #3498db;
 
 }
+
+
+.containero .card-link {
+    padding: 25px;
+    width: -webkit-fill-available;
+}
+
+    .containero .card-link a {
+        text-decoration: none;
+        position: relative;
+        padding: 10px 0px;
+    }
+
+    .containero .card-link a:after {
+        top: 30px;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        width: 0;
+
+        -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    }
+
+    .containero .card-link a:hover:after { 
+        width: 100%; 
+        left: 0; 
+    }
 /*------------------------------------------------------------------
 [3. Max Width: 979px]
 */

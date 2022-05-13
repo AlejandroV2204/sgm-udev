@@ -84,7 +84,8 @@
                             <li>RAM: $fila[4]</li>
                             <li>Disco duro: $fila[8]</li>
                             <li>Sistema Operativo: $fila[2]</li>
-                            <a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
+                            <a  href=\"../computadores/fichatecnica.php?idPC=$fila[0]\" class=\"btn btn-small btn-success\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>
+                            ";
 
                         echo "</div>";
                         
@@ -265,6 +266,7 @@
         </form>
     </div>
     <!-- FIN MODAL GUARDAR -->
+
 
     <!-- INICIO MODAL EDITAR -->
     <div id="modalEditar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
