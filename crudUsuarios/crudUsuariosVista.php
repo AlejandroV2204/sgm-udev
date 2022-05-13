@@ -257,7 +257,7 @@ $util -> validarRuta(0);
 
       <form action="crudUsuariosControlador.php" method="post" >
 
-                                  <input id="idEliminar" name="idEliminar" type="text">
+                                  <input id="idEliminar" name="idEliminar" type="hidden">
                                   <h3>Seguro desea desactivar el usuario</h3>
     </div>
   <div class="modal-footer">

@@ -6,6 +6,7 @@ $utilModelo = new utilModelo();
 
 $util -> validarRuta(0);
 $id = $_SESSION['usuario'][0];
+$estado = 0;
 
 ?>
 <!DOCTYPE html>
@@ -35,34 +36,28 @@ $id = $_SESSION['usuario'][0];
 
             
            <!-- /INICIO TABLA Datos-->
-
           <div class="span12">
             <?php 
-
                   $tabla = "usuario";
                   $result = $utilModelo->consultarVariasTablas("*",$tabla,"id_usuario='$id'");
-                  while ($fila = mysqli_fetch_array($result)) {
-                      if ($fila != NULL) {
+                  while ($filaIngre = mysqli_fetch_array($result)) {
+                      if ($filaIngre != NULL) {
+                        $usuarioAdmin=$filaIngre[0]."||".
+                        $filaIngre[2]."||".
+                        $filaIngre[1];
 
 
-                        $datos=$fila[0]."||".
-                             $fila[2]."||".
-                             $fila[3]."||".
-                             $fila[5]."||".
-                             $fila[6]."||".
-                             $fila[1];
+                             echo "<br><h3>Nombre completo Admin: $filaIngre[1] $filaIngre[2]
+                                            </h3>";
 
-
-                             echo "<h3>Nombre completo Admin: $fila[1] $fila[2]
-                                            </h3><br>";
-
-             ?>
-            
-            <br><br>
+                      }   
+                    }   
+                    ?>
+                     <br><br>
               <div class="widget widget-nopad">
             <div class="widget widget-table action-table">
               <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Datos Tecnico</h3>
+                <h3>Datos Desactivos</h3>
               </div>
 
               <!-- /widget-header -->
@@ -71,25 +66,52 @@ $id = $_SESSION['usuario'][0];
                   <thead>
                     <tr>
                       <th> NOMBRE</th>
-                      <th> Apellido</th>
-                      <th> DIRECCION</th>
+                      <th> APELLIDO</th>
+                      <th> CORREO</th>
+                      <th> USUARIO</th>
+                      <th> ACTIVAR</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                  <?php
-                 
+                    <?php
+                  $resultadoTabla = $utilModelo->consultarVariasTablas("*",$tabla,"estado_usuario='$estado'");
+                  while ($fila = mysqli_fetch_array($resultadoTabla)) {
+                      if ($fila != NULL) {
+                        $datos=$fila[0]. "||" .
+                        $fila[2]. "||" .
+                        $fila[1]. "||".
+                        $fila[4]. "||" .
+                        $fila[5];
 
+              if($fila[5] == 0){
+
+              $tipoUser = "Administrador";
+
+               }else if($fila[5] == 1){
+
+                $tipoUser = "Tecnico";
+
+               }else if($fila[5] == 2){
+
+                $tipoUser = "Monitor";
+
+               }else{
+
+                $tipoUser = "Estudiante";
+
+               }
                           echo "
                             <tr>
                               <td> $fila[1] </td>
                               <td> $fila[2] </td>
                               <td> $fila[4] </td>
-                  
+                              <td> $tipoUser </td>
+                              <td class=\"td-actions\"><a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-small btn-success\"><i class=\"btn-icon-only icon-ok\"> </i></a></td>
                             </tr>";
-                          }
-                        }
-                         ?>
+                  }
+                }
+          ?>
                   </tbody>
                 </table>
               </div>
@@ -109,12 +131,27 @@ $id = $_SESSION['usuario'][0];
         </div>
         <!-- /main-inner -->
     </div>
+    <div id="modalActivar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Activar Usuario</h3>
+  </div>
+  
+  <div class="modal-body">
 
+      <form action="Activar_control.php" method="post" >
 
+                                  <input id="id" name="id" type="hidden">
+                                  <h3>Estas seguro que desea activar a este usuario</h3>
+    </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    <button type="submit" name="activar" id="activar"class="btn btn-primary">Activar</button>
+  </div>
 
-    <?php
-  include "../componentes/pie.php";
-  ?>
+  </form>
+</div>
+
     <!-- Le javascript
   ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -124,6 +161,15 @@ $id = $_SESSION['usuario'][0];
     <script src="../js/chart.min.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
+
+     <script>
+       
+    function agregarForm(datos){
+      d=datos.split("||");
+       $("#id").val(d[0]);
+    }
+
+    </script>
 
 </body>
 
