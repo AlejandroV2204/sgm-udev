@@ -47,11 +47,11 @@ $row = $consulta->fetch_assoc();
 $id_reporte = $row['id_reporte'];
 ?>
 
-    <h1>Revisión De Reporte</h1>
-    <div class="containero">
-
-        <form action="crudRevisionControlador.php" method="GET" class="row g-3">
-            <div class="col-md-4">
+<div class="container">
+    
+    <form action="crudRevisionControlador.php" method="GET" class="row g-3">
+        <div class="col-md-4">
+                <h1>Revisión De Reporte</h1>
 
                 <input type="hidden" name="id_reporte" id="id_reporte" tabindex="1" class=" form-control span6"
                     value="<?php echo $id_reporte; ?>"> </label>
@@ -84,9 +84,12 @@ $id_reporte = $row['id_reporte'];
                             <button class="btn btn-primary" type="submit">Guardar</button>
                         </div>
                     </div>
-        </form>
+                </div>
+            </div>
+    </div>
+    </form>
 
-        <?php  
+    <?php  
 include "../componentes/pie.php";
 ?>
 

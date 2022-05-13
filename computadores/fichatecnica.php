@@ -17,6 +17,7 @@ $util -> validarRuta(0);
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
     <link href="../css/font-awesome.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -45,44 +46,151 @@ $util -> validarRuta(0);
 
 <body>
     <div class="container">
-        
-        
-        <form action="crudRevisionControlador.php" method="GET" class="row g-3">
-            <h1>Ficha tecnica</h1>
 
-          <!-- ------------------------------------------------------------------ -->
+        <div class="widget-content">
 
-            <div class="col-md-4">
-                <label for="validationDefault02" class="form-label">Nombre PC:
-                    <input type="text" name="nombre_pc" id="nombre_pc" tabindex="1" class=" form-control span6"
-                        value="<?php echo $row['id_pc']; ?>" disabled> </label>
-                </label>
+            <div class="pricing-plans plans-3">
+
+                <div class="plan-container">
+                    <div class="plan">
+                        <div class="plan-header">
+
+                            <div class="plan-title">
+                                First Agent
+                            </div> <!-- /plan-title -->
+
+                            <div class="plan-price">
+                                $0<span class="term">For Life</span>
+                            </div> <!-- /plan-price -->
+
+                        </div> <!-- /plan-header -->
+
+                    </div> <!-- /plan -->
+                </div> <!-- /plan-container -->
+
+                <form action="crudRevisionControlador.php" method="GET" class="row g-3">
+                    <h1>Ficha tecnica</h1>
+
+                    <!-- ------------------------------------------------------------------ -->
+
+
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Nombre PC:
+                            <input type="text" name="nombre_pc" id="nombre_pc" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['id_pc']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Sala:
+                            <input type="text" name="sala" id="sala" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['id_sala1']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Sistema Operativo:
+                            <input type="text" name="so" id="so" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['sistema_operativo']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Placa Madre:
+                            <input type="text" name="motherboard" id="motherboard" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['motherboard']; ?>" disabled>
+                        </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Cantidad RAM:
+                            <input type="text" name="ram" id="ram" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['ram']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Velocidad RAM:
+                            <input type="text" name="velocidad" id="velocidad" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['velocidad_ram']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Procesador:
+                            <input type="text" name="procesador" id="procesador" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['procesador']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Tipo graficos:
+                            <input type="text" name="tipograficos" id="tipograficos" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['tipo_graficos']; ?>" disabled>
+                        </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Disco Duro:
+                            <input type="text" name="discoduro" id="discoduro" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['capacidad_disco']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Mouse:
+                            <input type="text" name="ram" id="ram" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['mouse']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Teclado:
+                            <input type="text" name="ram" id="ram" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['teclado']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Estado Panel Frontal:
+                            <input type="text" name="panelfrontal" id="panelfrontal" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['estado_panel_frontal']; ?>"
+                                disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Lectora CD/DVD:
+                            <input type="text" name="cddvd" id="cddvd" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['lectora_cd']; ?>" disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Ventiladores:
+                            <input type="text" name="ventiladores" id="ventiladores" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['ventiladores']; ?>" disabled>
+                        </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Ultima pasta termica en:
+                            <input type="text" name="pastatermica" id="pastatermica" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['cambio_pasta_termica']; ?>"
+                                disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Ultimo mantenimiento:
+                            <input type="text" name="manteniento" id="manteniento" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['ultimo_mantenimiento']; ?>"
+                                disabled> </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Salidas video:
+                            <input type="text" name="salidasvideo" id="salidasvideo" tabindex="1"
+                                class=" form-control span6" value="<?php echo $row['salidas_video']; ?>" disabled>
+                        </label>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Estado:
+                            <input type="text" name="estado" id="estado" tabindex="1" class=" form-control span6"
+                                value="<?php echo $row['estado_pc']; ?>" disabled> </label>
+                        </label>
+                    </div>
             </div>
-            <div class="col-md-4">
-                <label for="validationDefault02" class="form-label">Sala:
-                    <input type="text" name="sala" id="sala" tabindex="1" class=" form-control span6"
-                        value="<?php echo $row['id_sala1']; ?>" disabled> </label>
-                </label>
-            </div>
-            <div class="col-md-4">
-                <label for="validationDefault02" class="form-label">Sistema Operativo:
-                    <input type="text" name="so" id="so" tabindex="1" class=" form-control span6"
-                        value="<?php echo $row['sistema_operativo']; ?>" disabled> </label>
-                </label>
-            </div>
-            <div class="col-md-4">
-                <label for="validationDefault02" class="form-label">Placa Madre:
-                    <input type="text" name="motherboard" id="motherboard" tabindex="1" class=" form-control span6"
-                        value="<?php echo $row['motherboard']; ?>" disabled> </label>
-                </label>
-            </div>
-            <div class="col-md-4">
-                <label for="validationDefault02" class="form-label">Cantidad RAM:
-                    <input type="text" name="ram" id="ram" tabindex="1" class=" form-control span6"
-                        value="<?php echo $row['ram']; ?>" disabled> </label>
-                </label>
-            </div>
-            
+        </div>
     </div>
     </form>
 

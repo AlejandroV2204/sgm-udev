@@ -126,7 +126,7 @@
                                 </div>
             
                                 <div class=\"card-link\">
-                                        <a href=\"#\" title=\"Read Full\"><span>Reporte hecho por: $fila[2]</span></a>
+                                        <a href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" title=\"Read Full\"><span>Reporte hecho por: $fila[2]</span></a>
                                  </div>
                              </div>
                                 
