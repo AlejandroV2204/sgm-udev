@@ -40,7 +40,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
     <?php 
 
     // Condicion de funcion o no funcion
@@ -59,57 +59,58 @@
 
 <body>
 
-<!-- Cambio expuesto por Julian condicion pra obligar a el usuario a cambiar password  -->
-<?php 
+    <!-- Cambio expuesto por Julian condicion pra obligar a el usuario a cambiar password  -->
+    <?php 
 
      if($code != 0){
 
     ?>
 
-     <!-- inicio modal eliminar -->
-<div id="modalextra" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-  <div class="modal-header" align="center">
-    <h3 id="myModalLabel">Aviso de cambio para cambio de contraseña</h3>
-  </div>
-      
-  <div class="modal-body" align="center">
-      <form action="../cambiarPassword/cambiarPasswordVista.php" method="post">
-        
-       <p>Se informa que es obligatorio que cambies tu contraseña ingresa mediante el boton abajo</p>
-       
-  <div align="center">
-       <div class="d-grid gap-2 col-6 mx-auto">
-    <button type="submit" name="renvioPass" id="renvioPass" class="btn btn-primary">Entrar Cambio Contraseña</button>
-       </div>
-       <div>
-  </form>
-</div>
-<!-- Fin modal -->
+    <!-- inicio modal eliminar -->
+    <div id="modalextra" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+        <div class="modal-header" align="center">
+            <h3 id="myModalLabel">Aviso de cambio para cambio de contraseña</h3>
+        </div>
+
+        <div class="modal-body" align="center">
+            <form action="../cambiarPassword/cambiarPasswordVista.php" method="post">
+
+                <p>Se informa que es obligatorio que cambies tu contraseña ingresa mediante el boton abajo</p>
+
+                <div align="center">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" name="renvioPass" id="renvioPass" class="btn btn-primary">Entrar Cambio
+                            Contraseña</button>
+                    </div>
+                    <div>
+            </form>
+        </div>
+        <!-- Fin modal -->
 
 
 
-    <!-- Aqui trabaja el reponsable de inicio para ser mas preciso
+        <!-- Aqui trabaja el reponsable de inicio para ser mas preciso
     Trabaja Dilan  -->
-  <?php
+        <?php
 
     // Responcibe de Dilan
   }else{
 
   ?>
 
-      <!-- De la linia 104 empieza code de Dilan Alerta no tocar lo de dilan  -->
- 
-       <!-- Toda la visual de dilan se sube al develop con un buen funcionamiento
+        <!-- De la linia 104 empieza code de Dilan Alerta no tocar lo de dilan  -->
+
+        <!-- Toda la visual de dilan se sube al develop con un buen funcionamiento
        mediante el proceso de aliniacion -->
-    <div class="containero">
-        <!-- <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2> -->
+        <div class="containero">
+            <!-- <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2> -->
 
-        <div class="row">
+            <div class="row">
 
 
-            <div class="card-category-1">
+                <div class="card-category-1">
 
-                <?php
+                    <?php
                         
                             
                     $tabla = "reporte, usuario";
@@ -136,26 +137,28 @@
                             }
 
                         ?>
+                </div>
             </div>
         </div>
-        </div>
-        
-<?php
+    </div>
+
+    <?php
             include "../componentes/pie.php";
              ?>
     <?php
   }
 ?>
-    
+
     <!-- Javascript -->
     <script src="../js/jquery-1.7.2.min.js"></script>
-  <script src="../js/excanvas.min.js"></script>
-  <script src="../js/funciones.js"></script>
-  <script src="../js/chart.min.js" ></script>
-  <script src="../js/bootstrap.js"></script>
-  <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
+    <script src="../js/excanvas.min.js"></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/chart.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
 
-<script src="js/base.js"></script>
+    <script src="js/base.js"></script>
 
 </body>
+
 </html>

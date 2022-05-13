@@ -299,7 +299,7 @@ textarea {
 }
 
 .extra-inner {
-    padding: 20px 0;
+    padding: 40px 0;
     font-size: 11px;
     color: #BBB;
     background: #1A1A1A;
@@ -1728,8 +1728,7 @@ body {
 .containero .card{
 
     width: 230px;
-    /* height: 280px; */
-    height: 300px;
+    height: 280px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
