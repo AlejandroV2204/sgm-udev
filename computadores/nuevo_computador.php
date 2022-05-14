@@ -149,8 +149,10 @@
                     <input type="radio" name="so_pc" value="WINDOWS 8.1" required> Windows 8.1<br>
                     <input type="radio" name="so_pc" value="WINDOWS 10" required> Windows 10<br>
                     <input type="radio" name="so_pc" value="LINUX" required> Linux
+                    <input type="radio" name="so_pc" value="WINDOWS 11" required> Windows 11
 
                 </p>
+
 
                 <label for="placa base" class="form-label">Motherboard</label>
                 <input type="text" class="form-control" name="mobo_pc" placeholder="ej: asus h61m-k" required>
@@ -279,17 +281,18 @@
 
             <form style="min-width: 500px;" action="control_computador.php" method="post">
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <input id="codigoE" name="numero" type="hidden">
-                </div>
+                </div> -->
 
-                <p>
-                    Sistema operativo: <br>
-                    <input type="radio" name="so_pc" id="so_pcE" value="WINDOWS 8.1" required> Windows 8.1<br>
-                    <input type="radio" name="so_pc" id="so_pcE" value="WINDOWS 10" required> Windows 10<br>
-                    <input type="radio" name="so_pc" id="so_pcE" value="LINUX" required> Linux
-
-                </p>
+                <label for="motherboard" class="form-label">Sistema operativo</label>
+                <select name="so_pcE" id="so_pcE" class="form-select" required>
+                    <option selected disabled value="">Escoge</option>
+                    <option value="WINDOWS 8.1">WINDOWS 8.1</option>
+                    <option value="WINDOWS 10">WINDOWS 10</option>
+                    <option value="WINDOWS 11">WINDOWS 11</option>
+                    <option value="LINUX">LINUX</option>
+                </select>
 
                 <label for="placa base" class="form-label">Motherboard</label>
                 <input type="text" class="form-control" name="mobo_pc" id="mobo_pcE" placeholder="ej: asus h61m-k"
@@ -336,7 +339,7 @@
 
                 </select>
 
-                <p>
+                <!-- <p>
                     Tipo de graficos:<br>
                     <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="INTEGRADOS" required>
                     Integrados
@@ -344,7 +347,14 @@
                     <input type="radio" name="tipo_graficos" id="tipo_graficosE" value="DEDICADOS" required>
                     Dedicados
 
-                </p>
+                </p> -->
+
+                <label for="graficos" class="form-label">Tipo de Graficos</label>
+                <select name="tipo_graficos" id="tipo_graficosE" class="form-select" required>
+                    <option selected disabled value="">Escoge</option>
+                    <option value="INTEGRADOS">INTEGRADOS</option>
+                    <option value="DEDICADOS">DEDICADOS</option>
+                </select>
 
                 <label for="capacidad disco" class="form-label">Capacidad disco</label>
                 <input type="text" class="form-control" name="capacidad_disco" id="capacidad_discoE"
@@ -364,7 +374,7 @@
 
                 </p>
 
-                <p>
+                <!-- <p>
                     Estado del panel frontal: <br>
                     <input type="radio" name="panel_frontal" id="panel_frontalE" value="Funcional" required>
                     Funcional<br>
@@ -373,7 +383,15 @@
                     <input type="radio" name="panel_frontal" id="panel_frontalE" value="Sin funcionar" required> No
                     funciona
 
-                </p>
+                </p> -->
+
+                <label for="panelfrontal" class="form-label">Estado del panel frontal</label>
+                <select name="panel_frontal" id="panel_frontalE" class="form-select" required>
+                    <option selected disabled value="">Escoge</option>
+                    <option value="Funcional">Funcional</option>
+                    <option value="Fallando">Fallando</option>
+                    <option value="Sin funcionar">No funciona</option>
+                </select>
 
                 <label for="ventiladores" class="form-label">No. Ventiladores</label>
                 <input type="number" class="form-control" name="ventiladores" id="ventiladoresE" placeholder=""
@@ -484,7 +502,7 @@
         $("#panel_frontalE").val(d[11]);
         $("#lectora_dvdE").val(d[12]);
         $("#ventiladoresE").val(d[13]);
-        $("#ultima_termicaE").val(d[14]);
+        $("#ultima_termicaEE").val(d[14]);
         $("#ultimo_manE").val(d[15]);
         $("#salidas_videoE").val(d[16]);
 
