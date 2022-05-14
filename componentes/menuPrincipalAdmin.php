@@ -42,7 +42,7 @@
                         
                                <!-- Validar opciones para mi admin -->
                                 <?php
-                                $util->validarElemento(0, '<li><a href="../admin/Activar.php"><i class="icon-bell"></i>Control Activos</a></li>');
+                                $util->validarElemento(0, '<li><a href="../admin/Notificaciones.php"><i class="icon-bell"></i>Control Activos</a></li>');
                                 $util->validarElemento(0, '<li><a href="../cambiarPassword/cambiarPasswordVista.php"><i class="icon-key"></i>Cambiar contraseña</a></li>');
                             ?>
 

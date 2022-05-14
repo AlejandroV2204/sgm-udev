@@ -61,8 +61,20 @@ $utilModelo -> modificar($nombreDeTabla, $campos, $valores, 'id_usuario', $id) ;
 $_SESSION['mensajeOk']="Accion realizada";
 
      header('Location: crudUsuariosVista.php');
- }else{
-
+	 
+ }else if(isset($_POST["activar"])){
+	echo "Activar";
+	
+	$campo = array("estado_usuario");
+	$valor = array('1');
+	
+	$id=$_POST['id_Activar'];
+	
+	$utilModelo->modificar('usuario',$campo, $valor,'id_usuario', $id) ;
+	$_SESSION['mensajeOk']="Accion realizada";
+	header('Location: crudUsuariosVista.php');
+	
+	}else{
 	echo "Eliminar";
 
 			$campo = array("estado_usuario");

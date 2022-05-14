@@ -126,10 +126,19 @@ $util -> validarRuta(0);
                               <td> $fila[2]</td>
                                <td>$fila[4]</td>
                                <td>$tipoUser</td>
-                               <td>$estado</td>
-                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
-                              <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                            </tr>";  
+                               <td>$estado</td>";
+
+                              if($fila[6] == 1){
+                                echo "<td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
+                                </tr>";
+                              }else{
+                                echo "<td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                <a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-small btn-success\"><i class=\"btn-icon-only icon-ok\"> </i></a></td>
+                                </tr>";
+
+                              }
+                               
                           }
                         }
                          ?>
@@ -269,7 +278,26 @@ $util -> validarRuta(0);
 </div>
 <!-- Fin modal -->
 
+<div id="modalActivar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Activar Usuario</h3>
+  </div>
+  
+  <div class="modal-body">
 
+      <form action="crudUsuariosControlador.php" method="post" >
+
+                                  <input id="id_Activar" name="id_Activar" type="hidden">
+                                  <h3>Estas seguro que desea activar a este usuario</h3>
+    </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    <button type="submit" name="activar" id="activar"class="btn btn-primary">Activar</button>
+  </div>
+
+  </form>
+</div>
 
  
   <!-- Le javascript
@@ -334,6 +362,7 @@ $util -> validarRuta(0);
       d=datos.split("||");
 
        $("#id").val(d[0]);
+       $("#id_Activar").val(d[0]);
        $("#idEliminar").val(d[0]);
        $("#nombreE").val(d[1]);
        $("#apellidoE").val(d[2]);
