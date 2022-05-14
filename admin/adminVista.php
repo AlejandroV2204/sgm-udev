@@ -102,10 +102,12 @@
 
         <!-- Toda la visual de dilan se sube al develop con un buen funcionamiento
        mediante el proceso de aliniacion -->
-        <div class="containero">
+        <div class="widget-content">
             <!-- <h2>Hola <?php echo $nombre ?>, es un gusto tenerte de vuelta!</h2> -->
 
-            <div class="row">
+            <!-- <div class="row"> -->
+
+            <div clas="containero">
 
 
                 <div class="card-category-1">
@@ -138,6 +140,7 @@
 
                         ?>
                 </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

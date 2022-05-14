@@ -49,11 +49,7 @@ $util -> validarRuta(0);
     $diff2 = $hoy->diff($fecha2);
 
 
-
-
-
     ?>
-
 <body>
     <div class="container">
 
