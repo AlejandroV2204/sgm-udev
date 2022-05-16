@@ -61,7 +61,20 @@ if(isset($_POST['guardarComputador']))
 
 
     }
+    
+    else if(isset($_POST['activar'])){
 
+        $campo = array("estado_pc");
+
+        $valor = array("1");
+        $idi=$_POST['idActivar'];
+
+        $utilModelo -> modificar('computador',$campo,$valor,'id_pc', $idi);
+        $_SESSION['mensajeOk']="Accion realizada";
+        header('Location: nuevo_computador.php');
+
+
+    }
     else
     {
 

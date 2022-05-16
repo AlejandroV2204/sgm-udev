@@ -4,7 +4,7 @@ include_once "../util/utilModelo.php";
 $utilModelo = new utilModelo();
 ?>
 
-    <?php
+<?php
         
             if(isset($_POST['request'])){
 
@@ -60,10 +60,24 @@ $utilModelo = new utilModelo();
                             <li>Procesador: $fila[6]</li>
                             <li>RAM: $fila[4]</li>
                             <li>Disco duro: $fila[8]</li>
-                            <li>Sistema Operativo: $fila[2]</li>
-                            <a  href=\"../computadores/fichatecnica.php?idPC=$fila[0]\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
+                            <li>Sistema Operativo: $fila[2]</li>";
+                            
+                            if($fila[17] == 1){
 
-                        echo "</div>";
+                              echo "<a  href=\"../computadores/fichatecnica.php?idPC=$fila[0]\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                              <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
+
+                          }
+                          
+                          else{
+
+                              echo "<a href=\"../computadores/fichatecnica.php?idPC=$fila[0]\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                              <a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-small btn-success\"><i class=\"btn-icon-only icon-ok\"> </i></a>";
+
+                          }
+                              
+
+                      echo "</div>";
                         
                     }
                 }

@@ -83,9 +83,23 @@
                             <li>Procesador: $fila[6]</li>
                             <li>RAM: $fila[4]</li>
                             <li>Disco duro: $fila[8]</li>
-                            <li>Sistema Operativo: $fila[2]</li>
-                            <a  href=\"../computadores/fichatecnica.php?idPC=$fila[0]\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>
-                            ";
+                            <li>Sistema Operativo: $fila[2]</li>";
+
+                            //Si el estado del pc es '1' (activo) se muestra el modal de eliminar
+                            if($fila[17] == 1){
+
+                                echo "<a  href=\"../computadores/fichatecnica.php?idPC=$fila[0]\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
+
+                            }
+                            
+                            else{
+
+                                echo "<a href=\"../computadores/fichatecnica.php?idPC=$fila[0]\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                <a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-small btn-success\"><i class=\"btn-icon-only icon-ok\"> </i></a>";
+
+                            }
+                                
 
                         echo "</div>";
                         
@@ -440,7 +454,7 @@
             <form action="control_computador.php" method="post">
 
                 <input id="idEliminar" name="idEliminar" type="hidden">
-                <h3>Seguro desea desactivar el computador?</h3>
+                <h3>Seguro desea desactivar este computador?</h3>
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
@@ -450,7 +464,29 @@
         </form>
     </div>
     <!-- Fin modal -->
+    
+    <!-- INICIO MODAL ACTIVAR -->
+    <div id="modalActivar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Activar computador</h3>
+        </div>
+        <div class="modal-body">
 
+            <form action="control_computador.php" method="post">
+
+                <input id="idActivar" name="idActivar" type="hidden">
+                <h3>Seguro desea activar este computador?</h3>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+            <button type="submit" name="activar" id="idActivar" class="btn btn-primary">Activar</button>
+        </div>
+
+        </form>
+    </div>
+    <!-- Fin modal -->
 
     <!-- Le javascript
 ================================================== -->
@@ -489,6 +525,7 @@
 
         $("#codigoE").val(d[0]);
         $("#idEliminar").val(d[0]);
+        $("#idActivar").val(d[0]);
         $("#salaE").val(d[1]);
         $("#so_pcE").val(d[2]);
         $("#mobo_pcE").val(d[3]);
