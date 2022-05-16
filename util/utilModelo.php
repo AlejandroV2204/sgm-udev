@@ -47,7 +47,7 @@
 
             $consulta = "SELECT * FROM $tabla where 1";
 
-            echo "consulta: ". $consulta;
+            //echo "consulta: ". $consulta;
 
             $query = mysqli_query($link, $consulta);
 
