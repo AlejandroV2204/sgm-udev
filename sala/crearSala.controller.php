@@ -47,7 +47,19 @@ $utilModelo -> modificar($nombreDeTabla,$campos,$valores,'id_sala', $id) ;
 $_SESSION['mensajeOk']="Accion realizada";
 
     header('Location: crearSala.vista.php');
-}else{
+}else if(isset($_POST["activar"])){
+	echo "Activar";
+	
+	$campo = array("estado_sala");
+	$valor = array('1');
+	
+	$id=$_POST['id_Activar'];
+	
+	$utilModelo->modificar('sala',$campo, $valor,'id_sala', $id) ;
+	$_SESSION['mensajeOk']="Accion realizada";
+	header('Location: crearSala.vista.php');
+	
+	}else{
 
    echo "Eliminar";
 

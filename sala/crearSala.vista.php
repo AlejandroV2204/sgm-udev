@@ -1,5 +1,5 @@
 <?php
-// include "../util/utilOsdo.php";
+include_once('../conexion.php');
 include_once "../util/utilModelo.php";
 include_once "../util/util.php";
 $util = new util();
@@ -21,10 +21,6 @@ $util -> validarRuta(0);
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/pages/dashboard.css" rel="stylesheet">
   <link href="../css/pages/plans.css" rel="stylesheet">
-  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 </head>
 <body>
   <?php
@@ -42,86 +38,79 @@ $util -> validarRuta(0);
           <div class="span9">
 
             <a href="#modalGuardar"  data-toggle="modal" class=" form-control btn btn-register">Crear Sala</a><br><br>
-              <div class="widget widget-nopad">
-            <div class="widget widget-table action-table">
-              <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Salas</h3>
-              </div>
-
-              <!-- /widget-header -->
-              <div class="widget-content">
-                <table class="table table-striped table-bordered">
-                  <thead>
-                    <tr>
-                      <th> Cantidad de computadores </th>
-                      <th> Nombre de la sala</th>
-                      <th> Estado </th>
-                      <th class="td-actions">EDITAR/ELIMINAR</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                  <?php
-
-                                  
-
-                  $utilModelo = new utilModelo();
+            <div class="widget widget-nopad">
+        
+        <div class="widget widget-table action-table">
+            
+          <div class="containero">
+                <?php
+                $imagenes = array("../img/salas/diseño.jpg", "../img/salas/laboratorio.jpg", "../img/salas/salon1.jpg", "../img/salas/salonAdmin.jpg");
+                
+                $utilModelo = new utilModelo();
                   $tabla = "sala";
                   $result = $utilModelo->consultarVariasTablas("*",$tabla,"1");
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
                         $datos=$fila[0]."||".
-                             $fila[1]."||".
-  			        					   $fila[2]."||".
-                             $fila[3];
-                             
-                   if($fila[3] == 1){
+                            $fila[1]."||".
+  			        					  $fila[2]."||".
+  			        					  $fila[3];
 
-                    $estado = "inactivo";
+                            $estado = "";
 
-                   }else if($fila[3] == 0){
+                            if( $fila[3] == 0){
+                                 $estado ="Ocupada";
 
-                    $estado = "Activo";
+                            }else if( $fila[3] == 1){
+                                 $estado = "Libre";
 
-                   }
+                            }
 
-                          echo "
-                            <tr>
-                              <td>$fila[1] </td>
-                              <td> $fila[2] </td>
-                               <td>$estado</td>
-                              <td class=\"td-actions\"><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                            </tr>";
+                      $random = $imagenes[rand(0, 3)];
 
-                              
+                        // La tarjeta donde se muestan los computadores
 
-                          }
-                        }
-                         ?>
-                  </tbody>
-                </table>
-              </div>
-              <h6 class="bigstats"></h6>
+                        echo "<div class=\"card\">";
+                            echo "<img src=\"$random\">
+                            <h6>$fila[2]</h6>
+                            <p>Especificacion</p>
+                            <li>Cantidad: $fila[1]</li>
+                            <li>Estado: $estado</li>";
 
+                            //Si el estado del pc es '1' (activo) se muestra el modal de eliminar
+                            if($fila[3] == 1){
+                                echo "<a  href=\"\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a>
+                                <a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
 
-              <!-- /widget-content -->
+                            }else if($fila[3] == 0){
+                                echo "<a href=\"\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a>
+                                <a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                <a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-small btn-success\"><i class=\"btn-icon-only icon-ok\"> </i></a>";
+
+                            }
+
+                        echo "</div>";
+                        
+                    }
+                }
+                    
+                ?>
+                <h6 class="bigstats"></h6>
+                </div>
+              </div >
             </div>
-          </div >
-
           </div>
-          <!-- /FIN TABLA rangos -->
-
-
         </div>
-        <!-- /row -->
-      </div>
-      <!-- /container -->
     </div>
-    <!-- /main-inner -->
   </div>
-
-
+</div>
+    <!-- /FIN TABLA rangos -->
+      
+      <?php 
+      include "../componentes/pie.php";
+      ?>
     <!-- inicio modal guardar -->
   <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -140,12 +129,7 @@ $util -> validarRuta(0);
                                     <input   type="text" name="nombre_sala" id="nombre_sala" tabindex="1" class=" form-control span4"
                                            placeholder="Nombre de la sala" value="" required>
                                 </div>
-                               <!-- <div class="form-group   ">
-                                    <input   type="text" name="estado" id="estado" tabindex="1" class=" form-control span4"
-                                           placeholder="Estado" value="" required>
-                                </div>-->
-
-    </div>
+                  </div>
     <div class="modal-footer">
       <!-- Cierre modal -->
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
@@ -163,7 +147,7 @@ $util -> validarRuta(0);
 <div id="modalEditar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Editar Registros</h3>
+    <h3 id="myModalLabel">Editar Salas</h3>
   </div>
   <div class="modal-body">
 
@@ -214,7 +198,26 @@ $util -> validarRuta(0);
 </div>
 <!-- Fin modal -->
 
+<div id="modalActivar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Activar Sala</h3>
+  </div>
+  
+  <div class="modal-body">
 
+      <form action="crearSala.controller.php" method="post" >
+
+                                  <input id="id_Activar" name="id_Activar" type="hidden">
+                                  <h3>Volvera a sevicio la siguiente sala</h3>
+    </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    <button type="submit" name="activar" id="activar"class="btn btn-primary">Activar</button>
+  </div>
+
+  </form>
+</div>
 
   
   <!-- Le javascript
@@ -234,6 +237,7 @@ $util -> validarRuta(0);
       d=datos.split("||");
 
        $("#codigoE").val(d[0]);
+       $("#id_Activar").val(d[0]);
        $("#idEliminar").val(d[0]);
        $("#Cantidad").val(d[1]);
        $("#Sala").val(d[2]);
@@ -242,6 +246,5 @@ $util -> validarRuta(0);
   </script>
 
 </body>
-<?php include "../componentes/pie.php"; ?>
 </html>
 
