@@ -89,7 +89,7 @@ $util -> validarRuta(0);
 
                    if($fila[5] == 1){
 
-                    $estado = "Activo";
+                    $estado = "Reparando";
 
                    }
                    else if($fila[5] == 2){
@@ -99,7 +99,7 @@ $util -> validarRuta(0);
                    }
                    else{
 
-                    $estado = "Inactivo";
+                    $estado = "Reparado";
 
                    }
 

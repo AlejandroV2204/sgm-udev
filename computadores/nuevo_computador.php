@@ -41,13 +41,9 @@
                     
 
                     <?php
-
                             $tabla = "sala";
-
                             $sql = $utilidad->mostrarTodosRegistros($tabla);
-
                             while($row = $sql->fetch_assoc()){
-                                
                                 echo "<option value = ".$row['id_sala'].">". $row['nombre_sala']. "</option>";
                             }
                         
