@@ -99,7 +99,7 @@ $util -> validarRuta(0);
                    }
                    else{
 
-                    $estado = "Inactivo";
+                    $estado = "Reparado";
 
                    }
 
@@ -110,9 +110,16 @@ $util -> validarRuta(0);
                               <td> $fila[2] </td>
                               <td> $fila[3] </td>
                               <td> $fila[4] </td>
-                              <td>$estado</td>
-                              <td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>
-                            </tr>";
+                              <td>$estado</td>";
+
+                              if($fila[5] == 0){
+                                
+                                echo "<td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-success btn-small\"><i class=\"btn-icon-only icon-ok\"> </i></a></td></tr>";
+                                
+                              }else{
+                                
+                                echo "<td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>";
+                              }
 
                               
 
@@ -247,6 +254,27 @@ $util -> validarRuta(0);
 <!-- Fin modal -->
 
 
+<!-- inicio modal activar -->
+<div id="modalActivar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+   <h3 id="myModalLabel">Activar reporte</h3>
+ </div>
+ <div class="modal-body">
+
+     <form action="crudReporteControlador.php" method="post" >
+
+                                 <input id="idActivar" name="idActivar" type="hidden">
+                                 <h3>¿Seguro desea colocar este reporte como activo?</h3>
+   </div>
+ <div class="modal-footer">
+   <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+   <button type="submit" name="activar" id="activar"class="btn btn-primary">Activar</button>
+ </div>
+
+ </form>
+</div>
+<!-- Fin modal -->
 
   
   <!-- Le javascript
@@ -267,6 +295,7 @@ $util -> validarRuta(0);
 
        $("#codigoE").val(d[0]);
        $("#idEliminar").val(d[0]);
+       $("#idActivar").val(d[0]);
        $("#id_pc").val(d[2]);
        $("#descripcion_reporte").val(d[3]);
     }

@@ -47,7 +47,22 @@ $_SESSION['mensajeOk']="Accion realizada";
 header('Location:crudReporteVista.php');
 
 
- }else{
+ }
+ else if(isset($_POST['activar'])){
+
+
+			$tabla = "reporte";
+			$valor = array("1");
+			$campo = array("estado_reporte");
+			$id = $_POST['idActivar'];
+
+		$utilModelo -> modificar($tabla,$campo,$valor,'id_reporte', $id) ;
+		$_SESSION['mensajeOk']="Accion realizada";
+ 		header('Location:crudReporteVista.php');
+
+   }
+ 
+ else{
 
 	echo "Eliminar";
 
