@@ -80,13 +80,11 @@ $util -> validarRuta(0);
 
                             //Si el estado del pc es '1' (activo) se muestra el modal de eliminar
                             if($fila[3] == 1){
-                                echo "<a  href=\"\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a>
-                                <a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                echo "<a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
                                 <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a>";
 
                             }else if($fila[3] == 0){
-                                echo "<a href=\"\" class=\"btn btn-small btn-default\"><i class=\"btn-icon-only icon-eye-open\"></i></a>
-                                <a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
+                                echo "<a data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
                                 <a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-small btn-success\"><i class=\"btn-icon-only icon-ok\"> </i></a>";
 
                             }

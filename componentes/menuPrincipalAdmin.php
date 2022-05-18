@@ -98,7 +98,7 @@
                 ?>
 
                 <?php
-                                $util->validarElemento(3, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-user"></i><span></span>Usuarios</a></li> ');
+                                $util->validarElemento(3, '<li><a href="../crudUsuarios/crudUsuariosVista.php"><i class="icon-user"></i><span></span>Usuarios</a></li>');
                                 $util->validarElemento(3, '<li><a href="../reporte/crudReporteVista.php"><i class="icon-tasks"></i><span></span>Reportes</a></li>');
                 ?>
 
