@@ -107,16 +107,17 @@
 
             <!-- <div class="row"> -->
 
-            <div clas="containero">
+            <!-- <div clas="containero"> -->
 
 
-                <div class="card-category-1">
+            <div class="card-category-1">
+                <div clas="containero">
 
                     <?php
                         
                             
                     $tabla = "reporte, usuario";
-                    $result = $utilModelo2->consultarVariasTablas("id_reporte, descripcion_reporte, nombre",$tabla,"id_usuario1 = id_usuario");
+                    $result = $utilModelo2->consultarVariasTablas("id_reporte, descripcion_reporte, nombre",$tabla,"id_usuario1 = id_usuario and estado_reporte = 1");
                     while ($fila = mysqli_fetch_row($result)) {
 
 

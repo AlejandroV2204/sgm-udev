@@ -2,7 +2,7 @@
 include_once "../util/utilModelo.php";
 include_once "../util/util.php";
 $util = new util();
-$utilmodelo = new utilModelo();
+$utilModelo2 = new utilModelo();
 
 $util -> validarRuta(0);
 
@@ -114,6 +114,34 @@ $util -> validarRuta(0);
             </div>
         </div>
         <div class="widget-content">
+
+        <?php
+                        
+                            
+                    // $tabla = "reporte, usuario";
+                    // $result = $utilModelo2->consultarVariasTablas("id_reporte, descripcion_reporte, nombre",$tabla,"id_usuario1 = id_usuario and estado_reporte = 1");
+                    // while ($fila = mysqli_fetch_row($result)) {
+
+
+                    //   echo  "<div class=\"basic-card basic-card-dark\">
+                    //             <div class=\"card-content\">
+                    //               <span class=\"card-title\">Reporte# $fila[0]</span>
+                    //                     <p class=\"card-text\">
+                    //                         $fila[1]
+                    //                     </p>
+                    //             </div>
+            
+                    //             <div class=\"card-link\">
+                    //                     <a href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" title=\"Read Full\"><span>Reporte hecho por: $fila[2]</span></a>
+                    //              </div>
+                    //          </div>
+                                
+                                
+                    //             ";
+                                
+                            }
+
+                        ?>
 
 
         </div>
