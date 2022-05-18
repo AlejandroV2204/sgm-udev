@@ -291,9 +291,9 @@
 
             <form style="min-width: 500px;" action="control_computador.php" method="post">
 
-                <!-- <div class="form-group">
-                    <input id="codigoE" name="numero" type="hidden">
-                </div> -->
+                <div class="form-group">
+                    <input id="codigoE" name="codeE" type="text">
+                </div>
 
                 <label for="motherboard" class="form-label">Sistema operativo</label>
                 <select name="so_pcE" id="so_pcE" class="form-select" required>

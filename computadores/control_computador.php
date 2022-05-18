@@ -10,7 +10,6 @@ $util = new util();
 if(isset($_POST['guardarComputador'])){
 
     //Variables que se crean de los campos en el formulario (la vista)
-
 $idcomputador = $_REQUEST['id_pc']; 
 $sistema_operativo = $_REQUEST['so_pc'];
 $idsala = $_REQUEST['sala'];
@@ -48,8 +47,7 @@ $lectoradvd = $_REQUEST['lectora_dvd'];
     else if(isset($_POST['modificarComputador'])){
 
 //Variables que se crean de los campos en el formulario (la vista)
-
-$sistema_operativo = $_REQUEST['so_pc'];
+$sistema_operativo = $_REQUEST['so_pcE'];
 $idsala = $_REQUEST['sala'];
 $motherboard = $_REQUEST['mobo_pc'];
 $ram = $_REQUEST['cantidad_ram'];
@@ -69,7 +67,7 @@ $lectoradvd = $_REQUEST['lectora_dvd'];
         $campos = array("id_sala1", "sistema_operativo", "motherboard","ram", "velocidad_ram", "procesador", "tipo_graficos", "capacidad_disco", "mouse", "teclado", "estado_panel_frontal", "lectora_cd", "ventiladores", "cambio_pasta_termica", "ultimo_mantenimiento", "salidas_video");
         $valores = array("$idsala","$sistema_operativo","$motherboard","$ram"."GB","$velocidadram","$procesador","$tipograficos","$capacidaddiscoduro","$mouse","$teclado","$panelfrontal","$lectoradvd", "$ventiladores", "$pastatermica", "$ultimomantenimiento", "$salidavideo");
         
-        $id = $_POST['numero'];
+        $id = $_POST['codeE'];
         $nombreDeTabla = "computador";
 
         $utilModelo->modificar($nombreDeTabla,$campos,$valores,'id_pc', $id);
