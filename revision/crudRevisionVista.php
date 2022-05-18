@@ -5,8 +5,6 @@ include_once "../util/util.php";
 $util = new util();
 $utilmodelo = new utilModelo();
 
-$util -> validarRuta(0);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
