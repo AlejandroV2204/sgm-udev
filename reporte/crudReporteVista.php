@@ -2,6 +2,7 @@
 include_once "../util/utilModelo.php";
 include_once "../util/util.php";
 $util = new util();
+$utilidad = new utilModelo();
 
 ?>
 <!DOCTYPE html>
@@ -48,12 +49,12 @@ $util = new util();
                   <thead>
                     <tr>
                       <th> ID </th>
-                      <th> NOMBRE USUARIO </th>
+                      <th> ID USUARIO </th>
                       <th> ID PC </th>
                       <th> DESCRIPCIÓN </th>
                       <th> OBSERVACIÓN </th>
                       <th> ESTADO </th>
-                      <th class="td-actions">REVISIÓN/EDITAR/Reparar</th>
+                      <th class="td-actions">REVISIÓN/EDITAR/ELIMINAR</th>
                     </tr>
                   </thead>
                   <tbody>
