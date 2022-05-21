@@ -60,12 +60,11 @@ $utilidad = new utilModelo();
                   <tbody>
 
                   <?php
-
-                                  
-
                   $utilModelo = new utilModelo();
-                  $tabla = "reporte";
-                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"1");
+                  $tabla = "reporte, usuario";
+                  $campos = "id_reporte, nombre, id_pc1, descripcion_reporte, descripcion_reporte, estado_reporte";
+                  $condicion = "id_usuario1 = id_usuario";
+                  $result = $utilModelo->consultarVariasTablas($campos, $tabla, $condicion);
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
@@ -140,7 +139,7 @@ $utilidad = new utilModelo();
   </div>
 
 
-    <!-- inicio modal guardar -->
+  <!-- inicio modal guardar -->
   <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
