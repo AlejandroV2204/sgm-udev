@@ -138,7 +138,7 @@ $util = new util();
   </div>
 
 
-    <!-- inicio modal guardar -->
+  <!-- inicio modal guardar -->
   <div id="modalGuardar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
@@ -267,7 +267,7 @@ $util = new util();
 <!-- Fin modal -->
 
   
-   <!-- Le javascript
+  <!-- Le javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="../js/jquery-1.7.2.min.js"></script>
@@ -276,6 +276,7 @@ $util = new util();
   <script src="../js/chart.min.js" ></script>
   <script src="../js/bootstrap.js"></script>
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
+
 
   <script type="text/javascript">
 
