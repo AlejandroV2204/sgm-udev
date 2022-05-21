@@ -2,7 +2,6 @@
 include_once "../util/utilModelo.php";
 include_once "../util/util.php";
 $util = new util();
-$utilidad = new utilModelo();
 
 ?>
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ $utilidad = new utilModelo();
                   <thead>
                     <tr>
                       <th> ID </th>
-                      <th> ID USUARIO </th>
+                      <th> NOMBRE USUARIO </th>
                       <th> ID PC </th>
                       <th> DESCRIPCIÓN </th>
                       <th> OBSERVACIÓN </th>
@@ -60,22 +59,27 @@ $utilidad = new utilModelo();
                   <tbody>
 
                   <?php
-
-                                  
-
                   $utilModelo = new utilModelo();
                   $tabla = "reporte";
                   $result = $utilModelo->consultarVariasTablas("*",$tabla,"1");
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
-                        $datos=
-                            $fila[0]."||".
+                        $datos=$fila[0]."||".
                             $fila[1]."||".
   			        					  $fila[2]."||".
   			        					  $fila[3]."||".
                             $fila[4]."||".
                             $fila[5];
+
+                            $idU = $fila[1]; 
+                            $user = "usuario";
+                            $cam = array("id_usuario");
+                            $extraccion = $utilModelo->mostrarregistros($user, $cam, $idU);
+                            while($nom = mysqli_fetch_array($extraccion)){
+                              if($nom != null){
+                                $extra = $nom[0]. "||".
+                                   $nom[1];
   			        				
                               $estado = "";
 
@@ -98,7 +102,7 @@ $utilidad = new utilModelo();
                           echo "
                             <tr>
                               <td> $fila[0] </td>
-                              <td> $fila[1] </td>
+                              <td> $nom[1]  </td>
                               <td> $fila[2] </td>
                               <td> $fila[3] </td>
                               <td> $fila[4] </td>
@@ -118,7 +122,8 @@ $utilidad = new utilModelo();
                               }
 
                               
-
+                            }
+                          }
                           }
                         }
                          ?>
