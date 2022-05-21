@@ -67,13 +67,15 @@ $util = new util();
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
-                        $datos=$fila[0]."||".
+                        $datos=
+                            $fila[0]."||".
                             $fila[1]."||".
   			        					  $fila[2]."||".
   			        					  $fila[3]."||".
                             $fila[4]."||".
                             $fila[5];
-                              $estado;
+  			        				
+                              $estado = "";
 
                    if($fila[5] == 1){
 
@@ -94,27 +96,25 @@ $util = new util();
                           echo "
                             <tr>
                               <td> $fila[0] </td>
-                              <td> $fila[1]  </td>
+                              <td> $fila[1] </td>
                               <td> $fila[2] </td>
                               <td> $fila[3] </td>
                               <td> $fila[4] </td>
                               <td>$estado</td>";
-                      
+
                               if($fila[5] == 0){
                                 
-                                echo "<td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a>
-                                <a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
-                                <a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-success btn-small\"><i class=\"btn-icon-only icon-ok\"> </i></a></td></tr>";
+                                echo "<td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalActivar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-success btn-small\"><i class=\"btn-icon-only icon-ok\"> </i></a></td></tr>";
                                 
                               }else{
                                 
-                                echo "<td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a>
-                                <a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
-                                <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>";
+                                echo "<td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a><a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a><a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>";
                               }
-                            }
-                          }
 
+                              
+
+                          }
+                        }
                          ?>
                   </tbody>
                 </table>
