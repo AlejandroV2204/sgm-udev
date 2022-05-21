@@ -60,8 +60,10 @@ $util = new util();
 
                   <?php
                   $utilModelo = new utilModelo();
-                  $tabla = "reporte";
-                  $result = $utilModelo->consultarVariasTablas("*",$tabla,"1");
+                  $tabla = "reporte, usuario";
+                  $campos = "id_reporte, nombre, id_pc1, descripcion_reporte, descripcion_reporte, estado_reporte";
+                  $condicion = "id_usuario1 = id_usuario";
+                  $result = $utilModelo->consultarVariasTablas($campos, $tabla, $condicion);
                   while ($fila = mysqli_fetch_array($result)) {
                       if ($fila != NULL) {
 
@@ -71,17 +73,7 @@ $util = new util();
   			        					  $fila[3]."||".
                             $fila[4]."||".
                             $fila[5];
-
-                            $idU = $fila[1]; 
-                            $user = "usuario";
-                            $cam = array("id_usuario");
-                            $extraccion = $utilModelo->mostrarregistros($user, $cam, $idU);
-                            while($nom = mysqli_fetch_array($extraccion)){
-                              if($nom != null){
-                                $extra = $nom[0]. "||".
-                                   $nom[1];
-  			        				
-                              $estado = "";
+                              $estado;
 
                    if($fila[5] == 1){
 
@@ -102,12 +94,12 @@ $util = new util();
                           echo "
                             <tr>
                               <td> $fila[0] </td>
-                              <td> $nom[1]  </td>
+                              <td> $fila[1]  </td>
                               <td> $fila[2] </td>
                               <td> $fila[3] </td>
                               <td> $fila[4] </td>
                               <td>$estado</td>";
-
+                      
                               if($fila[5] == 0){
                                 
                                 echo "<td class=\"td-actions\"><a  href=\"../revision/crudRevisionVista.php?idReporte=$fila[0]\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-eye-open\"></i></a>
@@ -120,12 +112,9 @@ $util = new util();
                                 <a  data-toggle=\"modal\" href=\"#modalEditar\" onclick=\"agregarForm('$datos');\" class=\"btn btn-small btn-info\"><i class=\"btn-icon-only icon-pencil\"></i></a>
                                 <a href=\"#modalEliminar\"  onclick=\"agregarForm('$datos');\" data-toggle=\"modal\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"> </i></a></td>";
                               }
-
-                              
                             }
                           }
-                          }
-                        }
+
                          ?>
                   </tbody>
                 </table>
@@ -278,7 +267,7 @@ $util = new util();
 <!-- Fin modal -->
 
   
-  <!-- Le javascript
+   <!-- Le javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="../js/jquery-1.7.2.min.js"></script>
@@ -287,7 +276,6 @@ $util = new util();
   <script src="../js/chart.min.js" ></script>
   <script src="../js/bootstrap.js"></script>
   <script language="javascript" type="text/javascript" src="../js/full-calendar/fullcalendar.min.js"></script>
-
 
   <script type="text/javascript">
 
